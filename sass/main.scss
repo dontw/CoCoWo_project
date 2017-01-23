@@ -1,10 +1,13 @@
 @import "base/reset";
 @import "base/base";
 @import "base/typography";
+@import "utils/_var.scss";
+
+@import "components/button";
 
 
 @import "utils/_mixin.scss";
-@import "utils/_var.scss";
+
 
 @import "layout/_grid.scss";
 @import "page/00_index/_large.scss";
