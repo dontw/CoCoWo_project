@@ -1,15 +1,17 @@
+@import "vendors/font_awsome/scss/font-awesome.scss";
+
 @import "base/reset";
 @import "base/base";
 @import "base/typography";
+
 @import "utils/_var.scss";
-
-@import "components/button";
-
-
 @import "utils/_mixin.scss";
 
+@import "components/button";
+@import "components/_gooeymenu.scss";
 
 @import "layout/_grid.scss";
+
 @import "page/00_index/_large.scss";
 @import "page/00_index/_medium.scss";
 @import "page/00_index/_small.scss";
