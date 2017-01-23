@@ -1,0 +1,18 @@
+@include respones(medium) {
+  .large{
+    display: none;
+  }
+  .middle{
+    h1{
+      display: block;
+      color: $normal-blue;
+    }
+
+  }
+
+  .little{
+    display: none;
+  }
+
+
+};

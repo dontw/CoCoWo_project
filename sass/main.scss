@@ -1,0 +1,12 @@
+@import "base/reset";
+@import "base/base";
+@import "base/typography";
+
+
+@import "utils/_mixin.scss";
+@import "utils/_var.scss";
+
+@import "layout/_grid.scss";
+@import "page/00_index/_large.scss";
+@import "page/00_index/_medium.scss";
+@import "page/00_index/_small.scss";
