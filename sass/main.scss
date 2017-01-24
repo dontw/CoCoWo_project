@@ -5,10 +5,11 @@
 
 //小功能樣式
 @import "utils/_var.scss";//變數設定
-@import "utils/_mixin.scss";
+@import "utils/_mixin.scss"; //各類涵式
 
 //大部件樣式
 @import "layout/_grid.scss";
+@import "layout/_main_nav.scss";
 
 //小部件樣式
 @import "components/button";
