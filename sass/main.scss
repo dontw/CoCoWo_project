@@ -1,17 +1,27 @@
+@charset "UTF-8"; //設定編碼
+
+//外來套件
 @import "vendors/font_awsome/scss/font-awesome.scss";
 
-@import "base/reset";
-@import "base/base";
-@import "base/typography";
-
-@import "utils/_var.scss";
+//小功能樣式
+@import "utils/_var.scss";//變數設定
 @import "utils/_mixin.scss";
 
+//大部件樣式
+@import "layout/_grid.scss";
+
+//小部件樣式
 @import "components/button";
 @import "components/_gooeymenu.scss";
 
-@import "layout/_grid.scss";
 
-@import "page/00_index/_large.scss";
-@import "page/00_index/_medium.scss";
-@import "page/00_index/_small.scss";
+//基本樣式
+@import "base/reset"; //重設
+@import "base/base";  //基本樣式
+@import "base/typography"; //基本樣式字體大小設定
+
+
+//各頁樣式
+@import "page/00_index/_large.scss"; //首頁桌機992px以上
+@import "page/00_index/_medium.scss"; //首頁平板768~992px
+@import "page/00_index/_small.scss"; //首頁手機768px以下

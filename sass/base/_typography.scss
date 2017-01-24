@@ -10,26 +10,30 @@ h1,h2,h3,h4{
 }
 
 h1{
-  font-size: 53px;
+  font-size: $fz-h1;
   font-weight: bold;
 }
 
 h2{
-  font-size: 40px;
+  font-size: $fz-h2;
 }
 
 h3{
-  font-size:32px;
+  font-size:$fz-h3;
 }
 
 h4{
-  font-size:24px;
+  font-size:$fz-h4;
 }
 
 h5{
-  font-size:19px;
+  font-size:$fz-h5;
 }
 
 p{
-  font-size: 16px;
+  font-size: $fz-p;
+}
+
+.minp{
+  font-size: $fz-minp;
 }
