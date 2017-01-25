@@ -1,17 +1,32 @@
 @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-h1,h2,h3,h4,h5,p{
+h1,h2,h3,h4,h5,p,.minp{
   font-family: "Noto Sans TC","微軟正黑體", sans-serif;
   color:#232323;
+  &.light{
+    font-weight: 100;
+  }
+  &.regular{
+    font-weight: 400;
+  }
+  &.medium{
+    font-weight: 500;
+  }
+  &.bold{
+    font-weight: 700;
+  }
+  &.black{
+    font-weight: 900;
+  }
 }
 
 h1,h2,h3,h4{
   font-weight: bold;
+
 }
 
 h1{
   font-size: $fz-h1;
-  font-weight: bold;
 }
 
 h2{
@@ -32,8 +47,7 @@ h5{
 
 p{
   font-size: $fz-p;
-}
-
-.minp{
-  font-size: $fz-minp;
+  &.minp{
+    font-size: $fz-minp;
+  }
 }

@@ -3771,16 +3771,25 @@ table {
 body {
   background-color: #eeeeee; }
 
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, .minp {
   font-family: "Noto Sans TC","微軟正黑體", sans-serif;
   color: #232323; }
+  h1.light, h2.light, h3.light, h4.light, h5.light, p.light, .minp.light {
+    font-weight: 100; }
+  h1.regular, h2.regular, h3.regular, h4.regular, h5.regular, p.regular, .minp.regular {
+    font-weight: 400; }
+  h1.medium, h2.medium, h3.medium, h4.medium, h5.medium, p.medium, .minp.medium {
+    font-weight: 500; }
+  h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, p.bold, .minp.bold {
+    font-weight: 700; }
+  h1.black, h2.black, h3.black, h4.black, h5.black, p.black, .minp.black {
+    font-weight: 900; }
 
 h1, h2, h3, h4 {
   font-weight: bold; }
 
 h1 {
-  font-size: 53px;
-  font-weight: bold; }
+  font-size: 53px; }
 
 h2 {
   font-size: 40px; }
@@ -3796,9 +3805,8 @@ h5 {
 
 p {
   font-size: 16px; }
-
-.minp {
-  font-size: 12px; }
+  p.minp {
+    font-size: 12px; }
 
 @media all and (min-width: 993px) {
   .large h1 {

@@ -23,6 +23,27 @@
 
 
 //各頁樣式
+//首頁 勛
 @import "page/00_index/_large.scss"; //首頁桌機992px以上
 @import "page/00_index/_medium.scss"; //首頁平板768~992px
 @import "page/00_index/_small.scss"; //首頁手機768px以下
+
+//搜尋空間 泓
+@import "page/10_search_space/_large.scss"; //首頁桌機992px以上
+@import "page/10_search_space/_medium.scss"; //首頁平板768~992px
+@import "page/10_search_space/_small.scss"; //首頁手機768px以下
+
+//刊登空間 宇
+@import "page/20_post_space/_large.scss"; //首頁桌機992px以上
+@import "page/20_post_space/_medium.scss"; //首頁平板768~992px
+@import "page/20_post_space/_small.scss"; //首頁手機768px以下
+
+//窩日誌 仁
+@import "page/30_blog_main/_large.scss"; //首頁桌機992px以上
+@import "page/30_blog_main/_medium.scss"; //首頁平板768~992px
+@import "page/30_blog_main/_small.scss"; //首頁手機768px以下
+
+//關於我們 宜真
+@import "page/40_about/_large.scss"; //首頁桌機992px以上
+@import "page/40_about/_medium.scss"; //首頁平板768~992px
+@import "page/40_about/_small.scss"; //首頁手機768px以下
