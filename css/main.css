@@ -2519,7 +2519,7 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Noto Sans TC","微軟正黑體", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -3508,7 +3508,7 @@ hr {
   text-decoration: none;
   color: #FFFFFF;
   border-radius: 1px;
-  font-family: "Noto Sans TC", "微軟正黑體", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   transition: .2s;
   position: relative; }
 
@@ -3526,19 +3526,80 @@ hr {
   transition: .1s; }
 
 .main_nav_a_active {
-  color: #03A9F4; }
+  color: #FFC107; }
 
 .main_nav_a:hover {
   text-decoration: none;
-  color: #B3E5FC;
+  color: #FFC107;
   background-color: rgba(85, 85, 85, 0.1); }
 
 .main_nav_a:hover:after {
-  border-bottom: 10px solid #03A9F4; }
+  border-bottom: 10px solid #FFC107; }
 
 .main_nav_a:active {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.16) inset; }
 
+@media all and (max-width: 767px) {
+  .stuff_nav {
+    height: 92px; }
+
+  .nav_p {
+    display: block;
+    position: relative;
+    top: -20px; }
+
+  .main_nav_bar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 92px;
+    line-height: 72px;
+    background-color: rgba(33, 33, 33, 0.6);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 2; }
+
+  .main_nav_logo {
+    margin: 5px 0;
+    height: 32px;
+    background-image: url(../img/logo-small.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%; }
+
+  .nav_user {
+    font-size: 30px;
+    color: #FFFFFF; }
+    .nav_user:hover {
+      color: #FFFFFF; }
+
+  .main_nav_a {
+    width: 100%;
+    display: block;
+    height: 50px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 12px;
+    text-decoration: none;
+    border-radius: 1px;
+    font-family: "Noto Sans TC", sans-serif;
+    transition: .2s;
+    position: relative; }
+    .main_nav_a i {
+      font-size: 22px; }
+
+  .nav_user_btn {
+    position: absolute;
+    top: -15px;
+    right: 0; }
+
+  .nav_user {
+    font-size: 32px;
+    color: #FFFFFF; }
+    .nav_user:hover {
+      color: #FFFFFF; }
+
+  .main_nav_a:after {
+    display: none; } }
 .button, .border_button {
   display: inline-block;
   margin: 0.3em;
@@ -3558,7 +3619,7 @@ hr {
   font-size: 18px;
   color: #eeeeee;
   text-align: center;
-  font-family: "Noto Sans TC","微軟正黑體", sans-serif; }
+  font-family: "Noto Sans TC", sans-serif; }
 
 .button:hover, .border_button:hover {
   box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.5);
@@ -3772,7 +3833,7 @@ body {
   background-color: #eeeeee; }
 
 h1, h2, h3, h4, h5, p, .minp {
-  font-family: "Noto Sans TC","微軟正黑體", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
   color: #232323; }
   h1.light, h2.light, h3.light, h4.light, h5.light, p.light, .minp.light {
     font-weight: 100; }
@@ -3808,16 +3869,11 @@ p {
   p.minp {
     font-size: 12px; }
 
-@media all and (min-width: 993px) {
-  .large h1 {
-    display: block;
-    color: #FFC107; }
+.index {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(../img/post_space_bcg.png); }
 
-  .middle {
-    display: none; }
-
-  .little {
-    display: none; } }
 @media all and (max-width: 992px) and (min-width: 768px) {
   .large {
     display: none; }

@@ -65,22 +65,100 @@
 	}
 
 	.main_nav_a_active{
-		color:$normal-blue;
+		color:$yellow;
 	}
 
 
 
 	.main_nav_a:hover{
 		text-decoration: none;
-		color:$light-blue;
+		color:$yellow;
 		background-color: rgba(85, 85, 85, 0.1);
 	}
 
 	.main_nav_a:hover:after{
-		border-bottom:10px	solid $normal-blue;
+		border-bottom:10px	solid $yellow;
 	}
 
 	.main_nav_a:active{
 		box-shadow: 2px 2px 3px rgba(0,0,0,0.16) inset;
 
 	}
+
+	@include respones(small) {
+	.stuff_nav{
+		height: 92px;
+	}
+
+	.nav_p{
+		display: block;
+		position: relative;
+		top:-20px;
+	}
+
+	.main_nav_bar{
+		display: block;
+		position: fixed;
+		width: 100%;
+		height: 92px;
+		line-height: 72px;
+		background-color: rgba(33, 33, 33, 0.6);
+		box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		z-index: 2;
+	}
+
+	.main_nav_logo{
+		margin:5px 0;
+		height: 32px;
+		background-image: url(../img/logo-small.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: 50% 50%;
+
+	}
+
+	.nav_user{
+		font-size: 30px;
+		color:$white;
+		&:hover{
+			color:$white;
+		}
+	}
+
+	.main_nav_a{
+		width: 100%;
+		display: block;
+		height: 50px;
+		text-align: center;
+		line-height: 40px;
+		font-size: 12px;
+		text-decoration: none;
+		border-radius: 1px;
+		font-family: $main_font_family;
+		transition:.2s;
+		position: relative;
+		i{
+			font-size: 22px;
+		}
+	}
+
+	.nav_user_btn{
+		position: absolute;
+		top:-15px;
+		right:0;
+
+	}
+
+	.nav_user{
+		font-size: 32px;
+		color:$white;
+		&:hover{
+			color:$white;
+		}
+	}
+
+	.main_nav_a:after{
+		display: none;
+	}
+
+	};

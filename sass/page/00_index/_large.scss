@@ -1,16 +1,3 @@
 @include respones(large) {
-  .large{
-    h1{
-      display: block;
-      color: $yellow;
-    }
 
-  }
-  .middle{
-    display: none;
-  }
-
-  .little{
-    display: none;
-  }
 };
