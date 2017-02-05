@@ -1,0 +1,228 @@
+.post_space{
+  position: relative;
+  .stuff_nav{
+         background: -webkit-linear-gradient(#40afdf 0%, #40afdf 100%);
+         background: -o-linear-gradient(#40afdf 0%, #40afdf 100%);
+         background: linear-gradient(#40afdf 0%, #40afdf 100%);
+        }
+
+  .page_title{
+    color:$white;
+    text-shadow:   0 1px 0 hsl(174,5%,80%),
+	                 0 2px 0 hsl(174,5%,75%),
+	                 0 3px 0 hsl(174,5%,70%),
+	                 0 4px 0 hsl(174,5%,66%),
+	                 0 5px 0 hsl(174,5%,64%),
+	                 0 6px 0 hsl(174,5%,62%),
+
+	                 0 0 5px rgba(0,0,0,.05),
+	                0 1px 3px rgba(0,0,0,.2),
+	                0 3px 5px rgba(0,0,0,.2),
+	               0 5px 10px rgba(0,0,0,.2),
+	              0 10px 10px rgba(0,0,0,.2),
+	              0 20px 20px rgba(0,0,0,.3);
+    position: absolute;
+    top:14%;
+    left:0;
+    right:0;
+    text-align: center;
+  }
+
+  .main_cube{
+    width: 500px;
+    height: 35vh;
+    position: absolute;
+    bottom:10%;
+    left:0;
+    right:0;
+    margin:auto;
+  }
+
+  .first_cube{
+    position: absolute;
+    bottom:12%;
+    left:11%;
+  }
+
+  .second_cube{
+    width:116px;
+    position: absolute;
+    height: 38vh;
+    bottom:19%;
+    left:34%;
+  }
+
+  .third_cube{
+    position: absolute;
+    bottom:8%;
+    right:17%;
+  }
+
+  .fourth_cube{
+    position: absolute;
+    bottom:18%;
+    right:34%;
+  }
+
+
+
+
+  .big_cloud{
+    position: absolute;
+    background-image: url(../img/post_space_bigcloud.svg);
+    background-repeat:repeat-x;;
+    background-origin: 50% 50%;
+    background-size: contain;
+    width: 100vw;
+    height: 40vh;
+    bottom:0;
+    z-index: 1;
+    animation: float  3s ease-out infinite;
+
+    .big_cloud_shadow{
+      background-image: url(../img/post_space_bigcloudshasow1.svg);
+      background-repeat:no-repeat;
+      background-size: contain;
+      width:20vw;
+      height: 40vh;
+      z-index: 2;
+      position: absolute;
+      bottom:-25%;
+      right:-20vw;
+      opacity:0.5;
+      animation: float3  50s linear infinite;
+    }
+
+    .big_cloud_shadow_1{
+      @extend .big_cloud_shadow;
+      animation: float3  30s linear infinite;
+      opacity:0.8;
+      width:30vw;
+      height: 30vh;
+      overflow: hidden;
+      bottom:13%;
+      right:-30vw;
+    }
+
+    .big_cloud_shadow_2{
+      @extend .big_cloud_shadow;
+      animation: float1  3s linear infinite;
+      opacity:0.8;
+      width:20vw;
+      height: 20vh;
+      overflow: hidden;
+      bottom:16%;
+      right:18vw;
+    }
+
+  }
+
+  .background_cloud{
+    width: 10%;
+    height: 10%;
+    background-image: url(../img/post_space_cloud.svg);
+    animation: float1 3s ease-out infinite;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    &.big{
+      width:35%;
+      height: 35%;
+      animation: float2  3s ease-out infinite;
+      position: absolute;
+      right:40px;
+      top:10%;
+    }
+    &.mid{
+      width:20%;
+      height: 20%;
+      animation: float1_1  3s ease-out infinite;
+      position: absolute;
+      left:40px;
+      top:30%;
+    }
+    &.cloud_1{
+      position: absolute;
+      right:40px;
+      bottom:40%;
+    }
+
+    &.cloud_2{
+      position: absolute;
+      right:40%;
+      top:20%;
+    }
+
+    &.cloud_3{
+      position: absolute;
+      left:20%;
+      top:10%;
+    }
+
+    &.cloud_4{
+      position: absolute;
+      right:10%;
+      top:10%;
+    }
+
+  }
+
+  @keyframes float {
+    50% {
+        transform: translate(0, -2px);
+      }
+ }
+
+
+
+  @keyframes float1 {
+    50% {
+        transform: translate(0, -5px);
+      }
+ }
+
+ @keyframes float1_1 {
+   50% {
+       transform: translate(0, 10px);
+     }
+}
+
+ @keyframes float2 {
+   50% {
+       transform: translate(0, 20px);
+     }
+}
+
+@keyframes float3 {
+  100% {
+      transform: translate(-130vw, 0);
+    }
+}
+  .page1{
+       background: -webkit-linear-gradient(#40afdf 0%, #7ec8e6 50%,#a1d0e3  100%);
+       background: -o-linear-gradient(#40afdf 0%,#7ec8e6 50% ,#a1d0e3 100%);
+       background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+       position: relative;
+        }
+
+  .page2{
+    background: -webkit-linear-gradient(#a1d0e3 0%,#7ec8e6 50% , #40afdf 100%);
+    background: -o-linear-gradient(#a1d0e3 0% ,#7ec8e6 50%, #40afdf 100%);
+    background: linear-gradient(#a1d0e3 0% ,#7ec8e6 50%, #40afdf 100%);
+  }
+
+  .page3{
+    background: -webkit-linear-gradient(#40afdf 0%, #7ec8e6 60%, $white 100%);
+    background: -o-linear-gradient(#40afdf 0%,#7ec8e6 60% ,$white 100%);
+    background: linear-gradient(#40afdf 0%,#7ec8e6 60%, $white 100%);
+  }
+
+  .page4{
+      background: -webkit-linear-gradient($white 0%, #7ec8e6 100%);
+      background: -o-linear-gradient($white 0%, #7ec8e6 100%);
+      background: linear-gradient($white 0%, #7ec8e6 100%);
+    }
+
+  .page5{
+    background: linear-gradient(#7ec8e6 0%, #40afdf 50%);
+  }
+}
