@@ -3890,6 +3890,8 @@ p {
     background: -webkit-linear-gradient(#40afdf 0%, #40afdf 100%);
     background: -o-linear-gradient(#40afdf 0%, #40afdf 100%);
     background: linear-gradient(#40afdf 0%, #40afdf 100%); }
+  .post_space section {
+    overflow: hidden; }
   .post_space .page_title {
     color: #FFFFFF;
     text-shadow: 0 1px 0 #c9cfce, 0 2px 0 #bcc2c2, 0 3px 0 #afb6b6, 0 4px 0 #a4adac, 0 5px 0 #9fa8a7, 0 6px 0 #99a3a2, 0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.3);
@@ -3900,30 +3902,79 @@ p {
     text-align: center; }
   .post_space .main_cube {
     width: 500px;
+    height: 35vh; }
+  .post_space .first_cube_wrap {
+    position: absolute;
+    bottom: 12%;
+    left: 11%; }
+  .post_space .first_person {
+    position: absolute;
+    bottom: 85%;
+    left: 28%;
+    transform: rotate(-1deg); }
+  .post_space .main_cube_wrap {
+    width: 500px;
     height: 35vh;
     position: absolute;
     bottom: 10%;
     left: 0;
     right: 0;
     margin: auto; }
-  .post_space .first_cube {
+  .post_space .main_person_wrap {
     position: absolute;
-    bottom: 12%;
-    left: 11%; }
-  .post_space .second_cube {
+    bottom: 72%;
+    left: 36%; }
+  .post_space .main_person_hand {
+    position: absolute;
+    bottom: 92%;
+    left: 4%;
+    animation: hand  1s linear infinite;
+    transform-origin: 0% 50%; }
+  .post_space .main_person_bubble {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 118%;
+    left: 48%;
+    animation: bubble  1s linear infinite; }
+@keyframes hand {
+  50% {
+    transform: rotate(15deg); } }
+@keyframes bubble {
+  50% {
+    transform: scale(1.1); } }
+  .post_space .second_cube_wrap {
     width: 116px;
     position: absolute;
     height: 38vh;
-    bottom: 19%;
+    bottom: 16%;
     left: 34%; }
-  .post_space .third_cube {
+  .post_space .second_cube {
+    width: 116px;
+    height: 38vh; }
+  .post_space .second_person {
+    width: 50px;
+    position: absolute;
+    bottom: 91%;
+    left: 31%;
+    transform: rotateX(-3deg) rotateY(16deg) rotateZ(1deg); }
+  .post_space .third_cube_wrap {
     position: absolute;
     bottom: 8%;
     right: 17%; }
-  .post_space .fourth_cube {
+  .post_space .third_person {
     position: absolute;
-    bottom: 18%;
+    bottom: 89%;
+    right: 39%; }
+  .post_space .fourth_cube_wrap {
+    position: absolute;
+    bottom: 15%;
     right: 34%; }
+  .post_space .fourth_person {
+    position: absolute;
+    bottom: 84%;
+    right: 21%;
+    transform: rotateX(-7deg) rotateY(-15deg) rotateZ(-2deg); }
   .post_space .big_cloud {
     position: absolute;
     background-image: url(../img/post_space_bigcloud.svg);
@@ -4000,6 +4051,14 @@ p {
       position: absolute;
       right: 10%;
       top: 10%; }
+  .post_space .space_ground {
+    width: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto; }
 @keyframes float {
   50% {
     transform: translate(0, -2px); } }
