@@ -3900,6 +3900,10 @@ p {
     left: 0;
     right: 0;
     text-align: center; }
+    .post_space .page_title.page_title_2 {
+      margin-top: 5%;
+      position: relative;
+      text-align: center; }
   .post_space .main_cube {
     width: 500px;
     height: 35vh; }
@@ -4051,14 +4055,64 @@ p {
       position: absolute;
       right: 10%;
       top: 10%; }
-  .post_space .space_ground {
-    width: 60%;
+  .post_space .background_cloud2 {
+    width: 10%;
+    height: 10%;
+    background-image: url(../img/post_space_cloud_2.svg);
+    animation: float1 3s ease-out infinite;
+    background-repeat: no-repeat;
+    background-size: 100% 100%; }
+    .post_space .background_cloud2.cloud_1 {
+      width: 38%;
+      height: 38%;
+      position: absolute;
+      top: 11%;
+      left: -3%;
+      animation: float1_1 3s ease-out infinite; }
+    .post_space .background_cloud2.cloud_2 {
+      width: 20%;
+      height: 20%;
+      position: absolute;
+      top: 7%;
+      left: 25%; }
+    .post_space .background_cloud2.cloud_3 {
+      width: 26%;
+      height: 26%;
+      position: absolute;
+      right: -2%;
+      bottom: 46%; }
+    .post_space .background_cloud2.cloud_4 {
+      width: 48%;
+      height: 48%;
+      position: absolute;
+      animation: float1_1 5s ease-out infinite;
+      bottom: 1%;
+      right: -4%; }
+  .post_space .ground_wrap {
+    width: 1000px;
+    height: 500px;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto; }
+  .post_space .space_ground {
+    width: 100%; }
+  .post_space .person {
+    width: 44%;
+    position: absolute;
+    top: 23.5%;
+    left: 28%; }
+  .post_space .furni_1 {
+    position: absolute;
+    width: 25%;
+    top: 39%;
+    left: 4%; }
+  .post_space .furni_2 {
+    position: absolute;
+    top: 49%;
+    left: 49%; }
 @keyframes float {
   50% {
     transform: translate(0, -2px); } }

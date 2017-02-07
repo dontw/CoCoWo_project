@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+  // onepage_scroll
   $(".main").onepage_scroll({
      sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
      easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
@@ -15,4 +17,48 @@ $(document).ready(function(){
                                       // the browser's width is less than 600, the fallback will kick in.
      direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
   });
+
+  // tweenMax
+  var controller = new ScrollMagic.Controller();
+
+  var wp = new TimelineMax().staggerFromTo(".person", 2, {
+        y: -800,
+        opacity: 1,
+        scale:1,
+
+
+    }, {
+        y: 0,
+        opacity: 1,
+        scale:1,
+        ease: Bounce.easeOut
+    }, 0.5);
+
+  var wp = new TimelineMax().staggerFromTo(".furni", 1, {
+        y: 0,
+        opacity: 1,
+        scale:0,
+
+
+    }, {
+        y: 0,
+        opacity: 1,
+        scale:1,
+    }, 0.5);
+
+
+  var scene = new ScrollMagic.Scene({
+      triggerElement: "#trigger1",
+      reverse: false,
+      offset: '100px' //觸發點下移100px
+
+      })
+
+  .setTween(wp)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
+
+
+
+
 });
