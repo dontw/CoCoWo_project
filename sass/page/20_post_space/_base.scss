@@ -306,6 +306,12 @@
     margin:auto;
   }
 
+  .ground_wrap_2{
+    @extend .ground_wrap;
+    right:-13%;
+    bottom:-55%;
+  }
+
   .space_ground{
     width: 100%;
   }
@@ -315,6 +321,10 @@
     position: absolute;
     top:23.5%;
     left:28%;
+  }
+
+  .person_sec2{
+    @extend .person ;
   }
 
   .furni_1{
@@ -331,6 +341,446 @@
     left: 49%;
 
   }
+
+  .furni_3{
+    position: absolute;
+    top:-5%;
+    left: 57%;
+
+  }
+
+  .furni_4{
+    position: absolute;
+    top: 0%;
+    left: 29%;
+
+  }
+
+  .furni_5{
+    position: absolute;
+    top: 18%;
+    left: 68%;
+
+  }
+
+  .furni_6{
+    position: absolute;
+    top: 2%;
+    left: 46%;
+
+  }
+
+  .furni_7{
+    position: absolute;
+    top: 22%;
+    left: 17%;
+
+  }
+
+.user{
+  position: absolute;
+
+
+
+  &.user_1{
+    width: 15%;
+    bottom:34%;
+    left:80%;
+    animation: float  0.5s linear infinite;
+  }
+
+  &.user_2{
+    width: 3%;
+    bottom:49%;
+    left:30%;
+    animation: float  0.3s linear infinite;
+  }
+
+  &.user_3{
+
+    bottom:23%;
+    left:55%;
+    animation: float  0.6s linear infinite;
+  }
+
+  &.user_4{
+    width:4%;
+    bottom:13%;
+    left:68%;
+    animation: float  0.4s linear infinite;
+  }
+
+  &.user_5{
+    bottom:94%;
+    left:49%;
+    animation: float  0.4s linear infinite;
+  }
+
+  &.user_6{
+    width: 4%;
+    bottom:24%;
+    left:78%;
+    animation: float  0.3s linear infinite;
+  }
+
+  &.user_7{
+    width: 13%;
+    bottom:19%;
+    left:30%;
+    animation: float  0.5s linear infinite;
+  }
+}
+
+.user_inter{
+  position: absolute;
+  width: 100%;
+  bottom: 69%;
+  left:0%;
+}
+
+// all the device
+
+.devices{
+  position: absolute;
+  bottom: -10%;
+  left:-7%;
+  width: 500px;
+}
+
+$frame: #fafafa;
+$screen: #555;
+$extra: #aaa;
+$browser:$light-blue;
+$browser-ui: $grey;
+
+  .device {
+  position: absolute;
+}
+
+.notebook { bottom: -30px; left: 0; }
+.ipad     { bottom: -40px; left: 350px; }
+.iphone   { bottom: -40px; left: 500px; }
+
+.screen {
+  position: relative;
+  margin: 13px auto 0;
+  border-radius: 2px;
+  background: $screen;
+  overflow: hidden;
+}
+
+.shadow {
+  position: absolute;
+  z-index: -1;
+  bottom: -4px;
+  left: -4%;
+  width: 108%;
+  height: 8px;
+  border-radius: 100%;
+  background: rgba(0,0,0,.2);
+}
+
+/***************************************
+ * Notebook
+ */
+
+.notebook {
+  width: 300px;
+  height: 185px;
+  border-radius: 10px 10px 0 0;
+  background: $frame;
+}
+
+.notebook:before {
+  top: 5px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: $extra;
+}
+
+.notebook .screen {
+  width: 275px;
+  height: 160px;
+}
+
+.notebook .keyboard {
+  position: absolute;
+  top: 100%;
+  margin-left: -25px;
+  width: 350px;
+  height: 8px;
+  border-radius: 5px 5px 25px 25px;
+  background: #eaeaea;
+}
+
+.notebook .keyboard:after {
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+  height: 4px;
+  border-radius: 0 0 8px 8px;
+  background: #ccc;
+}
+
+/***************************************
+ * Tablet
+ */
+
+.ipad {
+  width: 110px;
+  height: 150px;
+  border-radius: 8px;
+  background: $frame;
+}
+
+.ipad:before {
+  top: 5px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: $extra;
+}
+
+.ipad:after {
+  bottom: 5px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border: 1px solid $extra;
+  border-radius: 50%;
+}
+
+.ipad .screen {
+  width: 100px;
+  height: 125px;
+}
+
+/***************************************
+ * Smartphone
+ */
+
+.iphone {
+  width: 60px;
+  height: 110px;
+  border-radius: 8px;
+  background: $frame;
+}
+
+.iphone:before {
+  top: 6px;
+  left: 50%;
+  width: 10px;
+  height: 2px;
+  margin-left: -5px;
+  border-radius: 4px;
+  background: $extra;
+}
+
+.iphone:after {
+  bottom: 5px;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border: 1px solid $extra;
+  border-radius: 50%;
+}
+
+.iphone .screen{
+  width: 52px;
+  height: 85px;
+}
+
+/***************************************
+ * Animation
+ */
+
+.animation {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  background: $browser;
+  transform: scale(.4,.4) translateX(500%);
+  animation: 7s fly-in infinite;
+  overflow: hidden;
+}
+
+@keyframes fly-in {
+    0% { transform: scale(.4,.4) translateX(500%);  }
+   10% { transform: scale(.4,.4) translateX(0);     }
+   20% { transform: scale(1,1)   translateX(0);     }
+   80% { transform: scale(1,1)   translateX(0);     }
+   90% { transform: scale(.4,.4) translateX(0);     }
+  100% { transform: scale(.4,.4) translateX(-500%); }
+}
+
+.browser {
+  height: 15px;
+  background: $browser-ui;
+  &:before {
+    top: 5px;
+    left: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 2px;
+    background: $browser;
+  }
+  &:after {
+    top: 5px;
+    right: 5px;
+    height: 5px;
+    width: calc(100% - 20px);
+    border-radius: 2px;
+    background: $browser;
+  }
+}
+
+.content {
+  position: relative;
+  width: 80%;
+  height: 4px;
+  margin: 10% 0 0 10%;
+  background: $browser-ui;
+  box-shadow:
+    0 8px 0 $browser-ui,
+    0 16px 0 $browser-ui,
+    0 24px 0 $browser-ui,
+    0 32px 0 $browser-ui,
+    0 40px 0 $browser-ui,
+    0 48px 0 $browser-ui;
+  animation: 7s pop-in infinite;
+  &:after {
+    top: 48px;
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: $browser;
+  }
+}
+
+.notebook .content:before {
+  width: 32px;
+  height: 28px;
+  border-right: 4px solid $browser;
+  background: $browser-ui;
+}
+
+.ipad .content:before {
+  width: 24px;
+  height: 20px;
+  border-right: 4px solid $browser;
+  background: $browser-ui;
+}
+
+// messagebox
+.message {
+  background-color: white;
+  width: calc(100% - 3em);
+  max-width: 20em;
+  padding: 1em 1em 1em 1.5em;
+  border-left-width: 6px;
+  border-left-style: solid;
+  border-radius: 3px;
+  position: relative;
+  line-height: 1.5;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+  &:before {
+    color: white;
+    width:  1.5em;
+    height: 1.5em;
+    position: absolute;
+    top: 0.75em;
+    left: -3px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    line-height: 1.5;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: $main_font_family;
+  }
+
+  p {
+    margin: 0 0 1em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.message_1_1{
+    position: absolute;
+    top:-22%;
+    left:33%;
+    &:before {
+      content: "1";
+    }
+  }
+
+  &.message_1_2{
+    position: absolute;
+    top:42%;
+    right:-8%;
+    &:before {
+      content: "2";
+    }
+  }
+
+  &.message_1_3{
+    position: absolute;
+    top:-22%;
+    left:33%;
+    width: 500px;
+    &:before {
+      content: "3";
+    }
+  }
+}
+
+.message--error {
+  border-left-color: firebrick;
+
+  &:before {
+    background-color: firebrick;
+    content: "‼";
+  }
+}
+
+.message--warning {
+  border-left-color: $yellow;
+
+  &:before {
+    background-color: $yellow;
+    content: "!";
+  }
+}
+
+.message--success {
+  border-left-color: darkolivegreen;
+
+  &:before {
+    background-color: darkolivegreen;
+    content: "✔";
+  }
+}
+
+
+
+@keyframes pop-in {
+    0% { transform: translateY(3000%); }
+   18% { transform: translateY(3000%); }
+   28% { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
 
   @keyframes float {
     50% {

@@ -18,33 +18,24 @@ $(document).ready(function(){
      direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".
   });
 
+
+
   // tweenMax
+  //sec_2 animation
+  //falling ground
   var controller = new ScrollMagic.Controller();
 
   var wp = new TimelineMax().staggerFromTo(".person", 2, {
-        y: -800,
+        y: -700,
         opacity: 1,
         scale:1,
-
 
     }, {
         y: 0,
         opacity: 1,
         scale:1,
         ease: Bounce.easeOut
-    }, 0.5);
-
-  var wp = new TimelineMax().staggerFromTo(".furni", 1, {
-        y: 0,
-        opacity: 1,
-        scale:0,
-
-
-    }, {
-        y: 0,
-        opacity: 1,
-        scale:1,
-    }, 0.5);
+    }, 1);
 
 
   var scene = new ScrollMagic.Scene({
@@ -59,6 +50,161 @@ $(document).ready(function(){
   .addTo(controller);
 
 
+  //growing furnitures
+  var wp_2 = new TimelineMax().staggerFromTo(".furni", 0.5, {
+
+        y: 0,
+        opacity: 0,
+        scale:0,
+
+    }, {
+        delay: 3,
+        y: 0,
+        opacity: 1,
+        scale:1,
+        ease: Power3.easeOut,
+    }, 0.5);
+
+  var scene_2 = new ScrollMagic.Scene({
+      triggerElement: "#trigger2",
+      reverse: false,
+      offset: '110px',
 
 
+      })
+
+  .setTween(wp_2)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
+
+  //devices move in
+
+  var wp_3 = new TimelineMax().staggerFromTo(".devices", 1.5, {
+
+        x: -500,
+        opacity: 0,
+        scale:1,
+
+    }, {
+        delay: 7,
+        x: 0,
+        opacity: 1,
+        scale:1,
+        ease: Power3.easeOut,
+    }, 0.8);
+
+  var scene_3 = new ScrollMagic.Scene({
+      triggerElement: "#trigger3",
+      reverse: false,
+      offset: '120px',
+
+
+      })
+
+  .setTween(wp_3)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
+
+  //sec3
+  //ground fall in
+  var wp_4 = new TimelineMax().staggerFromTo(".ground_wrap_2", 2, {
+
+        x: -300,
+        y: -1500,
+        opacity: 1,
+        scale:1,
+
+    }, {
+        delay: 0.5,
+        x: 0,
+        y:0,
+        opacity: 1,
+        scale:1,
+        ease: Power3.easeOut,
+    }, 0.8);
+
+  var scene_4 = new ScrollMagic.Scene({
+      triggerElement: "#trigger4",
+      reverse: true,
+      offset: '120px',
+
+
+      })
+
+  .setTween(wp_4)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
+
+//user fall in
+  var wp_5 = new TimelineMax().staggerFromTo(".user", 0.5, {
+
+        y: -800,
+        opacity: 0,
+        scale:1,
+
+    }, {
+        delay: 2.5,
+        x: 0,
+        y:0,
+        opacity: 1,
+        scale:1,
+        ease: Power3.easeOut,
+    }, 0.3);
+
+  var scene_5 = new ScrollMagic.Scene({
+      triggerElement: "#trigger5",
+      reverse: true,
+      offset: '120px',
+
+
+      })
+  .setTween(wp_5)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
+
+//user_inter fade in
+  var wp_6 = new TimelineMax().staggerFromTo(".user_inter", 2, {
+
+        y: 300,
+        opacity: 0,
+        scale:1,
+
+    }, {
+        delay: 5,
+        x: 0,
+        y:0,
+        opacity: 1,
+        scale:1,
+        ease: Power3.easeOut,
+    }, 0.3);
+
+  var scene_6 = new ScrollMagic.Scene({
+      triggerElement: "#trigger6",
+      reverse: true,
+      offset: '120px',
+
+
+      })
+  .setTween(wp_6)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
+
+  var wp_7 = new TimelineMax().staggerTo(".user_inter", 2, {
+        delay: 6.5,
+        y: -300,
+        opacity: 0,
+        scale:1,
+
+    }, 0.3);
+
+  var scene_7 = new ScrollMagic.Scene({
+      triggerElement: "#trigger7",
+      reverse: true,
+      offset: '120px',
+
+
+      })
+  .setTween(wp_7)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
 });
