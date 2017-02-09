@@ -35,18 +35,16 @@
       position: relative;
       text-align: center;
     }
+    &.page_title_3{
+      margin-top:5%;
+      position: relative;;
+      text-align: center;
+    }
   }
 
-  .main_cube{
-    width: 500px;
-    height: 35vh;
-  }
 
-  .first_cube_wrap{
-    position: absolute;
-    bottom:12%;
-    left:11%;
-  }
+
+
 
   .first_person{
     position: absolute;
@@ -54,6 +52,11 @@
     left:28%;
     transform: rotate(-1deg);
 
+  }
+
+  .main_cube{
+    width: 500px;
+    height: 35vh;
   }
 
 
@@ -100,6 +103,12 @@
    50%{
      transform: scale(1.1);
    }
+ }
+
+ .first_cube_wrap{
+   position: absolute;
+   bottom:12%;
+   left:11%;
  }
 
   .second_cube_wrap{
@@ -295,6 +304,35 @@
 
   }
 
+  .background_cloud3{
+    @extend .background_cloud;
+
+    &.cloud_1{
+      width: 38%;
+      height: 38%;
+      position: absolute;
+      top:55%;
+      left:-3%;
+      animation: float1_1 3s ease-out infinite;
+    }
+
+    &.cloud_2{
+      width: 20%;
+      height: 17%;
+      position: absolute;
+      top:7%;
+      left:25%;
+    }
+
+    &.cloud_3{
+      width: 26%;
+      height: 26%;
+      position: absolute;
+      top:43%;
+      left:75%;
+    }
+  }
+
   .ground_wrap{
     width: 1000px;
     height:500px;
@@ -445,6 +483,11 @@
   bottom: -10%;
   left:-7%;
   width: 500px;
+  &:after{
+    content: "";
+    display: block;
+    clear:both;
+  }
 }
 
 $frame: #fafafa;
@@ -455,9 +498,10 @@ $browser-ui: $grey;
 
   .device {
   position: absolute;
+
 }
 
-.notebook { bottom: -30px; left: 0; }
+.notebook { bottom: -30px; left: 0;}
 .ipad     { bottom: -40px; left: 350px; }
 .iphone   { bottom: -40px; left: 500px; }
 

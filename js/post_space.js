@@ -207,4 +207,10 @@ $(document).ready(function(){
   .setTween(wp_7)
   .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
+
+  $('.upper_slider').slick({
+       
+     });
+
+
 });
