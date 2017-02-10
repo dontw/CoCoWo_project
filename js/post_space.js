@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   // onepage_scroll
   $(".main").onepage_scroll({
      sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -209,8 +208,45 @@ $(document).ready(function(){
   .addTo(controller);
 
   $('.upper_slider').slick({
-       
+    slide: '.upper_content',
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    asNavFor: '.buttom_slider',
+    useCSS: true,
+		cssEase: 'ease',
+		infinite: true,
+		lazyLoad: 'ondemand',
+		cssTransitions: true,
+
      });
+
+  $('.buttom_slider').slick({
+    slide: '.buttom_content',
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    arrows: false,
+    asNavFor: '.upper_slider',
+    focusOnSelect: true,
+    draggable: false,
+		autoplay: false,
+		autoplaySpeed: 4000,
+    centerMode: true,
+    onBeforeChange: function() {
+			$('.buttom_content .slick-active').removeClass('remove_color');
+      console.log('onbeforechangeok');
+		},
+		onAfterChange: function() {
+			$('.buttom_content .slick-active').removeClass('remove_color');
+      console.log('onafterchangeok');
+		},
+		onInit: function() {
+			$('.buttom_content .slick-active').removeClass('remove_color');
+      console.log('init');
+		},
+  });
 
 
 });

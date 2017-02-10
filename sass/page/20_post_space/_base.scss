@@ -1,4 +1,7 @@
 .post_space{
+  *{
+    // outline: red 1px solid;
+  }
   position: relative;
   .stuff_nav{
          background: -webkit-linear-gradient(#40afdf 0%, #40afdf 100%);
@@ -480,8 +483,8 @@
 
 .devices{
   position: absolute;
-  bottom: -10%;
-  left:-7%;
+  bottom: 5%;
+  left:22%;
   width: 500px;
   &:after{
     content: "";
@@ -762,8 +765,8 @@ $browser-ui: $grey;
 
   &.message_1_1{
     position: absolute;
-    top:-22%;
-    left:33%;
+    top:-3%;
+    left:0%;
     &:before {
       content: "1";
     }
@@ -877,10 +880,178 @@ $browser-ui: $grey;
   }
 
   .page4{
-      background: -webkit-linear-gradient($white 0%, #7ec8e6 100%);
-      background: -o-linear-gradient($white 0%, #7ec8e6 100%);
-      background: linear-gradient($white 0%, #7ec8e6 100%);
+      background: -webkit-linear-gradient($white 0%, #40afdf 100%);
+      background: -o-linear-gradient($white 0%, #40afdf 100%);
+      background: linear-gradient($white 0%, #40afdf 100%);
     }
+
+  // TESTIMONY
+  .testimony{
+    margin-top:50px;
+      .upper_slider{
+        position: relative;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        .left_side_btn {
+
+        }
+        .right_side_btn{
+          background-image: url(../img/post_space_right_arrow.svg);
+        }
+      }
+      .upper_content{
+
+
+        height:30%;
+        .content_left{
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 50%;
+          float:left;
+          background-image: linear-gradient($white 0%, #ccc 100%);
+          height: 400px;
+
+          .content_title{
+            text-align: center;
+          }
+          h4{
+            width: 60%;
+            text-align: center;
+            line-height: 1.5em;
+            color:$black;
+            display: inline-block;
+          }
+
+          hr{
+            width: 50%;
+            margin-top:2em;
+            border-color:$black;
+          }
+
+          .content_left_name{
+            text-align: center;
+            margin-top:1em;
+            color:$black;
+          }
+
+          .content_left_ocu{
+            text-align: center;
+            margin-top:0.5em;
+            color:$black;
+          }
+
+          .btn{
+            margin-top:3em;
+            text-align: center;
+          }
+
+          .border_button{
+            background-color: transparent;
+            border-color:$grey;
+            color:$black;
+            display: inline-block;;
+
+          }
+
+        }
+        .content_right{
+          width: 50%;
+          float: right;
+        }
+        .content_img{
+          width: 100%;
+          height: 400px;
+          background-image: url(../img/post_space_test_room_1.png);
+          background-size: cover;
+          background-position:50% 50%;
+          background-repeat: no-repeat;
+          // filter: brightness(0.50);
+
+          .content_logo{
+            width: 310px;
+            height: 210px;
+            background-image: url(../img/post_space_sprites-logos@1x.png);
+            background-size: 325% 325%;
+            background-position:4% 58%;
+            background-repeat: no-repeat;
+            position: relative;
+            top:100px;
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+          }
+
+        }
+      }
+
+
+
+
+      .buttom_slider{
+        .buttom_content{
+          width: 300px;
+          height: 140px;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: 50% 50%;
+          cursor: pointer;
+          background-image: url(../img/post_space_sprites-logos@1x.png);
+          // filter:grayscale(100%);
+        }
+
+
+
+        .buttom_content_1{
+          background-position: 60% 1%;
+          background-size: 478% 900%;
+          &.remove_color{
+            filter:grayscale(100%);
+          }
+        }
+        .buttom_content_2{
+          background-position: 60% 1%;
+          background-size: 478% 900%;
+          &.remove_color{
+            filter:grayscale(100%);
+          }
+
+        }
+        .buttom_content_3{
+          background-position: 60% 1%;
+          background-size: 478% 900%;
+          &.remove_color{
+            filter:grayscale(100%);
+          }
+
+        }
+        .buttom_content_4{
+          background-position: 60% 1%;
+          background-size: 478% 900%;
+          &.remove_color{
+            filter:grayscale(100%);
+          }
+
+        }
+        .buttom_content_5{
+          background-position: 60% 1%;
+          background-size: 478% 900%;
+          &.remove_color{
+            filter:grayscale(100%);
+          }
+
+        }
+        .buttom_content_6{
+          background-position: 60% 1%;
+          background-size: 478% 900%;
+          &.remove_color{
+            filter:grayscale(100%);
+          }
+
+        }
+      }
+  }
 
   .page5{
     background: linear-gradient(#7ec8e6 0%, #40afdf 50%);
