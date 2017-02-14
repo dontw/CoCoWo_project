@@ -355,7 +355,14 @@ hr {
 .col-xs-1 {
   width: 8.33333333%;
 }
+
+.col-xs-20p{
+  float:left;
+  width: 20%;
+}
+
 .col-xs-pull-12 {
+  float:left;
   right: 100%;
 }
 .col-xs-pull-11 {

@@ -1,3 +1,7 @@
+ *{
+	//  outline: red solid 1px;
+ }
+
 	.nav{
 		display:none;
 	}
@@ -94,6 +98,7 @@
 		display: block;
 		position: relative;
 		top:-20px;
+		font-size: 12px;
 	}
 
 	.main_nav_bar{
@@ -140,13 +145,6 @@
 		i{
 			font-size: 22px;
 		}
-	}
-
-	.nav_user_btn{
-		position: absolute;
-		top:-15px;
-		right:0;
-
 	}
 
 	.nav_user{

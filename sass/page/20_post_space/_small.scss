@@ -7,6 +7,11 @@
     }
 
     // sec1
+    .arrow{
+      bottom:65%;
+      height: 20px;
+      width:20px;
+    }
     .big_cloud{
       min-width: 768px;
       height: 290px;
@@ -313,6 +318,7 @@
 .testimony{
   .upper_slider{
     height: 300px;
+    margin-top:-30px;
     .upper_content{
       position: relative;
       &:after{
