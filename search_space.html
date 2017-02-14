@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="css/jquery-ui-slider-pips.css">
+<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<title>CoCoWork可可窩 </title>
+</head>
+<body id="searchspace">
+	<!-- 選單 -->
+     <div class="main_nav_bar">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-2 col-md-2">
+					<a href="index.html">
+						<div class="main_nav_logo"></div>
+					</a>
+				</div>
+				<!-- <div class="col-sm-2 col-md-2"></div> -->
+				<div class="col-xs-20p col-sm-2 col-md-2">
+					<a href="search_space.html" class="main_nav_a main_nav_a_active">
+						<i class="fa fa-search" aria-hidden="true"></i>
+						<span class="nav_p">搜索空間</span>
+					</a>
+				</div>
+				<div class="col-xs-20p col-sm-2 col-md-2">
+					<a href="post_space.html" class="main_nav_a">
+						<i class="fa fa-plus-square-o" aria-hidden="true"></i>
+						<span class="nav_p">刊登空間</span>
+					</a>
+				</div>
+				<div class="col-xs-20p col-sm-2 col-md-2">
+					<a href="#" class="main_nav_a main_nav_a_shop">
+						<i class="fa fa-book" aria-hidden="true"></i>
+						<span class="nav_p">窩 日 誌</span>
+					</a>
+				</div>
+				<div class="col-xs-20p col-sm-2 col-md-2">
+					<a href="#" class="main_nav_a">
+						<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+						<span class="nav_p">聯絡我們</span>
+					</a>
+				</div>
+	        <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
+	          <a href="#" class="main_nav_a">
+							<i class="fa fa-user-circle-o" aria-hidden="true"></i>
+	            <span class="nav_p">會員中心</span>
+			  </a>
+	        </div>
+				</div>
+			</div>
+		</div>
+	  <div class="stuff_nav"></div>
+
+
+
+
+	<section>
+		<div class="container-fluid">
+
+			<div class="row">
+
+				<!-- 地圖 -->
+				<div id="map" class="col-xs-12 col-lg-6"></div>
+
+
+				<!-- 搜尋頁面區塊 -->
+				<div id="info" class="col-xs-12 col-lg-6">
+					<!-- 搜尋區塊 -->
+					<div class="row">
+						<div id="select" class="col-lg-12">
+
+								<div class="col-xs-12 col-lg-2 text-center">
+									<div class="row">
+										<select class="seldown">
+											<option>我想要...</option>
+											<option>讀書</option>
+											<option>寫程式</option>
+											<option>展場</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-lg-2 text-center">
+									<div class="row">
+										<select class="seldown">
+											<option selected="selected">地點...</option>
+											<option>台北市</option>
+											<option>桃園市</option>
+											<option>高雄市</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-lg-2 text-center">
+									<div class="row">
+										<select class="seldown">
+											<option selected="selected">時間...</option>
+											<option>台北市</option>
+											<option>桃園市</option>
+											<option>高雄市</option>
+										</select>
+									</div>
+								</div>
+
+								<div id="moreinfo" class="col-xs-6 col-lg-3 text-center">
+									<div class="row">
+										<div class="button yellow  selbut">更多資訊</div>
+									</div>
+								</div>
+
+								<div id="goinfo" class="col-xs-6 col-lg-3 ">
+									<div class="row">
+										<div class="button dark-blue selbut">馬上搜尋</div>
+									</div>
+								</div>
+
+								<h5 class="col-sm-12">共<span>9</span>個空間供您選擇!</h5>
+
+						</div>
+					</div> <!-- row -->
+
+					<!-- 顯示結果區塊 -->
+						<div id="result" class="col-lg-12">
+
+							<div class="row">
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space1.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space3.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space4.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+							</div>
+
+
+							<!-- 顯示結果第二列 -->
+							<div class="row">
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space5.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space6.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space7.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+							</div>
+
+							<!-- 顯示結果第三列 -->
+							<div class="row">
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space8.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space9.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+								<div class="col-xs-12 col-lg-4 cards">
+									<!-- <div class="item"> -->
+										<div class="card-img col-xs-6 col-lg-12">
+											<div class="row">
+												<img class="card-img-top img-responsive" src="img/searchspace_space10.jpg" alt="cowork">
+											</div>
+										</div>
+										<div class="card-block col-xs-6 col-lg-12">
+											<h5 class="card-title">KoHub工作空間</h5>
+											<ul class="star">
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+												<li>★</li>
+											</ul>
+											<p class="card-text">台北市內湖區大湖一接36號</p>
+											<p class="card-text">185元/天</p>
+										</div>
+									<!-- </div> -->
+								</div>
+							</div>
+
+
+
+
+							<!-- 搜尋條件 -->
+							<div id="search" class="col-xs-12 col-lg-12">
+								<!-- 空間種類區塊 -->
+								<div class="row">
+									<div class="col-lg-12">
+										<div id="wotype">
+											<h5 class="mb">空間種類</h5>
+											<div class="wobtns">
+												<div class="col-xs-12 col-lg-4">
+													<label for="wo1">
+															<img class="card-img-top img-responsive" src="img/wo1.jpg" alt="cowork">
+													</label>
+												</div>
+												<div class="col-xs-12 col-lg-4">
+													<label for="wo2">
+															<img class="img-responsive" src="img/wo2.jpg" alt="cowork">
+													</label>
+												</div>
+												<div class="col-xs-12 col-lg-4">
+													<label for="wo3">
+														<img class="img-responsive" src="img/wo3.jpg" alt="cowork">
+													</label>
+												</div>
+											</div>
+											<div class="wobtns">
+												<div class="col-xs-12 col-lg-4">
+													<label for="wo4">
+														<img class="img-responsive" src="img/wo4.jpg" alt="cowork">
+													</label>
+												</div>
+												<div class="col-xs-12 col-lg-4">
+													<label for="wo5">
+														<img class="img-responsive" src="img/wo5.jpg" alt="cowork">
+													</label>
+												</div>
+												<div class="col-xs-12 col-lg-4">
+													<label for="wo6">
+														<img class="img-responsive" src="img/wo6.jpg" alt="cowork">
+													</label>
+												</div>
+											</div>
+
+											<input type="radio" id="wo1">
+											<input type="radio" id="wo2">
+											<input type="radio" id="wo3">
+											<input type="radio" id="wo4">
+											<input type="radio" id="wo5">
+											<input type="radio" id="wo6">
+										</div>
+									</div>
+								</div>
+
+								<!-- 人數需求區塊 -->
+								<div class="row">
+									<div class="col-lg-12">
+										<div id="people">
+											<h5 class="mb">人數需求</h5>
+
+											<div id="peoinfo">
+													<a href="#btn" class="button dark-blue" id="minus">-</a>
+
+													<div id="count">
+														<img src="">
+														<ul>
+															<li>1</li>
+															<li>人</li>
+														</ul>
+													</div>
+
+													<a href="#btn" class="button dark-blue" id="plus">+</a>
+													<div class="clear"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 預算金額區塊 -->
+								<div class="row">
+									<div class="col-lg-12">
+										<div id="money">
+											<h5 class="mb">預算區間</h5>
+											<div id="bar">
+												<p id="custom-labels-output" >金額預算區間</p><!-- class="panel callout radius text-center" -->
+												<div id="slider"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 設備服務區塊 -->
+								<div class="row">
+									<div class="col-lg-12">
+										<div id="device">
+											<h5 class="mb">設備服務</h5>
+
+											<div id="nets">
+												<span class="fa fa-wifi" aria-hidden="true" fa-5x></span>
+												<label for="net1">
+													<div class="button dark-blue net">
+														<i class="fa fa-wifi" aria-hidden="true"></i>
+														<p>Wi-Fi</p>
+													</div>
+												</label>
+												<label for="net2">
+													<div class="button dark-blue net">
+														<i class="fa fa-inbox" aria-hidden="true"></i>
+														<p>有線網路</p>
+													</div>
+												</label>
+												<label for="net3">
+													<div class="button dark-blue net">
+														<i class="fa fa-desktop" aria-hidden="true"></i>
+														<p>螢幕</p>
+													</div>
+												</label>
+												<label for="net4">
+													<div class="button dark-blue net">
+														<i class="fa fa-phone" aria-hidden="true"></i>
+														<p>電話</p>
+													</div>
+												</label>
+												<label for="net5">
+													<div class="button dark-blue net">
+														<i class="fa fa-fax" aria-hidden="true"></i>
+														<p>傳真</p>
+													</div>
+												</label>
+
+												<input type="checkbox" id="net1">
+												<input type="checkbox" id="net2">
+												<input type="checkbox" id="net3">
+												<input type="checkbox" id="net4">
+												<input type="checkbox" id="net5">
+
+												<div class="clear"></div>
+											</div>
+
+											<div id="foods">
+												<span class="fa fa-cutlery" aria-hidden="true"></span>
+												<label for="food1"><div class="button dark-blue food">飲水</div></label>
+												<label for="food2">
+													<div class="button dark-blue food">
+														<i class="fa fa-coffee" aria-hidden="true"></i>
+														<p>飲料</p>
+													</div>
+												</label>
+												<label for="food3"><div class="button dark-blue food">餐點</div></label>
+												<label for="food4"><div class="button dark-blue food">廚房</div></label>
+												<label for="food5"><div class="button dark-blue food">餐廳</div></label>
+
+												<input type="checkbox" id="food1">
+												<input type="checkbox" id="food2">
+												<input type="checkbox" id="food3">
+												<input type="checkbox" id="food4">
+												<input type="checkbox" id="food5">
+
+												<div class="clear"></div>
+											</div>
+
+											<div id="hards">
+												<span class="fa fa-print" aria-hidden="true"></span>
+												<label for="hard1">
+													<div class="button dark-blue hard">
+														<i class="fa fa-video-camera" aria-hidden="true"></i>
+														<p>投影機</p>
+													</div>
+												</label>
+												<label for="hard2">
+													<div class="button dark-blue hard">
+														<span class="glyphicon glyphicon-multifunction-printer"></span>
+														<p>掃描印刷</p>
+													</div>
+												</label>
+												<label for="hard3">
+													<div class="button dark-blue hard">
+
+														<p>白板</p>
+													</div>
+												</label>
+												<input type="checkbox" id="hard1">
+												<input type="checkbox" id="hard2">
+												<input type="checkbox" id="hard3">
+
+												<div class="clear"></div>
+											</div>
+
+											<div id="parks">
+												<span class="fa fa-bus" aria-hidden="true"></span>
+												<label for="park1">
+													<div class="button dark-blue park">
+														<i class="fa fa-subway" aria-hidden="true"></i>
+														<p>公共運輸</p>
+													</div>
+												</label>
+												<label for="park2">
+													<div class="button dark-blue park">
+														<i class="fa fa-bicycle" aria-hidden="true"></i>
+														<p>腳踏車位</p>
+													</div>
+												</label>
+												<label for="park3">
+													<div class="button dark-blue park">
+														<i class="fa fa-motorcycle" aria-hidden="true"></i>
+														<p>機車位</p>
+													</div>
+												</label>
+												<label for="park4">
+													<div class="button dark-blue park">
+														<i class="fa fa-car" aria-hidden="true"></i>
+														<p>汽車位</p>
+													</div>
+												</label>
+
+												<input type="checkbox" id="park1">
+												<input type="checkbox" id="park2">
+												<input type="checkbox" id="park3">
+												<input type="checkbox" id="park4">
+
+												<div class="clear"></div>
+											</div>
+
+											<div id="rooms">
+												<span class="fa fa-cubes" aria-hidden="true"></span>
+												<label for="room1"><div class="button dark-blue room">會議室</div></label>
+												<label for="room2"><div class="button dark-blue room">工具間</div></label>
+												<label for="room3"><div class="button dark-blue room">視聽空間</div></label>
+												<label for="room4"><div class="button dark-blue room">展覽空間</div></label>
+												<label for="room5"><div class="button dark-blue room">練團空間</div></label>
+
+												<input type="checkbox" id="room1">
+												<input type="checkbox" id="room2">
+												<input type="checkbox" id="room3">
+												<input type="checkbox" id="room4">
+												<input type="checkbox" id="room5">
+
+												<div class="clear"></div>
+											</div>
+
+											<div id="send">
+												<div class="button yellow senbtn">重設</div>
+												<div id="checkOk" class="button dark-blue senbtn">確認</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div> <!-- search -->
+						</div><!-- #result -->
+
+				</div> <!-- info -->
+
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<div class="footer">
+      <div class="footer_cloud"></div>
+      <div class="container">
+        <div class="row">
+        <div class="col-xs-12 col-md-4 site footer_col" >
+          <h5>網站地圖</h5>
+          <hr>
+          <a href="#">刊登空間</a>
+          <a href="#">搜索空間</a>
+          <a href="#">窩 日 誌</a>
+          <a href="#">會員中心</a>
+
+
+
+        </div>
+        <div class="col-xs-12 col-md-4 contacts footer_col" >
+          <h5>聯絡資訊</h5>
+          <hr>
+          <div class="addr contact_row col-xs-12 col-md-12">
+            <i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>
+            <p>Address:<br>桃園縣中壢市大馬路123號</p>
+          </div>
+          <div class="phone contact_row col-xs-12 col-md-12">
+            <i class="fa fa-phone fa-fw" aria-hidden="true"></i>
+            <p>Tel:03-1234-5678<br>Mol:0912-345-678</p>
+
+          </div>
+          <div class="mail contact_row col-xs-12 col-md-12">
+            <i class="fa fa-envelope fa-fw" aria-hidden="true"></i>
+            <p>Mail:<br>contact@cocowork.com.tw</p>
+          </div>
+
+        </div>
+
+        <div class="col-xs-12 col-md-4 socialmedia footer_col" >
+          <h5>追蹤我們</h5>
+          <hr>
+          <div class="social_icons">
+            <a href="#" class="fb_icon">
+              <img src="img/facebook_icon.svg" alt="facebook's icon" class="social_icon">
+            </a>
+            <a href="#" class="fb_icon">
+              <img src="img/youtube_icon.svg" alt="facebook's icon" class="social_icon">
+            </a>
+            <a href="#" class="fb_icon">
+              <img src="img/instagram_icon.svg" alt="facebook's icon" class="social_icon">
+            </a>
+            <a href="#" class="fb_icon">
+              <img src="img/googleplus_icon.svg" alt="facebook's icon" class="social_icon">
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <p class="minp copyright">Copyright © 2017 可可窩 cocowork</p>
+      </div>
+
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery-ui-slider-pips.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9fQSlL9rK_YGhBJDXZoSDPUbRt7Wd05k"></script>
+<script type="text/javascript" src="js/mo.js"></script>
+<script type="text/javascript" src="js/btn.js"></script>
+<script type="text/javascript" src="js/searchspace.js"></script>

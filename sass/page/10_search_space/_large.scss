@@ -1,3 +1,21 @@
 @include respones(large) {
+	// 顯示結果區塊
+	#searchspace{
+		#select{
+			#goinfo{
+				text-align: left;
+			}
+		}
+		#result{
+			.cards{
+				margin:10px 0;
+			}
+			.card-block{
+				padding:5px;
+				width:100%;
+				background-color: #fff;
+			}
+		}
+	}
 
 };

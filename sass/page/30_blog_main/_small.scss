@@ -1,3 +1,72 @@
 @include respones(small) {
-  
+  .blog
+  {
+  	.mainText
+	{
+
+		margin-top: 20px;
+		margin-left: 10px;
+		line-height: 1.5;
+	}
+
+	.container
+	{
+		.blogNav .blogNavItem
+		{
+			margin: 0;
+		}
+		.blogcontext
+		{
+			left: 8.3333333%;
+			
+			.share
+			{
+				li
+				{
+					width: 100%;
+				}
+			}
+			.messageRow
+			{
+				.message
+				{
+					img
+					{
+						width: 30%;
+					}
+				}
+				
+			}
+			.blogContextRightAll
+			{
+				display: none;
+			}
+		}
+
+
+	} 
+
+	.yoyo
+	{
+		position: static;
+		.buttonRight,.buttonleft
+		{
+			text-align: center;
+			clear: both;
+		}
+
+		
+	}
+	.yoyo2
+	{
+		position: static;
+		.buttonRight,.buttonleft
+		{
+			text-align: center;
+			clear: both;
+		}
+	}
+
+	
+  }
 };

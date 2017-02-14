@@ -1,3 +1,47 @@
 @include respones(small) {
-  
+  .memInfo
+	{
+		.memPageAll
+		{
+
+			.navbar
+			{
+				box-shadow: none;
+				background-color: hsla(0, 0%, 93%, 0);
+				border-color: #EEEEEE;
+			}
+			.memNavAll
+			{
+				position: fixed;
+				z-index: 999;
+				.memNavDisAll
+				{
+					display: inline-block;
+					button
+					{
+						background-color: #fff;
+						box-shadow: 1px 1px 10px $grey;
+					}
+				}
+
+				.memNavNoneAll
+				{
+					background-color: #fff;
+					margin-top: -14px;
+					box-shadow: 1px 1px 10px $grey;
+				}
+			}
+
+			.mempageDetail
+			{
+				position: static;
+				margin-top: 50px;
+			}
+		} 
+
+		.memInfoRight
+		{
+			margin-top: 50px;
+		}
+	} 
 };

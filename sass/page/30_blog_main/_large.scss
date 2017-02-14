@@ -1,3 +1,35 @@
 @include respones(large) {
+	.blog
+	{
+		.blogItemAll
+		{ 
+			.blogItem
+			{
+				.yoyo,.yoyo2
+				{
+					position: absolute;
+					bottom: 0;
+				}
+				.yoyo
+				{
+					right: 0;
+				}
+				.yoyo2
+				{
+					left: 0;
+				}
 
+				.buttonRight
+				{
+
+					float: right;
+				}
+				.buttonleft
+				{
+
+					float: left;
+				}
+			}
+		}
+	}
 };

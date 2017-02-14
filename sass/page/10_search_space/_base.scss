@@ -1,0 +1,331 @@
+#searchspace{
+	*{
+		// outline:1px solid red;
+	}
+	#nomenu{
+		background-color: #000;
+		height: 72px;
+	}
+	// 地圖設定
+	#map{
+	  	padding-bottom: 70%;
+	  	position: relative;
+	  	z-index: 1;
+	}
+
+	// 資訊設定
+  	#info{
+  		padding-bottom: 15%;
+	  	background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+
+		// 搜尋設定
+		#select{
+			background-color: #fff;
+			padding:10px 0;
+
+			.seldown{
+				width:100px;
+	  			padding: 0.5em 0;
+				border-radius: 5px;
+				box-shadow:2px 2px 1px rgba(20%,20%,40%,0.5) inset;
+				font-family: $main_font_family;
+			}
+			.selbut{
+				margin:10px 0;
+				font-size: $fz-p;
+				cursor:pointer;
+				margin:0;
+			}
+			h5{
+				margin:5px 0;
+				text-align: center;
+			}
+			span{
+				color:$yellow;
+				margin:0 0.5em;
+			}
+		}
+
+		//顯示結果區塊
+		#result{
+			position: relative;
+			overflow: hidden;
+			padding-bottom:20%;
+			margin-top: 20px;
+			.star{
+				color:$yellow;
+			}
+			.star li{
+				display:inline-block;
+			}
+			.card-block{
+				line-height: 25px;
+				background-color: #fff;
+				box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+				border-radius: 1px;
+			}
+		}
+	}
+
+	//搜尋條件區塊
+	#search{
+		position: absolute;
+		z-index: 15;
+		top:0;
+		right: -1000px;
+		background: linear-gradient(#a1d0e3 100%,#7ec8e6 50%,#40afdf 10%);
+
+
+		//空間種類區塊
+		#wotype{
+			margin:5px 0;
+
+			.wobtns{
+				text-align: center;
+			}
+			#wo1,
+			#wo2,
+			#wo3,
+			#wo4,
+			#wo5,
+			#wo6{
+				display: none;  /*讓圈圈消失*/
+			}
+			.wobtns{
+				label{
+					margin:5px 0;
+				}
+			}
+		}
+
+
+		//人數區塊
+		#people{
+			margin:5px 0;
+
+			#peoinfo{
+				margin:10px 0;
+				display: flex;
+				justify-content:center;
+
+				#count{
+					width:150px;
+					height: 35px;
+					background-color: #fff;
+					text-align: center;
+					float:left;
+				}
+				#minus,
+				#plus{
+					margin:0;
+					float: left;
+				}
+				.clear{
+					clear:both;
+				}
+			}
+		}
+
+
+		//預算區塊
+		#money{
+			// margin:5px 0;
+
+			h5{
+				margin:10px 0;
+			}
+
+			#bar{
+				text-align: center;
+				#slider{
+					font-size: 16px;
+					width:80%;
+					margin:20px auto;
+				}
+
+				//指標變菱形
+				#slider.ui-slider .ui-slider-handle {
+				    width: 20px;
+				    height: 20px;
+				    border-radius: 50% 50% 0;
+				    border-color: transparent;
+				    transition: border 0.4s ease;
+				}
+				//改變指標的位置
+				#slider.ui-slider.ui-slider-horizontal .ui-slider-handle {
+			        transform: rotateZ(45deg);
+			      	top: -25px;
+			      	margin-left: -10px;
+			   	}
+			   	//改變卷軸的寬度
+				#slider.ui-slider.ui-slider-horizontal {
+				    height: 6px;
+				}
+				//指針的粗細
+			    #slider.ui-slider.ui-slider-horizontal .ui-slider-pip .ui-slider-line {
+			        width: 2px;
+			        height: 10px;
+			        margin-left: -1px;
+			    }
+			    //指針的長度
+			    #slider.ui-slider.ui-slider-horizontal .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line {
+			        height: 20px;
+			    }
+			    //改變pip的顏色
+			   	#slider .ui-slider-handle,
+				#slider .ui-slider-range,
+				#slider .ui-slider-pip[class*=ui-slider-pip-selected] .ui-slider-line,
+				#slider .ui-slider-pip.ui-slider-pip-inrange .ui-slider-line {
+				  background-color: #25daa5;
+				}
+			}
+
+		}
+
+		//設備區塊
+		#device{
+			margin:20px 0;
+
+			#nets{
+				margin:15px 0;
+				span{
+					font-size: 30px;
+				}
+				#net1,
+				#net2,
+				#net3,
+				#net4,
+				#net5{
+					display: none;
+				}
+			}
+			#foods{
+				.food{
+					// display: flex;
+					// width: 120px;
+					// float:left;
+				}
+
+
+				margin:15px 0;
+				span{
+					font-size: 30px;
+				}
+				#food1,
+				#food2,
+				#food3,
+				#food4,
+				#food5{
+					display: none;
+
+				}
+
+				//點擊效果
+				label{
+				  position: relative;
+				  // margin: 10px;
+				  // width: 100px;
+				  // height: 30px;
+				  // float: left;
+				}
+				div{
+					// position: absolute;
+				  	// margin: auto;
+				  	// top: 0; left: 0; bottom: 0; right: 0;
+				 //  	width: 100%;
+				 //  	height: 100%;
+					cursor: pointer;
+			  		animation: unselected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+				}
+				label:before{
+				  content: "\2714";
+				  display: block;
+				  position: absolute;
+				  margin: auto;
+				  top: 0; left: 0; bottom: 0; right: 0;
+				  width: 40px;
+				  height: 40px;
+				  line-height: 40px;
+				  background:  #00c09e;
+				  border-radius: 50px;
+				  color: #fff;
+				  text-align: center;
+				  font-size: 16px;
+				  z-index: 10;
+				  opacity: 0;
+				  transition: 0.3s linear;
+				  cursor: pointer;
+				}
+
+				label.selected:before {
+				  opacity: 1;
+				}
+
+				label.selected div {
+				  box-shadow: 0 0 0 4px #00c09e;
+				  animation: selected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+				}
+
+				@keyframes selected {
+				  0% { border-color: #fff; }
+				  50% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 4px #00c09e; }
+				  80%,100% {box-shadow: 0 0 0 4px #00c09e; }
+				}
+
+				@keyframes unselected {
+				  0% { box-shadow: 0 0 0 4px #00c09e; }
+				  50% { transform: scale(0.95); opacity: 0.8; box-shadow: 0 0 0 4px #fff; }
+				  80%,100% {box-shadow: 0 0 0 4px #fff; }
+				}
+
+			}//#food
+			#hards{
+				margin:15px 0;
+				span{
+					font-size: 30px;
+				}
+				#hard1,
+				#hard2,
+				#hard3{
+					display: none;
+				}
+			}
+			#parks{
+				margin: 15px 0;
+				span{
+					font-size: 30px;
+				}
+				#park1,
+				#park2,
+				#park3,
+				#park4{
+					display: none;
+				}
+			}
+			#rooms{
+				margin:15px 0;
+				span{
+					font-size: 30px;
+				}
+				#room1,
+				#room2,
+				#room3,
+				#room4,
+				#room5{
+					display: none;
+				}
+			}
+			#send{
+				margin:20px 0;
+				.senbtn{
+					width:150px;
+					cursor: pointer;
+				}
+			}
+
+		}
+	}
+
+
+
+}

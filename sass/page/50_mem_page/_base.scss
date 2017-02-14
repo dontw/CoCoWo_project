@@ -1,0 +1,168 @@
+.mem_page
+{
+	background-color: #EEEEEE;
+}
+
+.userlightboxbccc
+	{
+		background-color: rgba(33, 33, 33, 0.6);
+		height: 100vh;
+		width: 100vw;
+		position: fixed;
+		z-index: 20;
+		display: none;
+		opacity: 0;
+
+	}
+	.userLightBox
+	{
+		// background-color: rgba(33, 33, 33, 0.6);
+		position: fixed;
+		z-index: 10;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		height: 500px;
+		// width: 500px;
+
+		text-align: center;
+		.lightbox
+		{
+			position: relative;
+			background-color: #fff;
+			display: inline-block;
+			padding: 25px 50px;
+			label
+			{
+				display: block;
+				// margin: 0 auto;
+				margin-top: 15px;
+				// input
+				// {
+				// 	width: 100%;
+				// }
+			}
+			#closeBox
+			{
+				position: absolute;
+
+				top: -3px;
+				right:0;
+				z-index: 15;
+			}
+			.userbutton
+			{
+				padding-top:10px; 
+			}
+			a
+			{
+
+				width: 100%;
+				margin: 15px 0 0 0;
+			}
+		}
+		
+	}
+
+
+.mempage
+{
+	margin: 50px 0;
+	.memPageAll
+	{
+		position: relative;
+		.navbar
+		{
+			box-shadow: 1px 1px 15px $dark-grey;
+			.navbar-left
+			{
+				float: left;
+			}
+		}
+		.nav
+		{
+			display: block;
+		}
+		.memNav
+		{
+			
+				padding-bottom: 15px;
+			
+			img
+			{
+				width: 100%;
+				border-radius: 50%;
+				padding: 15px 0;
+			}
+			li
+			{
+				display: block;
+				clear: both;
+				width: 100%;
+			}
+			li>a:hover
+			{
+				background-color: $dark-blue;
+				transition:.5s;
+			}
+			.active
+			{
+				a
+				{
+					background-color:$dark-blue;
+					
+					color:#fff;
+				}
+			}
+		}
+		.mempageDetail
+		{
+			position: absolute;
+			bottom: 20px;
+			right: 0;
+			img
+			{
+				vertical-align:  bottom;
+				width: 100%;
+			}
+			.memResult
+			{
+				text-align: center;
+				.memResultContext
+				{
+					
+					margin: 0 auto;
+					span
+					{
+						font-size: 30px;
+						font-weight: 500;
+					}
+					.spanBlue
+					{
+						color: $dark-blue;
+					}
+					.spanYellow
+					{
+						color: $yellow;
+					}
+				}
+
+			}
+
+		}
+
+		.mempageDetail
+		{
+			margin:0 auto;
+		}
+	}
+	.memPageAll::after
+	{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	
+}
