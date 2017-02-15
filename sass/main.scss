@@ -8,6 +8,7 @@
 @import "utils/_mixin.scss"; //各類涵式
 
 //大部件樣式
+@import "layout/_loginbox.scss";
 @import "layout/_grid.scss";
 @import "layout/_main_nav.scss";
 @import "layout/_footer.scss";
@@ -31,7 +32,7 @@
 @import "page/00_index/_small.scss"; //首頁手機768px以下
 
 //搜尋空間 泓
-@import "page/10_search_space/_base.scss"; 
+@import "page/10_search_space/_base.scss";
 @import "page/10_search_space/_large.scss"; //首頁桌機992px以上
 @import "page/10_search_space/_medium.scss"; //首頁平板768~992px
 @import "page/10_search_space/_small.scss"; //首頁手機768px以下
@@ -48,6 +49,7 @@
 @import "page/21_post_space_input/_small.scss"; //首頁手機768px以下
 
 //窩日誌 仁
+@import "page/30_blog_main/_base.scss";
 @import "page/30_blog_main/_large.scss"; //首頁桌機992px以上
 @import "page/30_blog_main/_medium.scss"; //首頁平板768~992px
 @import "page/30_blog_main/_small.scss"; //首頁手機768px以下
@@ -56,3 +58,36 @@
 @import "page/40_about/_large.scss"; //首頁桌機992px以上
 @import "page/40_about/_medium.scss"; //首頁平板768~992px
 @import "page/40_about/_small.scss"; //首頁手機768px以下
+
+//會員主頁 仁
+@import "page/50_mem_page/_base.scss";
+@import "page/50_mem_page/_large.scss"; //首頁桌機992px以上
+@import "page/50_mem_page/_medium.scss"; //首頁平板768~992px
+@import "page/50_mem_page/_small.scss"; //首頁手機768px以下
+
+// 51 會員申請做燈箱
+
+//會員資料修改 仁
+@import "page/52_mem_info_update/_base.scss";
+@import "page/52_mem_info_update/_large.scss"; //首頁桌機992px以上
+@import "page/52_mem_info_update/_medium.scss"; //首頁平板768~992px
+@import "page/52_mem_info_update/_small.scss"; //首頁手機768px以下
+
+//會員訂單管理 仁
+@import "page/53_mem_order/_base.scss";
+@import "page/53_mem_order/_large.scss"; //首頁桌機992px以上
+@import "page/53_mem_order/_medium.scss"; //首頁平板768~992px
+@import "page/53_mem_order/_small.scss"; //首頁手機768px以下
+
+//54會員訂單詳細資訊燈箱
+
+//會員空間資訊管理 仁
+@import "page/55_mem_space_info/_base.scss";
+@import "page/55_mem_space_info/_large.scss"; //首頁桌機992px以上
+@import "page/55_mem_space_info/_medium.scss"; //首頁平板768~992px
+@import "page/55_mem_space_info/_small.scss"; //首頁手機768px以下
+
+//56會員空間訂單管理
+
+//57會員空間資訊修改 燈箱
+//58會員空間訂單管理詳細資訊 燈箱

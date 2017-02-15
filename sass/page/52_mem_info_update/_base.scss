@@ -1,11 +1,12 @@
 .mem_Info
 {
 	background-color: #EEEEEE;
+	font-family: $main_font_family;
 }
 .memInfo
 {
 	margin-top: 50px;
-	
+
 	.memPageAll
 	{
 		position: relative;
@@ -23,9 +24,9 @@
 		}
 		.memNavNone
 		{
-			
+
 				padding-bottom: 15px;
-			
+
 			img
 			{
 				width: 100%;
@@ -48,7 +49,7 @@
 				a
 				{
 					background-color:$dark-blue;
-					
+
 					color:#fff;
 				}
 
@@ -58,7 +59,7 @@
 
 		.memInfoRight
 		{
-			
+
 			img
 			{
 				width: 100%;
@@ -67,7 +68,7 @@
 				vertical-align: middle;
 				display: inline-block;
 			}
-			
+
 			.breadcrumb
 			{
 				background-color: #eeeeee;
@@ -81,7 +82,7 @@
 				background-color: #000;
 				height:1px;
 				width: 100%;
-				margin-top:5px; 
+				margin-top:5px;
 				display: block;
 			}
 
@@ -93,13 +94,26 @@
 					padding: 5px 0;
 					width: 100%;
 					border-radius: 5px;
-					
+
 				}
 				select
 				{
 					display: block;
 					padding: 5px 0;
 					width: 100%;
+					border-radius: 5px;
+					border-style: inset;
+					border-width: 2px;
+					border-color: initial;
+					border-image: initial;
+				}
+				option
+				{
+					border-radius: 5px;
+					border-style: inset;
+					border-width: 2px;
+					border-color: initial;
+					border-image: initial;
 				}
 				p
 				{
@@ -135,7 +149,7 @@
 			}
 		}
 
-		
+
 	}
 	.memPageAll::after
 	{
@@ -143,5 +157,5 @@
 		display: block;
 		clear: both;
 	}
-	
+
 }

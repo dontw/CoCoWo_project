@@ -1,5 +1,5 @@
 @include respones(small) {
-  .memInfo
+  .memSpace
 	{
 		.memPageAll
 		{
@@ -8,12 +8,13 @@
 			{
 				box-shadow: none;
 				background-color: hsla(0, 0%, 93%, 0);
-				border-color: #EEEEEE;
+				border-color: hsla(0, 0%, 93%, 0);
 			}
 			.memNavAll
 			{
 				position: fixed;
 				z-index: 999;
+        top: 100px;
 				.memNavDisAll
 				{
 					display: inline-block;
@@ -37,11 +38,11 @@
 				position: static;
 				margin-top: 50px;
 			}
-		} 
+		}
 
 		.memInfoRight
 		{
 			margin-top: 50px;
 		}
-	} 
+	}
 };

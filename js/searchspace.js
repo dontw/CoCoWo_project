@@ -2,7 +2,7 @@
 function map(){
 	var myPosition = new google.maps.LatLng(24.9708264,121.18820769999999);
 
-	var myMap = new google.maps.Map(document.getElementById('map'),{
+	var myMap = new google.maps.Map(document.getElementById('searchMap'),{
 		zoom: 14,
 		center: myPosition,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -44,7 +44,20 @@ $("#slider")
     // })
 
 
-// 點擊確認
+//窩種點擊確認
+$('.woname').click(function () {
+  $(this).toggleClass('selected');
+  if ($('.woname.selected').length == 0)
+    // $('.select').
+    removeClass('selected');
+  else
+    // $('.select').
+    addClass('selected');
+  counter();
+});
+
+
+//設備點擊確認
 $('label').click(function () {
   $(this).toggleClass('selected');
   if ($('label.selected').length == 0)
@@ -64,6 +77,18 @@ $('#moreinfo').click(function(){
 //關閉詳細搜尋
 $('#checkOk').click(function(){
 	$('#search').animate({left:"1000px"},1000);
+});
+
+//圖片效果
+$(function(){
+     $(".box").hover(
+        function(){
+            var overlay = $(this).find('.box-overlay');
+            overlay.removeClass(overlay.data('return')).addClass(overlay.data('hover'));
+        },function(){
+             var overlay = $(this).find('.box-overlay');
+            overlay.removeClass(overlay.data('hover')).addClass(overlay.data('return'));
+    });
 });
 
 window.addEventListener('load',map,false);

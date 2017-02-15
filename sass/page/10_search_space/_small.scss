@@ -8,6 +8,7 @@
 		#select{
 			.seldown{
 				width:300px;
+				text-align: center;
 	  			padding: 0.5em 0;
 				border-radius: 5px;
 				box-shadow:2px 2px 1px rgba(20%,20%,40%,0.5) inset;
@@ -30,7 +31,21 @@
 				padding:0 5px;
 				background-color: #fff;
 			}
+
 		}//#result
+
+
+		#search{
+			#wotype{
+				.woname{
+					width:220px;
+				}
+				.wocenter{
+					width:220px;
+					margin:auto;
+				}
+			}
+		}
 	}//#searchspace
 	
 

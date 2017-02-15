@@ -1,4 +1,12 @@
 @include respones(small) {
+  .blog_footer{
+    	margin-top: 50px;
+  }
+
+  .blog_search{
+  	width: 100%;
+  	margin: auto;
+  }
   .blog
   {
   	.mainText
@@ -18,7 +26,7 @@
 		.blogcontext
 		{
 			left: 8.3333333%;
-			
+
 			.share
 			{
 				li
@@ -35,7 +43,7 @@
 						width: 30%;
 					}
 				}
-				
+
 			}
 			.blogContextRightAll
 			{
@@ -44,7 +52,7 @@
 		}
 
 
-	} 
+	}
 
 	.yoyo
 	{
@@ -55,7 +63,7 @@
 			clear: both;
 		}
 
-		
+
 	}
 	.yoyo2
 	{
@@ -67,6 +75,6 @@
 		}
 	}
 
-	
+
   }
 };

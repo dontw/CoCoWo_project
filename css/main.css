@@ -2324,6 +2324,44 @@
   overflow: visible;
   clip: auto; }
 
+.userlightboxbccc {
+  background-color: rgba(33, 33, 33, 0.6);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 20;
+  display: none;
+  opacity: 0; }
+
+.userLightBox {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 500px;
+  text-align: center; }
+  .userLightBox .lightbox {
+    position: relative;
+    background-color: #fff;
+    display: inline-block;
+    padding: 25px 50px; }
+    .userLightBox .lightbox label {
+      display: block;
+      margin-top: 15px; }
+    .userLightBox .lightbox #closeBox {
+      position: absolute;
+      top: -3px;
+      right: 0;
+      z-index: 15; }
+    .userLightBox .lightbox .userbutton {
+      padding-top: 10px; }
+    .userLightBox .lightbox a {
+      width: 100%;
+      margin: 15px 0 0 0; }
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -2676,7 +2714,8 @@ hr {
 
 .col-xs-20p {
   float: left;
-  width: 20%; }
+  width: 20%;
+  padding: 0; }
 
 .col-xs-pull-12 {
   float: left;
@@ -3729,7 +3768,8 @@ hr {
   color: #ffffff;
   text-align: center;
   font-family: "Noto Sans TC", sans-serif;
-  font-weight: 600; }
+  font-weight: 600;
+  cursor: pointer; }
 
 .button:hover, .border_button:hover {
   box-shadow: 1px 6px 15px rgba(0, 0, 0, 0.5);
@@ -5890,10 +5930,7 @@ iframe {
 
   .el__index {
     display: none; } }
-#searchspace #nomenu {
-  background-color: #000;
-  height: 72px; }
-#searchspace #map {
+#searchspace #searchMap {
   padding-bottom: 70%;
   position: relative;
   z-index: 1; }
@@ -5907,13 +5944,14 @@ iframe {
       width: 100px;
       padding: 0.5em 0;
       border-radius: 5px;
-      box-shadow: 2px 2px 1px rgba(51, 51, 102, 0.5) inset;
-      font-family: "Noto Sans TC", sans-serif; }
+      box-shadow: 2px 2px 1px rgba(51, 51, 102, 0.5) inset; }
     #searchspace #info #select .selbut {
       margin: 10px 0;
       font-size: 16px;
       cursor: pointer;
       margin: 0; }
+    #searchspace #info #select #moreinfo {
+      text-align: center; }
     #searchspace #info #select h5 {
       margin: 5px 0;
       text-align: center; }
@@ -5923,57 +5961,128 @@ iframe {
   #searchspace #info #result {
     position: relative;
     overflow: hidden;
-    padding-bottom: 20%;
+    padding-bottom: 30%;
     margin-top: 20px; }
     #searchspace #info #result .star {
       color: #FFC107; }
     #searchspace #info #result .star li {
       display: inline-block; }
+    #searchspace #info #result img {
+      border-radius: 1px 1px 0 0; }
     #searchspace #info #result .card-block {
       line-height: 25px;
-      background-color: #fff;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-      border-radius: 1px; }
+      border-radius: 0 0 1px 1px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 #searchspace #search {
   position: absolute;
   z-index: 15;
   top: 0;
   right: -1000px;
   background: linear-gradient(#a1d0e3 100%, #7ec8e6 50%, #40afdf 10%); }
-  #searchspace #search #wotype {
-    margin: 5px 0; }
-    #searchspace #search #wotype .wobtns {
-      text-align: center; }
-    #searchspace #search #wotype #wo1,
-    #searchspace #search #wotype #wo2,
-    #searchspace #search #wotype #wo3,
-    #searchspace #search #wotype #wo4,
-    #searchspace #search #wotype #wo5,
-    #searchspace #search #wotype #wo6 {
-      display: none;
-      /*讓圈圈消失*/ }
-    #searchspace #search #wotype .wobtns label {
-      margin: 5px 0; }
-  #searchspace #search #people {
-    margin: 5px 0; }
-    #searchspace #search #people #peoinfo {
-      margin: 10px 0;
+  #searchspace #search #wotype .wobtns {
+    text-align: center; }
+  #searchspace #search #wotype .box {
+    width: 220px;
+    height: 128px;
+    position: relative; }
+    #searchspace #search #wotype .box .box-content {
+      display: block;
+      padding: 20px;
+      width: 100%;
+      height: 100%;
+      background: #333;
+      color: #fff;
+      line-height: 25px;
       display: flex;
+      align-items: center;
       justify-content: center; }
-      #searchspace #search #people #peoinfo #count {
-        width: 150px;
-        height: 35px;
-        background-color: #fff;
-        text-align: center;
-        float: left; }
-      #searchspace #search #people #peoinfo #minus,
-      #searchspace #search #people #peoinfo #plus {
-        margin: 0;
-        float: left; }
-      #searchspace #search #people #peoinfo .clear {
-        clear: both; }
-  #searchspace #search #money h5 {
-    margin: 10px 0; }
+    #searchspace #search #wotype .box .box-overlay {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 5; }
+  #searchspace #search #wotype .woname {
+    background-color: #fff;
+    color: 000;
+    padding: 5px 0;
+    width: 220px; }
+  #searchspace #search #wotype #wo1,
+  #searchspace #search #wotype #wo2,
+  #searchspace #search #wotype #wo3,
+  #searchspace #search #wotype #wo4,
+  #searchspace #search #wotype #wo5,
+  #searchspace #search #wotype #wo6 {
+    display: none;
+    /*讓圈圈消失*/ }
+  #searchspace #search #wotype .wobtns label {
+    padding: 5px; }
+  #searchspace #search #wotype .woname {
+    position: relative; }
+  #searchspace #search #wotype p {
+    cursor: pointer;
+    animation: unselected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+  #searchspace #search #wotype .woname:before {
+    content: "\2714";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: #00c09e;
+    border-radius: 50px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    z-index: 10;
+    opacity: 0;
+    transition: 0.3s linear;
+    cursor: pointer; }
+  #searchspace #search #wotype .woname.selected:before {
+    opacity: 1; }
+  #searchspace #search #wotype .woname.selected p {
+    box-shadow: 0 0 0 4px #00c09e;
+    animation: selected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+@keyframes selected {
+  0% {
+    border-color: #fff; }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px #00c09e; }
+  80%,100% {
+    box-shadow: 0 0 0 4px #00c09e; } }
+@keyframes unselected {
+  0% {
+    box-shadow: 0 0 0 4px #00c09e; }
+  50% {
+    transform: scale(0.7);
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px #fff; }
+  80%,100% {
+    box-shadow: 0 0 0 4px #fff; } }
+  #searchspace #search #people #peoinfo {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center; }
+    #searchspace #search #people #peoinfo #count {
+      width: 150px;
+      height: 35px;
+      background-color: #fff;
+      text-align: center;
+      float: left; }
+    #searchspace #search #people #peoinfo #minus,
+    #searchspace #search #people #peoinfo #plus {
+      margin: 0;
+      float: left; }
+    #searchspace #search #people #peoinfo .clear {
+      clear: both; }
   #searchspace #search #money #bar {
     text-align: center; }
     #searchspace #search #money #bar #slider {
@@ -6006,9 +6115,15 @@ iframe {
   #searchspace #search #device {
     margin: 20px 0; }
     #searchspace #search #device #nets {
-      margin: 15px 0; }
+      margin: 10px 0; }
       #searchspace #search #device #nets span {
         font-size: 30px; }
+      #searchspace #search #device #nets .net {
+        padding: 5px 20px; }
+        #searchspace #search #device #nets .net p {
+          color: #fff;
+          margin: 5px 0;
+          font-weight: 100; }
       #searchspace #search #device #nets #net1,
       #searchspace #search #device #nets #net2,
       #searchspace #search #device #nets #net3,
@@ -6016,85 +6131,60 @@ iframe {
       #searchspace #search #device #nets #net5 {
         display: none; }
     #searchspace #search #device #foods {
-      margin: 15px 0; }
+      margin: 10px 0; }
       #searchspace #search #device #foods span {
         font-size: 30px; }
+      #searchspace #search #device #foods .food {
+        padding: 5px 20px; }
+        #searchspace #search #device #foods .food p {
+          color: #fff;
+          margin: 5px 0;
+          font-weight: 100; }
       #searchspace #search #device #foods #food1,
       #searchspace #search #device #foods #food2,
       #searchspace #search #device #foods #food3,
       #searchspace #search #device #foods #food4,
       #searchspace #search #device #foods #food5 {
         display: none; }
-      #searchspace #search #device #foods label {
-        position: relative; }
-      #searchspace #search #device #foods div {
-        cursor: pointer;
-        animation: unselected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
-      #searchspace #search #device #foods label:before {
-        content: "\2714";
-        display: block;
-        position: absolute;
-        margin: auto;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        width: 40px;
-        height: 40px;
-        line-height: 40px;
-        background: #00c09e;
-        border-radius: 50px;
-        color: #fff;
-        text-align: center;
-        font-size: 16px;
-        z-index: 10;
-        opacity: 0;
-        transition: 0.3s linear;
-        cursor: pointer; }
-      #searchspace #search #device #foods label.selected:before {
-        opacity: 1; }
-      #searchspace #search #device #foods label.selected div {
-        box-shadow: 0 0 0 4px #00c09e;
-        animation: selected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
-@keyframes selected {
-  0% {
-    border-color: #fff; }
-  50% {
-    transform: scale(0.95);
-    opacity: 0.8;
-    box-shadow: 0 0 0 4px #00c09e; }
-  80%,100% {
-    box-shadow: 0 0 0 4px #00c09e; } }
-@keyframes unselected {
-  0% {
-    box-shadow: 0 0 0 4px #00c09e; }
-  50% {
-    transform: scale(0.95);
-    opacity: 0.8;
-    box-shadow: 0 0 0 4px #fff; }
-  80%,100% {
-    box-shadow: 0 0 0 4px #fff; } }
     #searchspace #search #device #hards {
-      margin: 15px 0; }
+      margin: 10px 0; }
       #searchspace #search #device #hards span {
         font-size: 30px; }
+      #searchspace #search #device #hards .hard {
+        padding: 5px 22px; }
+        #searchspace #search #device #hards .hard p {
+          color: #fff;
+          margin: 5px 0;
+          font-weight: 100; }
       #searchspace #search #device #hards #hard1,
       #searchspace #search #device #hards #hard2,
       #searchspace #search #device #hards #hard3 {
         display: none; }
     #searchspace #search #device #parks {
-      margin: 15px 0; }
+      margin: 10px 0; }
       #searchspace #search #device #parks span {
         font-size: 30px; }
+      #searchspace #search #device #parks .park {
+        padding: 5px 10px; }
+        #searchspace #search #device #parks .park p {
+          color: #fff;
+          margin: 5px 0;
+          font-weight: 100; }
       #searchspace #search #device #parks #park1,
       #searchspace #search #device #parks #park2,
       #searchspace #search #device #parks #park3,
       #searchspace #search #device #parks #park4 {
         display: none; }
     #searchspace #search #device #rooms {
-      margin: 15px 0; }
+      margin: 10px 0; }
       #searchspace #search #device #rooms span {
         font-size: 30px; }
+      #searchspace #search #device #rooms .room {
+        padding: 5px 10px; }
+        #searchspace #search #device #rooms .room p {
+          color: #fff;
+          margin: 5px 0;
+          font-weight: 100; }
       #searchspace #search #device #rooms #room1,
       #searchspace #search #device #rooms #room2,
       #searchspace #search #device #rooms #room3,
@@ -6106,6 +6196,57 @@ iframe {
       #searchspace #search #device #send .senbtn {
         width: 150px;
         cursor: pointer; }
+    #searchspace #search #device label {
+      position: relative; }
+    #searchspace #search #device div {
+      cursor: pointer;
+      animation: unselected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+    #searchspace #search #device label:before {
+      content: "\2714";
+      display: block;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background: #00c09e;
+      border-radius: 50px;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+      z-index: 10;
+      opacity: 0;
+      transition: 0.3s linear;
+      cursor: pointer; }
+    #searchspace #search #device label.selected:before {
+      opacity: 1; }
+    #searchspace #search #device label.selected div {
+      box-shadow: 0 0 0 4px #00c09e;
+      animation: selected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+@keyframes selected {
+  0% {
+    border-color: #fff; }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px #00c09e; }
+  80%,100% {
+    box-shadow: 0 0 0 4px #00c09e; } }
+@keyframes unselected {
+  0% {
+    box-shadow: 0 0 0 4px #00c09e; }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px #fff; }
+  80%,100% {
+    box-shadow: 0 0 0 4px #fff; } }
+    #searchspace #search #device .button p, #searchspace #search #device .border_button p {
+      font-weight: 100; }
 
 @media all and (min-width: 993px) {
   #searchspace #select #goinfo {
@@ -6121,6 +6262,7 @@ iframe {
     display: none; }
   #searchspace #select .seldown {
     width: 300px;
+    text-align: center;
     padding: 0.5em 0;
     border-radius: 5px;
     box-shadow: 2px 2px 1px rgba(51, 51, 102, 0.5) inset; }
@@ -6135,7 +6277,12 @@ iframe {
     height: 124.5px;
     line-height: 23px;
     padding: 0 5px;
-    background-color: #fff; } }
+    background-color: #fff; }
+  #searchspace #search #wotype .woname {
+    width: 220px; }
+  #searchspace #search #wotype .wocenter {
+    width: 220px;
+    margin: auto; } }
 .post_space {
   position: relative;
   /***************************************
@@ -7197,6 +7344,301 @@ iframe {
   background: -o-linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%);
   background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%); }
 
+.blog_footer {
+  margin-top: 200px;
+  z-index: 0; }
+
+.blog {
+  position: relative;
+  line-height: 2;
+  background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%); }
+  .blog #lightboxbcc {
+    background-color: rgba(33, 33, 33, 0.6);
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 20;
+    display: none;
+    opacity: 0; }
+  .blog .disn {
+    display: none; }
+  .blog .disb {
+    display: block; }
+  .blog #ribbon {
+    padding: 0 0 10px 0;
+    position: absolute;
+    right: 0.25em;
+    top: -0.25em;
+    width: 40px; }
+    .blog #ribbon div {
+      background: #bb3a34;
+      background: linear-gradient(#e74841 0%, #bb3a34 100%);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.5em 0;
+      text-align: center;
+      text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5); }
+    .blog #ribbon div:after {
+      border-left: 20px solid #bb3a34;
+      border-right: 20px solid #bb3a34;
+      border-bottom: 10px solid transparent;
+      bottom: 0;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      width: 0; }
+  .blog img {
+    width: 100%; }
+  .blog a {
+    line-height: 1;
+    color: #fff; }
+  .blog .main {
+    background-image: url(../img/main1.png); }
+  .blog .mainText {
+    margin: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 15px;
+    line-height: 2; }
+  .blog .mainText h2 {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 1.2; }
+  .blog .mainText h2::after {
+    content: '';
+    background-color: #000;
+    height: 3px;
+    width: 100%;
+    display: block; }
+  .blog .mainText p {
+    font-size: 16px; }
+  .blog .mainText .button, .blog .mainText .border_button {
+    margin: 20px 0; }
+  .blog .mainText a {
+    color: #fff;
+    list-style: none;
+    line-height: 1; }
+  .blog .container .blogNav {
+    border: none;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: rgba(33, 33, 33, 0.6); }
+    .blog .container .blogNav .navGo {
+      display: block;
+      margin: 7.5px 0px; }
+    .blog .container .blogNav .blogNavItem {
+      border: 1px solid #03A9F4;
+      border-radius: 4px;
+      margin-right: 15px; }
+      .blog .container .blogNav .blogNavItem a {
+        padding: 10px 15px;
+        font-size: 14px;
+        background-color: #fff; }
+      .blog .container .blogNav .blogNavItem .dropdown-menu {
+        border: 1px solid #03A9F4;
+        border-radius: 4px;
+        box-shadow: 0px 6px 12px rgba(4, 170, 241, 0.275); }
+    .blog .container .blogNav .form-control, .blog .container .blogNav .btnSearch {
+      border: 1px solid #03A9F4; }
+    .blog .container .blogNav .keyword {
+      padding: 19px 12px; }
+    .blog .container .blogNav .searchBtn {
+      padding: 9px 12px; }
+  .blog .container .blogItemAll .blogItem {
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    padding: 15px;
+    z-index: 2; }
+    .blog .container .blogItemAll .blogItem h2 {
+      font-size: 40px;
+      line-height: 1.2;
+      padding: 0 10px; }
+    .blog .container .blogItemAll .blogItem h2::after {
+      content: '';
+      background-color: #000;
+      height: 3px;
+      width: 100%;
+      display: block;
+      margin: 5px auto; }
+    .blog .container .blogItemAll .blogItem .buttonRight a {
+      color: #fff;
+      list-style: none; }
+    .blog .container .blogItemAll .blogItem .buttonRight li {
+      display: inline-block;
+      padding-right: 10px; }
+    .blog .container .blogItemAll .blogItem .buttonleft a {
+      color: #fff;
+      list-style: none; }
+    .blog .container .blogItemAll .blogItem .buttonleft li {
+      display: inline-block;
+      padding-right: 10px; }
+  .blog .container .blogItemAll .blogItem::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .blog .container .blogcontext {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed;
+    top: -500px;
+    height: 1000px;
+    overflow: scroll;
+    left: 16.666666%;
+    z-index: 999;
+    display: none;
+    opacity: 0;
+    background-color: white;
+    border-radius: 20px; }
+    .blog .container .blogcontext #close {
+      position: absolute;
+      display: inline-block;
+      padding: 0 20px;
+      border-radius: 50%;
+      top: 0;
+      right: 0;
+      z-index: 99999;
+      font-size: 32px;
+      background-color: #BDBDBD; }
+    .blog .container .blogcontext .blogContextDetail {
+      position: relative; }
+      .blog .container .blogcontext .blogContextDetail h2 {
+        font-size: 40px;
+        line-height: 1.2;
+        text-align: center; }
+      .blog .container .blogcontext .blogContextDetail h2::after {
+        content: '';
+        background-color: #000;
+        height: 3px;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        text-align: center; }
+      .blog .container .blogcontext .blogContextDetail .minp {
+        font-size: 12px;
+        text-align: center; }
+      .blog .container .blogcontext .blogContextDetail img {
+        width: 100%; }
+      .blog .container .blogcontext .blogContextDetail .blogContextRightAll {
+        position: relative; }
+        .blog .container .blogcontext .blogContextDetail .blogContextRightAll #startfixed {
+          position: fixed;
+          bottom: 50px;
+          right: 0;
+          background-color: #000;
+          width: 100px;
+          height: 2px; }
+        .blog .container .blogcontext .blogContextDetail .blogContextRightAll #fixedGo {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 20px;
+          height: 2px;
+          background-color: #000; }
+      .blog .container .blogcontext .blogContextDetail .blogContextRight {
+        border-radius: 20px;
+        border: 1px solid #000;
+        padding: 10px;
+        position: absolute;
+        left: 0; }
+        .blog .container .blogcontext .blogContextDetail .blogContextRight h4 {
+          font-size: 24px; }
+        .blog .container .blogcontext .blogContextDetail .blogContextRight h4::after {
+          content: '';
+          background-color: #000;
+          height: 3px;
+          width: 100%;
+          display: block;
+          margin: 0 auto;
+          text-align: center; }
+        .blog .container .blogcontext .blogContextDetail .blogContextRight li {
+          font-size: 12px;
+          padding: 5px 0; }
+        .blog .container .blogcontext .blogContextDetail .blogContextRight span {
+          background-color: #FFC107;
+          padding: 2px 6px;
+          border-radius: 50%; }
+    .blog .container .blogcontext .blogContextDetail::after {
+      content: '';
+      display: block;
+      clear: both; }
+    .blog .container .blogcontext .share {
+      text-align: center;
+      margin: 20px 0; }
+      .blog .container .blogcontext .share a {
+        font-size: 16px; }
+      .blog .container .blogcontext .share a:hover {
+        text-decoration: none; }
+      .blog .container .blogcontext .share li {
+        display: inline-block;
+        background-color: #3B5998;
+        padding: 10px 40px 10px 10px;
+        vertical-align: middle;
+        width: 31%; }
+        .blog .container .blogcontext .share li i {
+          position: relative;
+          padding-right: 30px;
+          vertical-align: middle;
+          font-size: 40px; }
+      .blog .container .blogcontext .share .google {
+        background-color: #DB4437; }
+      .blog .container .blogcontext .share .twitter {
+        background-color: #36B9FF; }
+    .blog .container .blogcontext .writeRow {
+      font-size: 0; }
+      .blog .container .blogcontext .writeRow .writeAll .write {
+        width: 30%;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 20%; }
+        .blog .container .blogcontext .writeRow .writeAll .write img {
+          border-radius: 50%;
+          overflow: hidden; }
+      .blog .container .blogcontext .writeRow .writeAll .writeText {
+        width: 30%;
+        display: inline-block;
+        vertical-align: middle;
+        margin: auto;
+        text-align: center; }
+    .blog .container .blogcontext .messageRow h4::after {
+      content: '';
+      background-color: #000;
+      height: 3px;
+      width: 100%;
+      display: block;
+      margin: 5px auto;
+      text-align: center; }
+    .blog .container .blogcontext .messageRow .iMessage .row img {
+      border-radius: 50%; }
+    .blog .container .blogcontext .messageRow .iMessage .row .re {
+      width: 95%; }
+    .blog .container .blogcontext .messageRow .iMessage .row .subMessage {
+      margin-top: -5px;
+      margin-right: 5%;
+      float: right; }
+    .blog .container .blogcontext .messageRow .message img {
+      border-radius: 50%;
+      overflow: hidden;
+      width: 16.66666666%; }
+    .blog .container .blogcontext .messageRow .message h5 {
+      font-size: 19px; }
+    .blog .container .blogcontext .messageRow .message p {
+      color: #757575; }
+    .blog .container .blogcontext .messageRow .message span {
+      padding-right: 10px; }
+    .blog .container .blogcontext .messageRow .message .iMessage img {
+      width: 100%; }
+    .blog .container .blogcontext .messageRow ul::after, .blog .container .blogcontext .messageRow li::after {
+      content: '';
+      display: block;
+      clear: both; }
+  .blog .container .blogcontext::after {
+    content: '';
+    display: block;
+    clear: both; }
+
 @media all and (min-width: 993px) {
   .blog .blogItemAll .blogItem .yoyo, .blog .blogItemAll .blogItem .yoyo2 {
     position: absolute;
@@ -7210,6 +7652,13 @@ iframe {
   .blog .blogItemAll .blogItem .buttonleft {
     float: left; } }
 @media all and (max-width: 767px) {
+  .blog_footer {
+    margin-top: 50px; }
+
+  .blog_search {
+    width: 100%;
+    margin: auto; }
+
   .blog .mainText {
     margin-top: 20px;
     margin-left: 10px;
@@ -7234,3 +7683,556 @@ iframe {
     .blog .yoyo2 .buttonRight, .blog .yoyo2 .buttonleft {
       text-align: center;
       clear: both; } }
+.mem_page {
+  background-color: #EEEEEE;
+  font-family: "Noto Sans TC", sans-serif; }
+
+.mem_page_footer {
+  margin-top: 200px; }
+
+.mempage {
+  margin: 50px 0; }
+  .mempage .memPageAll {
+    position: relative; }
+    .mempage .memPageAll .navbar {
+      box-shadow: 1px 1px 15px #757575; }
+      .mempage .memPageAll .navbar .navbar-left {
+        float: left; }
+    .mempage .memPageAll .nav {
+      display: block; }
+    .mempage .memPageAll .memNavNone {
+      padding-bottom: 15px; }
+      .mempage .memPageAll .memNavNone img {
+        width: 100%;
+        border-radius: 50%;
+        padding: 15px 0; }
+      .mempage .memPageAll .memNavNone li {
+        display: block;
+        clear: both;
+        width: 100%; }
+      .mempage .memPageAll .memNavNone li > a:hover {
+        background-color: #0288D1;
+        transition: .5s; }
+      .mempage .memPageAll .memNavNone .active a {
+        background-color: #0288D1;
+        color: #fff; }
+    .mempage .memPageAll .mempageDetail {
+      position: absolute;
+      bottom: 20px;
+      right: 0; }
+      .mempage .memPageAll .mempageDetail img {
+        vertical-align: bottom;
+        width: 100%; }
+      .mempage .memPageAll .mempageDetail .memResult {
+        text-align: center; }
+        .mempage .memPageAll .mempageDetail .memResult .memResultContext {
+          margin: 0 auto; }
+          .mempage .memPageAll .mempageDetail .memResult .memResultContext span {
+            font-size: 30px;
+            font-weight: 500; }
+          .mempage .memPageAll .mempageDetail .memResult .memResultContext .spanBlue {
+            color: #0288D1; }
+          .mempage .memPageAll .mempageDetail .memResult .memResultContext .spanYellow {
+            color: #FFC107; }
+    .mempage .memPageAll .mempageDetail {
+      margin: 0 auto; }
+  .mempage .memPageAll::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+@media all and (max-width: 767px) {
+  .mempage .memPageAll .navbar {
+    box-shadow: none;
+    background-color: rgba(237, 237, 237, 0);
+    border-color: rgba(237, 237, 237, 0); }
+  .mempage .memPageAll .memNavAll {
+    position: fixed;
+    z-index: 999;
+    top: 100px; }
+    .mempage .memPageAll .memNavAll .memNavDisAll {
+      display: inline-block; }
+      .mempage .memPageAll .memNavAll .memNavDisAll button {
+        background-color: #fff;
+        box-shadow: 1px 1px 10px #BDBDBD; }
+    .mempage .memPageAll .memNavAll .memNavNoneAll {
+      background-color: #fff;
+      margin-top: -14px;
+      box-shadow: 1px 1px 10px #BDBDBD; }
+  .mempage .memPageAll .mempageDetail {
+    position: static;
+    margin-top: 50px; } }
+.mem_Info {
+  background-color: #EEEEEE;
+  font-family: "Noto Sans TC", sans-serif; }
+
+.memInfo {
+  margin-top: 50px; }
+  .memInfo .memPageAll {
+    position: relative; }
+    .memInfo .memPageAll .navbar {
+      box-shadow: 1px 1px 15px #757575; }
+      .memInfo .memPageAll .navbar .navbar-left {
+        float: left; }
+    .memInfo .memPageAll .nav {
+      display: block; }
+    .memInfo .memPageAll .memNavNone {
+      padding-bottom: 15px; }
+      .memInfo .memPageAll .memNavNone img {
+        width: 100%;
+        border-radius: 50%;
+        padding: 15px 0; }
+      .memInfo .memPageAll .memNavNone li {
+        display: block;
+        clear: both;
+        width: 100%; }
+      .memInfo .memPageAll .memNavNone li > a:hover {
+        background-color: #0288D1;
+        transition: .5s; }
+      .memInfo .memPageAll .memNavNone .active a {
+        background-color: #0288D1;
+        color: #fff; }
+    .memInfo .memPageAll .memInfoRight img {
+      width: 100%;
+      border-radius: 50%;
+      padding: 15px 0;
+      vertical-align: middle;
+      display: inline-block; }
+    .memInfo .memPageAll .memInfoRight .breadcrumb {
+      background-color: #eeeeee;
+      padding-left: 0;
+      padding-right: 0; }
+    .memInfo .memPageAll .memInfoRight h3::after {
+      content: '';
+      background-color: #000;
+      height: 1px;
+      width: 100%;
+      margin-top: 5px;
+      display: block; }
+    .memInfo .memPageAll .memInfoRight .memResult input {
+      display: block;
+      padding: 5px 0;
+      width: 100%;
+      border-radius: 5px; }
+    .memInfo .memPageAll .memInfoRight .memResult select {
+      display: block;
+      padding: 5px 0;
+      width: 100%;
+      border-radius: 5px;
+      border-style: inset;
+      border-width: 2px;
+      border-color: initial;
+      border-image: initial; }
+    .memInfo .memPageAll .memInfoRight .memResult option {
+      border-radius: 5px;
+      border-style: inset;
+      border-width: 2px;
+      border-color: initial;
+      border-image: initial; }
+    .memInfo .memPageAll .memInfoRight .memResult p {
+      margin: 20px 0 0 0; }
+    .memInfo .memPageAll .memInfoRight .memResult .submitImgButton .subRect {
+      display: inline-block;
+      font-size: 0;
+      vertical-align: middle;
+      width: 1%;
+      height: 200px;
+      opacity: 0;
+      background-color: #000; }
+    .memInfo .memPageAll .memInfoRight .memResult .submitImgButton .subText {
+      display: inline-block;
+      vertical-align: middle;
+      width: 95%; }
+    .memInfo .memPageAll .memInfoRight .memResult .memUpdateButton {
+      margin-top: 90px;
+      text-align: center; }
+  .memInfo .memPageAll::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+@media all and (max-width: 767px) {
+  .memInfo {
+    margin-top: 0; }
+    .memInfo .memPageAll .navbar {
+      box-shadow: none;
+      background-color: rgba(237, 237, 237, 0);
+      border-color: rgba(237, 237, 237, 0); }
+    .memInfo .memPageAll .memNavAll {
+      position: fixed;
+      z-index: 999;
+      top: 100px; }
+      .memInfo .memPageAll .memNavAll .memNavDisAll {
+        display: inline-block; }
+        .memInfo .memPageAll .memNavAll .memNavDisAll button {
+          background-color: #fff;
+          box-shadow: 1px 1px 10px #BDBDBD; }
+      .memInfo .memPageAll .memNavAll .memNavNoneAll {
+        background-color: #fff;
+        margin-top: -14px;
+        box-shadow: 1px 1px 10px #BDBDBD; }
+    .memInfo .memPageAll .mempageDetail {
+      position: static;
+      margin-top: 50px; }
+    .memInfo .memInfoRight {
+      margin-top: 50px; } }
+.mem_Order {
+  background-color: #EEEEEE;
+  font-family: "Noto Sans TC", sans-serif; }
+
+.memOrder {
+  margin-top: 50px; }
+  .memOrder .memPageAll {
+    position: relative; }
+    .memOrder .memPageAll .navbar {
+      box-shadow: 1px 1px 15px #757575; }
+      .memOrder .memPageAll .navbar .navbar-left {
+        float: left; }
+    .memOrder .memPageAll .nav {
+      display: block; }
+    .memOrder .memPageAll .memNavNone {
+      padding-bottom: 15px; }
+      .memOrder .memPageAll .memNavNone img {
+        width: 100%;
+        border-radius: 50%;
+        padding: 15px 0; }
+      .memOrder .memPageAll .memNavNone li {
+        display: block;
+        clear: both;
+        width: 100%; }
+      .memOrder .memPageAll .memNavNone li > a:hover {
+        background-color: #0288D1;
+        transition: .5s; }
+      .memOrder .memPageAll .memNavNone .active a {
+        background-color: #0288D1;
+        color: #fff; }
+    .memOrder .memPageAll .memOrderRight img {
+      width: 100%;
+      border-radius: 50%;
+      padding: 15px 0;
+      vertical-align: middle;
+      display: inline-block; }
+    .memOrder .memPageAll .memOrderRight .breadcrumb {
+      background-color: #eeeeee;
+      padding-left: 0;
+      padding-right: 0; }
+    .memOrder .memPageAll .memOrderRight .orderHead {
+      font-size: 0; }
+      .memOrder .memPageAll .memOrderRight .orderHead li {
+        display: inline-block;
+        font-size: 20px;
+        padding-right: 30px; }
+        .memOrder .memPageAll .memOrderRight .orderHead li h3 {
+          margin: 0;
+          font-size: 32px; }
+      .memOrder .memPageAll .memOrderRight .orderHead li + li {
+        padding-right: 0px; }
+        .memOrder .memPageAll .memOrderRight .orderHead li + li a {
+          padding: 10px 20px;
+          color: #BDBDBD; }
+        .memOrder .memPageAll .memOrderRight .orderHead li + li .headLinkNow, .memOrder .memPageAll .memOrderRight .orderHead li + li a:hover {
+          background-color: #BDBDBD;
+          color: #757575;
+          text-decoration: none; }
+        .memOrder .memPageAll .memOrderRight .orderHead li + li a:hover {
+          transition: .5s; }
+    .memOrder .memPageAll .memOrderRight .orderTable thead {
+      background-color: #fff;
+      font-size: 24px; }
+      .memOrder .memPageAll .memOrderRight .orderTable thead tr th {
+        padding: 5px 5px;
+        font-size: 19px; }
+    .memOrder .memPageAll .memOrderRight .orderTable tbody tr {
+      border-bottom: 1px solid #BDBDBD; }
+    .memOrder .memPageAll .memOrderRight .orderTable td {
+      vertical-align: middle;
+      width: 25%; }
+      .memOrder .memPageAll .memOrderRight .orderTable td a {
+        color: #03A9F4;
+        font-weight: 900; }
+      .memOrder .memPageAll .memOrderRight .orderTable td .button, .memOrder .memPageAll .memOrderRight .orderTable td .border_button {
+        color: #fff;
+        font-weight: 500;
+        cursor: pointer; }
+    .memOrder .memPageAll .memOrderRight .orderTable .insert tr {
+      border-bottom: none; }
+    .memOrder .memPageAll .memOrderRight .orderTable .insert td {
+      vertical-align: middle;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 44px;
+      padding-left: 5px; }
+    .memOrder .memPageAll .memOrderRight .orderChangePage {
+      text-align: center; }
+      .memOrder .memPageAll .memOrderRight .orderChangePage ul {
+        font-size: 0;
+        display: inline-block;
+        background-color: #fff;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #BDBDBD; }
+        .memOrder .memPageAll .memOrderRight .orderChangePage ul li {
+          display: inline-block;
+          font-size: 20px;
+          vertical-align: middle;
+          color: #03A9F4;
+          position: relative;
+          padding: 0; }
+          .memOrder .memPageAll .memOrderRight .orderChangePage ul li a {
+            display: block;
+            padding: 5px 15px; }
+          .memOrder .memPageAll .memOrderRight .orderChangePage ul li .linkNow {
+            color: #fff;
+            background-color: #03A9F4;
+            text-decoration: none; }
+          .memOrder .memPageAll .memOrderRight .orderChangePage ul li a:hover {
+            color: #fff;
+            background-color: #03A9F4;
+            text-decoration: none;
+            transition: .5s; }
+        .memOrder .memPageAll .memOrderRight .orderChangePage ul li + li::before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          vertical-align: middle;
+          width: 1px;
+          height: 38px;
+          background-color: #BDBDBD; }
+    .memOrder .memPageAll .memOrderRight .memResult input {
+      display: block;
+      padding: 5px 0;
+      width: 100%;
+      border-radius: 5px; }
+    .memOrder .memPageAll .memOrderRight .memResult select {
+      display: block;
+      padding: 5px 0;
+      width: 100%; }
+    .memOrder .memPageAll .memOrderRight .memResult p {
+      margin: 20px 0 0 0; }
+    .memOrder .memPageAll .memOrderRight .memResult .submitImgButton .subRect {
+      display: inline-block;
+      font-size: 0;
+      vertical-align: middle;
+      width: 1%;
+      height: 200px;
+      opacity: 0;
+      background-color: #000; }
+    .memOrder .memPageAll .memOrderRight .memResult .submitImgButton .subText {
+      display: inline-block;
+      vertical-align: middle;
+      width: 95%; }
+    .memOrder .memPageAll .memOrderRight .memResult .memUpdateButton {
+      margin-top: 90px;
+      text-align: center; }
+  .memOrder .memPageAll::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+@media all and (max-width: 767px) {
+  .memOrder .memPageAll .navbar {
+    box-shadow: none;
+    background-color: rgba(237, 237, 237, 0);
+    border-color: rgba(237, 237, 237, 0); }
+  .memOrder .memPageAll .memNavAll {
+    position: fixed;
+    z-index: 999;
+    top: 100px; }
+    .memOrder .memPageAll .memNavAll .memNavDisAll {
+      display: inline-block; }
+      .memOrder .memPageAll .memNavAll .memNavDisAll button {
+        background-color: #fff;
+        box-shadow: 1px 1px 10px #BDBDBD; }
+    .memOrder .memPageAll .memNavAll .memNavNoneAll {
+      background-color: #fff;
+      margin-top: -14px;
+      box-shadow: 1px 1px 10px #BDBDBD; }
+  .memOrder .memPageAll .mempageDetail {
+    position: static;
+    margin-top: 50px; }
+  .memOrder .memInfoRight {
+    margin-top: 50px; } }
+.mem_spaceInfo {
+  background-color: #EEEEEE;
+  font-family: "Noto Sans TC", sans-serif; }
+
+.memSpace {
+  margin-top: 50px; }
+  .memSpace .memPageAll {
+    position: relative; }
+    .memSpace .memPageAll .navbar {
+      box-shadow: 1px 1px 15px #757575; }
+      .memSpace .memPageAll .navbar .navbar-left {
+        float: left; }
+    .memSpace .memPageAll .nav {
+      display: block; }
+    .memSpace .memPageAll .memNavNone {
+      padding-bottom: 15px; }
+      .memSpace .memPageAll .memNavNone img {
+        width: 100%;
+        border-radius: 50%;
+        padding: 15px 0; }
+      .memSpace .memPageAll .memNavNone li {
+        display: block;
+        clear: both;
+        width: 100%; }
+      .memSpace .memPageAll .memNavNone li > a:hover {
+        background-color: #0288D1;
+        transition: .5s; }
+      .memSpace .memPageAll .memNavNone .active a {
+        background-color: #0288D1;
+        color: #fff; }
+    .memSpace .memPageAll .memOrderRight img {
+      width: 100%;
+      border-radius: 50%;
+      padding: 15px 0;
+      vertical-align: middle;
+      display: inline-block; }
+    .memSpace .memPageAll .memOrderRight .breadcrumb {
+      background-color: #eeeeee;
+      padding-left: 0;
+      padding-right: 0; }
+    .memSpace .memPageAll .memOrderRight .orderHead {
+      font-size: 0; }
+      .memSpace .memPageAll .memOrderRight .orderHead li {
+        display: inline-block;
+        font-size: 20px;
+        padding-right: 30px; }
+        .memSpace .memPageAll .memOrderRight .orderHead li h3 {
+          margin: 0;
+          font-size: 32px; }
+      .memSpace .memPageAll .memOrderRight .orderHead li + li {
+        padding-right: 0px; }
+        .memSpace .memPageAll .memOrderRight .orderHead li + li .spaceButton {
+          padding: 5px 10px;
+          display: inline;
+          color: #fff; }
+        .memSpace .memPageAll .memOrderRight .orderHead li + li .spaceButton:hover {
+          background-color: #FFC107;
+          color: #fff; }
+        .memSpace .memPageAll .memOrderRight .orderHead li + li a {
+          padding: 10px 20px;
+          color: #BDBDBD; }
+        .memSpace .memPageAll .memOrderRight .orderHead li + li .headLinkNow, .memSpace .memPageAll .memOrderRight .orderHead li + li a:hover {
+          background-color: #BDBDBD;
+          color: #757575;
+          text-decoration: none; }
+        .memSpace .memPageAll .memOrderRight .orderHead li + li a:hover {
+          transition: .5s; }
+    .memSpace .memPageAll .memOrderRight .orderTable thead {
+      background-color: #fff;
+      font-size: 19px; }
+      .memSpace .memPageAll .memOrderRight .orderTable thead tr th {
+        padding: 5px 5px; }
+    .memSpace .memPageAll .memOrderRight .orderTable tbody tr {
+      border-bottom: 1px solid #BDBDBD; }
+    .memSpace .memPageAll .memOrderRight .orderTable td {
+      vertical-align: middle;
+      width: 25%; }
+      .memSpace .memPageAll .memOrderRight .orderTable td a {
+        color: #03A9F4;
+        font-weight: 900; }
+      .memSpace .memPageAll .memOrderRight .orderTable td .button, .memSpace .memPageAll .memOrderRight .orderTable td .border_button {
+        color: #fff;
+        font-weight: 500;
+        cursor: pointer; }
+    .memSpace .memPageAll .memOrderRight .orderTable .insert tr {
+      border-bottom: none; }
+    .memSpace .memPageAll .memOrderRight .orderTable .insert td {
+      vertical-align: middle;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 44px;
+      padding-left: 5px; }
+    .memSpace .memPageAll .memOrderRight .orderChangePage {
+      text-align: center; }
+      .memSpace .memPageAll .memOrderRight .orderChangePage ul {
+        font-size: 0;
+        display: inline-block;
+        background-color: #fff;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #BDBDBD; }
+        .memSpace .memPageAll .memOrderRight .orderChangePage ul li {
+          display: inline-block;
+          font-size: 20px;
+          vertical-align: middle;
+          color: #03A9F4;
+          position: relative;
+          padding: 0; }
+          .memSpace .memPageAll .memOrderRight .orderChangePage ul li a {
+            display: block;
+            padding: 5px 15px; }
+          .memSpace .memPageAll .memOrderRight .orderChangePage ul li .linkNow {
+            color: #fff;
+            background-color: #03A9F4;
+            text-decoration: none; }
+          .memSpace .memPageAll .memOrderRight .orderChangePage ul li a:hover {
+            color: #fff;
+            background-color: #03A9F4;
+            text-decoration: none;
+            transition: .5s; }
+        .memSpace .memPageAll .memOrderRight .orderChangePage ul li + li::before {
+          content: '';
+          display: inline-block;
+          position: absolute;
+          left: 0;
+          vertical-align: middle;
+          width: 1px;
+          height: 38px;
+          background-color: #BDBDBD; }
+    .memSpace .memPageAll .memOrderRight .memResult input {
+      display: block;
+      padding: 5px 0;
+      width: 100%;
+      border-radius: 5px; }
+    .memSpace .memPageAll .memOrderRight .memResult select {
+      display: block;
+      padding: 5px 0;
+      width: 100%; }
+    .memSpace .memPageAll .memOrderRight .memResult p {
+      margin: 20px 0 0 0; }
+    .memSpace .memPageAll .memOrderRight .memResult .submitImgButton .subRect {
+      display: inline-block;
+      font-size: 0;
+      vertical-align: middle;
+      width: 1%;
+      height: 200px;
+      opacity: 0;
+      background-color: #000; }
+    .memSpace .memPageAll .memOrderRight .memResult .submitImgButton .subText {
+      display: inline-block;
+      vertical-align: middle;
+      width: 95%; }
+    .memSpace .memPageAll .memOrderRight .memResult .memUpdateButton {
+      margin-top: 90px;
+      text-align: center; }
+  .memSpace .memPageAll::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+@media all and (max-width: 767px) {
+  .memSpace .memPageAll .navbar {
+    box-shadow: none;
+    background-color: rgba(237, 237, 237, 0);
+    border-color: rgba(237, 237, 237, 0); }
+  .memSpace .memPageAll .memNavAll {
+    position: fixed;
+    z-index: 999;
+    top: 100px; }
+    .memSpace .memPageAll .memNavAll .memNavDisAll {
+      display: inline-block; }
+      .memSpace .memPageAll .memNavAll .memNavDisAll button {
+        background-color: #fff;
+        box-shadow: 1px 1px 10px #BDBDBD; }
+    .memSpace .memPageAll .memNavAll .memNavNoneAll {
+      background-color: #fff;
+      margin-top: -14px;
+      box-shadow: 1px 1px 10px #BDBDBD; }
+  .memSpace .memPageAll .mempageDetail {
+    position: static;
+    margin-top: 50px; }
+  .memSpace .memInfoRight {
+    margin-top: 50px; } }

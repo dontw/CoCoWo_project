@@ -45,7 +45,7 @@ $(document).ready(function(){
       })
 
   .setTween(wp)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
 
@@ -73,7 +73,7 @@ $(document).ready(function(){
       })
 
   .setTween(wp_2)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
   //devices move in
@@ -101,7 +101,7 @@ $(document).ready(function(){
       })
 
   .setTween(wp_3)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
   //sec3
@@ -131,7 +131,7 @@ $(document).ready(function(){
       })
 
   .setTween(wp_4)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
 //user fall in
@@ -158,7 +158,7 @@ $(document).ready(function(){
 
       })
   .setTween(wp_5)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
 //user_inter fade in
@@ -185,7 +185,7 @@ $(document).ready(function(){
 
       })
   .setTween(wp_6)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
   var wp_7 = new TimelineMax().staggerTo(".user_inter", 2, {
@@ -204,7 +204,7 @@ $(document).ready(function(){
 
       })
   .setTween(wp_7)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
   $('.upper_slider').slick({
@@ -236,8 +236,8 @@ $(document).ready(function(){
     asNavFor: '.upper_slider',
     focusOnSelect: true,
     draggable: false,
-		autoplay: false,
-		autoplaySpeed: 4000,
+		autoplay: true,
+		autoplaySpeed: 2000,
     centerMode: true,
     responsive: [
       {
@@ -248,7 +248,7 @@ $(document).ready(function(){
 					infinite: true,
 					dots: false,
 					autoplay: false,
-					autoplaySpeed: 4000
+					autoplaySpeed: 2000
 				}
 			},
 			{
@@ -258,8 +258,8 @@ $(document).ready(function(){
 					slidesToScroll: 1,
 					infinite: true,
 					dots: false,
-					autoplay: false,
-					autoplaySpeed: 4000
+					autoplay: true,
+					autoplaySpeed: 2000
 				}
 			},
 			{
@@ -269,8 +269,8 @@ $(document).ready(function(){
 					slidesToScroll: 1,
 					infinite: true,
 					dots: false,
-					autoplay: false,
-					autoplaySpeed: 4000
+					autoplay: true,
+					autoplaySpeed: 2000
 				}
 			},
 			{
@@ -280,8 +280,8 @@ $(document).ready(function(){
 					slidesToScroll: 1,
 					infinite: true,
 					dots: false,
-					autoplay: false,
-					autoplaySpeed: 4000
+					autoplay: true,
+					autoplaySpeed: 2000
 				}
 			}
   ]
