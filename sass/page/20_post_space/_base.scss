@@ -895,22 +895,22 @@ $browser-ui: $grey;
     }
 }
   .page1{
-       background: -webkit-linear-gradient(#40afdf 0%, #7ec8e6 50%,#a1d0e3  100%);
-       background: -o-linear-gradient(#40afdf 0%,#7ec8e6 50% ,#a1d0e3 100%);
-       background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+       background: -webkit-linear-gradient(#40afdf 0%,#a1d0e3  100%);
+       background: -o-linear-gradient(#40afdf 0%,#a1d0e3 100%);
+       background: linear-gradient(#40afdf 0%,#a1d0e3 100%);
        position: relative;
         }
 
   .page2{
-    background: -webkit-linear-gradient(#a1d0e3 0%,#7ec8e6 50% , #40afdf 100%);
-    background: -o-linear-gradient(#a1d0e3 0% ,#7ec8e6 50%, #40afdf 100%);
-    background: linear-gradient(#a1d0e3 0% ,#7ec8e6 50%, #40afdf 100%);
+    background: -webkit-linear-gradient(#a1d0e3 0% , #40afdf 100%);
+    background: -o-linear-gradient(#a1d0e3 0% , #40afdf 100%);
+    background: linear-gradient(#a1d0e3 0% , #40afdf 100%);
   }
 
   .page3{
-    background: -webkit-linear-gradient(#40afdf 0%, #7ec8e6 60%, #a1d0e3 100%);
-    background: -o-linear-gradient(#40afdf 0%,#7ec8e6 60% ,#a1d0e3 100%);
-    background: linear-gradient(#40afdf 0%,#7ec8e6 60%, #a1d0e3 100%);
+    background: -webkit-linear-gradient(#40afdf 0%,#a1d0e3 100%);
+    background: -o-linear-gradient(#40afdf 0% ,#a1d0e3 100%);
+    background: linear-gradient(#40afdf 0%,#a1d0e3 100%);
   }
 
   .page4{

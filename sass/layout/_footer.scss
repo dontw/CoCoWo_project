@@ -35,6 +35,8 @@
   h5{
     margin-top: 1em;
     text-align: center;
+    color:#666666;
+    font-weight: 500;
   }
 
   .copyright{
@@ -88,7 +90,7 @@
     margin-bottom: 30px;
     &:hover{
       text-decoration: none;
-      color:$black;
+      color:$yellow;
       transform: scale(1.05);
       transition: .3s;
     }
