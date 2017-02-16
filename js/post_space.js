@@ -207,6 +207,58 @@ $(document).ready(function(){
   // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
+  if ($(window).width() < 768) {
+    var wp_8 = new TimelineMax().staggerFromTo(".fixed_post", 0.05, {
+
+          // css:{top: "5%"},
+          opacity: 1,
+          scale:1,
+
+      }, {
+          css:{className:'+=CenterBtnMobile'},
+          delay: 0,
+          opacity: 1,
+          ease: Power0.easeNone,
+      }, 0);
+
+    var scene_8 = new ScrollMagic.Scene({
+        triggerElement: "#trigger8",
+        reverse: true,
+        offset: '120px',
+
+
+        })
+    .setTween(wp_8)
+    .addIndicators() // add indicators (requires plugin)
+    .addTo(controller);
+
+
+}
+else{
+  var wp_8 = new TimelineMax().staggerFromTo(".fixed_post", 0.05, {
+
+        opacity: 1,
+        scale:1,
+
+    }, {
+        css:{className:'+=CenterBtn'},
+        delay: 0,
+        opacity: 1,
+    }, 0);
+
+  var scene_8 = new ScrollMagic.Scene({
+      triggerElement: "#trigger8",
+      reverse: true,
+      offset: '120px',
+
+
+      })
+  .setTween(wp_8)
+  .addIndicators() // add indicators (requires plugin)
+  .addTo(controller);
+
+}
+
   $('.upper_slider').slick({
     slide: '.upper_content',
     infinite: true,
@@ -237,7 +289,7 @@ $(document).ready(function(){
     focusOnSelect: true,
     draggable: false,
 		autoplay: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 3000,
     centerMode: true,
     responsive: [
       {

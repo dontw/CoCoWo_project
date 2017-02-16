@@ -50,22 +50,25 @@
 
   .page_title{
     color:$white;
-    text-shadow:   0 1px 0 hsl(174,5%,80%),
-	                 0 2px 0 hsl(174,5%,75%),
-	                 0 3px 0 hsl(174,5%,70%),
-	                 0 4px 0 hsl(174,5%,66%),
-	                 0 5px 0 hsl(174,5%,64%),
-	                 0 6px 0 hsl(174,5%,62%),
+    text-shadow:  0 1px 5px rgba(0,0,0,.15);
 
-	                 0 0 5px rgba(0,0,0,.05),
-	                0 1px 3px rgba(0,0,0,.2),
-	                0 3px 5px rgba(0,0,0,.2);
+    //0 1px 0 hsl(174,5%,80%),
+	  //                0 2px 0 hsl(174,5%,75%),
+	  //                0 3px 0 hsl(174,5%,70%),
+	  //                0 4px 0 hsl(174,5%,66%),
+	  //                0 5px 0 hsl(174,5%,64%),
+	  //                0 6px 0 hsl(174,5%,62%),
+    //
+	  //                0 0 5px rgba(0,0,0,.05),
+	  //               0 1px 3px rgba(0,0,0,.2),
+	  //               0 3px 5px rgba(0,0,0,.2);
 
     position: absolute;
     top:14%;
     left:0;
     right:0;
     text-align: center;
+    font-weight: 500;
 
     &.page_title_2{
       margin-top:5%;
@@ -226,7 +229,7 @@
 
     .big_cloud_shadow_1{
       @extend .big_cloud_shadow;
-      animation: float3  30s linear infinite;
+      animation: float3  30s ease infinite;
       opacity:0.8;
       width:30vw;
       height: 30vh;
@@ -237,7 +240,7 @@
 
     .big_cloud_shadow_2{
       @extend .big_cloud_shadow;
-      animation: float1  3s linear infinite;
+      animation: float1  3s ease infinite;
       opacity:0.8;
       width:20vw;
       height: 20vh;
@@ -943,7 +946,7 @@ $browser-ui: $grey;
           justify-content: center;
           width: 50%;
           float:left;
-          background-image: linear-gradient($white 0%, #ccc 100%);
+          background-image: linear-gradient($white 0%, #ddd 100%);
           height: 400px;
 
           .content_title{
@@ -953,26 +956,31 @@ $browser-ui: $grey;
             width: 60%;
             text-align: center;
             line-height: 1.5em;
-            color:$black;
+            color:#333;
             display: inline-block;
+            font-weight: 500;
           }
 
           hr{
             width: 50%;
             margin-top:2em;
-            border-color:$black;
+            border-color:#666;
           }
 
           .content_left_name{
             text-align: center;
             margin-top:1em;
-            color:$black;
+            color:#666;
+            font-family: $sub_font_family;
+            font-weight: 300;
           }
 
           .content_left_ocu{
             text-align: center;
             margin-top:0.5em;
-            color:$black;
+            color:#666;
+            font-family: $sub_font_family;
+            font-weight: 300;
           }
 
           .btn{
@@ -1086,6 +1094,7 @@ $browser-ui: $grey;
           cursor: pointer;
           background-image: url(../img/post_space_sprites-logos@1x.png);
           filter:grayscale(100%);
+          transform: scale(0.55);
           opacity:0.4;
           transition: .3s;
         }
@@ -1093,6 +1102,7 @@ $browser-ui: $grey;
         .add_color{
           filter:grayscale(0%);
           opacity:1;
+          transform: scale(0.85);
         }
 
 
@@ -1165,6 +1175,15 @@ $browser-ui: $grey;
     position: fixed;
     right:1%;
     top:72px;
+    transition: 0.5s;
 
   }
+  .CenterBtn{
+    transform: translate(-45vw,32vh) scale(2);
+  }
+
+  .CenterBtnMobile{
+    transform: translate(0,-32vh);
+  }
+
 }

@@ -2578,8 +2578,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #23527c;
-  text-decoration: underline; }
+  color: #23527c; }
 
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -3514,7 +3513,8 @@ hr {
   .hidden-print {
     display: none !important; } }
 .nav {
-  display: none; }
+  display: none;
+  z-index: 100; }
 
 .stuff_nav {
   height: 72px; }
@@ -6352,12 +6352,13 @@ iframe {
     overflow: hidden; }
   .post_space .page_title {
     color: #FFFFFF;
-    text-shadow: 0 1px 0 #c9cfce, 0 2px 0 #bcc2c2, 0 3px 0 #afb6b6, 0 4px 0 #a4adac, 0 5px 0 #9fa8a7, 0 6px 0 #99a3a2, 0 0 5px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.2), 0 3px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
     position: absolute;
     top: 14%;
     left: 0;
     right: 0;
-    text-align: center; }
+    text-align: center;
+    font-weight: 500; }
     .post_space .page_title.page_title_2 {
       margin-top: 5%;
       position: relative;
@@ -6465,7 +6466,7 @@ iframe {
       opacity: 0.5;
       animation: float3  50s linear infinite; }
     .post_space .big_cloud .big_cloud_shadow_1 {
-      animation: float3  30s linear infinite;
+      animation: float3  30s ease infinite;
       opacity: 0.8;
       width: 30vw;
       height: 30vh;
@@ -6473,7 +6474,7 @@ iframe {
       bottom: 13%;
       right: -30vw; }
     .post_space .big_cloud .big_cloud_shadow_2 {
-      animation: float1  3s linear infinite;
+      animation: float1  3s ease infinite;
       opacity: 0.8;
       width: 20vw;
       height: 20vh;
@@ -6954,7 +6955,7 @@ iframe {
         justify-content: center;
         width: 50%;
         float: left;
-        background-image: linear-gradient(#FFFFFF 0%, #ccc 100%);
+        background-image: linear-gradient(#FFFFFF 0%, #ddd 100%);
         height: 400px; }
         .post_space .testimony .upper_content .content_left .content_title {
           text-align: center; }
@@ -6962,20 +6963,25 @@ iframe {
           width: 60%;
           text-align: center;
           line-height: 1.5em;
-          color: #212121;
-          display: inline-block; }
+          color: #333;
+          display: inline-block;
+          font-weight: 500; }
         .post_space .testimony .upper_content .content_left hr {
           width: 50%;
           margin-top: 2em;
-          border-color: #212121; }
+          border-color: #666; }
         .post_space .testimony .upper_content .content_left .content_left_name {
           text-align: center;
           margin-top: 1em;
-          color: #212121; }
+          color: #666;
+          font-family: "cwtexhei", sans-serif;
+          font-weight: 300; }
         .post_space .testimony .upper_content .content_left .content_left_ocu {
           text-align: center;
           margin-top: 0.5em;
-          color: #212121; }
+          color: #666;
+          font-family: "cwtexhei", sans-serif;
+          font-weight: 300; }
         .post_space .testimony .upper_content .content_left .btn {
           margin-top: 3em;
           text-align: center; }
@@ -7043,11 +7049,13 @@ iframe {
       cursor: pointer;
       background-image: url(../img/post_space_sprites-logos@1x.png);
       filter: grayscale(100%);
+      transform: scale(0.55);
       opacity: 0.4;
       transition: .3s; }
     .post_space .testimony .buttom_slider .add_color {
       filter: grayscale(0%);
-      opacity: 1; }
+      opacity: 1;
+      transform: scale(0.85); }
     .post_space .testimony .buttom_slider .buttom_content_1 {
       background-position: 60% 1%;
       background-size: 478% 900%; }
@@ -7091,7 +7099,12 @@ iframe {
     display: inline-block;
     position: fixed;
     right: 1%;
-    top: 72px; }
+    top: 72px;
+    transition: 0.5s; }
+  .post_space .CenterBtn {
+    transform: translate(-45vw, 32vh) scale(2); }
+  .post_space .CenterBtnMobile {
+    transform: translate(0, -32vh); }
 
 @media all and (max-width: 767px) {
   .post_space .page_title {
@@ -7208,7 +7221,7 @@ iframe {
         left: 16%; }
   .post_space .message {
     background-color: white;
-    width: 130px;
+    width: 155px;
     padding: 5px 5px;
     border-left-width: 6px;
     border-left-style: solid;
@@ -7218,7 +7231,7 @@ iframe {
     text-align: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
     .post_space .message h4 {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: normal; }
     .post_space .message:before {
       color: white;
@@ -7248,14 +7261,14 @@ iframe {
       position: absolute;
       top: 34%;
       right: 7%;
-      width: 130px; }
+      width: 155px; }
       .post_space .message.message_1_2:before {
         content: "2"; }
     .post_space .message.message_1_3 {
       position: absolute;
       top: -25%;
-      left: 34%;
-      width: 130px; }
+      left: 28%;
+      width: 155px; }
       .post_space .message.message_1_3:before {
         content: "3"; }
   .post_space .devices {

@@ -527,7 +527,7 @@ button.fs-continue,
 /* Progress bar */
 .fs-progress {
 	position: absolute;
-	top: 20%;
+	top: 170px;
 	width: 0%;
 	height: 0.5em;
 	background:  #FFC107;
@@ -538,8 +538,8 @@ button.fs-continue,
 /* Number indicator */
 .fs-numbers {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 90px;
+	right: 46%;
 	overflow: hidden;
 	color: rgba(0,0,0,0.4);
 	margin: 40px;
