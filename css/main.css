@@ -3792,7 +3792,7 @@ hr {
 
 .border_button {
   background-color: #FFFFFF;
-  border: #757575 solid 3px;
+  border: #757575 solid 2px;
   color: #757575;
   box-shadow: none; }
   .border_button:hover {
@@ -4015,7 +4015,9 @@ h1, h2, h3, h4, h5 {
 
 p {
   font-family: "cwtexhei", sans-serif;
-  color: #666666; }
+  color: #666666;
+  line-height: 1.5em;
+  letter-spacing: 1px; }
 
 h1 {
   font-size: 53px; }
@@ -6301,6 +6303,194 @@ iframe {
   #searchspace #search #wotype .wocenter {
     width: 220px;
     margin: auto; } }
+.space_content {
+  background: -webkit-linear-gradient(#40afdf 0%, #a1d0e3 100%);
+  background: -o-linear-gradient(#40afdf 0%, #a1d0e3 100%);
+  background: linear-gradient(#40afdf 0%, #a1d0e3 100%); }
+  .space_content #map {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 200px; }
+  .space_content .space_content_main span {
+    color: #666; }
+  .space_content .space_content_main {
+    background-color: #EEEEFF;
+    padding: 30px; }
+  .space_content .bread_crumbs_container {
+    background-color: #EEEEFF; }
+  .space_content .bread_crumbs {
+    font-family: "cwtexhei", sans-serif;
+    padding: 1em 0em; }
+    .space_content .bread_crumbs .bread_crumb_tag {
+      font-size: 14px;
+      color: #757575; }
+    .space_content .bread_crumbs .bread_crumb_tag:hover {
+      color: #212121; }
+    .space_content .bread_crumbs .bread_crumb_separator {
+      margin: 0 0.5em; }
+  .space_content .space_content_slider {
+    position: relative; }
+    .space_content .space_content_slider .slider_ctrl {
+      font-size: 48px;
+      color: #FFFFFF;
+      text-shadow: 0px 0px 1px #000;
+      position: absolute; }
+      .space_content .space_content_slider .slider_ctrl.left {
+        top: 50%;
+        left: 3%; }
+  .space_content .content_img {
+    height: 400px;
+    background-image: url(../img/post_space_test_room_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%; }
+  .space_content .space_name {
+    color: #556677; }
+  .space_content .space_star {
+    position: relative;
+    margin: 15px 0 0 0;
+    display: inline-block; }
+  .space_content .space_star:after {
+    content: "4";
+    font-family: "cwtexhei", sans-serif;
+    font-size: 20px;
+    color: #757575;
+    position: absolute;
+    right: -1em;
+    top: 3px; }
+  .space_content .space_star:before {
+    content: "\f005" "\f005" "\f005" "\f005" "\f006";
+    font-family: FontAwesome;
+    font-size: 24px;
+    color: #FFC107;
+    display: inline-block; }
+  .space_content .space_addr {
+    color: #999;
+    margin-top: 10px; }
+  .space_content .space_describe {
+    line-height: 1.5em;
+    letter-spacing: 1px; }
+  .space_content .space_equip_title, .space_content .space_user_title, .space_content .space_describe_title {
+    margin-top: 30px;
+    font-weight: 700; }
+  .space_content .space_equip_item {
+    display: inline-block;
+    width: 260px;
+    line-height: 30px;
+    padding: 5px 0;
+    position: relative; }
+  .space_content .item_img {
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center; }
+    .space_content .item_img.img1 {
+      background-image: url(../img/equipment_gif/wifi.png); }
+    .space_content .item_img.img2 {
+      background-image: url(../img/equipment_gif/phone.png); }
+    .space_content .item_img.img3 {
+      background-image: url(../img/equipment_gif/meeting_room.png); }
+    .space_content .item_img.img4 {
+      background-image: url(../img/equipment_gif/wifi.png); }
+    .space_content .item_img.img5 {
+      background-image: url(../img/equipment_gif/wifi.png); }
+  .space_content .item_name, .space_content .space_user_item .user_name, .space_content .space_user_item .user_occu {
+    font-family: "cwtexhei", sans-serif;
+    font-size: 16px;
+    margin-left: 40px; }
+  .space_content .space_order_wrap {
+    float: right; }
+  .space_content .space_order {
+    border: 1px solid #DADFDF;
+    width: 290px;
+    background-color: #F0F0FF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 20px;
+    text-align: center; }
+  .space_content .order_btn {
+    width: 97%; }
+    .space_content .order_btn.order_btn_2 {
+      width: 49%;
+      margin: 0.3em 0em;
+      padding: 0.5em 0em;
+      vertical-align: middle;
+      position: relative;
+      left: 7px; }
+    .space_content .order_btn.order_btn_3 {
+      width: 49%;
+      margin: 0.3em 0em;
+      padding: 0.5em 0em;
+      vertical-align: middle;
+      position: relative; }
+  .space_content .space_owner {
+    border: 1px solid #DADFDF;
+    width: 290px;
+    background-color: #F0F0FF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px; }
+  .space_content .owner_img, .space_content .space_user_item .user_img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle; }
+  .space_content .owner_desc {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: "cwtexhei", sans-serif;
+    line-height: 1.5em;
+    letter-spacing: 1px; }
+  .space_content .space_announce {
+    width: 290px;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px; }
+    .space_content .space_announce a {
+      display: block;
+      line-height: 2em;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-family: "cwtexhei", sans-serif; }
+  .space_content .space_user_item {
+    display: inline-block;
+    width: 150px;
+    line-height: 30px;
+    padding: 5px 0;
+    position: relative;
+    text-align: center; }
+    .space_content .space_user_item .user_img {
+      height: 30px;
+      width: 30px;
+      vertical-align: middle;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .space_content .space_user_item .user_name, .space_content .space_user_item .user_occu {
+      margin-left: 10px; }
+    .space_content .space_user_item .user_occu {
+      font-size: 14px;
+      color: #757575;
+      display: block;
+      margin-top: -10px; }
+    .space_content .space_user_item .user_status {
+      margin-top: 5px; }
+    .space_content .space_user_item .user_img {
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      position: relative; }
+
 .post_space {
   position: relative;
   /***************************************

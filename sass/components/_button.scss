@@ -36,7 +36,7 @@
 .border_button{
   @extend .button;
   background-color: $white;
-  border: $dark-grey solid 3px;
+  border: $dark-grey solid 2px;
   color: $dark-grey;
   box-shadow: none;
   &:hover{

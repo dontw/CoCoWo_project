@@ -1,0 +1,290 @@
+//space_content
+.space_content{
+  background: -webkit-linear-gradient(#40afdf 0%,#a1d0e3  100%);
+  background: -o-linear-gradient(#40afdf 0%,#a1d0e3 100%);
+  background: linear-gradient(#40afdf 0%,#a1d0e3 100%);
+
+  #map{
+    width: 100%;
+    height:500px;
+    margin-bottom:200px;
+  }
+
+  .space_content_main span{
+    color:#666;
+  }
+
+  .space_content_main{
+    // min-height: 1000px;
+    background-color: #EEEEFF;
+    padding:30px;
+  }
+
+  .bread_crumbs_container{
+    background-color: #EEEEFF;
+  }
+
+  .bread_crumbs{
+    font-family: $sub_font_family;
+    padding:1em 0em;
+
+    .bread_crumb_tag{
+      font-size: 14px;
+      color:$dark-grey;
+    }
+    .bread_crumb_tag:hover{
+      color:$black;
+    }
+    .bread_crumb_separator{
+      margin: 0 0.5em;
+    }
+  }//bread_crumbs end
+
+  // slider
+  .space_content_slider{
+    position: relative;
+    .slider_ctrl{
+      font-size: 48px;
+      color:$white;
+      text-shadow: 0px 0px 1px #000;
+      position: absolute;
+      &.left{
+        top:50%;
+        left:3%;
+      }
+    }
+  }
+  .slider_content{
+
+  }
+  .content_img{
+    height: 400px;
+    background-image: url(../img/post_space_test_room_1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    .img_1{
+
+    }
+  }
+
+  .space_name{
+    color:#556677;
+  }
+
+  .space_star{
+    position: relative;
+    margin: 15px 0 0 0;
+    display: inline-block;
+  }
+
+  .space_star:after{
+    content:"4";
+    font-family: $sub_font_family;
+    font-size: 20px;
+    color:$dark-grey;
+    position: absolute;
+    right:-1em;
+    top:3px;
+  }
+
+  .space_star:before{
+    content: "\f005" "\f005" "\f005" "\f005" "\f006";
+    font-family: FontAwesome;
+    font-size: 24px;
+    color: #FFC107;
+    display: inline-block;
+  }
+
+  .space_addr{
+    color:#999;
+    margin-top:10px;
+
+  }
+
+  .space_describe{
+    line-height: 1.5em;
+    letter-spacing: 1px;
+  }
+
+  .space_equip_title,.space_user_title,.space_describe_title{
+    margin-top:30px;
+    font-weight: 700;
+  }
+
+  .space_equip_item{
+    display: inline-block;
+    width: 260px;
+    line-height: 30px;
+    padding: 5px 0;
+    position: relative;
+  }
+
+  .item_img{
+    height: 30px;
+    width: 30px;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.img1{
+      background-image: url(../img/equipment_gif/wifi.png)
+    }
+
+    &.img2{
+      background-image: url(../img/equipment_gif/phone.png)
+    }
+
+    &.img3{
+      background-image: url(../img/equipment_gif/meeting_room.png)
+    }
+
+    &.img4{
+      background-image: url(../img/equipment_gif/wifi.png)
+    }
+
+    &.img5{
+      background-image: url(../img/equipment_gif/wifi.png)
+    }
+  }
+
+  .item_name{
+    font-family: $sub_font_family;
+    font-size: 16px;
+    margin-left: 40px;
+  }
+
+  .space_order_wrap{
+    float: right;
+  }
+
+  .space_order{
+    border:1px solid #DADFDF;
+    width: 290px;
+    background-color: #F0F0FF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding:20px;
+    text-align: center;
+  }
+
+  .order_btn{
+    width: 97%;
+    &.order_btn_1{
+
+    }
+    &.order_btn_2{
+    width: 49%;
+    margin:0.3em 0em;
+    padding:0.5em 0em;
+    vertical-align: middle;
+    position: relative;
+    left: 7px;
+    }
+    &.order_btn_3{
+    width: 49%;
+    margin:0.3em 0em;
+    padding:0.5em 0em;
+    vertical-align: middle;
+    position: relative;
+
+    }
+
+  }
+
+  .space_owner{
+    border:1px solid #DADFDF;
+    width: 290px;
+    background-color: #F0F0FF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding:20px;
+    text-align: center;
+    margin-top:10px;
+
+  }
+
+  .owner_img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+
+  }
+
+  .owner_desc{
+    display: inline-block;
+    vertical-align: middle;
+    font-family: $sub_font_family;
+    line-height: 1.5em;
+    letter-spacing: 1px;
+  }
+
+  .space_announce{
+    width: 290px;
+    padding:0;
+    text-align: left;
+    margin-top:20px;
+    a{
+      display: block;
+      line-height: 2em;
+      letter-spacing: 1px;
+      font-size: 14px;
+      font-family: $sub_font_family;
+    }
+  }
+
+  .space_user_item{
+    display: inline-block;
+    width: 150px;
+    line-height: 30px;
+    padding: 5px 0;
+    position: relative;
+    text-align: center;
+    .user_img{
+      height: 30px;
+      width: 30px;
+      vertical-align: middle;
+      position: absolute;
+      left: 0;
+      top: 5px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .user_name,.user_occu{
+      @extend .item_name;
+      margin-left: 10px;
+    }
+
+    .user_occu{
+      font-size: 14px;
+      color:$dark-grey;
+      display: block;
+      margin-top: -10px;
+    }
+
+    .user_status{
+      margin-top:5px;
+    }
+
+    .user_img{
+      @extend .owner_img;
+      display: block;
+      width: 100px;
+      height: 100px;
+      margin: auto;
+      position: relative;
+    }
+  }
+
+
+
+
+
+
+
+}//.space_content end
