@@ -259,6 +259,16 @@ else{
 
 }
 
+$('#money').sparkleHover(
+{image:'../img/flipping_coin.gif',
+sprite_size:48,
+colors : ['transperant'],
+lifespan: 3000,
+radius:800,
+num_sprites: 100
+});
+
+
   $('.upper_slider').slick({
     slide: '.upper_content',
     infinite: true,
@@ -341,12 +351,10 @@ else{
 
   $('.buttom_slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     $('.slick-current').removeClass('add_color');
-    console.log("nextSlideOK");
   });
 
   $('.buttom_slider').on('afterChange', function(event, slick, currentSlide){
     $('.slick-current').addClass('add_color');
-    console.log("afterchange");
   });
 
 
