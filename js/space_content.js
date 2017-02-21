@@ -61,6 +61,12 @@ $(document).ready(function(){
       $(this).html('<i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i>已按有幫助');
     }
 
+  //report_space
+  $('#report_space').click(function() {
+      $(this).text("");
+      $(this).text("您已檢舉本空間");
+  });
+
   });
 
 

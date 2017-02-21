@@ -45,6 +45,7 @@
 
   });
 
+
   function makeSprites(centerX, centerY){
     for (var i=0; i < num_sprites; i++){
       //make a div

@@ -1,4 +1,14 @@
 $(document).ready(function(){
+
+  $('#money').sparkleHover(
+  {image:'../img/flipping_coin.gif',
+  sprite_size:48,
+  colors : ['transperant'],
+  lifespan: 3000,
+  radius:800,
+  num_sprites: 100
+  });
+
   // onepage_scroll
   $(".main").onepage_scroll({
      sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
@@ -161,6 +171,13 @@ $(document).ready(function(){
   // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
+function clickAndShowMoney(){
+  $("#money").click();
+  delay(1000);
+  $("#money").click();
+}
+
+
 //user_inter fade in
   var wp_6 = new TimelineMax().staggerFromTo(".user_inter", 2, {
 
@@ -175,6 +192,7 @@ $(document).ready(function(){
         opacity: 1,
         scale:1,
         ease: Power3.easeOut,
+        onComplete: clickAndShowMoney
     }, 0.3);
 
   var scene_6 = new ScrollMagic.Scene({
@@ -259,15 +277,26 @@ else{
 
 }
 
-$('#money').sparkleHover(
-{image:'../img/flipping_coin.gif',
-sprite_size:48,
-colors : ['transperant'],
-lifespan: 3000,
-radius:800,
-num_sprites: 100
-});
+//pouring money
 
+var wp_9 = new TimelineMax().staggerTo(".user_inter", 2, {
+      delay: 6.5,
+      y: -300,
+      opacity: 0,
+      scale:1,
+
+  }, 0.3);
+
+var scene_9 = new ScrollMagic.Scene({
+    triggerElement: "#trigger9",
+    reverse: true,
+    offset: '120px',
+
+
+    })
+.setTween(wp_7)
+// .addIndicators() // add indicators (requires plugin)
+.addTo(controller);
 
   $('.upper_slider').slick({
     slide: '.upper_content',
