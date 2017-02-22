@@ -75,8 +75,8 @@ div.cs-skin-boxes:focus > span {
 }
 
 .cs-skin-boxes .cs-options li {
-	width: 20%;
-	height: 25%;
+	width: 33%;
+	height: 30%;
 	float: left;
 	position: relative;
 	cursor: pointer;
@@ -98,6 +98,7 @@ div.cs-skin-boxes:focus > span {
 }
 
 .cs-skin-boxes.cs-active .cs-options li {
+	position: relative;
 	opacity: 1;
 	-webkit-transform: scale3d(1,1,1);
 	transform: scale3d(1,1,1);
@@ -198,15 +199,22 @@ div.cs-skin-boxes:focus > span {
 	transition-delay: 0.19s;
 }
 
-.cs-skin-boxes .cs-options li.cs-selected::after {
-	content: '\2714';
-	color: rgba(0,0,0,0.1);
+
+.cs-skin-boxes .cs-options li.cs-selected::before {
+	content: '　\2714';
+	color: #fff;
 	position: absolute;
-	font-size: 2em;
-	top: 50%;
-	left: 50%;
+	font-size: 50px;
+	top: 60%;
+	left: 52%;
 	-webkit-transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
 	transform: translate3d(-50%,-50%,0) translate3d(0,-1em,0);
+	height:60px;
+	width:60px;
+	background-color: #37bc9b;
+	border-radius: 50%;
+	line-height: 56px;
+	letter-spacing: -42px;
 }
 
 .cs-skin-boxes .cs-options li.cs-selected span::after {
@@ -222,16 +230,23 @@ div.cs-skin-boxes:focus > span {
 
 .cs-skin-boxes .cs-options li.taipeiCity {
 	/*background-color: #588c75;*/
-	background-image: url(../../img/post_space_test_room_4.png);
-	background-size: contain;
+	background-image: url(../../img/city/taipei.jpg);
+	background-size: cover;
+	background-position: 60% 30%;
 }
 
-.cs-skin-boxes .cs-options li.color-b0c47f {
-	background-color: #b0c47f;
+.cs-skin-boxes .cs-options li.NewTaipeiCity{
+	/*background-color: #b0c47f;*/
+	background-image: url(../../img/city/newTaipei.jpg);
+	background-size: cover;
+	background-position: 60% 40%;
 }
 
-.cs-skin-boxes .cs-options li.color-f3e395 {
-	background-color: #f3e395;
+.cs-skin-boxes .cs-options li.TaoyuanCity {
+	/*background-color: #f3e395;*/
+	background-image: url(../../img/city/taoyuan.jpg);
+	background-size: cover;
+	background-position: 60% 40%;
 }
 
 .cs-skin-boxes .cs-options li.color-f3ae73 {
@@ -306,9 +321,10 @@ div.cs-skin-boxes:focus > span {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	line-height: 2em;
+	line-height: 16px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
+	font-size: 16px
 }
 
 /*@media screen and (max-width: 30em) {

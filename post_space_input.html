@@ -62,7 +62,7 @@
     <div class="stuff_nav"></div>
     <!-- main_nav_bar_end -->
     <!-- <input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="dean@road.us" required/> -->
-    <div class="container"  style="height:92.45%">
+    <div class="container input_container">
 
 			<div class="fs-form-wrap" id="fs-form-wrap">
 				<div class="fs-title">
@@ -92,22 +92,88 @@
 						</li>
             </li>
 						<li data-input-trigger>
-							<label class="fs-field-label fs-anim-upper" for="q3" data-info="This will help us know what kind of service you need">你的空間屬於哪類型的窩?</label>
+							<label class="fs-field-label fs-anim-upper" for="q3">你的空間屬於哪類型的窩?</label>
 							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
 								<span><input id="q3b" name="q3" type="radio" value="conversion"/><label for="q3b" class="radio-conversion">第一種窩</label></span>
 								<span><input id="q3c" name="q3" type="radio" value="social"/><label for="q3c" class="radio-social">第二種窩</label></span>
 								<span><input id="q3a" name="q3" type="radio" value="mobile"/><label for="q3a" class="radio-mobile">第三種窩</label></span>
+                <span><input id="q3d" name="q3" type="radio" value="conversion"/><label for="q3d" class="radio-conversion">第四種窩</label></span>
+								<span><input id="q3e" name="q3" type="radio" value="social"/><label for="q3e" class="radio-social">第五種窩</label></span>
+								<span><input id="q3f" name="q3" type="radio" value="mobile"/><label for="q3f" class="radio-mobile">第六種窩</label></span>
 
 							</div>
 						</li>
 						<li data-input-trigger>
-							<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些通訊設備?</label>
-              <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
-								<span><input id="q3d" name="q4" type="checkbox" value="conversion"/><label for="q3d" class="radio-conversion">第一種窩</label></span>
-								<span><input id="q3e" name="q4" type="checkbox" value="social"/><label for="q3e" class="radio-social">第二種窩</label></span>
-								<span><input id="q3f" name="q4" type="checkbox" value="mobile"/><label for="q3f" class="radio-mobile">第三種窩</label></span>
+							<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些通訊服務?</label>
+              <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
+								<span><input id="q4a" name="q4a" type="checkbox" value="conversion"/>
+                  <label for="q4a" required>
+                  <div class="inputimg info_1"></div>網路
+                  </label>
+                </span>
+								<span><input id="q4b" name="q4b" type="checkbox" value="social"/>
+                  <label for="q4b" required>
+                  <div class="inputimg info_2"></div>WiFi
+                  </label>
+                </span>
+								<span><input id="q4c" name="q4c" type="checkbox" value="mobile"/>
+                  <label for="q4c" required>
+                  <div class="inputimg info_3"></div>電話
+                  </label>
+                </span>
+                <span><input id="q4d" name="q4d" type="checkbox" value="conversion"/>
+                  <label for="q4d" required>
+                  <div class="inputimg info_4"></div>傳真
+                  </label>
+                </span>
+								<span><input id="q4e" name="q4e" type="checkbox" value="social"/>
+                  <label for="q4e" required>
+                  <div class="inputimg info_5"></div> 視訊設備
+                  </label>
+                </span>
+								<span><input id="q4f" name="q4f" type="checkbox" value="mobile"/>
+                  <label for="q4f" required>
+                  <div class="inputimg info_6"></div>郵包寄送
+                  </label>
+                </span>
 							</div>
 						</li>
+
+            <li data-input-trigger>
+              <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些通訊服務?</label>
+              <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
+                <span><input id="q4a" name="q4a" type="checkbox" value="conversion"/>
+                  <label for="q4a" required>
+                  <div class="inputimg info_1"></div>網路
+                  </label>
+                </span>
+                <span><input id="q4b" name="q4b" type="checkbox" value="social"/>
+                  <label for="q4b" required>
+                  <div class="inputimg info_2"></div>WiFi
+                  </label>
+                </span>
+                <span><input id="q4c" name="q4c" type="checkbox" value="mobile"/>
+                  <label for="q4c" required>
+                  <div class="inputimg info_3"></div>電話
+                  </label>
+                </span>
+                <span><input id="q4d" name="q4d" type="checkbox" value="conversion"/>
+                  <label for="q4d" required>
+                  <div class="inputimg info_4"></div>傳真
+                  </label>
+                </span>
+                <span><input id="q4e" name="q4e" type="checkbox" value="social"/>
+                  <label for="q4e" required>
+                  <div class="inputimg info_5"></div> 視訊設備
+                  </label>
+                </span>
+                <span><input id="q4f" name="q4f" type="checkbox" value="mobile"/>
+                  <label for="q4f" required>
+                  <div class="inputimg info_6"></div>郵包寄送
+                  </label>
+                </span>
+              </div>
+            </li>
             <li>
               <label class="fs-field-label fs-anim-upper" for="q5">你的空間能提供多少位置?</label>
 							<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1" step="1" min="1"/>

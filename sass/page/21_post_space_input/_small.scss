@@ -1,3 +1,97 @@
 @include respones(small) {
-  
+  // *{
+  //   outline: red 1px solid;
+  // }
+  .post_space_input .input_container{
+    height: 83.8%;
+  }
+
+  .js .fs-form-full .fs-fields > li {
+    top:0px;
+  }
+
+  .fs-title h2{
+    font-size: 32px;
+  }
+
+  .fs-progress{
+    top: 60px;
+  }
+
+  .fs-form-full .fs-fields > li label[data-info]::before{
+    bottom: 80%;
+  }
+
+  .fs-form-full .fs-fields > li label[data-info]::after{
+    top:3px;
+  }
+
+  .cs-skin-boxes .cs-options li.cs-selected::before{
+    top: 64%
+  }
+
+  .cs-skin-boxes .cs-options li.cs-selected::after{
+    top: 34%;
+    left: 52.1%;
+  }
+
+  button.fs-continue{
+    right: 39%;
+  }
+
+  .fs-numbers{
+    top: 69px;
+    right: 38%;
+  }
+
+  .fs-fields > li label.fs-field-label{
+    font-size: 24px;
+    letter-spacing:2px;
+    line-height: 1.2em;
+  }
+
+  .fs-fields input{
+    font-size: 24px;
+  }
+  .cs-skin-boxes .cs-options li{
+    width: 100%;
+  }
+
+  .btn_word{
+    display: none;
+  }
+
+  .fs-message-error{
+    top: 60px;
+    left: -12px;
+  }
+
+  .fs-fields > li .fs-radio-custom span{
+    padding: 2px;
+  }
+
+  .post_space_input .inputimg{
+    width: 40px;
+    height: 40px;
+    top: 16%;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+  }
+
+  .post_space_input input[type=checkbox]:checked ~ label:after{
+    content: '　\2714';
+    color: $white;
+    position: absolute;
+    font-size: 20px;
+    top: -14%;
+    right: -22%;
+    height: 26px;
+    width: 25px;
+    background-color: $green;
+    border-radius: 50%;
+    line-height: 25px;
+    letter-spacing: -27px;
+  }
 };

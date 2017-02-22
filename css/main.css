@@ -7884,10 +7884,157 @@ iframe {
     right: 3%;
     top: 90%; } }
 .post_space_input {
-  background: -webkit-linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%);
-  background: -o-linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%);
-  background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%); }
+  background: -webkit-linear-gradient(#40afdf 0%, #a1d0e3 100%);
+  background: -o-linear-gradient(#40afdf 0%, #a1d0e3 100%);
+  background: linear-gradient(#40afdf 0%, #a1d0e3 100%); }
+  .post_space_input label {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400; }
+  .post_space_input .fs-fields > li .fs-radio-custom span label {
+    color: #212121; }
+  .post_space_input .input_container {
+    height: 92.45%; }
+  .post_space_input .inputimg {
+    width: 128px;
+    height: 128px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 32px;
+    left: 24px; }
+    .post_space_input .inputimg.info_1 {
+      background-image: url(../img/equipment_gif/information/internet.png); }
+    .post_space_input .inputimg.info_2 {
+      background-image: url(../img/equipment_gif/information/wifi.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.info_3 {
+      background-image: url(../img/equipment_gif/information/phone.png); }
+    .post_space_input .inputimg.info_4 {
+      background-image: url(../img/equipment_gif/information/fax.png); }
+    .post_space_input .inputimg.info_5 {
+      background-image: url(../img/equipment_gif/information/video_conf_equipment.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.info_6 {
+      background-image: url(../img/equipment_gif/information/mailbox.png); }
+  .post_space_input .input_checkboxs span > label {
+    border: 3px solid #212121;
+    padding-bottom: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: .3s; }
+  .post_space_input input[type=checkbox]:checked ~ label {
+    border: 3px solid #37bc9b;
+    transition: .3s;
+    animation: selected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+  .post_space_input input[type=checkbox]:checked ~ label:after {
+    content: '　\2714';
+    color: #fff;
+    position: absolute;
+    font-size: 42px;
+    top: -17px;
+    right: -17px;
+    height: 60px;
+    width: 60px;
+    background-color: #37bc9b;
+    border-radius: 50%;
+    line-height: 56px;
+    letter-spacing: -58px;
+    animation: selected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
+    .post_space_input input[type=checkbox]:checked ~ label:after:hover {
+      opacity: 1; }
+@keyframes selected {
+  50% {
+    transform: scale(0.8);
+    opacity: 0.8; } }
+@keyframes unselected {
+  0% {
+    box-shadow: 0 0 0 4px #00c09e; }
+  50% {
+    transform: scale(0.8);
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px #fff; }
+  80%,100% {
+    box-shadow: 0 0 0 4px #fff; } }
+@media all and (max-width: 992px) and (min-width: 768px) {
+  .btn_word {
+    display: none; } }
+@media all and (max-width: 767px) {
+  .post_space_input .input_container {
+    height: 83.8%; }
 
+  .js .fs-form-full .fs-fields > li {
+    top: 0px; }
+
+  .fs-title h2 {
+    font-size: 32px; }
+
+  .fs-progress {
+    top: 60px; }
+
+  .fs-form-full .fs-fields > li label[data-info]::before {
+    bottom: 80%; }
+
+  .fs-form-full .fs-fields > li label[data-info]::after {
+    top: 3px; }
+
+  .cs-skin-boxes .cs-options li.cs-selected::before {
+    top: 64%; }
+
+  .cs-skin-boxes .cs-options li.cs-selected::after {
+    top: 34%;
+    left: 52.1%; }
+
+  button.fs-continue {
+    right: 39%; }
+
+  .fs-numbers {
+    top: 69px;
+    right: 38%; }
+
+  .fs-fields > li label.fs-field-label {
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 1.2em; }
+
+  .fs-fields input {
+    font-size: 24px; }
+
+  .cs-skin-boxes .cs-options li {
+    width: 100%; }
+
+  .btn_word {
+    display: none; }
+
+  .fs-message-error {
+    top: 60px;
+    left: -12px; }
+
+  .fs-fields > li .fs-radio-custom span {
+    padding: 2px; }
+
+  .post_space_input .inputimg {
+    width: 40px;
+    height: 40px;
+    top: 16%;
+    left: 0;
+    right: 0;
+    margin: auto; }
+
+  .post_space_input input[type=checkbox]:checked ~ label:after {
+    content: '　\2714';
+    color: #FFFFFF;
+    position: absolute;
+    font-size: 20px;
+    top: -14%;
+    right: -22%;
+    height: 26px;
+    width: 25px;
+    background-color: #37bc9b;
+    border-radius: 50%;
+    line-height: 25px;
+    letter-spacing: -27px; } }
 .blog_footer {
   margin-top: 200px;
   z-index: 0; }

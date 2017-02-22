@@ -1,5 +1,107 @@
 .post_space_input{
-  background: -webkit-linear-gradient(#40afdf 0%, #7ec8e6 50%,#a1d0e3  100%);
-  background: -o-linear-gradient(#40afdf 0%,#7ec8e6 50% ,#a1d0e3 100%);
-  background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+  background: -webkit-linear-gradient(#40afdf 0%,#a1d0e3  100%);
+  background: -o-linear-gradient(#40afdf 0%,#a1d0e3 100%);
+  background: linear-gradient(#40afdf 0%, #a1d0e3 100%);
+
+  label{
+    font-family: $main_font_family;
+    font-weight: 400;
+
+  }
+
+  .fs-fields > li .fs-radio-custom span label{
+    color:$black
+  }
+
+  .input_container{
+    height:92.45%;
+  }
+
+  .inputimg{
+    width: 128px;
+    height: 128px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 32px;
+    left: 24px;
+    &.info_1{
+      background-image: url(../img/equipment_gif/information/internet.png);
+    }
+    &.info_2{
+      background-image: url(../img/equipment_gif/information/wifi.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.info_3{
+      background-image: url(../img/equipment_gif/information/phone.png);
+    }
+
+    &.info_4{
+      background-image: url(../img/equipment_gif/information/fax.png);
+    }
+
+    &.info_5{
+      background-image: url(../img/equipment_gif/information/video_conf_equipment.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.info_6{
+      background-image: url(../img/equipment_gif/information/mailbox.png);
+    }
+  }
+
+  .input_checkboxs span > label {
+    border: 3px solid  $black;
+    padding-bottom:15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    transition: .3s;
+  }
+
+  input[type=checkbox]:checked ~ label{
+    border: 3px solid  $green;
+    transition: .3s;
+    animation: selected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+  }
+
+  input[type=checkbox]:checked ~ label:after{
+    content: '　\2714';
+    color: #fff;
+    position: absolute;
+    font-size: 42px;
+    top: -17px;
+    right: -17px;
+    height: 60px;
+    width: 60px;
+    background-color: #37bc9b;
+    border-radius: 50%;
+    line-height: 56px;
+    letter-spacing: -58px;
+    animation: selected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+
+    &:hover{
+      opacity:1;
+    }
+
+    @keyframes selected {
+      50% { transform: scale(0.8); opacity: 0.8;}
+    }
+
+    @keyframes unselected {
+      0% { box-shadow: 0 0 0 4px #00c09e; }
+      50% { transform: scale(0.8); opacity: 0.8; box-shadow: 0 0 0 4px #fff; }
+      80%,100% {box-shadow: 0 0 0 4px #fff; }
+    }
+
+  }
+
+
+
+
+
+
+
 }

@@ -117,14 +117,20 @@ button.fs-continue,
 .fs-message-error,
 .fs-message-final {
 	visibility: hidden;
+  transition:0s;
 }
 
 .no-js .fs-form-full .fs-fields > li {
+
 	visibility: visible;
+  opacity:1;
+  transition:0s;
 }
 
 .fs-show {
 	visibility: visible !important;
+  opacity:1 !important;
+  transition:0s;
 }
 
 /* Some general styles */
@@ -176,6 +182,7 @@ button.fs-continue,
 .js .fs-form-full .fs-fields > li {
 	position: absolute;
 	width: 100%;
+  top:-82px;
 }
 
 .fs-form-overview .fs-fields > li,
@@ -264,6 +271,7 @@ button.fs-continue,
 	font-weight: bold;
 	font-size: 1.5em;
 	border-radius: 0;
+  margin-bottom:15px;
 }
 
 .fs-fields input:invalid {
@@ -305,6 +313,20 @@ button.fs-continue,
 	cursor: pointer;
 }
 
+.fs-fields .fs-radio-custom input[type="checkbox"] {
+	position: absolute;
+	display: block;
+	margin: 30px auto 20px;
+	margin: 0 auto 20px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+
+
+
 .fs-fields > li .fs-radio-custom span {
 	float: left;
 	position: relative;
@@ -340,7 +362,7 @@ button.fs-continue,
 	cursor: pointer;
 }
 
-.fs-fields .fs-radio-custom label::after {
+/*.fs-fields .fs-radio-custom label::after {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -350,12 +372,11 @@ button.fs-continue,
 	background-size: 85%;
 	background-repeat: no-repeat;
 	content: '';
-	opacity: 0.5;
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 	-webkit-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
-}
+}*/
 
 .fs-fields .fs-radio-custom label.radio-mobile::after {
 	background-image: url(../img/mobile.svg);
@@ -375,11 +396,22 @@ button.fs-continue,
 	opacity: 1;
 }
 
+
+
 .fs-fields .fs-radio-custom input[type="radio"]:checked + label {
-	color: #0288D1;
+	color: #37bc9b;
 }
 
+.fs-fields .fs-radio-custom input[type="checkbox"]:checked + label {
+	color: #37bc9b;
+}
+
+
 .fs-form-overview .fs-fields .fs-radio-custom input[type="radio"]:checked + label {
+	color: rgba(0,0,0,0.8);
+}
+
+.fs-form-overview .fs-fields .fs-radio-custom input[type="checkbox"]:checked + label {
 	color: rgba(0,0,0,0.8);
 }
 
