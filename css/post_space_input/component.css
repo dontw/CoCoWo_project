@@ -117,20 +117,21 @@ button.fs-continue,
 .fs-message-error,
 .fs-message-final {
 	visibility: hidden;
-  transition:0s;
+  /*opacity:1;*/
+  
 }
 
 .no-js .fs-form-full .fs-fields > li {
 
 	visibility: visible;
-  opacity:1;
-  transition:0s;
+  /*opacity:1;*/
+
 }
 
 .fs-show {
 	visibility: visible !important;
-  opacity:1 !important;
-  transition:0s;
+  /*opacity:1 !important;*/
+
 }
 
 /* Some general styles */

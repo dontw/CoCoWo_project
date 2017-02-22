@@ -7926,7 +7926,6 @@ iframe {
     transition: .3s; }
   .post_space_input input[type=checkbox]:checked ~ label {
     border: 3px solid #37bc9b;
-    transition: .3s;
     animation: selected 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); }
   .post_space_input input[type=checkbox]:checked ~ label:after {
     content: '　\2714';
