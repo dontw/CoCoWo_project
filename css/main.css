@@ -7918,6 +7918,18 @@ iframe {
       background-size: contain; }
     .post_space_input .inputimg.info_6 {
       background-image: url(../img/equipment_gif/information/mailbox.png); }
+    .post_space_input .inputimg.equip_1 {
+      background-image: url(../img/equipment_gif/equipment/stationary.png); }
+    .post_space_input .inputimg.equip_2 {
+      background-image: url(../img/equipment_gif/equipment/whiteboard.png); }
+    .post_space_input .inputimg.equip_3 {
+      background-image: url(../img/equipment_gif/equipment/furniture.png); }
+    .post_space_input .inputimg.equip_4 {
+      background-image: url(../img/equipment_gif/equipment/moniter.png); }
+    .post_space_input .inputimg.equip_5 {
+      background-image: url(../img/equipment_gif/equipment/projector.png); }
+    .post_space_input .inputimg.equip_6 {
+      background-image: url(../img/equipment_gif/equipment/printer.png); }
   .post_space_input .input_checkboxs span > label {
     border: 3px solid #212121;
     padding-bottom: 15px;

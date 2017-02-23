@@ -120,7 +120,7 @@ button.fs-continue,
 <<<<<<< HEAD
 =======
   /*opacity:1;*/
-  
+
 >>>>>>> 04d829e2054db2107f10aa2ab4a08022a02f8278
 }
 
@@ -584,7 +584,7 @@ button.fs-continue,
 	overflow: hidden;
 	color: rgba(0,0,0,0.4);
 	margin: 40px;
-	width: 2em;
+	width: 2.5em;
 	font-weight: 700;
 	font-size: 2em;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

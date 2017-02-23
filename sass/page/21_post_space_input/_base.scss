@@ -51,6 +51,30 @@
     &.info_6{
       background-image: url(../img/equipment_gif/information/mailbox.png);
     }
+
+    &.equip_1{
+      background-image: url(../img/equipment_gif/equipment/stationary.png);
+    }
+
+    &.equip_2{
+      background-image: url(../img/equipment_gif/equipment/whiteboard.png);
+    }
+
+    &.equip_3{
+      background-image: url(../img/equipment_gif/equipment/furniture.png);
+    }
+
+    &.equip_4{
+      background-image: url(../img/equipment_gif/equipment/moniter.png);
+    }
+
+    &.equip_5{
+      background-image: url(../img/equipment_gif/equipment/projector.png);
+    }
+
+    &.equip_6{
+      background-image: url(../img/equipment_gif/equipment/printer.png);
+    }
   }
 
   .input_checkboxs span > label {
@@ -64,7 +88,7 @@
   input[type=checkbox]:checked ~ label{
     border: 3px solid  $green;
     // transition: .3s;
-    animation: selected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);  
+    animation: selected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
   }
 
   input[type=checkbox]:checked ~ label:after{
