@@ -25,6 +25,8 @@
     position: absolute;
     top: 32px;
     left: 24px;
+    background-position: 50% 50%;
+    background-size: contain;
     &.info_1{
       background-image: url(../img/equipment_gif/information/internet.png);
     }
@@ -58,22 +60,121 @@
 
     &.equip_2{
       background-image: url(../img/equipment_gif/equipment/whiteboard.png);
+      background-size: contain;
     }
 
     &.equip_3{
       background-image: url(../img/equipment_gif/equipment/furniture.png);
+      background-position: 50% 50%;
+      background-size: contain;
     }
 
     &.equip_4{
       background-image: url(../img/equipment_gif/equipment/moniter.png);
+      background-position: 50% 50%;
+      background-size: contain;
     }
 
     &.equip_5{
       background-image: url(../img/equipment_gif/equipment/projector.png);
+      background-position: 50% 50%;
+      background-size: contain;
     }
 
     &.equip_6{
       background-image: url(../img/equipment_gif/equipment/printer.png);
+      background-size: contain;
+    }
+
+    &.food_1{
+      background-image: url(../img/equipment_gif/food/filter_water.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.food_2{
+      background-image: url(../img/equipment_gif/food/Tea.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.food_3{
+      background-image: url(../img/equipment_gif/food/lemonade.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.food_4{
+      background-image: url(../img/equipment_gif/food/catering.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.food_5{
+      background-image: url(../img/equipment_gif/food/restaurant.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.food_6{
+      background-image: url(../img/equipment_gif/food/kitchen.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.room_1{
+      background-image: url(../img/equipment_gif/room/meeting_room.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.room_2{
+      background-image: url(../img/equipment_gif/room/library.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.room_3{
+      background-image: url(../img/equipment_gif/room/theater.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.room_4{
+      background-image: url(../img/equipment_gif/room/music.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.room_5{
+      background-image: url(../img/equipment_gif/room/tools_room.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.room_6{
+      background-image: url(../img/equipment_gif/room/lab.png);
+      background-position: 50% 50%;
+      background-size: contain;
+    }
+
+    &.transport_1{
+      background-image: url(../img/equipment_gif/transport/bus.png);
+    }
+    &.transport_2{
+      background-image: url(../img/equipment_gif/transport/metro.png);
+    }
+    &.transport_3{
+      background-image: url(../img/equipment_gif/transport/train.png);
+    }
+    &.transport_4{
+      background-image: url(../img/equipment_gif/transport/bike_rack.png);
+    }
+    &.transport_5{
+      background-image: url(../img/equipment_gif/transport/scooter.png);
+    }
+    &.transport_6{
+      background-image: url(../img/equipment_gif/transport/car_parking.png);
     }
   }
 

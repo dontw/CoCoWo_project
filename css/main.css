@@ -7901,7 +7901,9 @@ iframe {
     background-size: cover;
     position: absolute;
     top: 32px;
-    left: 24px; }
+    left: 24px;
+    background-position: 50% 50%;
+    background-size: contain; }
     .post_space_input .inputimg.info_1 {
       background-image: url(../img/equipment_gif/information/internet.png); }
     .post_space_input .inputimg.info_2 {
@@ -7921,15 +7923,83 @@ iframe {
     .post_space_input .inputimg.equip_1 {
       background-image: url(../img/equipment_gif/equipment/stationary.png); }
     .post_space_input .inputimg.equip_2 {
-      background-image: url(../img/equipment_gif/equipment/whiteboard.png); }
+      background-image: url(../img/equipment_gif/equipment/whiteboard.png);
+      background-size: contain; }
     .post_space_input .inputimg.equip_3 {
-      background-image: url(../img/equipment_gif/equipment/furniture.png); }
+      background-image: url(../img/equipment_gif/equipment/furniture.png);
+      background-position: 50% 50%;
+      background-size: contain; }
     .post_space_input .inputimg.equip_4 {
-      background-image: url(../img/equipment_gif/equipment/moniter.png); }
+      background-image: url(../img/equipment_gif/equipment/moniter.png);
+      background-position: 50% 50%;
+      background-size: contain; }
     .post_space_input .inputimg.equip_5 {
-      background-image: url(../img/equipment_gif/equipment/projector.png); }
+      background-image: url(../img/equipment_gif/equipment/projector.png);
+      background-position: 50% 50%;
+      background-size: contain; }
     .post_space_input .inputimg.equip_6 {
-      background-image: url(../img/equipment_gif/equipment/printer.png); }
+      background-image: url(../img/equipment_gif/equipment/printer.png);
+      background-size: contain; }
+    .post_space_input .inputimg.food_1 {
+      background-image: url(../img/equipment_gif/food/filter_water.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.food_2 {
+      background-image: url(../img/equipment_gif/food/Tea.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.food_3 {
+      background-image: url(../img/equipment_gif/food/lemonade.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.food_4 {
+      background-image: url(../img/equipment_gif/food/catering.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.food_5 {
+      background-image: url(../img/equipment_gif/food/restaurant.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.food_6 {
+      background-image: url(../img/equipment_gif/food/kitchen.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.room_1 {
+      background-image: url(../img/equipment_gif/room/meeting_room.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.room_2 {
+      background-image: url(../img/equipment_gif/room/library.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.room_3 {
+      background-image: url(../img/equipment_gif/room/theater.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.room_4 {
+      background-image: url(../img/equipment_gif/room/music.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.room_5 {
+      background-image: url(../img/equipment_gif/room/tools_room.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.room_6 {
+      background-image: url(../img/equipment_gif/room/lab.png);
+      background-position: 50% 50%;
+      background-size: contain; }
+    .post_space_input .inputimg.transport_1 {
+      background-image: url(../img/equipment_gif/transport/bus.png); }
+    .post_space_input .inputimg.transport_2 {
+      background-image: url(../img/equipment_gif/transport/metro.png); }
+    .post_space_input .inputimg.transport_3 {
+      background-image: url(../img/equipment_gif/transport/train.png); }
+    .post_space_input .inputimg.transport_4 {
+      background-image: url(../img/equipment_gif/transport/bike_rack.png); }
+    .post_space_input .inputimg.transport_5 {
+      background-image: url(../img/equipment_gif/transport/scooter.png); }
+    .post_space_input .inputimg.transport_6 {
+      background-image: url(../img/equipment_gif/transport/car_parking.png); }
   .post_space_input .input_checkboxs span > label {
     border: 3px solid #212121;
     padding-bottom: 15px;
