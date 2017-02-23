@@ -249,24 +249,39 @@ div.cs-skin-boxes:focus > span {
 	background-position: 60% 40%;
 }
 
-.cs-skin-boxes .cs-options li.color-f3ae73 {
-	background-color: #f3ae73;
+.cs-skin-boxes .cs-options li.casual_wo {
+	/*background-color: #f3ae73;*/
+	background-image: url(../../img/wo_type/casual_wo.jpg);
+	background-size: cover;
+	background-position: 60% 70%;
 }
 
-.cs-skin-boxes .cs-options li.color-da645a {
-	background-color: #da645a;
+.cs-skin-boxes .cs-options li.concern_wo {
+	/*background-color: #da645a;*/
+	background-image: url(../../img/wo_type/concern_wo.jpg);
+	background-size: cover;
+	background-position: 60% 70%;
 }
 
-.cs-skin-boxes .cs-options li.color-79a38f {
-	background-color: #79a38f;
+.cs-skin-boxes .cs-options li.maker_wo {
+	/*background-color: #79a38f;*/
+	background-image: url(../../img/wo_type/maker_wo.jpg);
+	background-size: cover;
+	background-position: 60% 70%;
 }
 
-.cs-skin-boxes .cs-options li.color-c1d099 {
-	background-color: #c1d099;
+.cs-skin-boxes .cs-options li.nature_wo {
+	/*background-color: #c1d099;*/
+	background-image: url(../../img/wo_type/nature_wo.jpg);
+	background-size: cover;
+	background-position: 60% 70%;
 }
 
-.cs-skin-boxes .cs-options li.color-f5eaaa {
-	background-color: #f5eaaa;
+.cs-skin-boxes .cs-options li.discuss_wo {
+	/*background-color: #f5eaaa;*/
+	background-image: url(../../img/wo_type/discuss_wo.jpg);
+	background-size: cover;
+	background-position: 60% 70%;
 }
 
 .cs-skin-boxes .cs-options li.color-f5be8f {

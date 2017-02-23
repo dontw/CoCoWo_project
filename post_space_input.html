@@ -93,15 +93,15 @@
             </li>
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" for="q3">你的空間屬於哪類型的窩?</label>
-							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
-								<span><input id="q3b" name="q3" type="radio" value="conversion"/><label for="q3b" class="radio-conversion">第一種窩</label></span>
-								<span><input id="q3c" name="q3" type="radio" value="social"/><label for="q3c" class="radio-social">第二種窩</label></span>
-								<span><input id="q3a" name="q3" type="radio" value="mobile"/><label for="q3a" class="radio-mobile">第三種窩</label></span>
-                <span><input id="q3d" name="q3" type="radio" value="conversion"/><label for="q3d" class="radio-conversion">第四種窩</label></span>
-								<span><input id="q3e" name="q3" type="radio" value="social"/><label for="q3e" class="radio-social">第五種窩</label></span>
-								<span><input id="q3f" name="q3" type="radio" value="mobile"/><label for="q3f" class="radio-mobile">第六種窩</label></span>
-
-							</div>
+              <select class="cs-select cs-skin-boxes fs-anim-lower">
+                <option value="" disabled selected>哪種窩呢?</option>
+                <option value="" data-class="casual_wo">隨意窩</option>
+                <option value="" data-class="concern_wo">專注窩</option>
+                <option value="" data-class="discuss_wo">討論窩</option>
+                <option value="" data-class="maker_wo">maker窩</option>
+                <option value="" data-class="nature_wo">自然窩</option>
+              </select>
+              <!-- <h4 class="wo_type_info fs-anim-lower">不知道自己是哪種窩?來看看<a href="#">窩種簡介!</a></h4> -->
 						</li>
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些通訊服務?</label>

@@ -12,6 +12,12 @@ $(document).ready(function(){
     centerPadding: '10%',
     slidesToShow: 1,
     infinite: true,
+    responsive: [{
+      breakpoint: 768,
+      settings: {
+        centerPadding:'0'
+      }
+    }]
   });
 
   //slider left ctrl

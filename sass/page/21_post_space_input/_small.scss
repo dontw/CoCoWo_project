@@ -94,4 +94,28 @@
     line-height: 25px;
     letter-spacing: -27px;
   }
+
+  .wo_type_info{
+    font-size: 14px;
+  }
+
+  .casual_wo:hover{
+    &:after{  display: none;}
+  }
+
+  .discuss_wo:hover{
+    &:after{  display: none;}
+  }
+
+  .concern_wo:hover{
+    &:after{  display: none;}
+  }
+
+  .maker_wo:hover{
+    &:after{  display: none;}
+  }
+
+  .nature_wo:hover{
+    &:after{  display: none;}
+  }
 };

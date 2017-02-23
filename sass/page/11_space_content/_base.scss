@@ -421,23 +421,23 @@
     background-repeat: no-repeat;
     background-position: center;
     &.img1{
-      background-image: url(../img/equipment_gif/wifi.png)
+      background-image: url(../img/equipment_gif/hosting.png)
     }
 
     &.img2{
-      background-image: url(../img/equipment_gif/phone.png)
+      background-image: url(../img/equipment_gif/hosting.png)
     }
 
     &.img3{
-      background-image: url(../img/equipment_gif/meeting_room.png)
+      background-image: url(../img/equipment_gif/hosting.png)
     }
 
     &.img4{
-      background-image: url(../img/equipment_gif/wifi.png)
+      background-image: url(../img/equipment_gif/hosting.png)
     }
 
     &.img5{
-      background-image: url(../img/equipment_gif/wifi.png)
+      background-image: url(../img/equipment_gif/hosting.png)
     }
   }
 
@@ -746,6 +746,7 @@
 .qa_input{
   font-family: $sub_font_family;
   padding:15px;
+  width: 100%;
 }
 
 .qa_input_btn{

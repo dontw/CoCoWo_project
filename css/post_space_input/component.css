@@ -126,23 +126,12 @@ button.fs-continue,
 
 .no-js .fs-form-full .fs-fields > li {
 	visibility: visible;
-<<<<<<< HEAD
-=======
-  /*opacity:1;*/
-
->>>>>>> 04d829e2054db2107f10aa2ab4a08022a02f8278
 }
 
 .fs-show {
 	visibility: visible !important;
-<<<<<<< HEAD
-=======
-  /*opacity:1 !important;*/
-
->>>>>>> 04d829e2054db2107f10aa2ab4a08022a02f8278
 }
 
-/* Some general styles */
 .fs-form-wrap button {
 	border: none;
 	background: none;
@@ -416,9 +405,9 @@ button.fs-continue,
 }
 
 
-.fs-form-overview .fs-fields .fs-radio-custom input[type="radio"]:checked + label {
+/*.fs-form-overview .fs-fields .fs-radio-custom input[type="radio"]:checked + label {
 	color: rgba(0,0,0,0.8);
-}
+}*/
 
 .fs-form-overview .fs-fields .fs-radio-custom input[type="checkbox"]:checked + label {
 	color: rgba(0,0,0,0.8);

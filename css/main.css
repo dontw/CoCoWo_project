@@ -6586,15 +6586,15 @@ iframe {
     background-repeat: no-repeat;
     background-position: center; }
     .space_content .item_img.img1 {
-      background-image: url(../img/equipment_gif/wifi.png); }
+      background-image: url(../img/equipment_gif/hosting.png); }
     .space_content .item_img.img2 {
-      background-image: url(../img/equipment_gif/phone.png); }
+      background-image: url(../img/equipment_gif/hosting.png); }
     .space_content .item_img.img3 {
-      background-image: url(../img/equipment_gif/meeting_room.png); }
+      background-image: url(../img/equipment_gif/hosting.png); }
     .space_content .item_img.img4 {
-      background-image: url(../img/equipment_gif/wifi.png); }
+      background-image: url(../img/equipment_gif/hosting.png); }
     .space_content .item_img.img5 {
-      background-image: url(../img/equipment_gif/wifi.png); }
+      background-image: url(../img/equipment_gif/hosting.png); }
   .space_content .item_name, .space_content .space_user_item .user_name, .space_content .space_user_item .user_occu {
     font-family: "cwtexhei", sans-serif;
     font-size: 16px;
@@ -6808,12 +6808,39 @@ iframe {
     padding: 30px; }
   .space_content .qa_input {
     font-family: "cwtexhei", sans-serif;
-    padding: 15px; }
+    padding: 15px;
+    width: 100%; }
   .space_content .qa_input_btn {
     position: absolute;
     top: 23%;
     right: 0; }
 
+@media all and (max-width: 767px) {
+  .space_content .space_name {
+    font-size: 24px; }
+  .space_content .slider_ctrl {
+    z-index: 2; }
+  .space_content .slider_content {
+    height: 300px; }
+  .space_content .space_user_item {
+    width: 100%; }
+  .space_content .space_user_item .user_status {
+    text-align: left; }
+  .space_content .user_name, .space_content .user_occu {
+    display: inline-block; }
+  .space_content .space_content .space_user_item .user_occu {
+    margin-left: 10px; }
+  .space_content .space_user_item .user_img {
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    display: inline-block;
+    float: left;
+    text-align: left; }
+  .space_content .space_order_wrap {
+    display: none; }
+  .space_content .space_map_content {
+    display: none; } }
 .post_space {
   position: relative;
   /***************************************
@@ -7895,15 +7922,18 @@ iframe {
   .post_space_input .input_container {
     height: 92.45%; }
   .post_space_input .inputimg {
-    width: 128px;
-    height: 128px;
+    width: 60%;
+    height: 60%;
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
     top: 32px;
-    left: 24px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
     background-position: 50% 50%;
-    background-size: contain; }
+    background-size: contain;
+    filter: contrast(300%); }
     .post_space_input .inputimg.info_1 {
       background-image: url(../img/equipment_gif/information/internet.png); }
     .post_space_input .inputimg.info_2 {
@@ -8038,6 +8068,80 @@ iframe {
     box-shadow: 0 0 0 4px #fff; }
   80%,100% {
     box-shadow: 0 0 0 4px #fff; } }
+  .post_space_input .wo_type_info {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    line-height: 1.2em;
+    font-size: 18px;
+    color: #212121; }
+  .post_space_input .casual_wo:hover:after {
+    content: "場地不受裝潢、設備拘束，自由自在的空間";
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-family: "cwtexhei", sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 12em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.67);
+    position: absolute; }
+  .post_space_input .discuss_wo:hover:after {
+    content: "可讓多個小團隊進行協作、會議之空間";
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-family: "cwtexhei", sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 12em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.67);
+    position: absolute; }
+  .post_space_input .concern_wo:hover:after {
+    content: "可以不受干擾、專心做事的空間";
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-family: "cwtexhei", sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 12em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.67);
+    position: absolute; }
+  .post_space_input .maker_wo:hover:after {
+    content: "提供設備，讓大家自己動手做的空間";
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-family: "cwtexhei", sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 12em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.67);
+    position: absolute; }
+  .post_space_input .nature_wo:hover:after {
+    content: "可以很容易接觸到自然的空間";
+    text-align: center;
+    vertical-align: middle;
+    color: #FFFFFF;
+    font-family: "cwtexhei", sans-serif;
+    font-size: 18px;
+    font-weight: 100;
+    line-height: 12em;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 33, 33, 0.67);
+    position: absolute; }
+
 @media all and (max-width: 992px) and (min-width: 768px) {
   .btn_word {
     display: none; } }
@@ -8115,7 +8219,25 @@ iframe {
     background-color: #37bc9b;
     border-radius: 50%;
     line-height: 25px;
-    letter-spacing: -27px; } }
+    letter-spacing: -27px; }
+
+  .wo_type_info {
+    font-size: 14px; }
+
+  .casual_wo:hover:after {
+    display: none; }
+
+  .discuss_wo:hover:after {
+    display: none; }
+
+  .concern_wo:hover:after {
+    display: none; }
+
+  .maker_wo:hover:after {
+    display: none; }
+
+  .nature_wo:hover:after {
+    display: none; } }
 .blog_footer {
   margin-top: 200px;
   z-index: 0; }

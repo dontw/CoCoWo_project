@@ -1,3 +1,52 @@
 @include respones(small) {
-  
+  .space_content{
+    .space_name{
+      font-size: 24px;
+    }
+
+    .slider_ctrl{
+      z-index: 2;
+    }
+
+    .slider_content{
+      height:300px;
+    }
+
+    .space_user_item{
+      width: 100%;
+    }
+
+    .space_user_item .user_status{
+      // width: 80%;
+      text-align: left;
+    }
+
+    .user_name,.user_occu{
+      display: inline-block;
+    }
+
+    .space_content .space_user_item .user_occu{
+      margin-left:10px
+    }
+
+    .space_user_item .user_img{
+      width: 50px;
+      height: 50px;
+      margin:0;
+      display: inline-block;
+      float:left;
+      text-align: left;
+    }
+
+    .space_order_wrap{
+      display: none;
+    }
+
+    .space_map_content{
+      display: none;
+    }
+
+
+  }
+
 };
