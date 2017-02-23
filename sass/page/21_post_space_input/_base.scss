@@ -63,8 +63,8 @@
 
   input[type=checkbox]:checked ~ label{
     border: 3px solid  $green;
-    transition: .3s;
-    animation: selected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+    // transition: .3s;
+    animation: selected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);  
   }
 
   input[type=checkbox]:checked ~ label:after{
