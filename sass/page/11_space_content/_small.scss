@@ -13,37 +13,175 @@
     }
 
     .space_user_item{
-      width: 100%;
-    }
-
-    .space_user_item .user_status{
-      // width: 80%;
-      text-align: left;
-    }
-
-    .user_name,.user_occu{
-      display: inline-block;
-    }
-
-    .space_content .space_user_item .user_occu{
-      margin-left:10px
-    }
-
-    .space_user_item .user_img{
-      width: 50px;
-      height: 50px;
-      margin:0;
-      display: inline-block;
-      float:left;
-      text-align: left;
+      width: 80px;
+      .user_img{
+        width:70px;
+        height:70px;
+      }
     }
 
     .space_order_wrap{
-      display: none;
+      float:none;
+      position: fixed;
+      bottom:0;
+      left:0;
+      width: 100%;
+      z-index: 3;
+      .space_order{
+        height:auto;
+        width: 100%;
+        padding:10px 20px 10px 20px;
+        h5{
+          font-size: 16px;
+        }
+        p{
+          font-size: 14px;
+        }
+      }
+      .order_btn_1,.order_btn_3,.space_owner,.space_announce{
+        display:none;
+      }
+    }
+
+    .space_intro_img{
+      margin-bottom:30px;
     }
 
     .space_map_content{
       display: none;
+    }
+
+    .space_operate_info p ~ p{
+      margin-left: 0;
+    }
+
+    .space_tab_ctrl{
+      padding: 0;
+      text-align: center;
+
+    }
+
+    .space_tab_ctrl li{
+      width:49%;
+      // font-size: 14px;
+      padding: 10px 20px 10px 20px
+    }
+
+    .space_tab_ctrl li ~ li{
+      margin-left: 0;
+    }
+
+    .space_evaluation .eval_user{
+      margin-bottom: 0;
+      padding-bottom: 7.5px;
+      min-height: 150px;
+      border-bottom: none;
+
+      .evaluation_user_img{
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    .order_tab{
+      display: inline;
+    }
+
+    .space_evaluation .eval_content{
+      padding: 7.5px 30px 30px 30px;
+      border-top:none;
+
+    }
+
+
+    .space_evaluation .eval_like .eval_like_btn{
+      margin-top:5px;
+      width: 100%;
+      text-align: center;
+      &:hover{
+        color:$red;
+        background-color: $white;
+      }
+    }
+
+    .eval_content:after{
+      content:"";
+      height: 0;
+      display: block;
+      clear:both;
+    }
+
+    .eval_content_letter{
+      line-height: 	1.11111111em;
+      margin-bottom: 0;
+    }
+    .space_evaluation .eval_time{
+      margin-left:0;
+      margin-top:15px;
+    }
+
+    .space_evaluation .eval_like{
+      position: static;
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+    .space_evaluation  .eval_report{
+      position: static;
+      float: left;
+      font-size: 14px;
+    }
+
+    .asker_bubble:before{
+      left: 44%;
+      top: -20px;
+      transform: rotate(90deg);
+    }
+
+    .asker_bubble:after{
+      left: 44%;
+      top: -15px;
+      transform: rotate(90deg);
+    }
+
+    .qa_asker_content{
+      margin-top:30px;
+    }
+
+    .qa_answer_content{
+      margin-bottom:30px;
+    }
+
+    .answer_bubble:before{
+      right: 46%;
+      top: auto;
+      bottom: -20px;
+      transform: rotate(90deg);
+    }
+
+    .answer_bubble:after{
+      right: 46%;
+      top: auto;
+      bottom: -15px;
+      transform: rotate(90deg);
+    }
+
+    .user_ask{
+      display:none;
+    }
+
+    .qa_input_wrap{
+      padding:0;
+
+      .qa_input{
+        width: 100%;
+      }
+      .qa_input_btn{
+        width: 100%;
+        position: static;
+        margin:0;
+        margin-top:5px;
+      }
     }
 
 

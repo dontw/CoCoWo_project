@@ -75,6 +75,18 @@ $(document).ready(function(){
 
   });
 
+  $('.space_qa_order span a').on('click',function(e){
+    e.preventDefault();
+    $(this).siblings('.active').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  $('.space_evaluation_order span a').on('click',function(e){
+    e.preventDefault();
+    $(this).siblings('.active').removeClass('active');
+    $(this).addClass('active');
+  });
+
 
 
 

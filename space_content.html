@@ -294,14 +294,13 @@
       <!-- space_intro -->
       <div class="container space_intro">
         <div class="row">
-        <div class="col-md-6 space_intro_content">
-          <h4>關於 八嘎巴拉拉共同工作空間</h4>
-          <p>八嘎巴拉拉共同工作空間是一個以社群為核心，結合自造者空間與共同工作空間，推廣動手做精神的國際創新交流平臺。位於臺北市中心精華地段的MakerBar，具有得天獨厚的地理位置，周圍應有盡有的電子零件材料銷售大廠電子光華商城、舉辦精采展覽與吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學，甚至離臺北車站附，吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學，甚至離臺北車站附，吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學。</p>
-        </div>
         <div class="col-md-6 space_intro_img">
           <img src="img/index_sun.png" alt="pic">
         </div>
-
+        <div class="col-md-6 space_intro_content">
+          <h4>關於 八嘎巴拉拉共同工作空間</h4>
+          <p>吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學，甚至離臺北車站附，吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學。</p>
+        </div>
         </div>
         <p class="space_blog_title">本空間相關窩誌</p>
         <hr>
@@ -368,14 +367,39 @@
           <div class="space_evaluation">
             <p class="space_evaluation_order">
               本空間共有 3 條評價
-              <span>排序依照：
-                <a href="#">時間</a>
+              <span>排序依照：<br class="order_tab">
+                <a href="#" class="active">時間</a>
                 <span>|</span>
                 <a href="#">評分</a>
                 <span>|</span>
                 <a href="#">幫助</a>
               </span>
             </p>
+            <div class="space_evaluation_item">
+              <div class="col-md-3 eval_user">
+                <img class="evaluation_user_img" src="img/write.jpeg" alt="">
+                <p class="user_name">使用者3</p>
+                <p class="user_occu">化學家</p>
+                <p class="user_total+review">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  共有 3 條評價
+                </p>
+              </div>
+              <div class="col-md-9 eval_content">
+                <h5 class="eval_content_letter">"這個空間真棒!，希望下次還有機會來!"<span class="eval_time">2017－2－20</span></h5>
+                <span class="space_eval_star"><span class="eval_star_score">4/5</span></span>
+                <hr class="space_eval_line">
+                <p>關於這個我們我認為阿，那個痾，這個空間還算是步錯，但是我好像不太會打中文，每次都被罵，不知道ㄏㄏ</p>
+                <div class="eval_like">
+                  <span>共 6 人覺得這篇評論有幫助！</span>
+                  <span class="eval_like_btn"><i class="fa fa-thumbs-up fa-fw" aria-hidden="true"></i>這對我有幫助！</span>
+                </div>
+                <span class="eval_report">
+                  <a href="#"><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>回報此評價</a>
+                </span>
+              </div>
+            </div>
+
             <div class="space_evaluation_item">
               <div class="col-md-3 eval_user">
                 <img class="evaluation_user_img" src="img/write.jpeg" alt="">
@@ -408,24 +432,26 @@
 
               <p class="space_qa_order">
                 本空間共有 3 條問答
-                <span>排序依照：
-                  <a href="#">時間</a>
+                <span>排序依照：<br class="order_tab">
+                  <a href="#" class="active">時間</a>
                   <span>|</span>
                   <a href="#">幫助</a>
                 </span>
               </p>
               <div class="space_qa_item col-md-12">
                 <p class="qa_item_no">問與答#1</p>
-                <div class="col-md-2 qa_asker">
-                  <img class="eval_user_img" src="img/write.jpeg" alt="">
-                  <p class="user_name">使用者3</p>
-                  <p class="user_occu">化學家</p>
-                </div>
-                <div class="col-md-10 qa_asker_content">
-                  <div class="col-xs-12 asker_bubble">
-                    <p class="asker_tag">提問：</p>
-                    <p class="asker_word">這邊可以做化學實驗嗎，謝謝!</p>
-                    <p class="asker_time">於 2017－2－20</p>
+                <div class="asker_wrap">
+                  <div class="col-md-2 qa_asker">
+                    <img class="eval_user_img" src="img/write.jpeg" alt="">
+                    <p class="user_name">使用者3</p>
+                    <p class="user_occu">化學家</p>
+                  </div>
+                  <div class="col-md-10 qa_asker_content">
+                    <div class="col-xs-12 asker_bubble">
+                      <p class="asker_tag">提問：</p>
+                      <p class="asker_word">這邊可以做化學實驗嗎，謝謝!</p>
+                      <p class="asker_time">於 2017－2－20</p>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-10 qa_answer_content">
@@ -471,7 +497,7 @@
               </div>
 
               <div class="col-md-12 qa_input_wrap">
-                <div class="col-md-2 qa_asker">
+                <div class="col-md-2 qa_asker user_ask">
                   <img class="eval_user_img" src="img/dummy_user.png" alt="">
                   <p class="user_name">訪客</p>
                   <p class="user_occu">我是訪客喔</p>
