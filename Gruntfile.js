@@ -1,20 +1,20 @@
 module.exports = function(grunt) {
-
-    // Project configuration.
     grunt.initConfig({
-
-        //watch  監看檔案
+        //watch
         watch: {
-            css: {
-                files: ['sass/*.scss', 'sass/**/*.scss','sass/**/*.css'],
-                tasks: ['sass']
-            },
             html: {
                 files: ['*.html']
             },
+            css: {
+                files: ['sass/*.scss', 'sass/**/*.scss', 'sass/**/*.css'],
+                tasks: ['sass']
+            },
+            php: {
+                files: ['*.php'],
+                tasks: ['php']
+            },
             js: {
-                files: ['js/*.js'],
-                tasks: ['js']
+                files: ['js/*.js']
             }
         },
         //sass
@@ -32,16 +32,42 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        //同步於瀏覽器
+        //php
+        php: {
+            dist: {
+                options: {
+                    hostname: '127.0.0.1',
+                    port: 3000,
+                    base: '.' // Project root
+                }
+            }
+        },
         browserSync: {
+            dist: {
+                bsFiles: {
+                    src: [
+                        'css/*.css',
+                        '*.html',
+                        'js/*.js',
+                        '*.php'
+                        // Files you want to watch for changes
+                    ]
+                },
+                options: {
+                    proxy: '<%= php.dist.options.hostname %>:<%= php.dist.options.port %>',
+                    port: 3333,
+                    watchTask: true,
+                    open: true,
+                    injectChanges: true
+                }
+            },
             dev: {
                 bsFiles: {
                     src: [
-                        //來源檔案
                         'css/*.css',
                         '*.html',
-                        'css/**/*.css',
-                        'js/*.js'
+                        'js/*.js',
+                        // Files you want to watch for changes
                     ]
                 },
                 options: {
@@ -52,22 +78,30 @@ module.exports = function(grunt) {
                     }
                 }
             }
-        },
+        }
 
     });
 
-    //會用到三個套件
+    // load npm tasks
+
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-browser-sync');
+    grunt.loadNpmTasks('grunt-php');
 
 
 
-    // define default task
-
-    grunt.registerTask('default', ['browserSync','watch']);
-    // grunt.registerTask('mini', ['cssmin']);
-    // grunt.registerTask('copy', ['copy']);
+    // define php server task
+    grunt.registerTask('server', [
+        'php:dist', // Start PHP Server
+        'browserSync:dist', // Using the PHP instance as a proxy
+        'watch' // Any other watch tasks you want to run
+    ]);
+// define default task
+    grunt.registerTask('default', [
+        'browserSync:dev', // Using the html
+        'watch' // Any other watch tasks you want to run
+    ]);
 
 
 };

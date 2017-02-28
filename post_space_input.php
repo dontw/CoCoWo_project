@@ -1,3 +1,113 @@
+<?php
+ob_start();
+session_start();
+//檢查是否登入，尚未登入則導入登入頁面
+if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
+  echo $_SESSION["mem_name"].'<br>';
+  echo $_SESSION["mem_no"].'<br>';
+  echo $_SESSION["this_spa_no"].'<br>';
+  echo $_SESSION["internet"][0];
+
+  if(isset($_REQUEST["action"]) && ($_REQUEST['action'] == "add")){
+    echo "sql start!";
+    try{
+    require_once("connectBooks.php");
+
+    // sql except checknox and files
+    // $sql = "INSERT INTO cospace (mem_no,
+    //                              wot_no,
+    //                              spa_name,
+    //                              spa_info,
+    //                              spa_city,
+    //                              spa_addr,
+    //                              spa_phone,
+    //                              spa_price,
+    //                              spa_plimit,
+    //                              spa_time,
+    //                              spa_status)
+    //
+    //                       VALUES (:mem_no,
+    //                               :wot_no,
+    //                               :spa_name,
+    //                               :spa_info,
+    //                               :spa_city,
+    //                               :spa_addr,
+    //                               :spa_phone,
+    //                               :spa_price,
+    //                               :spa_plimit,
+    //                               :spa_time,
+    //                               :spa_status)";
+    //
+    //
+    //
+    // $space = $pdo->prepare($sql);
+    // $space -> bindValue(":mem_no",$_SESSION["mem_no"]);
+    // $space -> bindValue(":spa_name",$_REQUEST["spa_name"]);
+    // $space -> bindValue(":spa_city",$_REQUEST["spa_city"]);
+    // $space -> bindValue(":spa_addr",$_REQUEST["spa_addr"]);
+    // $space -> bindValue(":spa_phone",$_REQUEST["spa_phone"]);
+    // $space -> bindValue(":wot_no",$_REQUEST["wot_no"]);
+    // $space -> bindValue(":spa_plimit",$_REQUEST["spa_plimit"]);
+    // $space -> bindValue(":spa_price",$_REQUEST["spa_price"]);
+    // $space -> bindValue(":spa_info",$_REQUEST["spa_info"]);
+    // $space -> bindValue(":spa_time",$_REQUEST["spa_time"]);
+    // $space -> bindValue(":spa_status",0);
+    //
+    //
+    // $space -> execute();
+
+
+
+    //catch current spa_no
+    $sql_no = "SELECT MAX(spa_no) AS this_spa_no FROM cospace;";
+    $space_no = $pdo->prepare($sql_no);
+    $space_no -> execute();
+    $Row_ch1 = $space_no->fetch(PDO::FETCH_ASSOC);
+    $_SESSION["this_spa_no"] = $Row_ch1["this_spa_no"];
+
+    echo '<script language="javascript">';
+    echo 'alert(ok)';
+    echo '</script>';
+
+
+    // sql for checkboxes
+    $internet = $_REQUEST['internet'];
+    $_SESSION["internet"] = $internet;
+    for ($i=0; $i < sizeof($internet) ; $i++) {
+
+      $sql_ck1 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$internet[$i].");";
+      $ck1 = $pdo->prepare($sql_ck1);
+      $ck1 -> bindValue(":spa_no",$_SESSION["this_spa_no"]);
+      $ck1 -> execute();
+      echo '<script language="javascript">';
+      echo 'alert('.$i.')';
+      echo '</script>';
+    }
+
+
+
+
+
+
+
+    header("Location: post_ok.php");
+
+    }catch(PDOException $ex){
+      echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+      echo "行號：",$ex->getLine(),"<br>";
+    }
+  }else{
+    echo "no";
+  }
+
+}else{
+  header("Location: test_login.html");
+}
+
+//確認是否按下submit，確認後執行資料庫步驟
+
+?>
+
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
@@ -68,78 +178,77 @@
 				<div class="fs-title">
 					<h2>輸入刊登資訊</h2>
 				</div>
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" action="">
 					<ol class="fs-fields">
-						<li>
-							<label class="fs-field-label fs-anim-upper" for="q1" data-info="想一個亮眼的名子吧，例如：可可工作窩。">怎麼稱呼您所刊登的空間呢?</label>
-							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="您的空間名稱" required/>
+						<!-- <li>
+							<label class="fs-field-label fs-anim-upper" for="spa_name" data-info="想一個亮眼的名子吧，例如：可可工作窩。">怎麼稱呼您所刊登的空間呢?</label>
+							<input class="fs-anim-lower" id="spa_name" name="spa_name" type="text" placeholder="您的空間名稱" required/>
 						</li>
 						<li>
-							<label class="fs-field-label fs-anim-upper" for="q2" data-info="其他縣市陸續開放中!">您的空間位於哪個城市?</label>
+							<label class="fs-field-label fs-anim-upper" for="spa_city" data-info="其他縣市陸續開放中!">您的空間位於哪個城市?</label>
 
-              <select class="cs-select cs-skin-boxes fs-anim-lower">
+              <select class="cs-select cs-skin-boxes fs-anim-lower" name="spa_city">
                 <option value="" disabled selected>請選取城市名</option>
-                <option value="taipeiCity" data-class="taipeiCity">台北市</option>
-                <option value="" data-class="NewTaipeiCity">新北市</option>
-                <option value="" data-class="TaoyuanCity">桃園市</option>
+                <option value="台北市" data-class="taipeiCity">台北市</option>
+                <option value="新北市" data-class="NewTaipeiCity">新北市</option>
+                <option value="桃園市" data-class="TaoyuanCity">桃園市</option>
               </select>
             </li>
             <li>
-              <label class="fs-field-label fs-anim-upper" for="q3">空間地址</label>
-							<input class="fs-anim-lower" id="q1" name="q3" type="text" placeholder="OO市OO區OOO街..." required/>
-              <label class="fs-field-label fs-anim-upper" for="q4" data-info="手機或市話">空間電話</label>
-              <input class="fs-anim-lower" id="q1" name="q4" type="text" placeholder="02-1234-5678 or 0912-345-678" required/>
+              <label class="fs-field-label fs-anim-upper" for="spa_addr">空間地址</label>
+							<input class="fs-anim-lower" id="spa_addr" name="spa_addr" type="text" placeholder="OO市OO區OOO街..." required/>
+              <label class="fs-field-label fs-anim-upper" for="spa_phone" data-info="手機或市話">空間電話</label>
+              <input class="fs-anim-lower" id="spa_phone" name="spa_phone" type="text" placeholder="02-1234-5678 or 0912-345-678" required/>
 						</li>
             </li>
 						<li data-input-trigger>
-							<label class="fs-field-label fs-anim-upper" for="q3">你的空間屬於哪類型的窩?</label>
-              <select class="cs-select cs-skin-boxes fs-anim-lower">
-                <option value="" disabled selected>哪種窩呢?</option>
-                <option value="" data-class="casual_wo">隨意窩</option>
-                <option value="" data-class="concern_wo">專注窩</option>
-                <option value="" data-class="discuss_wo">討論窩</option>
-                <option value="" data-class="maker_wo">maker窩</option>
-                <option value="" data-class="nature_wo">自然窩</option>
+							<label class="fs-field-label fs-anim-upper" for="wot_no">你的空間屬於哪類型的窩?</label>
+              <select class="cs-select cs-skin-boxes fs-anim-lower" name="wot_no">
+                <option value="n/a" disabled selected>哪種窩呢?</option>
+                <option value="1" data-class="casual_wo">隨意窩</option>
+                <option value="2" data-class="concern_wo">專注窩</option>
+                <option value="3" data-class="discuss_wo">討論窩</option>
+                <option value="4" data-class="maker_wo">maker窩</option>
+                <option value="5" data-class="nature_wo">自然窩</option>
               </select>
-              <!-- <h4 class="wo_type_info fs-anim-lower">不知道自己是哪種窩?來看看<a href="#">窩種簡介!</a></h4> -->
-						</li>
+						</li> -->
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些通訊服務?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
-								<span><input id="q4a" name="q4a" type="checkbox" value="conversion"/>
-                  <label for="q4a" required>
+								<span><input id="internet" name="internet[]" type="checkbox" value="2"/>
+                  <label for="internet" required>
                   <div class="inputimg info_1"></div>網路
                   </label>
                 </span>
-								<span><input id="q4b" name="q4b" type="checkbox" value="social"/>
-                  <label for="q4b" required>
+								<span><input id="wifi" name="internet[]" type="checkbox" value="4"/>
+                  <label for="wifi" required>
                   <div class="inputimg info_2"></div>WiFi
                   </label>
                 </span>
-								<span><input id="q4c" name="q4c" type="checkbox" value="mobile"/>
-                  <label for="q4c" required>
+								<span><input id="phone" name="internet[]" type="checkbox" value="6"/>
+                  <label for="phone" required>
                   <div class="inputimg info_3"></div>電話
                   </label>
                 </span>
-                <span><input id="q4d" name="q4d" type="checkbox" value="conversion"/>
-                  <label for="q4d" required>
+                <span><input id="fax" name="internet[]" type="checkbox" value="8"/>
+                  <label for="fax" required>
                   <div class="inputimg info_4"></div>傳真
                   </label>
                 </span>
-								<span><input id="q4e" name="q4e" type="checkbox" value="social"/>
-                  <label for="q4e" required>
+								<span><input id="video" name="internet[]" type="checkbox" value="10"/>
+                  <label for="video" required>
                   <div class="inputimg info_5"></div> 視訊設備
                   </label>
                 </span>
-								<span><input id="q4f" name="q4f" type="checkbox" value="mobile"/>
-                  <label for="q4f" required>
+								<span><input id="mail" name="internet[]" type="checkbox" value="12"/>
+                  <label for="mail" required>
                   <div class="inputimg info_6"></div>郵包寄送
                   </label>
                 </span>
 							</div>
 						</li>
 
-            <li data-input-trigger>
+            <!-- <li data-input-trigger>
               <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些辦公設備?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
                 <span><input id="q51a" name="q51a" type="checkbox" value="conversion"/>
@@ -284,25 +393,31 @@
             </li>
 
             <li>
-              <label class="fs-field-label fs-anim-upper" for="q5">你的空每個營業日能提供多少位置?</label>
-							<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1" step="1" min="1"/>
+              <label class="fs-field-label fs-anim-upper" for="spa_plimit">你的空每個營業日能提供多少位置?</label>
+							<input class="fs-mark fs-anim-lower" id="spa_plimit" name="spa_plimit" type="number" placeholder="1" step="1" min="1"/>
 						</li>
+
+            <li>
+              <label class="fs-field-label fs-anim-upper" for="spa_price">你的空間每個位子的日租價格?</label>
+              <input class="fs-mark fs-anim-lower" id="spa_price" name="spa_price" type="number" placeholder="100" step="1" min="1"/>
+            </li>
+
             </li>
 						<li>
-							<label class="fs-field-label fs-anim-upper" for="q4">敘述一下您空間的特色吧!</label>
-							<textarea class="fs-anim-lower" id="q4" name="q4" placeholder="Describe here"></textarea>
+							<label class="fs-field-label fs-anim-upper" for="spa_info">敘述一下您空間的特色吧!</label>
+							<textarea class="fs-anim-lower" id="spa_info" name="spa_info" placeholder="Describe here"></textarea>
 						</li>
 						<li>
 							<label class="fs-field-label fs-anim-upper" for="q5">您的空間營業時間為何?</label>
-							<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="time" placeholder="開始時間"/>
-              <input class="fs-mark fs-anim-lower" id="q6" name="q6" type="time" placeholder="結束時間"/>
+							<input class="fs-anim-lower" type="text" name="spa_time">
 						</li>
             <li>
               <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">提供您展現您空間特色的照片吧(最多五張)</label>
               <input class="fs-anim-lower" id="q9" name="q9" type="file" value="mobile"/><label for="q9" class="radio-mobile"></label>
 
-            </li>
+            </li> -->
 					</ol><!-- /fs-fields -->
+          <input type="hidden" name="action" id="action" value="add">
 					<button class="fs-submit" type="submit">送出申請</button>
 				</form><!-- /fs-form -->
 			</div><!-- /fs-form-wrap -->
