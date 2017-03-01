@@ -3,92 +3,169 @@ ob_start();
 session_start();
 //檢查是否登入，尚未登入則導入登入頁面
 if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
-  echo $_SESSION["mem_name"].'<br>';
-  echo $_SESSION["mem_no"].'<br>';
-  echo $_SESSION["this_spa_no"].'<br>';
-  echo $_SESSION["internet"][0];
+  // echo $_SESSION["mem_name"].'<br>';
+  // echo $_SESSION["mem_no"].'<br>';
 
   if(isset($_REQUEST["action"]) && ($_REQUEST['action'] == "add")){
-    echo "sql start!";
+    // echo "sql start!";
     try{
     require_once("connectBooks.php");
 
     // sql except checknox and files
-    // $sql = "INSERT INTO cospace (mem_no,
-    //                              wot_no,
-    //                              spa_name,
-    //                              spa_info,
-    //                              spa_city,
-    //                              spa_addr,
-    //                              spa_phone,
-    //                              spa_price,
-    //                              spa_plimit,
-    //                              spa_time,
-    //                              spa_status)
-    //
-    //                       VALUES (:mem_no,
-    //                               :wot_no,
-    //                               :spa_name,
-    //                               :spa_info,
-    //                               :spa_city,
-    //                               :spa_addr,
-    //                               :spa_phone,
-    //                               :spa_price,
-    //                               :spa_plimit,
-    //                               :spa_time,
-    //                               :spa_status)";
-    //
-    //
-    //
-    // $space = $pdo->prepare($sql);
-    // $space -> bindValue(":mem_no",$_SESSION["mem_no"]);
-    // $space -> bindValue(":spa_name",$_REQUEST["spa_name"]);
-    // $space -> bindValue(":spa_city",$_REQUEST["spa_city"]);
-    // $space -> bindValue(":spa_addr",$_REQUEST["spa_addr"]);
-    // $space -> bindValue(":spa_phone",$_REQUEST["spa_phone"]);
-    // $space -> bindValue(":wot_no",$_REQUEST["wot_no"]);
-    // $space -> bindValue(":spa_plimit",$_REQUEST["spa_plimit"]);
-    // $space -> bindValue(":spa_price",$_REQUEST["spa_price"]);
-    // $space -> bindValue(":spa_info",$_REQUEST["spa_info"]);
-    // $space -> bindValue(":spa_time",$_REQUEST["spa_time"]);
-    // $space -> bindValue(":spa_status",0);
-    //
-    //
-    // $space -> execute();
+    $sql = "INSERT INTO cospace (mem_no,
+                                 wot_no,
+                                 spa_name,
+                                 spa_info,
+                                 spa_city,
+                                 spa_addr,
+                                 spa_phone,
+                                 spa_price,
+                                 spa_plimit,
+                                 spa_time,
+                                 spa_status)
+
+                          VALUES (:mem_no,
+                                  :wot_no,
+                                  :spa_name,
+                                  :spa_info,
+                                  :spa_city,
+                                  :spa_addr,
+                                  :spa_phone,
+                                  :spa_price,
+                                  :spa_plimit,
+                                  :spa_time,
+                                  :spa_status)";
+
+
+
+    $space = $pdo->prepare($sql);
+    $space -> bindValue(":mem_no",$_SESSION["mem_no"]);
+    $space -> bindValue(":spa_name",$_REQUEST["spa_name"]);
+    $space -> bindValue(":spa_city",$_REQUEST["spa_city"]);
+    $space -> bindValue(":spa_addr",$_REQUEST["spa_addr"]);
+    $space -> bindValue(":spa_phone",$_REQUEST["spa_phone"]);
+    $space -> bindValue(":wot_no",$_REQUEST["wot_no"]);
+    $space -> bindValue(":spa_plimit",$_REQUEST["spa_plimit"]);
+    $space -> bindValue(":spa_price",$_REQUEST["spa_price"]);
+    $space -> bindValue(":spa_info",$_REQUEST["spa_info"]);
+    $space -> bindValue(":spa_time",$_REQUEST["spa_time"]);
+    $space -> bindValue(":spa_status",0);
+
+
+    $space -> execute();
 
 
 
     //catch current spa_no
-    $sql_no = "SELECT MAX(spa_no) AS this_spa_no FROM cospace;";
-    $space_no = $pdo->prepare($sql_no);
-    $space_no -> execute();
-    $Row_ch1 = $space_no->fetch(PDO::FETCH_ASSOC);
-    $_SESSION["this_spa_no"] = $Row_ch1["this_spa_no"];
-
-    echo '<script language="javascript">';
-    echo 'alert(ok)';
-    echo '</script>';
-
+    $this_spa_no = $pdo->lastInsertId();
+    // $sql_no = "SELECT MAX(spa_no) AS this_spa_no FROM cospace;";
+    // $space_no = $pdo->prepare($sql_no);
+    // $space_no -> execute();
+    // $Row_ch1 = $space_no->fetch(PDO::FETCH_ASSOC);
+    // $_SESSION["this_spa_no"] = $Row_ch1["this_spa_no"];
 
     // sql for checkboxes
     $internet = $_REQUEST['internet'];
-    $_SESSION["internet"] = $internet;
-    for ($i=0; $i < sizeof($internet) ; $i++) {
+    $equip = $_REQUEST['equip'];
+    $food = $_REQUEST['food'];
+    $room = $_REQUEST['room'];
+    $transport = $_REQUEST['transport'];
 
+    for ($i=0; $i < count($internet) ; $i++) {
       $sql_ck1 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$internet[$i].");";
       $ck1 = $pdo->prepare($sql_ck1);
-      $ck1 -> bindValue(":spa_no",$_SESSION["this_spa_no"]);
+      $ck1 -> bindValue(":spa_no",$this_spa_no);
       $ck1 -> execute();
-      echo '<script language="javascript">';
-      echo 'alert('.$i.')';
-      echo '</script>';
     }
 
+    for ($i=0; $i < count($equip) ; $i++) {
+      $sql_ck2 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$equip[$i].");";
+      $ck2 = $pdo->prepare($sql_ck2);
+      $ck2 -> bindValue(":spa_no",$this_spa_no);
+      $ck2 -> execute();
+    }
+
+    for ($i=0; $i < count($food) ; $i++) {
+      $sql_ck3 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$food[$i].");";
+      $ck3 = $pdo->prepare($sql_ck3);
+      $ck3 -> bindValue(":spa_no",$this_spa_no);
+      $ck3 -> execute();
+    }
+
+    for ($i=0; $i < count($room) ; $i++) {
+      $sql_ck4 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$room[$i].");";
+      $ck4 = $pdo->prepare($sql_ck4);
+      $ck4 -> bindValue(":spa_no",$this_spa_no);
+      $ck4 -> execute();
+    }
+
+    for ($i=0; $i < count($transport) ; $i++) {
+      $sql_ck5 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$transport[$i].")";
+      $ck5 = $pdo->prepare($sql_ck5);
+      $ck5 -> bindValue(":spa_no",$this_spa_no);
+      $ck5 -> execute();
+    }
+
+    //upload Image
+
+    echo "lololololololo<br>";
+
+    echo $_FILES["photo"]["error"][0];
+
+    for( $i=0 ;$i< count($_FILES["photo"]["error"]); $i++){
+	switch( $_FILES["photo"]["error"][$i]){
+		case 0:
+
+			$from = $_FILES["photo"]["tmp_name"][$i];
+			//檢查資料夾或檔案是否存在
+			if( file_exists("space_photo")==false){ //不存在
+				//建立資料夾 make directory
+		        mkdir("space_photo");
+			}
+	        //原始檔名(utf-8)
+	        $fileName = $_FILES["photo"]["name"][$i];
+
+	        //設定好資料夾,並轉碼為big5
+			$to = "img/space_photo/". mb_convert_encoding($fileName, "Big5","UTF-8");
+
+			if(copy( $from, $to) ){
+				// echo "上傳成功<br>";
+        try{
+
+          $img_name = "img/space_photo/".$fileName;
+
+          $sql_photo = "INSERT INTO photo (spa_no, pho_name) VALUES (:spa_no, '$img_name')";
+          $photos = $pdo->prepare($sql_photo);
+          $photos->bindValue(":spa_no",$this_spa_no);
+          $photos->execute();
 
 
+        }catch(PDOException $ex){
+          echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+          echo "行號：",$ex->getLine(),"<br>";
+        }
+			}else{
+				echo "error<br>";
+			}
+			break;
+		case 1:
+		    echo "檔案不得超過", ini_get("upload_max_filesize") ,"<br>";
+			break;
+		case 2:
+			echo "檔案不得超過", $_REQUEST["MAX_FILE_SIZE"] ,"<br>";
+			break;
+		case 3:
+			echo "上傳檔案不完整<br>";
+			break;
+		case 4:
+		    echo "檔案没送<br>";
+		     break;
+		default :
+		    echo "錯誤代碼:" , $_FILES["photo"]["error"][$i],"請通知系統人員<br>";
+		     break;
+	}//switch
 
-
-
+}
 
     header("Location: post_ok.php");
 
@@ -97,7 +174,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
       echo "行號：",$ex->getLine(),"<br>";
     }
   }else{
-    echo "no";
+    // echo "no";
   }
 
 }else{
@@ -178,9 +255,9 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 				<div class="fs-title">
 					<h2>輸入刊登資訊</h2>
 				</div>
-				<form id="myform" class="fs-form fs-form-full" autocomplete="off" action="">
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off" enctype="multipart/form-data" action="" method="POST">
 					<ol class="fs-fields">
-						<!-- <li>
+						<li>
 							<label class="fs-field-label fs-anim-upper" for="spa_name" data-info="想一個亮眼的名子吧，例如：可可工作窩。">怎麼稱呼您所刊登的空間呢?</label>
 							<input class="fs-anim-lower" id="spa_name" name="spa_name" type="text" placeholder="您的空間名稱" required/>
 						</li>
@@ -211,36 +288,36 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
                 <option value="4" data-class="maker_wo">maker窩</option>
                 <option value="5" data-class="nature_wo">自然窩</option>
               </select>
-						</li> -->
+						</li>
 						<li data-input-trigger>
 							<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些通訊服務?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
-								<span><input id="internet" name="internet[]" type="checkbox" value="2"/>
+								<span><input id="internet" name="internet[]" type="checkbox" value="1"/>
                   <label for="internet" required>
                   <div class="inputimg info_1"></div>網路
                   </label>
                 </span>
-								<span><input id="wifi" name="internet[]" type="checkbox" value="4"/>
+								<span><input id="wifi" name="internet[]" type="checkbox" value="2"/>
                   <label for="wifi" required>
                   <div class="inputimg info_2"></div>WiFi
                   </label>
                 </span>
-								<span><input id="phone" name="internet[]" type="checkbox" value="6"/>
+								<span><input id="phone" name="internet[]" type="checkbox" value="3"/>
                   <label for="phone" required>
                   <div class="inputimg info_3"></div>電話
                   </label>
                 </span>
-                <span><input id="fax" name="internet[]" type="checkbox" value="8"/>
+                <span><input id="fax" name="internet[]" type="checkbox" value="4"/>
                   <label for="fax" required>
                   <div class="inputimg info_4"></div>傳真
                   </label>
                 </span>
-								<span><input id="video" name="internet[]" type="checkbox" value="10"/>
+								<span><input id="video" name="internet[]" type="checkbox" value="5"/>
                   <label for="video" required>
                   <div class="inputimg info_5"></div> 視訊設備
                   </label>
                 </span>
-								<span><input id="mail" name="internet[]" type="checkbox" value="12"/>
+								<span><input id="mail" name="internet[]" type="checkbox" value="6"/>
                   <label for="mail" required>
                   <div class="inputimg info_6"></div>郵包寄送
                   </label>
@@ -248,36 +325,36 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 							</div>
 						</li>
 
-            <!-- <li data-input-trigger>
+            <li data-input-trigger>
               <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些辦公設備?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
-                <span><input id="q51a" name="q51a" type="checkbox" value="conversion"/>
-                  <label for="q51a" required>
+                <span><input id="stationary" name="equip[]" type="checkbox" value="11"/>
+                  <label for="stationary" required>
                   <div class="inputimg equip_1"></div>文具
                   </label>
                 </span>
-                <span><input id="q52b" name="q52b" type="checkbox" value="social"/>
-                  <label for="q52b" required>
+                <span><input id="board" name="equip[]" type="checkbox" value="12"/>
+                  <label for="board" required>
                   <div class="inputimg equip_2"></div>白板
                   </label>
                 </span>
-                <span><input id="q53c" name="q53c" type="checkbox" value="mobile"/>
-                  <label for="q53c" required>
+                <span><input id="furniture" name="equip[]" type="checkbox" value="13"/>
+                  <label for="furniture" required>
                   <div class="inputimg equip_3"></div>辦公家具
                   </label>
                 </span>
-                <span><input id="q54d" name="q54d" type="checkbox" value="conversion"/>
-                  <label for="q54d" required>
+                <span><input id="monitor" name="equip[]" type="checkbox" value="14"/>
+                  <label for="monitor" required>
                   <div class="inputimg equip_4"></div>螢幕
                   </label>
                 </span>
-                <span><input id="q55e" name="q55e" type="checkbox" value="social"/>
-                  <label for="q55e" required>
+                <span><input id="projector" name="equip[]" type="checkbox" value="15"/>
+                  <label for="projector" required>
                   <div class="inputimg equip_5"></div>投影機
                   </label>
                 </span>
-                <span><input id="q56f" name="q56f" type="checkbox" value="mobile"/>
-                  <label for="q56f" required>
+                <span><input id="print" name="equip[]" type="checkbox" value="16"/>
+                  <label for="print" required>
                   <div class="inputimg equip_6"></div>掃描影印
                   </label>
                 </span>
@@ -287,33 +364,33 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
             <li data-input-trigger>
               <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間有提供任何飲食嗎?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
-                <span><input id="q61" name="q61" type="checkbox" value="conversion"/>
-                  <label for="q61" required>
+                <span><input id="water" name="food[]" type="checkbox" value="21"/>
+                  <label for="water" required>
                   <div class="inputimg food_1"></div>飲水
                   </label>
                 </span>
-                <span><input id="q62" name="q62" type="checkbox" value="social"/>
-                  <label for="q62" required>
+                <span><input id="hot" name="food[]" type="checkbox" value="22"/>
+                  <label for="hot" required>
                   <div class="inputimg food_2"></div>熱飲
                   </label>
                 </span>
-                <span><input id="q63" name="q63" type="checkbox" value="mobile"/>
-                  <label for="q63" required>
+                <span><input id="cold" name="food[]" type="checkbox" value="23"/>
+                  <label for="cold" required>
                   <div class="inputimg food_3"></div>冷飲
                   </label>
                 </span>
-                <span><input id="q64" name="q64" type="checkbox" value="conversion"/>
-                  <label for="q64" required>
+                <span><input id="dish" name="food[]" type="checkbox" value="24"/>
+                  <label for="dish" required>
                   <div class="inputimg food_4"></div>餐點
                   </label>
                 </span>
-                <span><input id="q65" name="q65" type="checkbox" value="social"/>
-                  <label for="q65" required>
+                <span><input id="restaurant" name="food[]" type="checkbox" value="25"/>
+                  <label for="restaurant" required>
                   <div class="inputimg food_5"></div>餐廳
                   </label>
                 </span>
-                <span><input id="q66" name="q66" type="checkbox" value="mobile"/>
-                  <label for="q66" required>
+                <span><input id="kitchen" name="food[]" type="checkbox" value="26"/>
+                  <label for="kitchen" required>
                   <div class="inputimg food_6"></div>廚房
                   </label>
                 </span>
@@ -323,33 +400,33 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
             <li data-input-trigger>
               <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間有包含下列設施嗎?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
-                <span><input id="q71" name="q71" type="checkbox" value="conversion"/>
-                  <label for="q71" required>
+                <span><input id="meeting" name="room[]" type="checkbox" value="31"/>
+                  <label for="meeting" required>
                   <div class="inputimg room_1"></div>會議室
                   </label>
                 </span>
-                <span><input id="q72" name="q72" type="checkbox" value="social"/>
-                  <label for="q72" required>
+                <span><input id="library" name="room[]" type="checkbox" value="32"/>
+                  <label for="library" required>
                   <div class="inputimg room_2"></div>圖書室
                   </label>
                 </span>
-                <span><input id="q73" name="q73" type="checkbox" value="mobile"/>
-                  <label for="q73" required>
+                <span><input id="theater" name="room[]" type="checkbox" value="33"/>
+                  <label for="theater" required>
                   <div class="inputimg room_3"></div>視聽室
                   </label>
                 </span>
-                <span><input id="q74" name="q74" type="checkbox" value="conversion"/>
-                  <label for="q74" required>
+                <span><input id="music" name="room[]" type="checkbox" value="34"/>
+                  <label for="music" required>
                   <div class="inputimg room_4"></div>展演空間
                   </label>
                 </span>
-                <span><input id="q75" name="q75" type="checkbox" value="social"/>
-                  <label for="q75" required>
+                <span><input id="tools" name="room[]" type="checkbox" value="35"/>
+                  <label for="tools" required>
                   <div class="inputimg room_5"></div>工具間
                   </label>
                 </span>
-                <span><input id="q76" name="q76" type="checkbox" value="mobile"/>
-                  <label for="q76" required>
+                <span><input id="lab" name="room[]" type="checkbox" value="36"/>
+                  <label for="lab" required>
                   <div class="inputimg room_6"></div>實驗室
                   </label>
                 </span>
@@ -359,33 +436,33 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
             <li data-input-trigger>
               <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">您空間周遭交通狀態如何?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
-                <span><input id="q81" name="q81" type="checkbox" value="conversion"/>
-                  <label for="q81" required>
+                <span><input id="bus" name="transport[]" type="checkbox" value="41"/>
+                  <label for="bus" required>
                   <div class="inputimg transport_1"></div>公車
                   </label>
                 </span>
-                <span><input id="q82" name="q82" type="checkbox" value="social"/>
-                  <label for="q82" required>
+                <span><input id="metro" name="transport[]" type="checkbox" value="42"/>
+                  <label for="metro" required>
                   <div class="inputimg transport_2"></div>捷運
                   </label>
                 </span>
-                <span><input id="q83" name="q83" type="checkbox" value="mobile"/>
-                  <label for="q83" required>
+                <span><input id="train" name="transport[]" type="checkbox" value="43"/>
+                  <label for="train" required>
                   <div class="inputimg transport_3"></div>火車
                   </label>
                 </span>
-                <span><input id="q84" name="q84" type="checkbox" value="conversion"/>
-                  <label for="q84" required>
+                <span><input id="bike" name="transport[]" type="checkbox" value="44"/>
+                  <label for="bike" required>
                   <div class="inputimg transport_4"></div>單車位
                   </label>
                 </span>
-                <span><input id="q85" name="q85" type="checkbox" value="social"/>
-                  <label for="q85" required>
+                <span><input id="scooter" name="transport[]" type="checkbox" value="45"/>
+                  <label for="scooter" required>
                   <div class="inputimg transport_5"></div>機車位
                   </label>
                 </span>
-                <span><input id="q86" name="q86" type="checkbox" value="mobile"/>
-                  <label for="q86" required>
+                <span><input id="car" name="transport[]" type="checkbox" value="46"/>
+                  <label for="car" required>
                   <div class="inputimg transport_6"></div>汽車位
                   </label>
                 </span>
@@ -413,9 +490,9 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 						</li>
             <li>
               <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">提供您展現您空間特色的照片吧(最多五張)</label>
-              <input class="fs-anim-lower" id="q9" name="q9" type="file" value="mobile"/><label for="q9" class="radio-mobile"></label>
+              <input class="fs-anim-lower" id="photo" name="photo[]" type="file" multiple/><label for="photo"></label>
 
-            </li> -->
+            </li>
 					</ol><!-- /fs-fields -->
           <input type="hidden" name="action" id="action" value="add">
 					<button class="fs-submit" type="submit">送出申請</button>

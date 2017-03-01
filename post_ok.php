@@ -14,8 +14,6 @@ session_start();
   <a href="post_space_input.php">test again!</a><br>
   <?php
      echo $_SESSION["mem_name"].'<br>';
-     echo $_SESSION["this_spa_no"].'<br>';
-     echo $_SESSION["ck1"];
    ?>
 </body>
 </html>
