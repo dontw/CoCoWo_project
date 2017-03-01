@@ -3756,7 +3756,7 @@ hr {
 .button, .border_button {
   display: inline-block;
   margin: 0.3em;
-  padding: 0.5em 1.5em;
+  padding: 1em 1.5em;
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -3779,7 +3779,8 @@ hr {
   text-align: center;
   font-family: "cwtexhei", sans-serif;
   font-weight: 400;
-  cursor: pointer; }
+  cursor: pointer;
+  border-radius: 34px; }
 
 .button:hover, .border_button:hover {
   -webkit-box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);
@@ -6622,7 +6623,7 @@ iframe {
   .space_content .space_order {
     border: 1px solid #DADFDF;
     width: 290px;
-    height: 257px;
+    height: 294px;
     background-color: #F0F0FF;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     padding: 20px;
@@ -6652,7 +6653,8 @@ iframe {
       padding: 33px 0.2em 20px 0.2em;
       vertical-align: bottom;
       position: relative;
-      font-size: 14px; }
+      font-size: 14px;
+      border-radius: 3px; }
       .space_content .order_btn.order_btn_3.order_btn_3_1 {
         position: absolute;
         left: 25.4px; }
@@ -6845,6 +6847,64 @@ iframe {
     position: absolute;
     top: 26%;
     right: 0; }
+  .space_content .userlightboxbccc {
+    background-color: rgba(33, 33, 33, 0.6);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 999999;
+    display: none;
+    opacity: 0; }
+  .space_content #signupuserLightBox {
+    margin-top: 0;
+    margin-left: 0px; }
+    .space_content #signupuserLightBox .lightbox {
+      top: 20%; }
+      .space_content #signupuserLightBox .lightbox label {
+        text-align: left; }
+      .space_content #signupuserLightBox .lightbox input[type='reset'] {
+        display: block;
+        width: 100%;
+        margin: 0.3em 0; }
+  .space_content .userLightBox {
+    background-color: rgba(33, 33, 33, 0.9);
+    position: fixed;
+    z-index: 1000000;
+    top: 0%;
+    left: 0%;
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 100%;
+    display: none;
+    opacity: 0;
+    text-align: center; }
+    .space_content .userLightBox .lightbox {
+      position: relative;
+      background-color: #fff;
+      display: inline-block;
+      padding: 25px 40px;
+      border-radius: 4px; }
+      .space_content .userLightBox .lightbox label {
+        display: block;
+        margin-top: 15px; }
+      .space_content .userLightBox .lightbox .closeBox {
+        top: -10px;
+        right: -5px;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        font-size: 1.5em;
+        background: #757575;
+        border-radius: 30px;
+        position: absolute;
+        z-index: 99;
+        cursor: pointer;
+        box-shadow: 0 0 3px 0 #000; }
+      .space_content .userLightBox .lightbox .userbutton {
+        padding-top: 10px; }
+      .space_content .userLightBox .lightbox a {
+        width: 100%;
+        margin: 15px 0 0 0; }
 
 @media all and (max-width: 767px) {
   .space_content .space_name {

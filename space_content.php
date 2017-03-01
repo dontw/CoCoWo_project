@@ -47,7 +47,7 @@
               </a>
             </div>
             <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
-              <a href="#" class="main_nav_a">
+              <a href="#" class="main_nav_a main_nav_user_a">
                 <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                 <span class="nav_p">會員中心</span>
               </a>
@@ -519,6 +519,33 @@
 
         </div> <!--row-->
       </div><!--qa&eval-->
+      <!-- userLightBox -->
+    <div class="userlightboxbccc" id="loginuserlightboxbccc">lolollo</div>
+      <div class="userLightBox" id="loginuserLightBox">
+        <div class="lightbox">
+          <div class="closeBox" id="logincloseBox">
+            x
+          </div>
+          <h4>會員登入</h4>
+          <label for="usermail">
+            <input id="usermail" type="text" name="usermail" placeholder="會員帳號">
+          </label>
+          <label for="userpsw">
+            <input id="userpsw" type="password" name="userpsw" placeholder="會員密碼">
+          </label>
+          <label for="userpsw">
+            <input type="checkbox" name="userck" >記住帳號與密碼
+          </label>
+          <div class="userbutton">
+            <a id="userBtn" class="button dark-blue" href="#">登入</a>
+            <a id='signBtn' class="button yellow" href="#btn">註冊</a>
+          </div>
+        </div>
+      </div>
+
+  <!-- userLightBoxEnd-->
+
+
       <!--footer_start-->
       <div class="footer">
         <div class="footer_cloud"></div>
@@ -578,6 +605,7 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2CcU1WuGApPmm-c2p5jGF6OHUMfP75os&callback=initMap"
 async defer></script>
       <script src="js/space_content.js"></script>
+      <script src="js/loginBox.js"></script>
   </body>
   <footer>
     <!-- 放JS的地方 -->

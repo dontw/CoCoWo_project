@@ -1,7 +1,7 @@
 .button {
   display: inline-block;
   margin: 0.3em;
-  padding: 0.5em 1.5em;
+  padding: 1em 1.5em;
   overflow: hidden;
   position: relative;
   text-decoration: none;
@@ -22,6 +22,7 @@
   font-family: "cwtexhei", sans-serif;
   font-weight: 400;
   cursor: pointer;
+  border-radius: 34px;
 }
 
 .button:hover {
@@ -30,6 +31,7 @@
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.19), 0 6px 6px 0 rgba(0, 0, 0, 0.23);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
   text-decoration: none;
   color:$white;
+
 
 }
 

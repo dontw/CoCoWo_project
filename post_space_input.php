@@ -503,6 +503,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 		<script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script src="js/fullscreenForm.js"></script>
+    <script type="js/loginBox.js"></script>
 		<script>
 			(function() {
 				var formWrap = document.getElementById( 'fs-form-wrap' );

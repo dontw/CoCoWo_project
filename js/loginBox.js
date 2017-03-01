@@ -1,33 +1,50 @@
+
+function closeBtn(fadeTime)
+{
+	wdHeight = $(window).height();
+	$('#loginuserlightboxbccc, #logincloseBox').on('click',function(){
+
+		$('#loginuserlightboxbccc,#loginuserLightBox').stop().animate({opacity:'0'},fadeTime, function()
+			{
+				$('#loginuserlightboxbccc, #loginuserLightBox').css({display:'none'});
+			});
+	});
+
+
+
+}
+
 $(document).ready(function(){
 
 
 
-	$('.nav_user_btn').click(function(){
+	var memBtn = $('.main_nav_user_a'),
+	memcheck = $('.main_nav_user_a > span'),
+	overlayOpacity = 0.7,
+	fadeTime = 500;
+	console.log(memcheck.text());
 
+		memBtn.on('click', function(e)
+		{
+			e.preventDefault();
 
+			// var setLoginBox = $(this),
+			// setLoginHref = setLoginBox.attr('href'),
+			wdHeight = $(window).height();
+			// $('body').append('<div id="logOverlay"></div><div id="logWindow"><div class="logClose">×</div><iframe id="logcontWrap"></iframe></div>');
+			// $('#logcontWrap').attr('src',setLoginHref);
+			// $('#logOverlay,#logWindow').css({display:'block',opacity:'0'});
+			// $('#logOverlay').css({height:wdHeight}).stop().animate({opacity:overlayOpacity},fadeTime);
+			// $('#logWindow').stop().animate({opacity:'1'},fadeTime);
 
-		$('.userlightboxbccc').animate({
-			opacity:1
-		},1000);
-
-
-    $(".userlightboxbccc").css("display", "block");
-
-
-
-});
-
-	$('#closeBox').click(function(){
-
-		$('.userlightboxbccc').animate({
-			'opacity':'0'
-		},1000, function(){
-			$(".userlightboxbccc").css("display", "none");
-
-
+			$('#loginuserlightboxbccc, #loginuserLightBox').css({display:'block',opacity:'0'});
+			$('#loginuserlightboxbccc').css({height:wdHeight}).stop().animate({opacity:'1'},fadeTime);
+			$('#loginuserLightBox').stop().animate({opacity:'1'},fadeTime);
+			closeBtn(fadeTime);
 		});
 
-	});
+
+
 
 
 
