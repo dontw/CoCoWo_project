@@ -6918,10 +6918,11 @@ iframe {
     .space_content .order_light_box .add_order {
       position: relative;
       width: 80%;
-      background-color: #FFFFFF;
+      background-color: #03A9F4;
       z-index: 41;
       margin: auto;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      border-radius: 1px; }
       .space_content .order_light_box .add_order:after {
         content: "";
         display: table;
@@ -6943,9 +6944,11 @@ iframe {
         box-shadow: 0 0 3px 0 #000; }
       .space_content .order_light_box .add_order .add_order_space_info {
         width: 35%;
+        height: 540px;
         background-color: #FFFFFF;
         padding: 30px;
-        float: left; }
+        float: left;
+        overflow: auto; }
         .space_content .order_light_box .add_order .add_order_space_info img {
           width: 100%;
           margin-bottom: 15px; }
@@ -6964,20 +6967,65 @@ iframe {
           clear: both; }
         .space_content .order_light_box .add_order .add_order_input .input_content_show {
           width: 100%;
-          height: 600px;
+          height: 540px;
           max-height: 60%;
-          overflow: auto;
+          overflow: hidden;
           position: relative;
           /*progressbar connectors*/
           /*marking active/completed steps green*/
           /*The number of the step and the connector before it = green*/ }
+          .space_content .order_light_box .add_order .add_order_input .input_content_show .input_contents {
+            position: absolute;
+            top: 0%;
+            width: 100%; }
           .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content {
-            min-height: 600px;
+            height: 540px;
             width: 100%;
             background-color: #03A9F4;
-            padding: 30px;
+            padding: 86px 30px 30px 30px;
             float: left;
-            position: relative; }
+            position: relative;
+            opacity: 0; }
+            .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .left, .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .right {
+              width: 50%;
+              float: left; }
+            .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content input {
+              margin-bottom: 15px; }
+            .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .input_title {
+              margin-bottom: 15px; }
+            .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content.content_1 {
+              opacity: 1; }
+              .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content.content_1 .content_1_input {
+                width: 50%;
+                float: left; }
+              .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content.content_1 .content_1_panel {
+                margin-top: 47px;
+                width: 50%;
+                float: left;
+                padding: 30px;
+                box-sizing: border-box;
+                border: 2px solid #FFFFFF;
+                text-align: left; }
+                .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content.content_1 .content_1_panel h4, .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content.content_1 .content_1_panel h3 {
+                  margin-bottom: 15px;
+                  color: #FFFFFF; }
+                .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content.content_1 .content_1_panel .total_money {
+                  color: #FFC107; }
+            .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel {
+              margin: auto;
+              width: 50%;
+              padding: 30px;
+              box-sizing: border-box;
+              border: 2px solid #FFFFFF;
+              text-align: left; }
+              .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel p, .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel h5 {
+                margin-bottom: 15px;
+                font-family: "Noto Sans TC", sans-serif;
+                color: #FFFFFF; }
+                .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel p span, .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel h5 span {
+                  font-family: "cwtexhei", sans-serif; }
+              .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel .total_money, .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel .date {
+                color: #FFC107; }
             .space_content .order_light_box .add_order .add_order_input .input_content_show .input_content .order_next_btn {
               position: absolute;
               bottom: 30px;

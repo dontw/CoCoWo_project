@@ -100,27 +100,50 @@ $(document).ready(function(){
 
   $('.order_next_btn_1').on('click',function(){
     $('.step_2').addClass('active');
+    $('.input_contents').animate({top: "-100%"},700,'easeOutBack');
+    $('.content_2').animate({opacity: 1},700,'easeInOut');
   });
 
   $('.order_pre_btn_1').on('click',function(){
     $('.step_2').removeClass('active');
+    $('.input_contents').animate({top: "0%"},500,'easeOut');
   });
 
   $('.order_next_btn_2').on('click',function(){
     $('.step_3').addClass('active');
+    $('.input_contents').animate({top: "-200%"},700,'easeOutBack');
+    $('.content_3').animate({opacity: 1},700,'easeInOut');
   });
 
   $('.order_pre_btn_2').on('click',function(){
     $('.step_3').removeClass('active');
+    $('.input_contents').animate({top: "-100%"},500,'easeOut');
+
   });
 
   $('.order_next_btn_3').on('click',function(){
     $('.step_4').addClass('active');
+    $('.input_contents').animate({top: "-300%"},700,'easeOutBack');
+    $('.content_4').animate({opacity: 1},700,'easeInOut');
   });
 
   $('.order_pre_btn_3').on('click',function(){
     $('.step_4').removeClass('active');
+    $('.input_contents').animate({top: "-200%"},500,'easeOut');
   });
+
+// get current date
+var d = new Date();
+var month = d.getMonth()+1;
+var day = d.getDate();
+var output = d.getFullYear() + '-' +
+    ((''+month).length<2 ? '0' : '') + month + '-' +
+    ((''+day).length<2 ? '0' : '') + day;
+
+  $('#date-range0').dateRangePicker({
+        language:'tc',
+        startDate: output
+      });
 
 
 

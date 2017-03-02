@@ -7,8 +7,14 @@
     <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.easing.compatibility.js"></script>
+    <script src="js/moment-with-locales.min.js"></script>
+    <script src="js/jquery.daterangepicker.js"></script>
+
 
     <title>CoCoWork可可窩 </title>
   </head>
@@ -588,30 +594,66 @@
           <ul class="add_order_progressbar">
             <li class="step_1 active">日期人數</li>
             <li class="step_2">基本資料</li>
-            <li class="step_3">付款方式</li>
-            <li class="step_4">訂單確認</li>
+            <li class="step_3">訂單確認</li>
+            <li class="step_4">付款方式</li>
           </ul>
-          <form action="">
-            <div class="input_content content_1">
-              <h4>選擇日期、人數</h4>
-              <a class="button yellow order_next_btn order_next_btn_1 ">下一步</a>
-            </div>
-            <div class="input_content content_2">
-              <h4>填寫基本資料</h4>
-              <a class="order_pre_btn order_pre_btn_1">上一步</a>
-              <a class="button yellow order_next_btn order_next_btn_2">下一步</a>
-            </div>
-            <div class="input_content content_3">
-              <h4>確認訂單</h4>
-              <a class="order_pre_btn order_pre_btn_2">上一步</a>
-              <a class="button yellow order_next_btn order_next_btn_3">下一步</a>
-            </div>
-            <div class="input_content content_4">
-              <h4>選擇付款方式</h4>
-              <a class="order_pre_btn order_pre_btn_3">上一步</a>
-              <button type="submit" class="button red order_next_btn order_next_btn_4">送出訂單</button>
-            </div>
-          </form>
+          <div class="input_contents">
+
+            <form action="">
+              <div class="input_content content_1">
+                <div class="content_1_input">
+                <h3 class="input_title">請選擇預定日期：</h3><input id="date-range0" size="40" value="">
+                <h3 class="input_title">請選擇預定位置數：</h3><input type="number">
+                </div>
+                <div class="content_1_panel">
+                  <h4>預定日期：</h4>
+                  <h4>2017/3/9~2017/3/10</h4>
+                  <h4>天數：<span>2</span>天</h4>
+                  <h4>每日單價：<span>225</span>元</h4>
+                  <hr>
+                  <h3>總共：<span class="total_money">550</span> 元</h3>
+                </div>
+                <a class="button yellow order_next_btn order_next_btn_1 ">下一步</a>
+              </div>
+              <div class="input_content content_2">
+                <div class="left">
+                  <h3 class="input_title">姓名：</h3><input type="text">
+                  <h3 class="input_title">電話：</h3><input type="text">
+                  <h3 class="input_title">e-mail：</h3><input type="text">
+                </div>
+                <div class="right">
+                  <h3 class="input_title">備註</h3>
+                  <textarea name="name" rows="12" cols="30"></textarea>
+                </div>
+                <a class="order_pre_btn order_pre_btn_1">上一步</a>
+                <a class="button yellow order_next_btn order_next_btn_2">下一步</a>
+              </div>
+              <div class="input_content content_3">
+                <div class="content_3_panel">
+                  <h5 style="text-align:center;">確認訂單</h5>
+                  <p>姓名：<span>Doge 嗓</span></p>
+                  <p>電話：<span>09123456789</span></p>
+                  <p>e-mail：<span>dogeOfVeniece@gmail.com</span></p>
+                  <p>人數：<span>4</span> 人</p>
+                  <p>預定日期：<span class="date">2017/3/9 ~ 2017/3/10</span></p>
+                  <p>備註：<span>我想要吃土豆，有土豆嗎，謝謝喔!</span></p>
+                  <hr>
+                  <h5>金額：<span class="total_money">550</span> 元</h5>
+                </div>
+                <a class="order_pre_btn order_pre_btn_2">上一步</a>
+                <a class="button yellow order_next_btn order_next_btn_3">下一步</a>
+              </div>
+              <div class="input_content content_4">
+                <h4>選擇付款方式</h4>
+                <input type="radio" name="pay" value="cash">
+                <input type="radio" name="pay" value="credit_card">
+                <input type="radio" name="pay" value="account">
+                <input type="radio" name="pay" value="store">
+                <a class="order_pre_btn order_pre_btn_3">上一步</a>
+                <button type="submit" class="button red order_next_btn order_next_btn_4">送出訂單</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
@@ -678,7 +720,7 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2CcU1WuGApPmm-c2p5jGF6OHUMfP75os&callback=initMap"
 async defer></script>
       <script src="js/space_content.js"></script>
-      <script src="js/loginBox.js"></script>
+      <!-- <script src="js/loginBox.js"></script> -->
   </body>
   <footer>
     <!-- 放JS的地方 -->
