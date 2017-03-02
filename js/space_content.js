@@ -88,9 +88,48 @@ $(document).ready(function(){
   });
 
 
+  //add_ordeer_box
+  var fadeTime = 500;
+  $('.order_light_box .close_box').on('click',function(){
+
+    $('.order_light_box').stop().animate({opacity:'0'},fadeTime, function()
+      {
+        $('.order_light_box').css({display:'none'});
+      });
+  });
+
+  $('.order_next_btn_1').on('click',function(){
+    $('.step_2').addClass('active');
+  });
+
+  $('.order_pre_btn_1').on('click',function(){
+    $('.step_2').removeClass('active');
+  });
+
+  $('.order_next_btn_2').on('click',function(){
+    $('.step_3').addClass('active');
+  });
+
+  $('.order_pre_btn_2').on('click',function(){
+    $('.step_3').removeClass('active');
+  });
+
+  $('.order_next_btn_3').on('click',function(){
+    $('.step_4').addClass('active');
+  });
+
+  $('.order_pre_btn_3').on('click',function(){
+    $('.step_4').removeClass('active');
+  });
+
+
 
 
 });
+
+
+
+
 
 function initMap() {
   // Create a map object and specify the DOM element for display.
@@ -116,4 +155,6 @@ var marker = new google.maps.Marker({
   map: map,
   title: 'Prototype Hacker Demo'
 });
+
+
 }

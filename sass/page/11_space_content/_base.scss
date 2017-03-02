@@ -844,7 +844,7 @@
 	}
 	.userLightBox
 	{
-		background-color: rgba(33, 33, 33, 0.9);
+		background-color: rgba(33, 33, 33, 0.6);
 		position: fixed;
 	    z-index: 1000000;
 	    top: 0%;
@@ -906,6 +906,189 @@
 		}
 
 	}
+
+  .order_light_box{
+    position: fixed;
+    z-index: 40;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(33, 33, 33, 0.6);
+    // display: none;
+
+
+
+    .add_order{
+      position: relative;
+      width: 80%;
+      background-color: $white;
+      // padding:30px;
+      z-index: 41;
+      margin: auto;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      &:after{
+        content:"";
+        display: table;
+        clear:both;
+      }
+      .close_box{
+        top: -10px;
+        right: -5px;
+        width: 30px;
+        height: 30px;
+        // line-height: 30px;
+        color: #fff;
+        font-size: 1.5em;
+        background: #757575;
+        border-radius: 30px;
+        position: absolute;
+        z-index: 99;
+        cursor: pointer;
+        padding-left: 5px;
+        padding-top: 2px;
+        box-shadow: 0 0 3px 0 #000;
+      }
+
+      .add_order_space_info{
+        width: 35%;
+        background-color:$white;
+        padding:30px;
+        float:left;
+        img{
+          width: 100%;
+          margin-bottom:15px;
+        }
+        .space_operate_info{
+          p{
+            margin-left: 0;
+            margin-right:10px;
+          }
+        }
+        .space_describe_title{
+          margin-top:15px;
+          margin-bottom:0px;
+        }
+      }
+      .add_order_input{
+        width: 65%;
+        float:left;
+        &:after{
+          content:"";
+          display: block;
+          clear:both;
+        }
+      .input_content_show{
+        width:100%;
+        height: 600px;
+        max-height:60%;
+        overflow: auto;
+        position: relative;
+        .input_content{
+          min-height: 600px;
+          width: 100%;
+          background-color: $normal-blue;
+          padding:30px;
+          float:left;
+          position: relative;
+
+          .order_next_btn{
+            position: absolute;
+            bottom:30px;
+            right:30px;
+            }
+
+          .order_pre_btn{
+            font-size: 18px;
+            position: absolute;
+            bottom:30px;
+            left:30px;
+            cursor: pointer;
+            color:$white;
+            font-family: $sub_font_family;
+            padding:1.5em 1em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid $white;
+
+            &:hover{
+              color:$yellow;
+              border-color:$yellow;
+              transition: .3s;
+            }
+
+          }
+          }
+
+
+          .add_order_progressbar {
+            position: fixed;
+            z-index: 30;
+            margin-top:30px;
+          	margin-bottom: 30px;
+          	overflow: hidden;
+          	/*CSS counters to number the steps*/
+          	counter-reset: step;
+            font-family: $sub_font_family;
+            width:50%;
+            min-width:500px;
+
+          }
+          .add_order_progressbar li {
+          	list-style-type: none;
+          	color: white;
+          	text-transform: uppercase;
+          	font-size: 9px;
+          	width: 24.33%;
+          	float: left;
+          	position: relative;
+            text-align: center;
+            font-size: 16px;
+
+          }
+          .add_order_progressbar li:before {
+          	content: counter(step);
+          	counter-increment: step;
+          	width: 20px;
+          	line-height: 20px;
+          	display: block;
+          	font-size: 10px;
+          	color: #333;
+          	background: white;
+          	border-radius: 3px;
+          	margin: 0 auto 5px auto;
+          }
+          /*progressbar connectors*/
+          .add_order_progressbar li:after {
+          	content: '';
+          	width: 100%;
+          	height: 2px;
+          	background: white;
+          	position: absolute;
+          	left: -50%;
+          	top: 9px;
+          	z-index: -1; /*put it behind the numbers*/
+          }
+          .add_order_progressbar li:first-child:after {
+          	/*connector not needed before the first step*/
+          	content: none;
+          }
+          /*marking active/completed steps green*/
+          /*The number of the step and the connector before it = green*/
+          .add_order_progressbar li.active:before,  .add_order_progressbar li.active:after{
+          	background: $yellow;
+          	color: white;
+            transition: .4s;
+            animation:alternate;
+
+          }
+
+
+        }
+      }
+    }
+  }
 
 
 
