@@ -108,7 +108,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 
     //upload Image
 
-    echo "lololololololo<br>";
+
 
     echo $_FILES["photo"]["error"][0];
 
@@ -290,7 +290,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
               </select>
 						</li>
 						<li data-input-trigger>
-							<label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些通訊服務?</label>
+							<label class="fs-field-label fs-anim-upper">你的空間提供那些通訊服務?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
 								<span><input id="internet" name="internet[]" type="checkbox" value="1"/>
                   <label for="internet" required>
@@ -326,7 +326,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 						</li>
 
             <li data-input-trigger>
-              <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間提供那些辦公設備?</label>
+              <label class="fs-field-label fs-anim-upper">你的空間提供那些辦公設備?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
                 <span><input id="stationary" name="equip[]" type="checkbox" value="11"/>
                   <label for="stationary" required>
@@ -362,7 +362,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
             </li>
 
             <li data-input-trigger>
-              <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間有提供任何飲食嗎?</label>
+              <label class="fs-field-label fs-anim-upper">你的空間有提供任何飲食嗎?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
                 <span><input id="water" name="food[]" type="checkbox" value="21"/>
                   <label for="water" required>
@@ -398,7 +398,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
             </li>
 
             <li data-input-trigger>
-              <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">你的空間有包含下列設施嗎?</label>
+              <label class="fs-field-label fs-anim-upper">你的空間有包含下列設施嗎?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
                 <span><input id="meeting" name="room[]" type="checkbox" value="31"/>
                   <label for="meeting" required>
@@ -434,7 +434,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
             </li>
 
             <li data-input-trigger>
-              <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">您空間周遭交通狀態如何?</label>
+              <label class="fs-field-label fs-anim-upper">您空間周遭交通狀態如何?</label>
               <div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower input_checkboxs">
                 <span><input id="bus" name="transport[]" type="checkbox" value="41"/>
                   <label for="bus" required>
@@ -489,8 +489,8 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 							<input class="fs-anim-lower" type="text" name="spa_time">
 						</li>
             <li>
-              <label class="fs-field-label fs-anim-upper" data-info="We'll make sure to use it all over">提供您展現您空間特色的照片吧(最多五張)</label>
-              <input class="fs-anim-lower" id="photo" name="photo[]" type="file" multiple/><label for="photo"></label>
+              <label class="fs-field-label fs-anim-upper">提供您展現您空間特色的照片吧(最多五張)</label>
+              <input class="fs-anim-lower" style="font-size:0.7em;" id="photo" name="photo[]" type="file" multiple/><label for="photo"></label>
 
             </li>
 					</ol><!-- /fs-fields -->

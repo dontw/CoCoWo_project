@@ -1,3 +1,12 @@
+
+
+$(window).load(function(){
+  $("#preloader").hide();
+  $(".post_space").show();
+});
+
+
+
 $(document).ready(function(){
 
   $('#money').sparkleHover(

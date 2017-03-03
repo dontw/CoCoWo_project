@@ -140,15 +140,82 @@ var output = d.getFullYear() + '-' +
     ((''+month).length<2 ? '0' : '') + month + '-' +
     ((''+day).length<2 ? '0' : '') + day;
 
+var dates_num;
+
   $('#date-range0').dateRangePicker({
         language:'tc',
-        startDate: output
+        startDate: output,
+        separator: ' ~ ',
+        autoClose: true,
+        getValue: function()
+        	{
+        		var dateObject = $(this).val();
+        	}
       });
+  var days_num = 0;
+  var people_num = 0 + 1;
+  var space_price = $('.space_price').html();
+
+
+
+  $(".date-picker-wrapper.no-shortcuts").on("change keyup paste mousemove", function(){
+    // alert('date ok!');
+    $('.order_dates').text($('#date-range0').val());
+  });
+
+  $("#order_number_input").on("change keyup paste", function(){
+    $('.selected_number').text($('#order_number_input').val());
+    people_num = $('#order_number_input').val();
+    return people_num;
+  });
+
+  $(".date-picker-wrapper.no-shortcuts").on(" mousemove", function(){
+    // alert('ok!');
+    days_num = $('.selected-days-num').html();
+    // console.log(days_num);
+    $('.selected_date_panel').text(days_num);
+    return days_num;
+  });
+
+  $(".selected_number,.selected_date_panel,.order_dates").bind("DOMSubtreeModified",function(){
+    var total =days_num * people_num * space_price;
+    $('.total_money').text(total);
+  });
+
+  $("#order_name_input").on("change keyup paste", function(){
+    $('.order_name').text($(this).val());
+  });
+
+  $("#order_phone_input").on("change keyup paste", function(){
+    $('.order_phone').text($(this).val());
+  });
+
+  $("#order_mail_input").on("change keyup paste", function(){
+    $('.order_mail').text($(this).val());
+  });
+
+  $("#order_info_input").on("change keyup paste", function(){
+    $('.order_info').text($(this).val());
+  });
+
+  });
 
 
 
 
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

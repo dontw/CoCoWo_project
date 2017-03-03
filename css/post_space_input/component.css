@@ -270,6 +270,7 @@ button.fs-continue,
 	font-size: 1.5em;
 	border-radius: 0;
   margin-bottom:15px;
+  font-family: "cwtexhei", sans-serif;
 }
 
 .fs-fields input:invalid {
@@ -478,21 +479,25 @@ button.fs-continue,
 .fs-fields input::-webkit-input-placeholder,
 .fs-fields textarea::-webkit-input-placeholder {
 	color: rgba(0,0,0,0.1);
+  font-family: "cwtexhei", sans-serif;
 }
 
 .fs-fields input:-moz-placeholder,
 .fs-fields textarea:-moz-placeholder {
 	color: rgba(0,0,0,0.1);
+  font-family: "cwtexhei", sans-serif;
 }
 
 .fs-fields input::-moz-placeholder,
 .fs-fields textarea::-moz-placeholder {
 	color: rgba(0,0,0,0.1);
+  font-family: "cwtexhei", sans-serif;
 }
 
 .fs-fields input:-ms-input-placeholder,
 .fs-fields textarea:-ms-input-placeholder {
 	color: rgba(0,0,0,0.1);
+  font-family: "cwtexhei", sans-serif;
 }
 
 /* Hide placeholder when focused in Webkit browsers */
@@ -719,7 +724,7 @@ button.fs-continue:hover {
 /* Error message */
 .fs-message-error {
 	position: absolute;
-	bottom: 75%;
+	bottom: 50%;
 	left: 50%;
 	z-index: 800;
 	max-width: 960px;

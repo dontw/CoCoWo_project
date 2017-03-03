@@ -602,28 +602,29 @@
             <form action="">
               <div class="input_content content_1">
                 <div class="content_1_input">
-                <h3 class="input_title">請選擇預定日期：</h3><input id="date-range0" size="40" value="">
-                <h3 class="input_title">請選擇預定位置數：</h3><input type="number">
+                <h3 class="input_title">請選擇預訂日期：</h3><input id="date-range0" size="40" placeholder="請選取日期">
+                <h3 class="input_title">請選擇預訂位置數：</h3><input id="order_number_input" type="number" placeholder="請填數字">
                 </div>
                 <div class="content_1_panel">
                   <h4>預定日期：</h4>
-                  <h4>2017/3/9~2017/3/10</h4>
-                  <h4>天數：<span>2</span>天</h4>
-                  <h4>每日單價：<span>225</span>元</h4>
+                  <h4><span class="order_dates"></span></h4>
+                  <h4>天數：<span class="selected_date_panel">2</span> 天</h4>
+                  <h4>預訂位置數：<span class="selected_number"></span> 個</h4>
+                  <h4>每日單價：<span class="space_price">225</span>元</h4>
                   <hr>
-                  <h3>總共：<span class="total_money">550</span> 元</h3>
+                  <h3>總共：<span class="total_money"></span> 元</h3>
                 </div>
                 <a class="button yellow order_next_btn order_next_btn_1 ">下一步</a>
               </div>
               <div class="input_content content_2">
                 <div class="left">
-                  <h3 class="input_title">姓名：</h3><input type="text">
-                  <h3 class="input_title">電話：</h3><input type="text">
-                  <h3 class="input_title">e-mail：</h3><input type="text">
+                  <h3 class="input_title">姓名：</h3><input id="order_name_input" type="text" placeholder="您的姓名" required="!!!">
+                  <h3 class="input_title">電話：</h3><input id="order_phone_input" type="text" placeholder="手機或市話">
+                  <h3 class="input_title">e-mail：</h3><input id="order_mail_input" type="text" placeholder="example@gmail.com">
                 </div>
                 <div class="right">
                   <h3 class="input_title">備註</h3>
-                  <textarea name="name" rows="12" cols="30"></textarea>
+                  <textarea id="order_info_input" name="name" rows="12" cols="30" placeholder="有什麼額外需求都可以在先提出唷!"></textarea>
                 </div>
                 <a class="order_pre_btn order_pre_btn_1">上一步</a>
                 <a class="button yellow order_next_btn order_next_btn_2">下一步</a>
@@ -631,24 +632,43 @@
               <div class="input_content content_3">
                 <div class="content_3_panel">
                   <h5 style="text-align:center;">確認訂單</h5>
-                  <p>姓名：<span>Doge 嗓</span></p>
-                  <p>電話：<span>09123456789</span></p>
-                  <p>e-mail：<span>dogeOfVeniece@gmail.com</span></p>
-                  <p>人數：<span>4</span> 人</p>
-                  <p>預定日期：<span class="date">2017/3/9 ~ 2017/3/10</span></p>
-                  <p>備註：<span>我想要吃土豆，有土豆嗎，謝謝喔!</span></p>
+                  <p>姓名：<span class="order_name"></span></p>
+                  <p>電話：<span class="order_phone"></span></p>
+                  <p>e-mail：<span class="order_mail"></span></p>
+                  <p>人數：<span class="selected_number"></span> 人</p>
+                  <p>天數：<span class="selected_date_panel"></span> 天</p>
+                  <p>預定日期：<span class="date order_dates"></span></p>
+                  <p>備註：<span class="order_info"></span></p>
                   <hr>
-                  <h5>金額：<span class="total_money">550</span> 元</h5>
+                  <h5 style="margin-bottom:0;">金額：<span class="total_money"></span> 元</h5>
                 </div>
                 <a class="order_pre_btn order_pre_btn_2">上一步</a>
                 <a class="button yellow order_next_btn order_next_btn_3">下一步</a>
               </div>
               <div class="input_content content_4">
-                <h4>選擇付款方式</h4>
-                <input type="radio" name="pay" value="cash">
-                <input type="radio" name="pay" value="credit_card">
-                <input type="radio" name="pay" value="account">
-                <input type="radio" name="pay" value="store">
+                <h3>選擇付款方式：</h3>
+                <div class="pay_radios">
+                  <input type="radio" id="cash" name="pay" value="cash" checked>
+                  <label id="go" for="cash">
+                    <div class="inputimg info_1"></div>
+                    <p class="pay_title">現金</p>
+                  </label>
+                  <input type="radio" id="credit_card" name="pay" value="credit_card">
+                  <label id="go" for="credit_card">
+                    <div class="inputimg info_2"></div>
+                    <p class="pay_title">信用卡</p>
+                  </label>
+                  <input type="radio" id="account" name="pay" value="account">
+                  <label id="go" for="account">
+                    <div class="inputimg info_3"></div>
+                    <p class="pay_title">轉帳</p>
+                  </label>
+                  <input type="radio" id="store" name="pay" value="store">
+                  <label id="go" for="store">
+                    <div class="inputimg info_4"></div>
+                    <p class="pay_title">超商付款</p>
+                  </label>
+                </div>
                 <a class="order_pre_btn order_pre_btn_3">上一步</a>
                 <button type="submit" class="button red order_next_btn order_next_btn_4">送出訂單</button>
               </div>
