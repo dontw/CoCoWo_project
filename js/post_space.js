@@ -1,7 +1,7 @@
 
 
 $(window).load(function(){
-  $("#preloader").hide();
+  $("#preloader").delay(3000).hide();
   $(".post_space").show();
 });
 
@@ -281,7 +281,7 @@ else{
 
       })
   .setTween(wp_8)
-  .addIndicators() // add indicators (requires plugin)
+  // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
 }
@@ -394,6 +394,23 @@ var scene_9 = new ScrollMagic.Scene({
   $('.buttom_slider').on('afterChange', function(event, slick, currentSlide){
     $('.slick-current').addClass('add_color');
   });
+
+  $('.fixed_post').on('click',function(){
+    if (sessionStorage.getItem("username")) {
+      var url = "post_space_input.php";
+      window.location = url;
+      return false;
+    }else{
+      alert("請先登入會員!");
+      $('.main_nav_user_a').click();
+    }
+  });
+
+
+
+
+
+
 
 
 });

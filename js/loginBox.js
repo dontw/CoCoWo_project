@@ -9,6 +9,25 @@ function closeBtn(fadeTime)
 				$('#loginuserlightboxbccc, #loginuserLightBox').css({display:'none'});
 			});
 	});
+	$('#signBtn').on('click',function(){
+
+		$('#loginuserlightboxbccc,#loginuserLightBox').stop().animate({opacity:'0'},fadeTime, function()
+			{
+				$('#loginuserlightboxbccc').css({display:'none'});
+
+			});
+		$('#signupuserlightboxbccc, #signupuserLightBox').css({display:'block',opacity:'0'});
+		$('#signupuserlightboxbccc').css({height:wdHeight}).stop().animate({opacity:'1'},fadeTime);
+		$('#signupuserLightBox').stop().animate({opacity:'1'},fadeTime);
+	});
+
+	$('#signupuserlightboxbccc, #signupcloseBox').on('click',function(){
+
+		$('#signupuserlightboxbccc,#signupuserLightBox').stop().animate({opacity:'0'},fadeTime, function()
+			{
+				$('#signupuserlightboxbccc, #signupuserLightBox').css({display:'none'});
+			});
+	});
 
 
 
@@ -27,6 +46,7 @@ $(document).ready(function(){
 		memBtn.on('click', function(e)
 		{
 			e.preventDefault();
+			console.log('hello');
 
 			// var setLoginBox = $(this),
 			// setLoginHref = setLoginBox.attr('href'),

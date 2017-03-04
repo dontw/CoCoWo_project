@@ -90,8 +90,17 @@ $(document).ready(function(){
 
   //add_ordeer_box
   var fadeTime = 500;
-  $('.order_light_box .close_box').on('click',function(){
+  $('.order_btn').on('click',function(){
+    alert('click!');
+    $('.order_light_box').css({display:'block',opacity:'0'});
+    $('.order_light_box').stop().animate({opacity:'1'},fadeTime, function()
+      {
+        $('.order_light_box').css({display:'block'});
+      });
+      return false;
+  });
 
+  $('.order_light_box .close_box,.thx_button').on('click',function(){
     $('.order_light_box').stop().animate({opacity:'0'},fadeTime, function()
       {
         $('.order_light_box').css({display:'none'});
@@ -99,9 +108,13 @@ $(document).ready(function(){
   });
 
   $('.order_next_btn_1').on('click',function(){
-    $('.step_2').addClass('active');
-    $('.input_contents').animate({top: "-100%"},700,'easeOutBack');
-    $('.content_2').animate({opacity: 1},700,'easeInOut');
+    if($('#date-range0').val()&&$('#order_number_input').val()){
+      $('.step_2').addClass('active');
+      $('.input_contents').animate({top: "-100%"},700,'easeOutBack');
+      $('.content_2').animate({opacity: 1},700,'easeInOut');
+    }else{
+      alert('請輸入日期與預訂數量!');
+    }
   });
 
   $('.order_pre_btn_1').on('click',function(){
@@ -110,9 +123,13 @@ $(document).ready(function(){
   });
 
   $('.order_next_btn_2').on('click',function(){
-    $('.step_3').addClass('active');
-    $('.input_contents').animate({top: "-200%"},700,'easeOutBack');
-    $('.content_3').animate({opacity: 1},700,'easeInOut');
+    if($('#order_name_input').val() && $('#order_phone_input').val() && $('#order_mail_input').val()){
+      $('.step_3').addClass('active');
+      $('.input_contents').animate({top: "-200%"},700,'easeOutBack');
+      $('.content_3').animate({opacity: 1},700,'easeInOut');
+    }else{
+      alert('請輸入訂單聯絡資訊!');
+    }
   });
 
   $('.order_pre_btn_2').on('click',function(){
@@ -130,6 +147,24 @@ $(document).ready(function(){
   $('.order_pre_btn_3').on('click',function(){
     $('.step_4').removeClass('active');
     $('.input_contents').animate({top: "-200%"},500,'easeOut');
+  });
+
+
+  $('.cube-wrapper').hide();
+  $('.thx_order').animate({opacity:'0'}, function () {
+        $(this).css('z-index', -1);
+    });
+  $('.order_next_btn_4').on('click',function(){
+    if(confirm("確認送出訂單?")){
+        $('.add_order_progressbar,.pay_title,.pay_radios,.order_pre_btn_3,.order_next_btn_4').hide();
+        $('.cube-wrapper').show();
+        $('.cube-wrapper').delay(3000).animate({opacity:0});
+        $('.thx_order').delay(3000).animate({opacity:'1'},300,function(){
+          $(this).css('z-index', 50);
+        });
+      return false;
+    }
+    return false;
   });
 
 // get current date
@@ -154,7 +189,7 @@ var dates_num;
       });
   var days_num = 0;
   var people_num = 0 + 1;
-  var space_price = $('.space_price').html();
+
 
 
 
@@ -178,6 +213,7 @@ var dates_num;
   });
 
   $(".selected_number,.selected_date_panel,.order_dates").bind("DOMSubtreeModified",function(){
+    var space_price = $('.space_price').html();
     var total =days_num * people_num * space_price;
     $('.total_money').text(total);
   });
@@ -197,6 +233,8 @@ var dates_num;
   $("#order_info_input").on("change keyup paste", function(){
     $('.order_info').text($(this).val());
   });
+
+  $('.space_price').text($('.main_space_price').html());
 
   });
 

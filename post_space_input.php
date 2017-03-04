@@ -1,185 +1,179 @@
 <?php
 ob_start();
 session_start();
-//檢查是否登入，尚未登入則導入登入頁面
-if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
-  // echo $_SESSION["mem_name"].'<br>';
-  // echo $_SESSION["mem_no"].'<br>';
 
-  if(isset($_REQUEST["action"]) && ($_REQUEST['action'] == "add")){
-    // echo "sql start!";
-    try{
-    require_once("connectBooks.php");
 
-    // sql except checknox and files
-    $sql = "INSERT INTO cospace (mem_no,
-                                 wot_no,
-                                 spa_name,
-                                 spa_info,
-                                 spa_city,
-                                 spa_addr,
-                                 spa_phone,
-                                 spa_price,
-                                 spa_plimit,
-                                 spa_time,
-                                 spa_status)
+if(isset($_REQUEST["action"]) && ($_REQUEST['action'] == "add")){
+  // echo "sql start!";
+  try{
+  require_once("connectBooks.php");
 
-                          VALUES (:mem_no,
-                                  :wot_no,
-                                  :spa_name,
-                                  :spa_info,
-                                  :spa_city,
-                                  :spa_addr,
-                                  :spa_phone,
-                                  :spa_price,
-                                  :spa_plimit,
-                                  :spa_time,
-                                  :spa_status)";
+  // sql except checknox and files
+  $sql = "INSERT INTO cospace (mem_no,
+                               wot_no,
+                               spa_name,
+                               spa_info,
+                               spa_city,
+                               spa_addr,
+                               spa_phone,
+                               spa_price,
+                               spa_plimit,
+                               spa_time,
+                               spa_status)
+
+                        VALUES (:mem_no,
+                                :wot_no,
+                                :spa_name,
+                                :spa_info,
+                                :spa_city,
+                                :spa_addr,
+                                :spa_phone,
+                                :spa_price,
+                                :spa_plimit,
+                                :spa_time,
+                                :spa_status)";
 
 
 
-    $space = $pdo->prepare($sql);
-    $space -> bindValue(":mem_no",$_SESSION["mem_no"]);
-    $space -> bindValue(":spa_name",$_REQUEST["spa_name"]);
-    $space -> bindValue(":spa_city",$_REQUEST["spa_city"]);
-    $space -> bindValue(":spa_addr",$_REQUEST["spa_addr"]);
-    $space -> bindValue(":spa_phone",$_REQUEST["spa_phone"]);
-    $space -> bindValue(":wot_no",$_REQUEST["wot_no"]);
-    $space -> bindValue(":spa_plimit",$_REQUEST["spa_plimit"]);
-    $space -> bindValue(":spa_price",$_REQUEST["spa_price"]);
-    $space -> bindValue(":spa_info",$_REQUEST["spa_info"]);
-    $space -> bindValue(":spa_time",$_REQUEST["spa_time"]);
-    $space -> bindValue(":spa_status",0);
+  $space = $pdo->prepare($sql);
+  $space -> bindValue(":mem_no",$_SESSION["mem_no"]);
+  $space -> bindValue(":spa_name",$_REQUEST["spa_name"]);
+  $space -> bindValue(":spa_city",$_REQUEST["spa_city"]);
+  $space -> bindValue(":spa_addr",$_REQUEST["spa_addr"]);
+  $space -> bindValue(":spa_phone",$_REQUEST["spa_phone"]);
+  $space -> bindValue(":wot_no",$_REQUEST["wot_no"]);
+  $space -> bindValue(":spa_plimit",$_REQUEST["spa_plimit"]);
+  $space -> bindValue(":spa_price",$_REQUEST["spa_price"]);
+  $space -> bindValue(":spa_info",$_REQUEST["spa_info"]);
+  $space -> bindValue(":spa_time",$_REQUEST["spa_time"]);
+  $space -> bindValue(":spa_status",0);
 
 
-    $space -> execute();
-
-
-
-    //catch current spa_no
-    $this_spa_no = $pdo->lastInsertId();
-    // $sql_no = "SELECT MAX(spa_no) AS this_spa_no FROM cospace;";
-    // $space_no = $pdo->prepare($sql_no);
-    // $space_no -> execute();
-    // $Row_ch1 = $space_no->fetch(PDO::FETCH_ASSOC);
-    // $_SESSION["this_spa_no"] = $Row_ch1["this_spa_no"];
-
-    // sql for checkboxes
-    $internet = $_REQUEST['internet'];
-    $equip = $_REQUEST['equip'];
-    $food = $_REQUEST['food'];
-    $room = $_REQUEST['room'];
-    $transport = $_REQUEST['transport'];
-
-    for ($i=0; $i < count($internet) ; $i++) {
-      $sql_ck1 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$internet[$i].");";
-      $ck1 = $pdo->prepare($sql_ck1);
-      $ck1 -> bindValue(":spa_no",$this_spa_no);
-      $ck1 -> execute();
-    }
-
-    for ($i=0; $i < count($equip) ; $i++) {
-      $sql_ck2 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$equip[$i].");";
-      $ck2 = $pdo->prepare($sql_ck2);
-      $ck2 -> bindValue(":spa_no",$this_spa_no);
-      $ck2 -> execute();
-    }
-
-    for ($i=0; $i < count($food) ; $i++) {
-      $sql_ck3 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$food[$i].");";
-      $ck3 = $pdo->prepare($sql_ck3);
-      $ck3 -> bindValue(":spa_no",$this_spa_no);
-      $ck3 -> execute();
-    }
-
-    for ($i=0; $i < count($room) ; $i++) {
-      $sql_ck4 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$room[$i].");";
-      $ck4 = $pdo->prepare($sql_ck4);
-      $ck4 -> bindValue(":spa_no",$this_spa_no);
-      $ck4 -> execute();
-    }
-
-    for ($i=0; $i < count($transport) ; $i++) {
-      $sql_ck5 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$transport[$i].")";
-      $ck5 = $pdo->prepare($sql_ck5);
-      $ck5 -> bindValue(":spa_no",$this_spa_no);
-      $ck5 -> execute();
-    }
-
-    //upload Image
+  $space -> execute();
 
 
 
-    echo $_FILES["photo"]["error"][0];
+  //catch current spa_no
+  $this_spa_no = $pdo->lastInsertId();
+  // $sql_no = "SELECT MAX(spa_no) AS this_spa_no FROM cospace;";
+  // $space_no = $pdo->prepare($sql_no);
+  // $space_no -> execute();
+  // $Row_ch1 = $space_no->fetch(PDO::FETCH_ASSOC);
+  // $_SESSION["this_spa_no"] = $Row_ch1["this_spa_no"];
 
-    for( $i=0 ;$i< count($_FILES["photo"]["error"]); $i++){
-	switch( $_FILES["photo"]["error"][$i]){
-		case 0:
+  // sql for checkboxes
+  $internet = $_REQUEST['internet'];
+  $equip = $_REQUEST['equip'];
+  $food = $_REQUEST['food'];
+  $room = $_REQUEST['room'];
+  $transport = $_REQUEST['transport'];
 
-			$from = $_FILES["photo"]["tmp_name"][$i];
-			//檢查資料夾或檔案是否存在
-			if( file_exists("space_photo")==false){ //不存在
-				//建立資料夾 make directory
-		        mkdir("space_photo");
-			}
-	        //原始檔名(utf-8)
-	        $fileName = $_FILES["photo"]["name"][$i];
-
-	        //設定好資料夾,並轉碼為big5
-			$to = "img/space_photo/". mb_convert_encoding($fileName, "Big5","UTF-8");
-
-			if(copy( $from, $to) ){
-				// echo "上傳成功<br>";
-        try{
-
-          $img_name = "img/space_photo/".$fileName;
-
-          $sql_photo = "INSERT INTO photo (spa_no, pho_name) VALUES (:spa_no, '$img_name')";
-          $photos = $pdo->prepare($sql_photo);
-          $photos->bindValue(":spa_no",$this_spa_no);
-          $photos->execute();
-
-
-        }catch(PDOException $ex){
-          echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
-          echo "行號：",$ex->getLine(),"<br>";
-        }
-			}else{
-				echo "error<br>";
-			}
-			break;
-		case 1:
-		    echo "檔案不得超過", ini_get("upload_max_filesize") ,"<br>";
-			break;
-		case 2:
-			echo "檔案不得超過", $_REQUEST["MAX_FILE_SIZE"] ,"<br>";
-			break;
-		case 3:
-			echo "上傳檔案不完整<br>";
-			break;
-		case 4:
-		    echo "檔案没送<br>";
-		     break;
-		default :
-		    echo "錯誤代碼:" , $_FILES["photo"]["error"][$i],"請通知系統人員<br>";
-		     break;
-	}//switch
-
-}
-
-    header("Location: post_ok.php");
-
-    }catch(PDOException $ex){
-      echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
-      echo "行號：",$ex->getLine(),"<br>";
-    }
-  }else{
-    // echo "no";
+  for ($i=0; $i < count($internet) ; $i++) {
+    $sql_ck1 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$internet[$i].");";
+    $ck1 = $pdo->prepare($sql_ck1);
+    $ck1 -> bindValue(":spa_no",$this_spa_no);
+    $ck1 -> execute();
   }
 
-}else{
-  header("Location: test_login.html");
+  for ($i=0; $i < count($equip) ; $i++) {
+    $sql_ck2 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$equip[$i].");";
+    $ck2 = $pdo->prepare($sql_ck2);
+    $ck2 -> bindValue(":spa_no",$this_spa_no);
+    $ck2 -> execute();
+  }
+
+  for ($i=0; $i < count($food) ; $i++) {
+    $sql_ck3 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$food[$i].");";
+    $ck3 = $pdo->prepare($sql_ck3);
+    $ck3 -> bindValue(":spa_no",$this_spa_no);
+    $ck3 -> execute();
+  }
+
+  for ($i=0; $i < count($room) ; $i++) {
+    $sql_ck4 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$room[$i].");";
+    $ck4 = $pdo->prepare($sql_ck4);
+    $ck4 -> bindValue(":spa_no",$this_spa_no);
+    $ck4 -> execute();
+  }
+
+  for ($i=0; $i < count($transport) ; $i++) {
+    $sql_ck5 = "INSERT INTO spadevice (spa_no,dev_no) VALUES(:spa_no, ".$transport[$i].")";
+    $ck5 = $pdo->prepare($sql_ck5);
+    $ck5 -> bindValue(":spa_no",$this_spa_no);
+    $ck5 -> execute();
+  }
+
+  //upload Image
+
+
+
+  echo $_FILES["photo"]["error"][0];
+
+  for( $i=0 ;$i< count($_FILES["photo"]["error"]); $i++){
+switch( $_FILES["photo"]["error"][$i]){
+	case 0:
+
+		$from = $_FILES["photo"]["tmp_name"][$i];
+		//檢查資料夾或檔案是否存在
+		if( file_exists("space_photo")==false){ //不存在
+			//建立資料夾 make directory
+	        mkdir("space_photo");
+		}
+        //原始檔名(utf-8)
+        $fileName = $_FILES["photo"]["name"][$i];
+
+        //設定好資料夾,並轉碼為big5
+		$to = "img/space_photo/". mb_convert_encoding($fileName, "Big5","UTF-8");
+
+		if(copy( $from, $to) ){
+			// echo "上傳成功<br>";
+      try{
+
+        $img_name = "img/space_photo/".$fileName;
+
+        $sql_photo = "INSERT INTO photo (spa_no, pho_name) VALUES (:spa_no, '$img_name')";
+        $photos = $pdo->prepare($sql_photo);
+        $photos->bindValue(":spa_no",$this_spa_no);
+        $photos->execute();
+
+
+      }catch(PDOException $ex){
+        echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+        echo "行號：",$ex->getLine(),"<br>";
+      }
+		}else{
+			echo "error<br>";
+		}
+		break;
+	case 1:
+	    echo "檔案不得超過", ini_get("upload_max_filesize") ,"<br>";
+		break;
+	case 2:
+		echo "檔案不得超過", $_REQUEST["MAX_FILE_SIZE"] ,"<br>";
+		break;
+	case 3:
+		echo "上傳檔案不完整<br>";
+		break;
+	case 4:
+	    echo "檔案没送<br>";
+	     break;
+	default :
+	    echo "錯誤代碼:" , $_FILES["photo"]["error"][$i],"請通知系統人員<br>";
+	     break;
+}//switch
+
 }
+
+  header("Location: post_ok.php");
+
+  }catch(PDOException $ex){
+    echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
+    echo "行號：",$ex->getLine(),"<br>";
+  }
+}else{
+  // echo "no";
+}
+
 
 //確認是否按下submit，確認後執行資料庫步驟
 
@@ -238,9 +232,9 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
   					</a>
   				</div>
           <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
-            <a href="#" class="main_nav_a">
+            <a href="#" class="main_nav_a main_nav_user_a">
   						<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <span class="nav_p">會員中心</span>
+              <span class="nav_p">登入</span>
   					</a>
           </div>
   			</div>
@@ -248,6 +242,47 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
   	</div>
     <div class="stuff_nav"></div>
     <!-- main_nav_bar_end -->
+    <!-- SignupuserLightBox -->
+    <div class="userlightboxbccc" id="signupuserlightboxbccc"></div>
+      <div class="userLightBox" id="signupuserLightBox">
+        <div class="lightbox">
+          <div class="closeBox" id="signupcloseBox">
+            x
+          </div>
+          <h4>會員註冊</h4>
+          <form>
+            <label for="usermail">
+              帳號:
+              <input type="mail" name="signusermail" placeholder="aaa123@example.com">
+            </label>
+            <label for="userpsw">
+              密碼:
+              <input type="password" name="signuserpsw" placeholder="會員密碼">
+            </label>
+            <label for="username">
+              名稱:
+              <input type="text" name="username" placeholder="會員名稱">
+            </label>
+            <label for="userpho">
+              電話:
+              <input type="text" name="userpho" placeholder="會員電話">
+            </label>
+            <label for="usersex">
+            性別:
+              <input type="radio" name="usersex" value="0">男
+              <input type="radio" name="usersex" value="1">女
+            </label>
+            <label for="useroccu">
+              職業:
+              <input type="text" name="useroccu" placeholder="Engineer">
+            </label>
+            <div class="userbutton">
+              <a id="yesBtn" class="button dark-blue" href="#">確定</a>
+              <input type="reset" name="" class="button red">
+          </form>
+          </div>
+        </div>
+      </div>
     <!-- <input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="dean@road.us" required/> -->
     <div class="container input_container">
 
@@ -500,6 +535,9 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
 			</div><!-- /fs-form-wrap -->
 
 		</div><!-- /container -->
+
+
+    <!-- SignupuserLightBoxEnd-->
 		<script src="js/classie.js"></script>
 		<script src="js/selectFx.js"></script>
 		<script src="js/fullscreenForm.js"></script>
@@ -587,5 +625,7 @@ if ((isset($_SESSION["mem_name"])===true) && ($_SESSION['mem_name'] != "")) {
   <!-- 放JS的地方 -->
   <script src="js/btn.js"></script>
   <script src="js/post_space_input.js"></script>
+  <script src="js/loginBox.js"></script>
+  <script src="js/member.js"></script>
 </footer>
 </html>

@@ -105,7 +105,7 @@
 
         <div class="space_order_wrap">
           <div class="space_order">
-            <h5>預訂價格：225元/日</h5>
+            <h5>預訂價格：<span class="main_space_price">224</span> 元/日</h5>
             <p class="order_limit">最少須預訂1天</p>
             <a href="#" class="button yellow order_btn">立即預訂</a>
             <a href="#" class="border_button dark-blue order_btn order_btn_1">聯絡空間主</a>
@@ -608,9 +608,9 @@
                 <div class="content_1_panel">
                   <h4>預定日期：</h4>
                   <h4><span class="order_dates"></span></h4>
-                  <h4>天數：<span class="selected_date_panel">2</span> 天</h4>
+                  <h4>天數：<span class="selected_date_panel"></span> 天</h4>
                   <h4>預訂位置數：<span class="selected_number"></span> 個</h4>
-                  <h4>每日單價：<span class="space_price">225</span>元</h4>
+                  <h4>每日單價：<span class="space_price"></span>元</h4>
                   <hr>
                   <h3>總共：<span class="total_money"></span> 元</h3>
                 </div>
@@ -646,7 +646,7 @@
                 <a class="button yellow order_next_btn order_next_btn_3">下一步</a>
               </div>
               <div class="input_content content_4">
-                <h3>選擇付款方式：</h3>
+                <h3 class="pay_title">選擇付款方式：</h3>
                 <div class="pay_radios">
                   <input type="radio" id="cash" name="pay" value="cash" checked>
                   <label id="go" for="cash">
@@ -668,6 +668,19 @@
                     <div class="inputimg info_4"></div>
                     <p class="pay_title">超商付款</p>
                   </label>
+                </div>
+                <div class="cube-wrapper">
+                  <div class="cube-folding">
+                    <span class="leaf1"></span>
+                    <span class="leaf2"></span>
+                    <span class="leaf3"></span>
+                    <span class="leaf4"></span>
+                  </div>
+                  <span class="loading" data-name="Loading"><p style="color:white;">請稍後</p></span>
+                </div>
+                <div class="thx_order">
+                <h3 class="thx_title">感謝您的預訂！</h3>
+                  <a class="button yellow thx_button" href="#">返回空間主頁面</a>
                 </div>
                 <a class="order_pre_btn order_pre_btn_3">上一步</a>
                 <button type="submit" class="button red order_next_btn order_next_btn_4">送出訂單</button>
