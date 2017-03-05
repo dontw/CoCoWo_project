@@ -87,11 +87,9 @@ $(document).ready(function(){
     $(this).addClass('active');
   });
 
-
   //add_ordeer_box
   var fadeTime = 500;
   $('.order_btn').on('click',function(){
-    alert('click!');
     $('.order_light_box').css({display:'block',opacity:'0'});
     $('.order_light_box').stop().animate({opacity:'1'},fadeTime, function()
       {
@@ -236,6 +234,18 @@ var dates_num;
 
   $('.space_price').text($('.main_space_price').html());
 
+  });
+
+  $(window).keydown(function(event){
+  if(event.keyCode == 13) {
+    event.preventDefault();
+    return false;
+  }
+
+  if(event.keyCode == 9) {
+    event.preventDefault();
+    return false;
+  }
   });
 
 

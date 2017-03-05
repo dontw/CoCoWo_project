@@ -2,40 +2,51 @@
 	
 	//顯示結果橫向排列
 	#searchspace{
-		#map{
+		#searchMap{
 			display: none;
 		}
-		#select{
-			.seldown{
-				width:300px;
-				text-align: center;
-	  			padding: 0.5em 0;
-				border-radius: 5px;
-				box-shadow:2px 2px 1px rgba(20%,20%,40%,0.5) inset;
-			}
-			#goinfo{
-				text-align: center;
-			}
-			h5{
-				margin:10px 0;
-			}
+		.footer{
+			margin-top: 10px;
 		}
-		#result{
-			.cards{
-				margin:10px 0;
+		#info{
+			padding-bottom: 100%;
+			#select{
+				.seldown{
+					margin:5px 0;
+				}
+				#goinfo{
+					text-align: center;
+				}
+				h5{
+					margin:10px 0;
+				}
 			}
-			.card-block{
-				width:50%;
-				height:124.5px;
-				line-height: 23px;
-				padding:0 5px;
-				background-color: #fff;
-			}
+			#result{
+				padding-bottom: 280%;
+				.spaceimg{
+					width:50.33333333%;
+					float: left;
+				}
+				.spacecontent{
+					width:49.66666666%;
+					float: left;
+					line-height: 17px;
+				}
+				h5{
+					font-size:15px;
+				}
+				.card-text{
+					font-size:14px;
+				}
 
-		}//#result
+			}//#result
+		}//#info
+		
 
 
 		#search{
+			top:130px;
+
 			#wotype{
 				.woname{
 					width:220px;
@@ -45,7 +56,31 @@
 					margin:auto;
 				}
 			}
+			#people{
+				margin:20px 0;
+			}
+			#money{
+				margin:20px 0;
+			}
+
+			#device{
+				margin:30px 0;
+
+				.dev{
+					width:33.33333333%;
+				}
+				.dericon{
+					background-color: #fff;
+					width:30%;
+					margin:5px 0 ;
+				}
+				.spaceicon{
+					height: 40px;
+				}
+			}
 		}
+
+		
 	}//#searchspace
 	
 

@@ -1,4 +1,7 @@
 @include respones(small) {
+  // *{
+  //   outline: 1px solid red;
+  // }
   .space_content{
     .space_name{
       font-size: 24px;
@@ -183,8 +186,104 @@
         margin-top:5px;
       }
     }
+    .add_order_space_info{
+      display:none;
+    }
+
+    .order_light_box{
+      padding:0;
+      margin:0;
+      top:0;
+    }
+
+    .order_light_box .add_order{
+      width: 100%;
+      height:100vh;
+    }
+
+    .order_light_box .add_order .close_box {
+      top:0;
+      right:0;
+    }
+
+    .order_light_box .add_order .add_order_input .input_content_show .add_order_progressbar{
+      transform:scale(0.8);
+      top:30px;
+      left: -58px;
+      text-align: center;
+      margin:auto;
+
+    }
+
+    .order_light_box .add_order .add_order_input{
+      width: 100%;
+      height:100vh;
+      padding:0;
+    }
+
+    .order_light_box .add_order .add_order_input .input_content_show .input_content{
+      padding:120px 15px 30px 15px;
+    }
+
+    .content_1_panel{
+      display:none;
+    }
+
+    .order_light_box .add_order .add_order_input .input_content_show .input_content.content_1 .content_1_input{
+      width: 100%;
+      float: none;
+    }
+
+    .order_light_box .add_order .add_order_input .input_content_show{
+      max-height: 100%;
+    }
+
+    .order_light_box .add_order .add_order_input .input_content_show .input_content .input_title{
+      // margin-top:100px;
+    }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content input{
+       font-size: 18px;
+     }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content .left{
+       width: 100%;
+       float:none;
+     }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content .right {
+       width: 100%;
+       float:none;
+       display: none;
+     }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content .content_3_panel{
+       width: 90%;
+       padding:15px;
+     }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content.content_4 .pay_radios > label{
+       width:80px;
+       height:100px;
+       margin:10px;
+       display: inline-block;
+     }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content.content_4 .pay_radios{
+       text-align: center;
+     }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content.content_4 .pay_radios:after{
+       content:"";
+       display: table;
+       clear:both;
+     }
+
+     .order_light_box .add_order .add_order_input .input_content_show .input_content.content_4 .pay_radios > label .inputimg{
+       top: 13px;
+     }
 
 
-  }
+  }//space_content
 
 };

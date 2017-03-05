@@ -47,7 +47,7 @@ function checkmem()
 
 
 				var memcut = msg.split("|");
-				alert('登入成功!!'+memcut[2]+'您好~!');
+				alert('登入成功!!!');
 
 				dofirst(memcut[1], memcut[2]);
 			}
@@ -80,7 +80,7 @@ function insertmem()
 	{
 		signusersex='女';
 	}
-	alert(signusermail+'<br>'+signuserpsw);
+	// alert(signusermail+'<br>'+signuserpsw);
 	$.ajax(
 	{
 		url:"../memberInsert_JSON.php",
@@ -93,7 +93,7 @@ function insertmem()
 			usersex:signusersex,
 			useroccu:signuseroccu
 		},
-		type:"GET",
+		type:"POST",
 		dataType:'html',
 
 		success:function(msg)
@@ -103,7 +103,7 @@ function insertmem()
 				// var member = JSON.parse(msg);
 
 
-				alert(msg);
+				alert("已申請完成!請重新登入");
 				window.location.reload();
 
 
@@ -125,7 +125,7 @@ function testmem()
 	$.ajax(
 	{
 		url:"../memberInsert_JSON.php",
-		type:"GET",
+		type:"POST",
 		dataType:'text',
 
 		success:function(msg)

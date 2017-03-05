@@ -5,18 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.min.js"></script>
 
-   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    <!-- TweenMax動畫 -->
+    <!--<script src="libs/gsap/src/minified/TweenMax.min.js"></script>
+    <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js"></script>
+    <script type="text/javascript" src="libs/Scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js"></script> -->
+    <!-- TweenMax動畫 -->
 
-   <script src="js/jquery.min.js"></script>
-   <script type="text/javascript" src="js/loginBox.js"></script>
+    <!-- 頁面滾動 -->
+    <!-- <link rel="stylesheet" href="css/jquery.fullPage.css"> -->
+    <!-- <script src="js/jquery.fullPage.js"></script> -->
+    <!-- 頁面滾動 -->
 
-   <title>可可窩CoCoWork</title>
+    <title>可可窩CoCoWo</title>
 
 </head>
-<body>
+<body class="index_body">
+  <div id="preloader">
+    <div class="cube-wrapper">
+      <div class="cube-folding">
+        <span class="leaf1"></span>
+        <span class="leaf2"></span>
+        <span class="leaf3"></span>
+        <span class="leaf4"></span>
+      </div>
+      <span class="loading" data-name="Loading"><p>讀取中...</p></span>
+    </div>
+  </div>
 
 
 <!-- 選單Bar 開始囉XD -->
@@ -36,13 +55,13 @@
             </a>
           </div>
           <div class="col-xs-20p col-sm-2 col-md-2">
-            <a href="post_space.html" class="main_nav_a">
+            <a href="post_space.html" class="main_nav_a ">
               <i class="fa fa-plus-square-o" aria-hidden="true"></i>
               <span class="nav_p">刊登空間</span>
             </a>
           </div>
           <div class="col-xs-20p col-sm-2 col-md-2">
-            <a href="blog_main.html" class="main_nav_a main_nav_a_shop">
+            <a href="#" class="main_nav_a main_nav_a_shop">
               <i class="fa fa-book" aria-hidden="true"></i>
               <span class="nav_p">窩 日 誌</span>
             </a>
@@ -54,9 +73,9 @@
             </a>
           </div>
           <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
-            <a href="#" class="main_nav_a">
+            <a href="#" class="main_nav_a main_nav_user_a">
               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <span class="nav_p">會員中心</span>
+              <span class="nav_p">登入</span>
             </a>
           </div>
         </div>
@@ -64,42 +83,17 @@
     </div>
     <div class="stuff_nav"></div>
 <!-- 選單Bar 結束啦XD -->
-<!-- userLoginBox -->
-<!-- userLightBox -->
-<div class="userlightboxbccc">
-  <div class="userLightBox">
-    <div class="lightbox">
-      <div id="closeBox">
-        <i class="fa fa-window-close" aria-hidden="true"></i>
-      </div>
-      <h4>會員登入</h4>
-      <label for="username">
-        <input type="text" name="username" placeholder="會員帳號">
-      </label>
-      <label for="userpsw">
-        <input type="password" name="userpsw" placeholder="會員密碼">
-      </label>
-      <label for="userpsw">
-        <input type="checkbox" name="userck" >記住帳號與密碼
-      </label>
-      <div class="userbutton">
-        <a class="button dark-blue" href="mem_page.html">登入</a>
-        <a class="button yellow" href="#btn">註冊</a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- userLightBoxEnd-->
-<!-- userLoginBoxEnd -->
-
+<div id="dowebok">
+    <!-- <div class="gototop"></div> -->
   <!-- 我是節點 01 -->
-  <div id="section_01"></div>
+
 
 <!-- section_01 開始囉XD -->
   <section class="section section_01">
+    <div id="section_01"></div>
     <div id="fixed_bg">
       <!--這裡是太陽-->
-      <img id="sun" src="img/index_sun.png" alt="sun">
+      <!-- <img id="sun" src="img/cocowo_sun.png" alt="sun"> -->
     </div>
 
   <!-- container_01 開始包 -->
@@ -108,14 +102,15 @@
       <!-- 立方塊 開始-->
 
         <div class="header_title">
+        <!-- <object type="image/svg+xml" data="img/maker_space.svg"></object> -->
             <!-- <h2>簡單預約三步驟，一起在共享空間工作</h2> -->
-            <h2>工作的地點，你有更多選擇</h2>
+            <h1>工作的地點，你有更多選擇</h1>
         </div>
 
         <div id="header_3step">
             <div class="header_3step boxL">
               <div class="front"></div>
-              <div class="back"><img src="img/index_header_3step01.png" alt=""></div>
+              <div class="back"><img src="img/cocowo_header_3step01.png" alt=""></div>
               <div class="top"></div>
               <div class="bottom"></div>
               <div class="left"></div>
@@ -123,7 +118,7 @@
             </div>
             <div class="header_3step boxC">
               <div class="front"></div>
-              <div class="back"><img src="img/index_header_3step02.png" alt=""></div>
+              <div class="back"><img src="img/cocowo_header_3step02.png" alt=""></div>
               <div class="top"></div>
               <div class="bottom"></div>
               <div class="left"></div>
@@ -131,7 +126,7 @@
             </div>
             <div class="header_3step boxR">
               <div class="front"></div>
-              <div class="back"><img src="img/index_header_3step03.png" alt=""></div>
+              <div class="back"><img src="img/cocowo_header_3step03.png" alt=""></div>
               <div class="top"></div>
               <div class="bottom"></div>
               <div class="left"></div>
@@ -180,661 +175,415 @@
             </div>
 
             <div class="select">
-              <a class="button green" href="#btn">幫我找!</a>
+              <a class="button border_button yellow" href="#btn">立即尋找</a>
             </div>
-          <script>
-            $('.select').on('click','.placeholder',function(){
-              var parent = $(this).closest('.select');
-              if ( ! parent.hasClass('is-open')){
-                parent.addClass('is-open');
-                $('.select.is-open').not(parent).removeClass('is-open');
-              }else{
-                parent.removeClass('is-open');
-              }
-            }).on('click','ul>li',function(){
-              var parent = $(this).closest('.select');
-              parent.removeClass('is-open').find('.placeholder').text( $(this).text() );
-            });
-          </script>
+
 
         </div>
       <!-- 搜尋Bar 結束-->
     </div>
   <!-- container_01 結束包 -->
-
+  <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
   </section>
 <!-- section_01 結束啦XD -->
 
   <!-- 我是節點 02 -->
-  <div id="section_02"></div>
 
 <!-- section_02 開始囉XD -->
   <section class="section section_02">
+  <div id="section_02"></div>
 
   <!-- container_02 開始包 -->
     <div class="container">
 
-      <div id="scene_title_box">
-        <div id="scene_title_slider">
-          <div class="scene_title_box" id="scene_title_1">
-            <h3>討論窩</h3>
-            <h5>適合想互相交流的worker</h5>
-          </div>
-          <div class="scene_title_box" id="scene_title_2">
-            <h3>專注窩</h3>
-            <h5>適合需趕著交件的worker</h5>
-          </div>
-          <div class="scene_title_box" id="scene_title_3">
-            <h3>隨意窩</h3>
-            <h5>適合不想受拘束的worker</h5>
-          </div>
-          <div class="scene_title_box" id="scene_title_4">
-            <h3>自然窩</h3>
-            <h5>適合想雙眼放鬆的worker</h5>
-          </div>
-          <div class="scene_title_box" id="scene_title_5">
-            <h3>Maker窩</h3>
-            <h5>適合喜愛3D列印的worker</h5>
-          </div>
+        <div class="space_slider B">
+
+          <ul class="slider_overflow">
+
+            <li class="slider_main">
+              <div class="space_title" >
+                      <h3>討論窩</h3>
+                      <h5>適合想互相交流的worker</h5>
+                  </div>
+              <div class="slider_box">
+
+                <div class="slider talking_space space01">
+                  <div class="slider_bg space_bg01">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+
+                <div class="slider talking_space space02">
+                  <div class="slider_bg space_bg02">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                      </div>
+                      <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+
+                </div>
+
+                <div class="slider talking_space space03">
+                  <div class="slider_bg space_bg03">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="slider_main">
+              <div class="space_title" >
+                      <h3>專注窩</h3>
+                      <h5>適合需趕著交件的worker</h5>
+                  </div>
+              <div class="slider_box">
+
+                <div class="slider focus_space space04">
+                  <div class="slider_bg space_bg04">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+
+                <div class="slider focus_space space05">
+                  <div class="slider_bg space_bg05">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                      </div>
+                      <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+
+                </div>
+
+                <div class="slider focus_space space06">
+                  <div class="slider_bg space_bg06">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="slider_main">
+              <div class="space_title" >
+                      <h3>隨意窩</h3>
+                      <h5>適合不想受拘束的worker</h5>
+                  </div>
+              <div class="slider_box">
+
+                <div class="slider lazy_space space07">
+                  <div class="slider_bg space_bg07">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+
+                <div class="slider lazy_space space08">
+                  <div class="slider_bg space_bg08">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                      </div>
+                      <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+
+                </div>
+
+                <div class="slider lazy_space space09">
+                  <div class="slider_bg space_bg09">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="slider_main">
+              <div class="space_title" >
+                      <h3>自然窩</h3>
+                      <h5>適合想親近自然的worker</h5>
+                  </div>
+              <div class="slider_box">
+
+                <div class="slider nature_space space10">
+                  <div class="slider_bg space_bg10">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+
+                <div class="slider nature_space space11">
+                  <div class="slider_bg space_bg11">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                      </div>
+                      <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+
+                </div>
+
+                <div class="slider nature_space space12">
+                  <div class="slider_bg space_bg12">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="slider_main">
+              <div class="space_title" >
+                      <h3>Maker窩</h3>
+                      <h5>適合喜愛3D列印的worker</h5>
+                  </div>
+              <div class="slider_box">
+
+                <div class="slider maker_space space13">
+                  <div class="slider_bg space_bg13">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+
+                <div class="slider maker_space space14">
+                  <div class="slider_bg space_bg14">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                      </div>
+                      <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+
+                </div>
+
+                <div class="slider maker_space space15">
+                  <div class="slider_bg space_bg15">
+                    <div class="text">
+                            <h2>Treerful 小樹屋</h2>
+                            <span></span>
+                            <p>
+                              Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
+                            </p>
+                            <h5>台北市內湖區大湖一街36號</h5>
+                            <h4>185元/天</h4>
+                            <a class="button border_button dark-blue" href="#btn">觀看更多</a>
+                        </div>
+                  </div>
+                  <div class="close_btn"></div>
+                  <div class="preview">
+                    <h2 class="heading">Treerful 小樹屋</h2>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
         </div>
-      </div>
-
-    <!-- 精選空間幻燈片 開始 -->
-        <div class="cont s--inactive">
-
-          <div class="cont__inner">
-
-            <!-- slider1 開始囉XD -->
-              <!-- el start -->
-
-              <div class="el slider1">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Treerful 小樹屋</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Treerful 小樹屋</h2>
-                        <span></span>
-                        <p>
-                          Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">1</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="1">1</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider1">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">2</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="2">2</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider1">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">不鳥穀共同工作空間</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>不鳥穀共同工作空間</h2>
-                        <span></span>
-                        <p>
-                          不鳥穀創意總監特地將不鳥穀的家設計成Loft空間，有著非常大的靈活性，期望讓進駐者可以隨心所欲地創造出自己夢想中的辦公空間，完全不被已有的結構或物件所約制住。在這裡工作，彷彿置身自成一格的藝術展示天地，擁有源源不絕的靈感，這就是SOHO與創業的天堂。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">3</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="3">3</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-            <!-- slider1 結束啦XD -->
-
-            <!-- slider2 開始囉XD -->
-              <!-- el start -->
-              <div class="el slider2">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Treerful 小樹屋</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Treerful 小樹屋</h2>
-                        <span></span>
-                        <p>
-                          Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">4</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="4">4</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider2">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">5</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="5">5</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider2">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">6</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="6">6</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-            <!-- slider1 結束啦XD -->
-
-            <!-- slider3 開始囉XD -->
-              <!-- el start -->
-              <div class="el slider3">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Treerful 小樹屋</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Treerful 小樹屋</h2>
-                        <span></span>
-                        <p>
-                          Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">7</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="7">7</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider3">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">8</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="8">8</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider3">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">9</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="9">9</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-            <!-- slider1 結束啦XD -->
-
-            <!-- slider4 開始囉XD -->
-              <!-- el start -->
-              <div class="el slider4">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Treerful 小樹屋</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Treerful 小樹屋</h2>
-                        <span></span>
-                        <p>
-                          Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">10</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="10">10</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider4">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">11</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="11">11</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider4">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">12</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="12">12</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-            <!-- slider1 結束啦XD -->
-
-            <!-- slider5 開始囉XD -->
-              <!-- el start -->
-              <div class="el slider5">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Treerful 小樹屋</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Treerful 小樹屋</h2>
-                        <span></span>
-                        <p>
-                          Treerful 小樹屋，我們在各地提供自助式的獨立包廂，有質感的空間、親民的價格，期盼予您一個舒適的私人環境；我們期待與您共同定義小樹屋，發掘專屬於您的空間體驗。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">13</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="13">13</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider5">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">14</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="14">14</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-              <!-- el start -->
-              <div class="el slider5">
-                <div class="el__overflow">
-                  <div class="el__inner">
-                    <div class="el__bg"></div>
-                    <div class="el__preview-cont">
-                      <h2 class="el__heading">Changee 中山</h2>
-                    </div>
-                    <div class="el__content">
-                      <div class="el__text">
-                        <h2>Changee 中山</h2>
-                        <span></span>
-                        <p>
-                          在平日的白天，Changee中山是共同工作空間(Co-workingSpace)
-                          開放各式領域的工作者和工作團隊進駐，希冀讓各領域的進駐者能夠透過Changee相互交流，並讓每個人可以自在無負擔的嘗試、執行，最後實踐自己的想法。
-                        </p>
-                        <h5>台北市內湖區大湖一街36號</h5>
-                        <h4>185元/天</h4>
-                        <a class="button border_button dark-blue" href="#btn">觀看更多</a>
-                      </div>
-                      <div class="el__close-btn"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="el__index">
-                  <div class="el__index-back">15</div>
-                  <div class="el__index-front">
-                    <div class="el__index-overlay" data-index="15">15</div>
-                  </div>
-                </div>
-              </div>
-              <!-- el end -->
-            <!-- slider1 結束啦XD -->
-          </div>
-        </div>
-    <!-- 精選空間幻燈片 結束 -->
-
-    <!-- 翻轉地板 開始 -->
-
-
-      <div id="scene">
+        <ul class="dot B">
+          <li class="myCircle"></li>
+          <li class="myCircle"></li>
+          <li class="myCircle"></li>
+          <li class="myCircle"></li>
+          <li class="myCircle"></li>
+        </ul>
+        <ul class="dot_mobile">
+          <!-- <li id="left"></li> -->
+          <li id="right" ></li>
+          <input id="count" type="hidden" value="1">
+     <!--      <input id="countR" type="hidden" value="4"> -->
+        </ul>
+<!--         <script>
+          $(".dot_mobile li").click(function(){
+  alert($(".slider_overflow li").length);
+});
+        </script> -->
+        <div id="scene">
           <div class="rotate_scene" onclick="">
             <figure>
-              <div class="people"><img class="scene_img" src="img/index_scene_01.png" alt=""></div>
+              <div class="space_01"><object data="img/cocowo_talking_space.svg" type=""></object></div>
+              <div class="space_03"><object data="img/cocowo_lazy_space.svg" type=""></object></div>
+              <div class="space_05"><object data="img/cocowo_maker_space.svg" type=""></object></div>
+
               <div class="front"></div>
               <div class="bottom"></div>
               <div class="back"></div>
-              <div class="people_02"><img class="scene_img" src="img/index_people_02.png" alt=""></div>
+
+              <div class="space_02"><object data="img/cocowo_focus_space.svg" type=""></object></div>
+              <div class="space_04"><object data="img/cocowo_nature_space.svg" type=""></object></div>
+
             </figure>
           </div>
-      </div>
-    <!-- 翻轉地板 結束 -->
-<div id="scene_button">
-          <button id="A"></button>
-          <button id="B"></button>
-          <button id="C"></button>
-          <button id="D"></button>
-          <button id="E"></button>
-      </div>
-    <!-- 翻轉地板的js 開始-->
-      <script>
-            $("#A").click(function(){
-          $("figure").css("transform","rotateX(70deg) translateZ(8vw)");
-
-          $(".scene_title_box").css("opacity","0");
-
-          $(".people_02 img").css("opacity","0");
-
-          $(".people img").css("opacity","1");
-
-          $("#scene_title_1").css("opacity","1");
-
-        });
-
-             $("#B").click(function(){
-          $("figure").css("transform","rotateX(250deg) translateZ(-6vw)");
-
-          $(".slider1").remove();
-
-          $(".scene_title_box").css("opacity","0");
-
-          $(".people img").css("opacity","0");
-
-          $(".people_02 img").css("opacity","1");
-
-          $("#scene_title_2").css("opacity","1");
-
-        });
-
-            $("#C").click(function(){
-          $("figure").css("transform","rotateX(430deg) translateZ(8vw)");
-
-          $(".slider2").remove();
-
-          $(".scene_title_box").css("opacity","0");
-
-          $(".people_02 img").css("opacity","0");
-
-          $(".people img").css("opacity","1");
-
-          $("#scene_title_3").css("opacity","1");
-
-        });
-
-            $("#D").click(function(){
-          $("figure").css("transform","rotateX(610deg) translateZ(-6vw)");
-
-          $(".slider3").remove();
-
-          $(".scene_title_box").css("opacity","0");
-
-          $(".people img").css("opacity","0");
-
-          $(".people_02 img").css("opacity","1");
-
-          $("#scene_title_4").css("opacity","1");
-        });
-
-            $("#E").click(function(){
-          $("figure").css("transform","rotateX(790deg) translateZ(8vw)");
-
-          $(".slider4").remove();
-
-          $(".scene_title_box").css("opacity","0");
-
-          $(".people_02 img").css("opacity","0");
-
-          $(".people img").css("opacity","1");
-
-          $("#scene_title_5").css("opacity","1");
-        });
-      </script>
-    <!-- 翻轉地板的js 結束-->
-
-
+        </div>
 
     </div>
   <!-- container_02 結束包 -->
@@ -843,80 +592,162 @@
 <!-- section_02 結束啦XD -->
 
   <!-- 我是節點 03 -->
-  <div id="section_03"></div>
+
 <!-- section_03 開始囉XD -->
   <section class="section section_03">
+  <div id="section_03"></div>
+
     <div class="container">
       <div class="map_title">
         <h3>附近的空間</h3>
       </div>
     </div>
-      <div id="map"></div>
+      <div id="nearby_box">
+        <input id="pac-input" class="controls" type="text"
+        placeholder="要找哪裡的窩？">
+      </div>
+
+    <div id="map"></div>
 
 
   </section>
 <!-- section_03 結束啦XD -->
 
   <!-- 我是節點 04 -->
-  <div id="section_04"></div>
+
 <!-- section_04 開始囉XD -->
 
   <section class="section section_04">
+  <div id="section_04"></div>
+
     <div class="container">
-      <div class="blog_title">
+      <div class="blog_title C">
             <h3>窩日誌</h3>
             <h5>co-work相關最新文章</h5>
       </div>
-      <div class="blog_box">
+      <div class="blog_box C">
             <div class="blog blog_01">
-              <img src="img/index_img_01.jpg" alt="">
+              <img src="img/cocowo_blog_img01.jpg" alt="">
               <h5>空間介紹:巴拉巴巴嘎</h5>
               <p>想開店的朋友，都知道初期必須準備一筆資金，而初期到底要準備多少資金，到底有什麼要花錢？該怎麼分配都是一門大學費用，以下將針對每一項介紹分析。</p>
 
             </div>
             <div class="blog blog_02">
-              <img src="img/index_img_02.jpg" alt="">
+              <img src="img/cocowo_blog_img02.jpg" alt="">
               <h5>如何靠空間活用致富</h5>
               <p>想開店的朋友，都知道初期必須準備一筆資金，而初期到底要準備多少資金，到底有什麼要花錢？該怎麼分配都是一門大學費用，以下將針對每一項介紹分析。</p>
 
             </div>
             <div class="blog blog_03">
-              <img src="img/index_img_03.jpg" alt="">
+              <img src="img/cocowo_blog_img03.jpg" alt="">
               <h5>你所不知的共同工作</h5>
               <p>想開店的朋友，都知道初期必須準備一筆資金，而初期到底要準備多少資金，到底有什麼要花錢？該怎麼分配都是一門大學費用，以下將針對每一項介紹分析。</p>
 
             </div>
       </div>
-      <div class="blog_btn">
-            <a class="button dark-blue" href="#btn">更多精彩文章</a>
+      <div class="blog_btn C">
+            <a class="button border_button dark-blue" href="#btn">更多精彩文章</a>
       </div>
     </div>
   </section>
 <!-- section_04 結束啦XD -->
 
   <!-- 我是節點 05 -->
-  <div id="section_05"></div>
-  <!-- section_05 開始囉XD -->
+
 
 <!-- section_05 開始囉XD -->
   <section class="section section_05">
+  <div id="section_05"></div>
+
     <div class="container">
-        <div class="footer_title">
+        <div class="footer_title D">
 
             <h1><span>work</span>在一起，尋找更多<span>可能</span></h1>
 
         </div>
-            <a class="button yellow" href="#btn">立即尋找</a>
+            <a class="button border_button yellow D" href="#btn">立即尋找</a>
         </div>
-        <img src="img/index_footer_people.png" alt="">
+        <img  class="D" src="img/cocowo_footer_people.png" alt="">
+
   </section>
 <!-- section_05 結束啦XD -->
 
-  <!-- 我是節點 06 -->
-  <div id="section_06"></div>
-  <!-- section_06 開始囉XD -->
+<!-- userLightBox -->
+<div class="userlightboxbccc" id="loginuserlightboxbccc"></div>
+ <div class="userLightBox" id="loginuserLightBox">
+   <div class="lightbox">
+     <div class="closeBox" id="logincloseBox">
+      <i class="fa fa-times fa-fw" aria-hidden="true"></i>
+     </div>
+     <h4>會員登入</h4>
+     <label for="usermail">
+       <input id="usermail" type="text" name="usermail" placeholder="會員帳號">
+     </label>
+     <label for="userpsw">
+       <input id="userpsw" type="password" name="userpsw" placeholder="會員密碼">
+     </label>
+     <label for="userpsw">
+       <input type="checkbox" name="userck" >記住帳號與密碼
+     </label>
+     <div class="userbutton">
+       <a id="userBtn" class="button dark-blue" href="#">登入</a>
+       <a id='signBtn' class="button yellow">註冊</a>
+     </div>
+   </div>
+ </div>
 
+<!-- userLightBoxEnd-->
+
+<!-- SignupuserLightBox -->
+<div class="userlightboxbccc" id="signupuserlightboxbccc"></div>
+ <div class="userLightBox" id="signupuserLightBox">
+   <div class="lightbox">
+     <div class="closeBox" id="signupcloseBox">
+       <i class="fa fa-times fa-fw" aria-hidden="true"></i>
+     </div>
+     <h4>會員註冊</h4>
+     <form>
+       <label for="usermail">
+         帳號:
+         <input type="mail" name="signusermail" placeholder="aaa123@example.com">
+       </label>
+       <label for="userpsw">
+         密碼:
+         <input type="password" name="signuserpsw" placeholder="會員密碼">
+       </label>
+       <label for="username">
+         名稱:
+         <input type="text" name="username" placeholder="會員名稱">
+       </label>
+       <label for="userpho">
+         電話:
+         <input type="text" name="userpho" placeholder="會員電話">
+       </label>
+       <label for="usersex">
+       性別:
+         <input type="radio" name="usersex" value="0">男
+         <input type="radio" name="usersex" value="1">女
+       </label>
+       <label for="useroccu">
+         職業:
+         <input type="text" name="useroccu" placeholder="Engineer">
+       </label>
+       <div class="userbutton">
+         <a id="yesBtn" class="button dark-blue" href="#">確定</a>
+         <input type="reset" name="" class="button red">
+     </form>
+     </div>
+   </div>
+ </div>
+
+<!-- SignupuserLightBoxEnd-->
+
+<!-- footer 開始囉XD -->
+
+  <!-- <div class="section fp-auto-height footer "> -->
   <div class="footer">
+  <div id="section_06"></div>
+
     <!-- <div class="footer_cloud"></div> -->
     <div class="container">
       <div class="row">
@@ -974,81 +805,23 @@
     </div>
 
   </div>
-
+<!-- footer 結束啦XD -->
+</div>
 
 </body>
-<!-- 按鈕js -->
-<script src="js/btn.js"></script>
-
-    <script type="text/javascript">
-     var $cont = document.querySelector('.cont');
-    var $elsArr = [].slice.call(document.querySelectorAll('.el'));
-    var $closeBtnsArr = [].slice.call(document.querySelectorAll('.el__close-btn'));
-    setTimeout(function () {
-        $cont.classList.remove('s--inactive');
-    }, 200);
-    $elsArr.forEach(function ($el) {
-        $el.addEventListener('click', function () {
-            if (this.classList.contains('s--active'))
-                return;
-            $cont.classList.add('s--el-active');
-            this.classList.add('s--active');
+<script src="js/index_space.js"></script>
+<script src="js/loginBox.js"></script>
+<script src="js/member.js"></script>
+<!-- <script src="js/tween.js"></script> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADTKs2WrmkAtyb0RqjlaDZjh0CHlPh1Gc&libraries=places&callback=initMap"
+         async defer></script>
+  <!-- <script type="text/javascript">
+        $(document).ready(function() {
+            $('#dowebok').fullpage({
+                verticalCentered: true,
+                anchors: [ 'HeaderBar', 'AwesomeWo','NearbyWo', 'BlogWo', 'GoSearch','Footer'],
+                'navigation': true,
+            });
         });
-        $el.addEventListener('keypress', function (e) {
-            if (this.classList.contains('s--active'))
-                return;
-            if (e.which !== 13)
-                return;
-            $cont.classList.add('s--el-active');
-            this.classList.add('s--active');
-        });
-    });
-    $closeBtnsArr.forEach(function ($btn) {
-        $btn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            $cont.classList.remove('s--el-active');
-            document.querySelector('.el.s--active').classList.remove('s--active');
-        });
-        $btn.addEventListener('keypress', function (e) {
-            if (e.which !== 13)
-                return;
-            e.stopPropagation();
-            $cont.classList.remove('s--el-active');
-            document.querySelector('.el.s--active').classList.remove('s--active');
-        });
-    });
-  </script>
-   <script>
-      // 當window load完所需的結構檔案後執行init google map
-      google.maps.event.addDomListener(window, 'load', init);
-
-      // 以下為範例的init function
-      function init() {
-
-          var mapOptions = {
-            // 預設地圖的放大級數
-            zoom: 11,
-
-            // 地圖中心的經緯度
-            center: new google.maps.LatLng(40.6700, -73.9400), // New York
-
-            // style地圖的地方
-            // Snazzy Maps 的範例config code貼在這
-            styles: [{"featureType":"landscape.natural","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#e0efef"}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"hue":"#1900ff"},{"color":"#c0e8e8"}]},{"featureType":"road","elementType":"geometry","stylers":[{"lightness":100},{"visibility":"simplified"}]},{"featureType":"road","elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"transit.line","elementType":"geometry","stylers":[{"visibility":"on"},{"lightness":700}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#7dcdcd"}]}]
-          };
-
-        // 拿地圖的html div
-        var mapElement = document.getElementById('map');
-
-        // 將上面對地圖的設定套用在選定的div地圖上
-        var map = new google.maps.Map(mapElement, mapOptions);
-
-        // marker小圖標得設定寫在這!
-        var marker = new google.maps.Marker({
-          position: new google.maps.LatLng(40.6700, -73.9400),
-          map: map,
-          title: 'Prototype Hacker Demo'
-        });
-      }
-   </script>
+  </script> -->
 </html>

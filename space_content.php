@@ -1,4 +1,6 @@
 <?php
+// sending order
+
 
  ?>
 <!DOCTYPE html>
@@ -602,11 +604,11 @@
           </ul>
           <div class="input_contents">
 
-            <form action="">
+            <form id="order_form" action="">
               <div class="input_content content_1">
                 <div class="content_1_input">
-                <h3 class="input_title">請選擇預訂日期：</h3><input id="date-range0" size="40" placeholder="請選取日期">
-                <h3 class="input_title">請選擇預訂位置數：</h3><input id="order_number_input" type="number" placeholder="請填數字">
+                <h3 class="input_title">請選擇預訂日期：</h3><input name="ord_daterange" id="date-range0" size="40" placeholder="請選取日期">
+                <h3 class="input_title">請選擇預訂位置數：</h3><input name="ord_man" type="number" id="order_number_input" placeholder="請填數字">
                 </div>
                 <div class="content_1_panel">
                   <h4>預定日期：</h4>
@@ -621,13 +623,13 @@
               </div>
               <div class="input_content content_2">
                 <div class="left">
-                  <h3 class="input_title">姓名：</h3><input id="order_name_input" type="text" placeholder="您的姓名" required="!!!">
-                  <h3 class="input_title">電話：</h3><input id="order_phone_input" type="text" placeholder="手機或市話">
-                  <h3 class="input_title">e-mail：</h3><input id="order_mail_input" type="text" placeholder="example@gmail.com">
+                  <h3 class="input_title">姓名：</h3><input name="ord_name" id="order_name_input" type="text" placeholder="您的姓名" required="!!!">
+                  <h3 class="input_title">電話：</h3><input name="ord_phone" id="order_phone_input" type="text" placeholder="手機或市話">
+                  <h3 class="input_title">e-mail：</h3><input name="ord_mail" id="order_mail_input" type="text" placeholder="example@gmail.com">
                 </div>
                 <div class="right">
                   <h3 class="input_title">備註</h3>
-                  <textarea id="order_info_input" name="name" rows="12" cols="30" placeholder="有什麼額外需求都可以在先提出唷!"></textarea>
+                  <textarea id="order_info_input" name="ord_note" rows="12" cols="30" placeholder="有什麼額外需求都可以在先提出唷!"></textarea>
                 </div>
                 <a class="order_pre_btn order_pre_btn_1">上一步</a>
                 <a class="button yellow order_next_btn order_next_btn_2">下一步</a>
@@ -643,7 +645,7 @@
                   <p>預定日期：<span class="date order_dates"></span></p>
                   <p>備註：<span class="order_info"></span></p>
                   <hr>
-                  <h5 style="margin-bottom:0;">金額：<span class="total_money"></span> 元</h5>
+                  <h5 style="margin-bottom:0;">金額：<span class="total_money" id="total_money"></span> 元</h5>
                 </div>
                 <a class="order_pre_btn order_pre_btn_2">上一步</a>
                 <a class="button yellow order_next_btn order_next_btn_3">下一步</a>
@@ -684,9 +686,14 @@
                 <div class="thx_order">
                 <h3 class="thx_title">感謝您的預訂！</h3>
                   <a class="button yellow thx_button" href="#">返回空間主頁面</a>
+
                 </div>
                 <a class="order_pre_btn order_pre_btn_3">上一步</a>
                 <input type="hidden" name="action" id="action" value="add">
+                <input type="hidden" id="mem_no_input" name="mem_no">
+                <input type="hidden" id="spa_no_input" name="spa_no">
+                <input type="hidden" id="ord_money_input" name="ord_money">
+
                 <button type="submit" class="button red order_next_btn order_next_btn_4">送出訂單</button>
               </div>
             </form>
@@ -757,6 +764,7 @@
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2CcU1WuGApPmm-c2p5jGF6OHUMfP75os&callback=initMap"
 async defer></script>
       <script src="js/space_content.js"></script>
+      <script src="js/send_order.js"></script>
       <!-- <script src="js/loginBox.js"></script> -->
   </body>
   <footer>

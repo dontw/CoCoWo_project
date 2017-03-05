@@ -1,7 +1,7 @@
 
 
 $(window).load(function(){
-  $("#preloader").delay(3000).hide();
+  $("#preloader").hide();
   $(".post_space").show();
 });
 
@@ -394,6 +394,8 @@ var scene_9 = new ScrollMagic.Scene({
   $('.buttom_slider').on('afterChange', function(event, slick, currentSlide){
     $('.slick-current').addClass('add_color');
   });
+
+  console.log(sessionStorage.getItem('userno'));
 
   $('.fixed_post').on('click',function(){
     if (sessionStorage.getItem("username")) {
