@@ -28,10 +28,10 @@
 	.userLightBox
 	{
 		// background-color: rgba(33, 33, 33, 0.6);
-		position: fixed;
+			position: fixed;
 	    z-index: 1000000;
-	    top: 50%;
-	    left: 50%;
+			top: 48%;
+    	left: 47%;
 	    margin-top: -152.5px;
 	    margin-left: -139px;
 
@@ -84,6 +84,22 @@
 
 				width: 100%;
 				margin: 15px 0 0 0;
+			}
+
+			#usermail,#userpsw{
+				display: block;
+		    margin: 0;
+		    padding: 0 0 0.15em;
+		    width: 100%;
+		    border: none;
+		    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+		    color: #212121;
+		    text-overflow: ellipsis;
+		    font-weight: bold;
+		    font-size: 24px;
+		    border-radius: 0;
+		    margin-bottom: 15px;
+		    font-family: "cwtexhei", sans-serif;
 			}
 		}
 

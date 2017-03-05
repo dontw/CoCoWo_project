@@ -398,7 +398,7 @@ var scene_9 = new ScrollMagic.Scene({
   $('.fixed_post').on('click',function(){
     if (sessionStorage.getItem("username")) {
       var url = "post_space_input.php";
-      window.location = url;
+      window.location = url + "?mem_no="+sessionStorage.getItem('userno');
       return false;
     }else{
       alert("請先登入會員!");

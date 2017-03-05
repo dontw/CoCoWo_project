@@ -1,10 +1,16 @@
 $(document).ready(function() {
-  if (sessionStorage.getItem("username")) {
-    var url = "post_space_input.php";
-    window.location = url;
-    return false;
-  }else{
+  if (sessionStorage.getItem('userno') === null) {
     alert("請先登入會員!");
-    $('.main_nav_user_a').click();
+    var url = "post_space.html";
+    window.location = url;
+  }else{
+  }
+});
+
+$('.fs-submit').on('click',function(){
+  if(confirm("確認送出?")){
+    alert('刊登完成!即將返回刊登主頁');
+  }else{
+
   }
 });

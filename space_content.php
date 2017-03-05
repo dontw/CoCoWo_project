@@ -1,3 +1,6 @@
+<?php
+
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -16,7 +19,7 @@
     <script src="js/jquery.daterangepicker.js"></script>
 
 
-    <title>CoCoWork可可窩 </title>
+    <title>CoCoWork可可窩</title>
   </head>
   <body class="space_content">
     <!-- main_nav_bar -->
@@ -683,6 +686,7 @@
                   <a class="button yellow thx_button" href="#">返回空間主頁面</a>
                 </div>
                 <a class="order_pre_btn order_pre_btn_3">上一步</a>
+                <input type="hidden" name="action" id="action" value="add">
                 <button type="submit" class="button red order_next_btn order_next_btn_4">送出訂單</button>
               </div>
             </form>

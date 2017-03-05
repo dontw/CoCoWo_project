@@ -36,7 +36,7 @@ if(isset($_REQUEST["action"]) && ($_REQUEST['action'] == "add")){
 
 
   $space = $pdo->prepare($sql);
-  $space -> bindValue(":mem_no",$_SESSION["mem_no"]);
+  $space -> bindValue(":mem_no",$_GET["mem_no"]);
   $space -> bindValue(":spa_name",$_REQUEST["spa_name"]);
   $space -> bindValue(":spa_city",$_REQUEST["spa_city"]);
   $space -> bindValue(":spa_addr",$_REQUEST["spa_addr"]);
@@ -164,7 +164,7 @@ switch( $_FILES["photo"]["error"][$i]){
 
 }
 
-  header("Location: post_ok.php");
+header("Location: post_space.html");
 
   }catch(PDOException $ex){
     echo "資料庫操作失敗,原因：",$ex->getMessage(),"<br>";
