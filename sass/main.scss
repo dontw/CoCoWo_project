@@ -32,6 +32,8 @@
 @import "page/00_index/_medium.scss"; //首頁平板768~992px
 @import "page/00_index/_small.scss"; //首頁手機768px以下
 
+@import "page/01_intro/_base.scss";
+
 //搜尋空間 泓
 @import "page/10_search_space/_base.scss";
 @import "page/10_search_space/_large.scss"; //首頁桌機992px以上
@@ -100,4 +102,4 @@
 
 //後檯登入頁
 @import "page/60_back_login/_base.scss";
-@import "page/61_back/_back.scss"; 
+@import "page/61_back/_back.scss";

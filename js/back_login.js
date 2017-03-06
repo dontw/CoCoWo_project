@@ -1,14 +1,10 @@
 $(window).load(function(){
   $("#preloader").hide();
-  $(".back_login").show();
+  $(".back_login_wrap").show();
 });
 
-$(document).ready(function() {
-
-});
 
 $(".back_login_submit").on('click', function(){
-  alert('login start');
   var adm_id = $('#adm_id').val();
   var adm_pwd = $('#adm_pwd').val();
   $.ajax({
@@ -18,11 +14,11 @@ $(".back_login_submit").on('click', function(){
       data :{adm_id,adm_pwd},
       success:function(result) {
           //EMPTY存在的話
-          alert("ss",result);
-          if(result =="no"){
-            alert("帳密錯誤!!");
-          }else{
+          if(result==="yes"){
             alert('登入成功!!!');
+            window.location = "back_space.html"
+          }else{
+            alert("帳密錯誤!!");
           }
         },
         error:function(xhr, ajaxOption, thrownError)

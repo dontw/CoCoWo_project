@@ -202,7 +202,7 @@ header("Location: post_space.html");
   		<div class="container">
   			<div class="row">
   				<div class="col-xs-12 col-sm-2 col-md-2">
-  					<a href="index.html">
+  					<a href="index.php">
   						<div class="main_nav_logo"></div>
   					</a>
   				</div>
