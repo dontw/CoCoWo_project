@@ -1,7 +1,17 @@
 @include respones(small) {
+	.mem_Info{
+		.col-xs-20p
+		{
+			padding: 0;
+		}
+	}
   .memInfo
 	{
     margin-top: 0;
+    .col-xs-20p
+	{
+		padding: 0;
+	}
 		.memPageAll
 		{
 
@@ -15,7 +25,9 @@
 			{
 				position: fixed;
 				z-index: 999;
-        top: 100px;
+        		top: 85px;
+        		left: 0;
+
 				.memNavDisAll
 				{
 					display: inline-block;
@@ -28,6 +40,8 @@
 
 				.memNavNoneAll
 				{
+					padding-right: 34px;
+    				padding-left: 34px;
 					background-color: #fff;
 					margin-top: -14px;
 					box-shadow: 1px 1px 10px $grey;
@@ -44,7 +58,20 @@
 		.memInfoRight
 		{
 			margin-top: 50px;
+			
+			.memResult
+			{
+				.submitImg, .submitImgButton
+				{
+					img{width: 50%;}
+					text-align: center;
+				}
 
+				
+			}
 		}
 	}
+	.memInfo .memPageAll .memInfoRight .memResult .memUpdateButton .Btn {
+    width:100%;
+    display:block;}
 };

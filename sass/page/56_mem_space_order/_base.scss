@@ -1,0 +1,313 @@
+.mem_spaceInfo
+{
+	background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+
+	font-family: $main_font_family;
+}
+.memSpace
+{
+	// margin-top: 50px;
+	.container
+	{
+		background: #EEEEEE;
+		padding-top: 30px;
+		padding-bottom: 5px;
+	}
+	.memPageAll
+	{
+		position: relative;
+		.navbar
+		{
+			box-shadow: 1px 1px 15px $dark-grey;
+			.navbar-left
+			{
+				float: left;
+			}
+		}
+		.nav
+		{
+			display: block;
+		}
+		.memNavNone
+		{
+
+				padding-bottom: 15px;
+
+			img
+			{
+				width: 100%;
+				border-radius: 50%;
+				padding: 15px 0;
+			}
+			li
+			{
+				display: block;
+				clear: both;
+				width: 100%;
+			}
+			li>a:hover
+			{
+				background-color: $dark-blue;
+				transition:.5s;
+			}
+			.active
+			{
+				a
+				{
+					background-color:$dark-blue;
+
+					color:#fff;
+				}
+
+			}
+
+		}
+
+		.memOrderRight
+		{
+
+			img
+			{
+				width: 100%;
+				border-radius: 50%;
+				padding: 15px 0;
+				vertical-align: middle;
+				display: inline-block;
+			}
+
+			.breadcrumb
+			{
+				background-color: #eeeeee;
+				padding-left: 0;
+				padding-right: 0;
+			}
+			.orderHead
+			{
+				font-size: 0;
+				li
+				{
+
+					display: inline-block;
+					font-size: 20px;
+					padding-right:30px;
+
+
+					h3
+					{
+						margin: 0;
+						font-size: $fz-h3;
+					}
+				}
+				li+li
+				{
+					padding-right:0px;
+					.spaceButton
+					{
+						padding: 5px 10px;
+						display: inline;
+						color: #fff;
+					}
+					.spaceButton:hover
+					{
+						background-color: $yellow;
+						color: #fff;
+					}
+					a
+					{
+						padding: 10px 20px;
+						color: $grey;
+					}
+					.headLinkNow
+					{
+						background-color: $grey;
+						color: $dark-grey;
+						text-decoration: none;
+					}
+					a:hover
+					{
+						@extend .headLinkNow;
+						transition:.5s;
+					}
+				}
+			}
+			.orderTable
+			{
+				table
+				{
+					width: 100%;
+				}
+				thead
+				{
+					background-color: #fff;
+					font-size: $fz-h5;
+					tr
+					{
+						th
+						{
+							padding: 5px 5px;
+							width: 25%;
+						}
+					}
+				}
+				tbody
+				{
+					tr
+					{
+
+						border-bottom: 1px solid $grey;
+					}
+
+				}
+				td
+				{
+					vertical-align: middle;
+					padding: 0 5px;
+					width: 25%;
+					a
+					{
+						color: $normal-blue;
+						font-weight:900;
+					}
+					.button
+					{
+						color: #fff;
+						font-weight:500;
+						cursor: pointer;
+						margin: 0.17em;
+					}
+				}
+				.insert
+				{
+					tr
+					{
+						border-bottom: none;
+					}
+					td
+					{
+						vertical-align: middle;
+						padding-top: 5px;
+						padding-bottom: 5px;
+						padding-right: 44px;
+						padding-left: 5px;
+
+
+					}
+				}
+			}
+
+			.orderChangePage
+			{
+				text-align: center;
+				ul
+				{
+					font-size: 0;
+					display: inline-block;
+					background-color: #fff;
+					margin-top: 5px;
+					border-radius: 4px;
+					border: 1px solid  $grey;
+					li
+					{
+						// background-color: #fff;
+						display: inline-block;
+						font-size: 20px;
+						vertical-align: middle;
+						color: $normal-blue;
+						position: relative;
+						padding: 0;
+						a
+						{
+							display:block;
+							padding: 5px 15px;
+						}
+						.linkNow
+						{
+							color: #fff;
+							background-color: $normal-blue;
+							text-decoration: none;
+						}
+						a:hover
+						{
+							color: #fff;
+							background-color: $normal-blue;
+							text-decoration: none;
+							transition:.5s;
+						}
+					}
+					li+li::before
+					{
+						content: '';
+						display: inline-block;
+						position: absolute;
+						left: 0;
+						vertical-align: middle;
+						width: 1px;
+						height: 38px;
+						background-color: $grey;
+
+					}
+				}
+			}
+
+
+
+			.memResult
+			{
+				input
+				{
+					display: block;
+					padding: 5px 0;
+					width: 100%;
+					border-radius: 5px;
+
+				}
+				select
+				{
+					display: block;
+					padding: 5px 0;
+					width: 100%;
+				}
+				p
+				{
+					margin: 20px 0 0 0;
+				}
+
+				.submitImgButton
+				{
+
+					.subRect
+					{
+						display: inline-block;
+						font-size: 0;
+						vertical-align: middle;
+						width: 1%;
+						height: 200px;
+						opacity: 0;
+						background-color: #000;
+					}
+					.subText
+					{
+						display: inline-block;
+						vertical-align: middle;
+						width: 95%;
+					}
+				}
+
+				.memUpdateButton
+				{
+					margin-top: 90px;
+					text-align: center;
+				}
+			}
+		}
+
+
+	}
+	.memPageAll::after
+	{
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+}

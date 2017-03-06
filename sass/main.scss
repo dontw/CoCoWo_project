@@ -62,6 +62,11 @@
 @import "page/30_blog_main/_medium.scss"; //首頁平板768~992px
 @import "page/30_blog_main/_small.scss"; //首頁手機768px以下
 
+@import "page/31_blog_content/_base.scss";
+@import "page/31_blog_content/_large.scss";
+@import "page/31_blog_content/_medium.scss";
+@import "page/31_blog_content/_small.scss";
+
 //關於我們 宜真
 @import "page/40_about/_large.scss"; //首頁桌機992px以上
 @import "page/40_about/_medium.scss"; //首頁平板768~992px

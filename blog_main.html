@@ -8,19 +8,32 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+  <link rel="stylesheet" type="text/css" href="engine0/style.css" />
+
+
   <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <!--script type="text/javascript" src="js/jquery-ui.js"></script-->
   <script type="text/javascript" src="js/blog.js"></script>
+
   <script type="text/javascript" src="js/loginBox.js"></script>
+  <script type="text/javascript" src="js/member.js"></script>
+
   <title>可可窩CoCoWork</title>
-</head>
-<body>
+
+	<!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+	<link rel="stylesheet" type="text/css" href="engine0/style.css" />
+
+	<!-- End WOWSlider.com HEAD section --></head>
+<body class="blog_main">
+<!-- <div id="testp">
+  <p>目前滾動:<span>0</span></p>
+</div> -->
   <!-- main_nav_bar -->
    <div class="main_nav_bar">
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-2 col-md-2">
-            <a href="index.html">
+            <a href="index.php">
               <div class="main_nav_logo"></div>
             </a>
           </div>
@@ -38,7 +51,7 @@
             </a>
           </div>
           <div class="col-xs-20p col-sm-2 col-md-2">
-            <a href="#" class="main_nav_a main_nav_a_shop main_nav_a_active">
+            <a href="blog_main.html" class="main_nav_a main_nav_a_shop main_nav_a_active">
               <i class="fa fa-book" aria-hidden="true"></i>
               <span class="nav_p">窩 日 誌</span>
             </a>
@@ -50,9 +63,9 @@
             </a>
           </div>
           <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
-            <a href="#" class="main_nav_a">
+            <a href="#" class="main_nav_a main_nav_user_a">
               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <span class="nav_p">會員中心</span>
+              <span class="nav_p">登入</span>
             </a>
           </div>
         </div>
@@ -62,473 +75,155 @@
     <!-- main_nav_bar_end -->
 
   <!-- userLightBox -->
-  <div class="userlightboxbccc">
-    <div class="userLightBox">
+  <div class="userlightboxbccc" id="loginuserlightboxbccc"></div>
+    <div class="userLightBox" id="loginuserLightBox">
       <div class="lightbox">
-        <div id="closeBox">
-          <i class="fa fa-window-close" aria-hidden="true"></i>
-        </div>
+        <div class="closeBox" id="logincloseBox"><i class="fa fa-times" aria-hidden="true"></i></div>
         <h4>會員登入</h4>
-        <label for="username">
-          <input type="text" name="username" placeholder="會員帳號">
+        <label for="usermail">
+          <input id="usermail" type="text" name="usermail" placeholder="會員帳號">
         </label>
         <label for="userpsw">
-          <input type="password" name="userpsw" placeholder="會員密碼">
+          <input id="userpsw" type="password" name="userpsw" placeholder="會員密碼">
         </label>
         <label for="userpsw">
           <input type="checkbox" name="userck" >記住帳號與密碼
         </label>
         <div class="userbutton">
-          <a class="button dark-blue" href="mem_page.html">登入</a>
-          <a class="button yellow" href="#btn">註冊</a>
+          <a id="userBtn" class="button dark-blue" href="#">登入</a>
+          <a id='signBtn' class="button yellow">註冊</a>
         </div>
       </div>
     </div>
-  </div>
+
   <!-- userLightBoxEnd-->
+
+  <!-- SignupuserLightBox -->
+  <div class="userlightboxbccc" id="signupuserlightboxbccc"></div>
+    <div class="userLightBox" id="signupuserLightBox">
+      <div class="lightbox">
+        <div class="closeBox" id="signupcloseBox">
+        <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <h4>會員註冊</h4>
+        <form>
+          <label for="usermail">
+            <input type="mail" name="signusermail" placeholder="aaa123@example.com">
+          </label>
+          <label for="userpsw">
+            <input type="password" name="signuserpsw" placeholder="會員密碼">
+          </label>
+          <label for="username">
+            <input type="text" name="username" placeholder="會員名稱">
+          </label>
+          <label for="userpho">
+            <input type="text" name="userpho" placeholder="會員電話">
+          </label>
+          <label for="usersex">
+            <input type="radio" name="usersex" value="0">男
+            <input type="radio" name="usersex" value="1">女
+          </label>
+          <label for="useroccu">
+            <input type="text" name="useroccu" placeholder="Engineer">
+          </label>
+          <div class="userbutton">
+            <a id="yesBtn" class="button dark-blue" href="#">確定</a>
+            <input type="reset" name="" class="button red">
+          </div>
+        </form>
+        </div>
+      </div>
+
+
+  <!-- SignupuserLightBoxEnd-->
+
+  <div id="preloader">
+    <div class="cube-wrapper">
+      <div class="cube-folding">
+        <span class="leaf1"></span>
+        <span class="leaf2"></span>
+        <span class="leaf3"></span>
+        <span class="leaf4"></span>
+      </div>
+      <span class="loading" data-name="Loading"><p>讀取中...</p></span>
+    </div>
+  </div>
 
 
   <div class="blog">
     <div id="lightboxbcc"></div>
+
+    <div class="col-xs-12 col-sm-12" >
+
+      <div class="container" id="plusSlider">
+      <div id="wowslider-container0">
+          <div class="ws_images" >
+          <ul>
+            <li>
+            <div class="sliderBlogNo" style='display: none'>1</div>
+            <a href="1" class="linkGo"><img src="data0/images/hasagi.jpg" alt="index_img_01" title="非典型辦公室 兼顧生活與工作" id="wows0_0"/></a></li>
+            <li>
+            <div class="sliderBlogNo" style='display: none'>2</div>
+            <a href="2" ><img src="data0/images/index_img_02.jpg" title="燃燒吧，自造者魂！－ MakerBar Taipei" id="wows0_1"/></a></li>
+            <li>
+            <div class="sliderBlogNo" style='display: none'>3</div>
+            <a href="3" class="linkGo"><img src="data0/images/index_img_03.jpg" alt="index_img_03" title="為熱愛的事而義無反顧，是創業者的生活態度" id="wows0_2"/></a></li>
+          </ul></div>
+          <div class="ws_bullets"><div>
+            <a href="#" title="非典型辦公室 兼顧生活與工作"><span>1</span></a>
+            <a href="#" title="燃燒吧，自造者魂！－ MakerBar Taipei"><span>2</span></a>
+            <a href="#" title="為熱愛的事而義無反顧，是創業者的生活態度"><span>3</span></a>
+          </div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.com/vi">image slider</a> by WOWSlider.com v8.7</div>
+          <div class="ws_shadow"></div>
+        </div>
+         <script type='text/javascript' src='engine0/wowslider.js' defer></script>
+         <script type='text/javascript' src='engine0/script.js' defer></script>
+        </div>
+    </div>
+
     <div class="container">
-      <div class="row">
-        <div class="main col-xs-12">
-          <!-- <img src="../img/bcc1.jpg" class="mainBcc"> -->
-          <div class="mainText col-xs-11 col-sm-7">
-            <div id="ribbon">
-              <div>最新</div>
-            </div>
-            <h2 >非典型辦公室 兼顧生活與工作</h2>
-            <p >數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-              以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-              求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。</p>
-
-              <p>「非典」勞動人口近年顯著成長，美國
-                ....</p>
-                <div >
-                  <a id="button" class="button dark-blue" href="#">More</a>
-                </div>
-
-              </div>
-            </div>
-          </div>
 
 
 
-          <div class="row">
-            <nav class="navbar navbar-default blogNav" role="navigation">
-              <!-- 右選單 -->
-              <ul class="nav navbar-nav navbar-left navGo">
-                <!-- 下拉選單 -->
-                <li class="dropdown blogNavItem">
-                  <a href="#" class="dropdown-toggle " data-toggle="dropdown">排列順序 <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">發文時間</a></li>
-                    <li><a href="#">留言數</a></li>
-                    <li><a href="#">人氣</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown blogNavItem">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">地區 <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">北部</a></li>
-                    <li><a href="#">中部</a></li>
-                    <li><a href="#">南部</a></li>
-                    <li><a href="#">東部</a></li>
-                  </ul>
-                </li>
-
-              </ul>
-              <!-- 搜尋表單 -->
-              <form class="navbar-form navbar-right blog_search" role="search">
-               <div class="form-group">
-                 <input type="text" class="form-control keyword" placeholder="請輸入關鍵字">
-               </div>
-               <button type="submit" class="btn btn-default btnSearch searchBtn">搜尋</button>
-             </form>
-
-           </nav>
-         </div>
-         <div class="blogItemAll">
-
-        <!-- <div class="row">
-          <div class="blogItem">
-           <h2>喔喔喔喔喔喔</h2>
-           <div class="col-xs-12 col-sm-5 blogTextBigAll">
-            <img src="../img/detail-1.jpg">
-           </div>
-           <div class="col-xs-12 col-sm-7 blogTextBigAll">
-             <div class="blogTextAll">
-               <div class="blogText">數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-                以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-                求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。
-                </div>
-             </div>
-              <div class="buttonLeft">
-              <a href="#">More</a>
-            </div>
-            <div class="buttonRight">
-              <a href="#">More</a>
-            </div>
-            </div>
-
-          </div>
-        </div> -->
-        <div class="row">
-         <div class="blogItem">
-
-           <h2>燃燒吧，自造者魂！－ MakerBar Taipei </h2>
-           <div class="col-xs-12 col-sm-5"><img src="img/item1.png"></div>
-           <div class="col-xs-12 col-sm-7"><p class="regular" style="color:grey">MakerBar Taipei 是 一 個 以 社 群 為 核 心， 結 合自造者空間與共同工作空間，推廣動手做精神的國際創新交流平臺。位於臺北市中心精華地段的MakerBar，具有得天獨厚的地理位置，周圍應有盡有的電子零件材料銷售大廠電子光華商城、舉辦精采展覽與吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學，甚至離臺北車站附....</p></div>
-            <div class="col-xs-12 col-sm-7 yoyo">
-              <div class="buttonRight">
-                <a id="button" class="button dark-blue" >More</a>
-              </div>
-              <div class="buttonleft">
-                <ul>
-                  <li>2017/01/20</li>
-                  <li>留言數：3</li>
-                  <li>人氣：666</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-         <div class="blogItem">
-          <a name="bbb"></a>
-          <h2>「為熱愛的事而義無反顧，是創業者的生活態度。」－ 卡市達創業加油站 </h2>
-          <div class="col-xs-12 col-sm-5 col-sm-push-7"><img src="img/item2.png"></div>
-          <div class="col-xs-12 col-sm-7 col-sm-pull-5">卡市達創業加油站是一個創意聚落。創辦人邱于芸，被譽為台灣微型創業空間的先驅者。憑藉豐富的經營管理經驗，展現傲人的實務成績，實踐微型創業。卡市達創業加油命名由來，源自英國劍橋一位電腦工程師，史都華佩恩 (Stuart Payne) 的創業故事。他每天下午吃茶配餅乾，並且上網....</div>
-            <div class="col-xs-12 col-sm-7 yoyo2">
-              <div class="buttonleft">
-                <a id="button" class="button dark-blue" >More</a>
-              </div>
-              <div class="buttonRight">
-                <ul>
-                  <li>2017/01/20</li>
-                  <li>留言數：3</li>
-                  <li>人氣：666</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-         <div class="blogItem">
-          <a name="ccc"></a>
-          <h2>燃燒吧，自造者魂！－ MakerBar Taipei </h2>
-           <div class="col-xs-12 col-sm-5"><img src="img/item1.png"></div>
-           <div class="col-xs-12 col-sm-7">MakerBar Taipei 是 一 個 以 社 群 為 核 心， 結 合自造者空間與共同工作空間，推廣動手做精神的國際創新交流平臺。位於臺北市中心精華地段的MakerBar，具有得天獨厚的地理位置，周圍應有盡有的電子零件材料銷售大廠電子光華商城、舉辦精采展覽與吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學，甚至離臺北車站附....</div>
-            <div class="col-xs-12 col-sm-7 yoyo">
-              <div class="buttonRight">
-                <a id="button" class="button dark-blue" >More</a>
-              </div>
-              <div class="buttonleft">
-                <ul>
-                  <li>2017/01/20</li>
-                  <li>留言數：3</li>
-                  <li>人氣：666</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-         <div class="blogItem">
-          <a name="ddd"></a>
-          <h2>「為熱愛的事而義無反顧，是創業者的生活態度。」－ 卡市達創業加油站 </h2>
-          <div class="col-xs-12 col-sm-5 col-sm-push-7"><img src="img/item2.png"></div>
-          <div class="col-xs-12 col-sm-7 col-sm-pull-5">卡市達創業加油站是一個創意聚落。創辦人邱于芸，被譽為台灣微型創業空間的先驅者。憑藉豐富的經營管理經驗，展現傲人的實務成績，實踐微型創業。卡市達創業加油命名由來，源自英國劍橋一位電腦工程師，史都華佩恩 (Stuart Payne) 的創業故事。他每天下午吃茶配餅乾，並且上網....</div>
-            <div class="col-xs-12 col-sm-7 yoyo2">
-              <div class="buttonleft">
-                <a id="button" class="button dark-blue" >More</a>
-              </div>
-              <div class="buttonRight">
-                <ul>
-                  <li>2017/01/20</li>
-                  <li>留言數：3</li>
-                  <li>人氣：666</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-         <div class="blogItem">
-          <a name="eee"></a>
-          <h2>燃燒吧，自造者魂！－ MakerBar Taipei </h2>
-           <div class="col-xs-12 col-sm-5"><img src="img/item1.png"></div>
-           <div class="col-xs-12 col-sm-7">MakerBar Taipei 是 一 個 以 社 群 為 核 心， 結 合自造者空間與共同工作空間，推廣動手做精神的國際創新交流平臺。位於臺北市中心精華地段的MakerBar，具有得天獨厚的地理位置，周圍應有盡有的電子零件材料銷售大廠電子光華商城、舉辦精采展覽與吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學，甚至離臺北車站附....</div>
-            <div class="col-xs-12 col-sm-7 yoyo">
-              <div class="buttonRight">
-                <a id="button" class="button dark-blue" >More</a>
-              </div>
-              <div class="buttonleft">
-                <ul>
-                  <li>2017/01/20</li>
-                  <li>留言數：3</li>
-                  <li>人氣：666</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-         <div class="blogItem">
-          <a name="fff"></a>
-          <h2>「為熱愛的事而義無反顧，是創業者的生活態度。」－ 卡市達創業加油站 </h2>
-          <div class="col-xs-12 col-sm-5 col-sm-push-7"><img src="img/item2.png"></div>
-          <div class="col-xs-12 col-sm-7 col-sm-pull-5">卡市達創業加油站是一個創意聚落。創辦人邱于芸，被譽為台灣微型創業空間的先驅者。憑藉豐富的經營管理經驗，展現傲人的實務成績，實踐微型創業。卡市達創業加油命名由來，源自英國劍橋一位電腦工程師，史都華佩恩 (Stuart Payne) 的創業故事。他每天下午吃茶配餅乾，並且上網....</div>
-            <div class="col-xs-12 col-sm-7 yoyo2">
-              <div class="buttonleft">
-                <a id="button" class="button dark-blue" >More</a>
-              </div>
-              <div class="buttonRight">
-                <ul>
-                  <li>2017/01/20</li>
-                  <li>留言數：3</li>
-                  <li>人氣：666</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-         <div class="blogItem">
-          <a name="ggg"></a>
-          <h2>燃燒吧，自造者魂！－ MakerBar Taipei </h2>
-           <div class="col-xs-12 col-sm-5"><img src="img/item1.png"></div>
-           <div class="col-xs-12 col-sm-7">MakerBar Taipei 是 一 個 以 社 群 為 核 心， 結 合自造者空間與共同工作空間，推廣動手做精神的國際創新交流平臺。位於臺北市中心精華地段的MakerBar，具有得天獨厚的地理位置，周圍應有盡有的電子零件材料銷售大廠電子光華商城、舉辦精采展覽與吸引人潮的華山文創園區，以及培育科技與設計人才知名的臺北科技大學，甚至離臺北車站附....</div>
-            <div class="col-xs-12 col-sm-7 yoyo">
-              <div class="buttonRight">
-                <a id="button" class="button dark-blue" href="#ggg">More</a>
-              </div>
-              <div class="buttonleft">
-                <ul>
-                  <li>2017/01/20</li>
-                  <li>留言數：3</li>
-                  <li>人氣：666</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
 
 
-        <div id="blogcontext" class="col-xs-10 col-sm-8 col-sm-push-2  blogcontext">
-
-          <div class=" blogContextDetail ">
-            <div id="close"><i class="fa fa-times" aria-hidden="true"></i></div>
-            <div class="col-xs-12 col-sm-10 col-sm-push-1 blogContextHead">
-              <h2>非典型辦公室 兼顧生活與工作</h2>
-              <p class="minp">發布時間：2017/02/10</p>
-            </div>
-            <div class="col-xs-12 col-sm-7 col-sm-push-1">
-              <img src="img/main1.png">
-              <p>數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-                以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-                求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-                以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-                求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-                以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-                求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。</p>
-                <img src="img/item3.png">
-                <p>數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-                  以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-                  求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-                  以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-                  求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。數位經濟產生新興型態的產業與工作，不僅改變了勞動結構和工作場域，也鬆動了工作與生活之間的界線。
-                  以彈性與開放吸引眾多「非典」工作者的共同工作空間(co-working space)，因應進駐者愈來愈多變的需
-                  求，開始出現友善小孩或毛小孩的環境，與傳統辦公室氛圍截然不同。</p>
-
-                  <ul class="share">
-                    <li class="facebook button "><a href="#"><i class="fa fa-facebook " aria-hidden="true"></i>facebook</a></li>
-                    <li class="google button"><a href=""><i class="fa fa-google-plus " aria-hidden="true"></i>google+</a></li>
-                    <li class="twitter button"><a href=""><i class="fa fa-twitter " aria-hidden="true"></i>twitter</a></li>
-                  </ul>
-
-                  <div class="row writeRow">
-                    <div class="writeAll">
-                      <div class="write">
-                        <img  src="img/write.jpeg">
-                      </div>
-                      <div class="writeText">
-                        <p class="minp">Written By</p>
-                        <p>Heisenberg</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="row messageRow">
-                    <h4>留言區</h4>
-                    <div class="iMessage">
-                      <div class="row">
-                      <div class="col-xs-4 col-sm-2">
-                          <img src="img/Gus.jpg">
-                        </div>
-                        <div class="col-xs-8 col-sm-10">
-                          <div class="row">
-                            <textarea class="re" placeholder="回覆..."></textarea>
-                          </div>
-                          <div class="row">
-                            <a id="button" class="button dark-blue subMessage" href="#ggg">送出</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <ul class="message">
-                      <li>
-                        <img class="col-xs-6 col-sm-2" src="img/write.jpeg">
-                        <div class="col-xs-6 col-sm-10">
-                          <h5 class="bold">8isenberg</h5>
-                          <p><span>發表時間：2017/02/01</span><span>16:30</span></p>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                        </div>
-                        <ul class="col-xs-10 col-xs-push-2">
-                          <li>
-                            <img class="col-xs-6 col-sm-2" src="img/doge.jpeg">
-                            <div class="col-xs-6 col-sm-10">
-                              <h5 class="bold">Doge</h5>
-                              <p><span>發表時間：2017/02/01</span><span>16:31</span></p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                            </div>
-                          </li>
-                          <li>
-                            <img class="col-xs-6 col-sm-2" src="img/write.jpeg">
-                            <div class="col-xs-6 col-sm-10">
-                              <h5 class="bold">heisenberg</h5>
-                              <p><span>發表時間：2017/02/01</span><span>16:35</span></p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                            </div>
-                          </li>
-                          <li>
-                            <img class="col-xs-6 col-sm-2" src="img/doge.jpeg">
-                            <div class="col-xs-6 col-sm-10">
-                              <h5 class="bold">Doge</h5>
-                              <p><span>發表時間：2017/02/01</span><span>16:36</span></p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="iMessage">
-                              <div class="row">
-                                <div class="col-xs-4 col-sm-2">
-                                  <img src="img/Gus.jpg">
-                                </div>
-                                <div class="col-xs-8 col-sm-10">
-                                  <div class="row">
-                                    <textarea class="re" placeholder="回覆..."></textarea>
-                                  </div>
-                                  <div class="row">
-                                    <a id="button" class="button dark-blue subMessage" href="#ggg">送出</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
-
-                        </ul>
-
-                      </li>
 
 
-                      <li>
-                        <img class="col-xs-6 col-sm-2" src="img/doge.jpeg">
-                        <div class="col-xs-6 col-sm-10">
-                          <h5 class="bold">8isenberg</h5>
-                          <p><span>發表時間：2017/02/01</span><span>16:30</span></p>
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                        </div>
-                        <ul class="col-xs-10 col-xs-push-2">
-                          <li>
-                            <img class="col-xs-6 col-sm-2" src="img/write.jpeg">
-                            <div class="col-xs-6 col-sm-10">
-                              <h5 class="bold">Doge</h5>
-                              <p><span>發表時間：2017/02/01</span><span>16:31</span></p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                            </div>
-                          </li>
-                          <li>
-                            <img class="col-xs-6 col-sm-2" src="img/write.jpeg">
-                            <div class="col-xs-6 col-sm-10">
-                              <h5 class="bold">heisenberg</h5>
-                              <p><span>發表時間：2017/02/01</span><span>16:35</span></p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                            </div>
-                          </li>
-                          <li>
-                            <img class="col-xs-6 col-sm-2" src="img/doge.jpeg">
-                            <div class="col-xs-6 col-sm-10">
-                              <h5 class="bold">Doge</h5>
-                              <p><span>發表時間：2017/02/01</span><span>16:36</span></p>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, perspiciatis.</p>
-                            </div>
-                          </li>
-                          <li>
-                            <div class="iMessage">
-                              <div class="row">
-                                <div class="col-xs-4 col-sm-2">
-                                  <img src="img/Gus.jpg">
-                                </div>
-                                <div class="col-xs-8 col-sm-10">
-                                  <div class="row">
-                                    <textarea class="re" placeholder="回覆..."></textarea>
-                                  </div>
-                                  <div class="row">
-                                    <a id="button" class="button dark-blue subMessage" href="#ggg">送出</a>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </li>
+        <div class="blogItemAll" id="blogItemAll">
 
-                        </ul>
 
-                      </li>
-                    </ul>
-                  </div>
-                </div>
 
-                <div class="col-xs-12 col-sm-3 col-sm-push-1 blogContextRightAll">
-                  <div class=" blogContextRight">
-                    <div id="startfixed"></div>
-                    <div class="part">
-                      <h4>最新文章</h4>
-                      <img src="img/item1.png">
-                      <p>「為熱愛的事而義無反顧，是創業者的生活態度。」－ 卡市達創業加油站 </p>
-                    </div>
-                    <div class="part">
-                      <h4>熱門文章</h4>
-                      <ul>
-                        <li><span>1</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>2</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>3</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>4</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>5</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                      </ul>
-                    </div>
-                    <div class="part">
-                      <h4>相似的文章</h4>
-                      <ul>
-                        <li><span>1</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>2</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>3</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>4</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                        <li><span>5</span>因intelmach影響，北朝鮮共同工作空間需....</li>
-                      </ul>
-                    </div>
-                    <div id="fixedGo"></div>
-                  </div>
 
-                </div>
-              </div>
-            </div>
+
+
 
           </div>
 
         </div>
+
+
+
+
+
+        <div id="mdOverlay"></div>
+          <div id="mdWindow">
+            <div class="mdClose">×</div>
+            <div id="contWrap">
+              <div id="blogcontext" class="col-xs-12 col-sm-12  blogcontext">
+
+  <div class=" blogContextDetail " id="blogContextDetail">
+
+
+
+
+    </div>
+
+
+
+  </div>
+            </div>
+          </div>
+
         <!-- footerstart -->
         <div class="footer blog_footer">
           <div class="footer_cloud"></div>
@@ -587,10 +282,14 @@
           <p class="minp copyright">Copyright © 2017 可可窩 cocowork</p>
           </div>
           <!-- footer-end -->
+
+
       </body>
       <footer>
         <script src="js/btn.js"></script>
 
         <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <!-- <script type="text/javascript" src="engine1/wowslider.js"></script>
+        <script type="text/javascript" src="engine1/script.js"></script> -->
       </footer>
       </html>

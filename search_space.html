@@ -6,11 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="css/jquery-ui-slider-pips.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="css/magic.css">
 <link rel="stylesheet" type="text/css" href="css/calendar.css">
-<link rel="stylesheet" type="text/css" href="css/snazzy-info-window.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <title>可可窩CoCoWo</title>
 </head>
@@ -49,7 +48,7 @@
 					</a>
 				</div>
 				<div class="col-xs-20p col-sm-2 col-md-2">
-					<a href="#" class="main_nav_a main_nav_a_shop">
+					<a href="blog_main.html" class="main_nav_a main_nav_a_shop">
 						<i class="fa fa-book" aria-hidden="true"></i>
 						<span class="nav_p">窩 日 誌</span>
 					</a>
@@ -157,6 +156,10 @@
 			<div class="row">
 
 				<!-- 地圖 -->
+				<div id="nearby_box">
+			        <input id="pac-input" class="controls" type="text"
+			        placeholder="要找哪裡的窩？">
+			    </div>
 				<div id="searchMap" class="col-xs-12 col-lg-6"></div>
 
 
@@ -1093,28 +1096,22 @@
          <h4>會員註冊</h4>
          <form>
            <label for="usermail">
-             帳號:
              <input type="mail" name="signusermail" placeholder="aaa123@example.com">
            </label>
            <label for="userpsw">
-             密碼:
              <input type="password" name="signuserpsw" placeholder="會員密碼">
            </label>
            <label for="username">
-             名稱:
              <input type="text" name="username" placeholder="會員名稱">
            </label>
            <label for="userpho">
-             電話:
              <input type="text" name="userpho" placeholder="會員電話">
            </label>
            <label for="usersex">
-           性別:
              <input type="radio" name="usersex" value="0">男
              <input type="radio" name="usersex" value="1">女
            </label>
            <label for="useroccu">
-             職業:
              <input type="text" name="useroccu" placeholder="Engineer">
            </label>
            <div class="userbutton">
@@ -1130,14 +1127,14 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.js"></script>
     <script type="text/javascript" src="js/jquery-ui-slider-pips.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC9fQSlL9rK_YGhBJDXZoSDPUbRt7Wd05k"></script>
     <script type="text/javascript" src="js/mo.js"></script>
-    <script type="text/javascript" src="js/snazzy-info-window.min.js"></script>
     <script type="text/javascript" src="js/moment.js"></script>
     <script type="text/javascript" src="js/es6.js"></script>
     <script type="text/javascript" src="js/btn.js"></script>
     <script src="js/loginBox.js"></script>
     <script src="js/member.js"></script>
     <script type="text/javascript" src="js/search_space.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADTKs2WrmkAtyb0RqjlaDZjh0CHlPh1Gc&libraries=places&callback=initMap"
+         async defer></script>
 </body>
 </html>

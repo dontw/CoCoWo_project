@@ -1,4 +1,7 @@
+
+
 $(document).ready(function(){
+
 
   //slick slider options
   $('.space_content_slider').on('init', function(event, slick){
@@ -88,82 +91,82 @@ $(document).ready(function(){
   });
 
   //add_ordeer_box
-  var fadeTime = 500;
-  $('.order_btn').on('click',function(){
-    $('.order_light_box').css({display:'block',opacity:'0'});
-    $('.order_light_box').stop().animate({opacity:'1'},fadeTime, function()
-      {
-        $('.order_light_box').css({display:'block'});
-      });
-      return false;
-  });
-
-  $('.order_light_box .close_box,.thx_button').on('click',function(){
-    $('.order_light_box').stop().animate({opacity:'0'},fadeTime, function()
-      {
-        $('.order_light_box').css({display:'none'});
-      });
-  });
-
-  $('.order_next_btn_1').on('click',function(){
-    if($('#date-range0').val()&&$('#order_number_input').val()){
-      $('.step_2').addClass('active');
-      $('.input_contents').animate({top: "-100%"},700,'easeOutBack');
-      $('.content_2').animate({opacity: 1},700,'easeInOut');
-    }else{
-      alert('請輸入日期與預訂數量!');
-    }
-  });
-
-  $('.order_pre_btn_1').on('click',function(){
-    $('.step_2').removeClass('active');
-    $('.input_contents').animate({top: "0%"},500,'easeOut');
-  });
-
-  $('.order_next_btn_2').on('click',function(){
-    if($('#order_name_input').val() && $('#order_phone_input').val() && $('#order_mail_input').val()){
-      $('.step_3').addClass('active');
-      $('.input_contents').animate({top: "-200%"},700,'easeOutBack');
-      $('.content_3').animate({opacity: 1},700,'easeInOut');
-    }else{
-      alert('請輸入訂單聯絡資訊!');
-    }
-  });
-
-  $('.order_pre_btn_2').on('click',function(){
-    $('.step_3').removeClass('active');
-    $('.input_contents').animate({top: "-100%"},500,'easeOut');
-
-  });
-
-  $('.order_next_btn_3').on('click',function(){
-    $('.step_4').addClass('active');
-    $('.input_contents').animate({top: "-300%"},700,'easeOutBack');
-    $('.content_4').animate({opacity: 1},700,'easeInOut');
-  });
-
-  $('.order_pre_btn_3').on('click',function(){
-    $('.step_4').removeClass('active');
-    $('.input_contents').animate({top: "-200%"},500,'easeOut');
-  });
-
-
-  $('.cube-wrapper').hide();
-  $('.thx_order').animate({opacity:'0'}, function () {
-        $(this).css('z-index', -1);
+var fadeTime = 500;
+$('.order_btn').on('click',function(){
+  $('.order_light_box').css({display:'block',opacity:'0'});
+  $('.order_light_box').stop().animate({opacity:'1'},fadeTime, function()
+    {
+      $('.order_light_box').css({display:'block'});
     });
-  $('.order_next_btn_4').on('click',function(){
-    if(confirm("確認送出訂單?")){
-        $('.add_order_progressbar,.pay_title,.pay_radios,.order_pre_btn_3,.order_next_btn_4').hide();
-        $('.cube-wrapper').show();
-        $('.cube-wrapper').delay(3000).animate({opacity:0});
-        $('.thx_order').delay(3000).animate({opacity:'1'},300,function(){
-          $(this).css('z-index', 50);
-        });
-      return false;
-    }
     return false;
+});
+
+$('.order_light_box .close_box,.thx_button').on('click',function(){
+  $('.order_light_box').stop().animate({opacity:'0'},fadeTime, function()
+    {
+      $('.order_light_box').css({display:'none'});
+    });
+});
+
+$('.order_next_btn_1').on('click',function(){
+  if($('#date-range0').val()&&$('#order_number_input').val()){
+    $('.step_2').addClass('active');
+    $('.input_contents').animate({top: "-100%"},700,'easeOutBack');
+    $('.content_2').animate({opacity: 1},700,'easeInOut');
+  }else{
+    alert('請輸入日期與預訂數量!');
+  }
+});
+
+$('.order_pre_btn_1').on('click',function(){
+  $('.step_2').removeClass('active');
+  $('.input_contents').animate({top: "0%"},500,'easeOut');
+});
+
+$('.order_next_btn_2').on('click',function(){
+  if($('#order_name_input').val() && $('#order_phone_input').val() && $('#order_mail_input').val()){
+    $('.step_3').addClass('active');
+    $('.input_contents').animate({top: "-200%"},700,'easeOutBack');
+    $('.content_3').animate({opacity: 1},700,'easeInOut');
+  }else{
+    alert('請輸入訂單聯絡資訊!');
+  }
+});
+
+$('.order_pre_btn_2').on('click',function(){
+  $('.step_3').removeClass('active');
+  $('.input_contents').animate({top: "-100%"},500,'easeOut');
+
+});
+
+$('.order_next_btn_3').on('click',function(){
+  $('.step_4').addClass('active');
+  $('.input_contents').animate({top: "-300%"},700,'easeOutBack');
+  $('.content_4').animate({opacity: 1},700,'easeInOut');
+});
+
+$('.order_pre_btn_3').on('click',function(){
+  $('.step_4').removeClass('active');
+  $('.input_contents').animate({top: "-200%"},500,'easeOut');
+});
+
+
+$('.cube-wrapper').hide();
+$('.thx_order').animate({opacity:'0'}, function () {
+      $(this).css('z-index', -1);
   });
+$('.order_next_btn_4').on('click',function(){
+  if(confirm("確認送出訂單?")){
+      $('.add_order_progressbar,.pay_title,.pay_radios,.order_pre_btn_3,.order_next_btn_4').hide();
+      $('.cube-wrapper').show();
+      $('.cube-wrapper').delay(3000).animate({opacity:0});
+      $('.thx_order').delay(3000).animate({opacity:'1'},300,function(){
+        $(this).css('z-index', 50);
+      });
+    return false;
+  }
+  return false;
+});
 
 // get current date
 var d = new Date();
@@ -175,68 +178,61 @@ var output = d.getFullYear() + '-' +
 
 var dates_num;
 
-  $('#date-range0').dateRangePicker({
-        language:'tc',
-        startDate: output,
-        separator: ' ~ ',
-        autoClose: true,
-        getValue: function()
-        	{
-        		var dateObject = $(this).val();
-        	}
-      });
-  var days_num = 0;
-  var people_num = 0 + 1;
+$('#date-range0').dateRangePicker({
+      language:'tc',
+      startDate: output,
+      separator: ' ~ ',
+      autoClose: true,
+      getValue: function()
+        {
+          var dateObject = $(this).val();
+        }
+    });
+var days_num = 0;
+var people_num = 0 + 1;
 
+$(".date-picker-wrapper.no-shortcuts").on("change keyup paste mousemove", function(){
+  // alert('date ok!');
+  $('.order_dates').text($('#date-range0').val());
+});
 
+$("#order_number_input").on("change keyup paste", function(){
+  $('.selected_number').text($('#order_number_input').val());
+  people_num = $('#order_number_input').val();
+  return people_num;
+});
 
+$(".date-picker-wrapper.no-shortcuts").on(" mousemove", function(){
+  // alert('ok!');
+  days_num = $('.selected-days-num').html();
+  // console.log(days_num);
+  $('.selected_date_panel').text(days_num);
+  return days_num;
+});
 
-  $(".date-picker-wrapper.no-shortcuts").on("change keyup paste mousemove", function(){
-    // alert('date ok!');
-    $('.order_dates').text($('#date-range0').val());
-  });
+$(".selected_number,.selected_date_panel,.order_dates").bind("DOMSubtreeModified",function(){
+  var space_price = $('.space_price').html();
+  var total =days_num * people_num * space_price;
+  $('.total_money').text(total);
+});
 
-  $("#order_number_input").on("change keyup paste", function(){
-    $('.selected_number').text($('#order_number_input').val());
-    people_num = $('#order_number_input').val();
-    return people_num;
-  });
+$("#order_name_input").on("change keyup paste", function(){
+  $('.order_name').text($(this).val());
+});
 
-  $(".date-picker-wrapper.no-shortcuts").on(" mousemove", function(){
-    // alert('ok!');
-    days_num = $('.selected-days-num').html();
-    // console.log(days_num);
-    $('.selected_date_panel').text(days_num);
-    return days_num;
-  });
+$("#order_phone_input").on("change keyup paste", function(){
+  $('.order_phone').text($(this).val());
+});
 
-  $(".selected_number,.selected_date_panel,.order_dates").bind("DOMSubtreeModified",function(){
-    var space_price = $('.space_price').html();
-    var total =days_num * people_num * space_price;
-    $('.total_money').text(total);
-  });
+$("#order_mail_input").on("change keyup paste", function(){
+   $('.order_mail').text($(this).val());
+ });
 
-  $("#order_name_input").on("change keyup paste", function(){
-    $('.order_name').text($(this).val());
-  });
+ $("#order_info_input").on("change keyup paste", function(){
+  $('.order_info').text($(this).val());
+});
 
-  $("#order_phone_input").on("change keyup paste", function(){
-    $('.order_phone').text($(this).val());
-  });
-
-  $("#order_mail_input").on("change keyup paste", function(){
-    $('.order_mail').text($(this).val());
-  });
-
-  $("#order_info_input").on("change keyup paste", function(){
-    $('.order_info').text($(this).val());
-  });
-
-  $('.space_price').text($('.main_space_price').html());
-
-  });
-
-  $(window).keydown(function(event){
+$(window).keydown(function(event){
   if(event.keyCode == 13) {
     event.preventDefault();
     return false;
@@ -246,6 +242,13 @@ var dates_num;
     event.preventDefault();
     return false;
   }
+});
+
+
+
+
+
+
 
   //Ajax
 
@@ -380,29 +383,29 @@ var dates_num;
             }
     });
 
-    // //讀取窩誌編號
-    //   $.ajax({
-    //     type:'get',
-    //     url:'spacontent_blog_JSON.php',
-    //     data : {
-    //       spa : $('input[name="spadev"]').val()
-    //     },
-    //     dataType:'json',
-    //     error:function(xhr){
-    //       console.log(xhr.responseText);
-    //     },
-    //     success:function(b){
-    //
-    //       for(var i=0;i<b.length;i++){
-    //         var no = b[i].blog_no;
-    //         $('#spablog').val(no);
-    //
-    //       }//for
-    //
-    //       //bg();
-    //
-    //     }
-    //   });
+    //讀取窩誌編號
+      $.ajax({
+        type:'get',
+        url:'spacontent_blog_JSON.php',
+        data : {
+          spa : $('input[name="spadev"]').val()
+        },
+        dataType:'json',
+        error:function(xhr){
+          console.log(xhr.responseText);
+        },
+        success:function(b){
+
+          for(var i=0;i<b.length;i++){
+            var no = b[i].blog_no;
+            $('#spablog').val(no);
+
+          }//for
+
+          //bg();
+
+        }
+      });
 
 
       count = 3;
@@ -530,9 +533,33 @@ var dates_num;
       //     })//ajax
       // }//bg
 
-  });
+      //動態更改狀態
+      $.ajax({
+        url: 'spacontent_status_JSON.php',
+        type: 'get',
+        dataType: 'json',
+        data: {status : $('input[name="spadev"]').val() },
+        error:function(xhr){
+            alert(xhr.responseText);
+        },
+        success:function(ss){
+            for(var i=0;i<ss.length ;i++){
+              var sta = ss[i].spa_status;
 
-  //送出問與答
+              if(sta == 2){
+                $('#statu').attr("str",'img/img_verified_icon.png');
+              }else{
+                console.log(ss);
+              }
+            }
+        }
+      });
+
+
+});//ready
+
+
+//送出問與答
     $('.qa_input_btn').click(function(){
           $.ajax({
             type : 'get',
@@ -579,54 +606,28 @@ var dates_num;
 
 
 
+  function initMap() {
+    // Create a map object and specify the DOM element for display.
+    var mapOptions = {
 
+      scrollwheel: false,
+      // 預設地圖的放大級數
+      zoom: 16,
 
+      // 地圖中心的經緯度
+      center: new google.maps.LatLng(25.02523,121.54310),
+    };
 
+  // 拿地圖的html div
+  var mapElement = document.getElementById('map');
 
+  // 將上面對地圖的設定套用在選定的div地圖上
+  var map = new google.maps.Map(mapElement, mapOptions);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function initMap() {
-  // Create a map object and specify the DOM element for display.
-  var mapOptions = {
-
-    scrollwheel: false,
-    // 預設地圖的放大級數
-    zoom: 16,
-
-    // 地圖中心的經緯度
-    center: new google.maps.LatLng(25.02523,121.54310),
-  };
-
-// 拿地圖的html div
-var mapElement = document.getElementById('map');
-
-// 將上面對地圖的設定套用在選定的div地圖上
-var map = new google.maps.Map(mapElement, mapOptions);
-
-// marker小圖標得設定寫在這!
-var marker = new google.maps.Marker({
-  position: new google.maps.LatLng(25.02523,121.54310),
-  map: map,
-  title: 'Prototype Hacker Demo'
-});
-
-
+  // marker小圖標得設定寫在這!
+  var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(25.02523,121.54310),
+    map: map,
+    title: 'Prototype Hacker Demo'
+  });
 }

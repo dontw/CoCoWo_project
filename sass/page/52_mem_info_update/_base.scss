@@ -1,12 +1,18 @@
 .mem_Info
 {
-	background-color: #EEEEEE;
+	background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+
 	font-family: $main_font_family;
 }
 .memInfo
 {
 	margin-top: 50px;
-
+	.container
+	{
+		background: #EEEEEE;
+		padding-top: 30px;
+		padding-bottom: 5px;
+	}
 	.memPageAll
 	{
 		position: relative;
@@ -143,8 +149,13 @@
 
 				.memUpdateButton
 				{
-					margin-top: 90px;
+					margin-top: 45px;
 					text-align: center;
+					.Btn
+					{
+						width: 46%;
+						display: inline-block;
+					}
 				}
 			}
 		}

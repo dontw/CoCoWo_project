@@ -1,4 +1,5 @@
 <?php
+
 try{
   require_once("connectBooks.php");
   $sql = "insert into member(mem_no, mem_mail, mem_pwd, mem_img, mem_name, mem_pho, mem_sex, mem_occu)

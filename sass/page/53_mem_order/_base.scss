@@ -1,12 +1,24 @@
 .mem_Order
 {
-	background-color: #EEEEEE;
+	background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+
 	font-family: $main_font_family;
+
+	.ordtext
+	{
+		margin-top: -267px;
+    margin-left: -160px;
+	}
 }
 .memOrder
 {
-	margin-top: 50px;
-
+	// margin-top: 50px;
+	.container
+	{
+		background: #EEEEEE;
+		padding-top: 30px;
+		padding-bottom: 5px;
+	}
 	.memPageAll
 	{
 		position: relative;
@@ -115,6 +127,10 @@
 			}
 			.orderTable
 			{
+				table
+				{
+					width: 100%;
+				}
 				thead
 				{
 					background-color: #fff;
@@ -125,6 +141,7 @@
 						{
 							padding: 5px 5px;
 							font-size: $fz-h5;
+							width: 25%;
 						}
 					}
 				}
@@ -140,6 +157,7 @@
 				td
 				{
 					vertical-align: middle;
+					padding: 0 5px;
 					width: 25%;
 					a
 					{
@@ -151,6 +169,7 @@
 						color: #fff;
 						font-weight:500;
 						cursor: pointer;
+						margin: 0.17em;
 					}
 				}
 				.insert

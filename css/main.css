@@ -2329,7 +2329,7 @@
   background-color: rgba(33, 33, 33, 0.6);
   width: 100%;
   position: fixed;
-  z-index: 1;
+  z-index: 99;
   display: none;
   opacity: 0;
   top: 0; }
@@ -2338,7 +2338,26 @@
   margin-top: -211px;
   margin-left: -159px; }
   #signupuserLightBox .lightbox label {
-    text-align: left; }
+    text-align: left;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: 24px; }
+    #signupuserLightBox .lightbox label input[type="radio"] {
+      width: 30px;
+      height: 30px; }
+    #signupuserLightBox .lightbox label input[type="text"], #signupuserLightBox .lightbox label input[type="mail"], #signupuserLightBox .lightbox label input[type="password"] {
+      display: block;
+      margin: 0;
+      padding: 0 0 0.15em;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      color: #212121;
+      text-overflow: ellipsis;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 0;
+      margin-bottom: 15px;
+      font-family: "Noto Sans TC", sans-serif; }
   #signupuserLightBox .lightbox input[type='reset'] {
     display: block;
     width: 100%;
@@ -2360,7 +2379,7 @@
     display: inline-block;
     padding: 30px;
     border-radius: 4px;
-    left: 43px; }
+    left: 0%; }
     .userLightBox .lightbox label {
       display: block;
       margin-top: 15px; }
@@ -6938,6 +6957,54 @@ body {
     z-index: 1; }
   #searchspace .infoadd {
     padding-bottom: 53%; }
+  #searchspace img[src="https://maps.gstatic.com/mapfiles/api-3/images/mapcnt6.png"] {
+    background-color: #fff;
+    left: -1px !important;
+    top: -335px !important; }
+  #searchspace #nearby_content {
+    position: relative;
+    margin-left: 18px; }
+    #searchspace #nearby_content .nearby_imgBox {
+      overflow: hidden; }
+      #searchspace #nearby_content .nearby_imgBox img {
+        width: 100%; }
+    #searchspace #nearby_content .nearby_text span:before {
+      content: "" "" "" "" "";
+      font-family: FontAwesome;
+      font-size: 24px;
+      letter-spacing: 4px;
+      color: #fdd000;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    #searchspace #nearby_content .nearby_text h4 {
+      text-align: right; }
+    #searchspace #nearby_content .nearby_text .nearby_btn {
+      display: flex;
+      justify-content: flex-end; }
+  #searchspace .controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 50px;
+    outline: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  #searchspace #pac-input {
+    text-align: center;
+    letter-spacing: 2px;
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+    border: 2px solid #4d90fe;
+    transition: .5s; }
+  #searchspace #pac-input:focus {
+    border: 2px solid #4d90fe;
+    transition: .5s; }
   #searchspace .infolev {
     padding-bottom: 0; }
   #searchspace #info {
@@ -7325,6 +7392,8 @@ body {
     -webkit-appearance: none;
     margin: 0;
     /* <-- Apparently some margin are still there even though it's hidden */ }
+  .space_content .userLightBox .lightbox .closeBox i {
+    left: 5px; }
   .space_content .clearfix {
     clear: both; }
   .space_content hr {
@@ -7839,64 +7908,6 @@ body {
     position: absolute;
     top: 26%;
     right: 0; }
-  .space_content .userlightboxbccc {
-    background-color: rgba(33, 33, 33, 0.6);
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    z-index: 999999;
-    display: none;
-    opacity: 0; }
-  .space_content #signupuserLightBox {
-    margin-top: 0;
-    margin-left: 0px; }
-    .space_content #signupuserLightBox .lightbox {
-      top: 20%; }
-      .space_content #signupuserLightBox .lightbox label {
-        text-align: left; }
-      .space_content #signupuserLightBox .lightbox input[type='reset'] {
-        display: block;
-        width: 100%;
-        margin: 0.3em 0; }
-  .space_content .userLightBox {
-    background-color: rgba(33, 33, 33, 0.6);
-    position: fixed;
-    z-index: 1000000;
-    top: 0%;
-    left: 0%;
-    margin-top: 0px;
-    margin-left: 0px;
-    height: 100%;
-    display: none;
-    opacity: 0;
-    text-align: center; }
-    .space_content .userLightBox .lightbox {
-      position: relative;
-      background-color: #fff;
-      display: inline-block;
-      padding: 25px 40px;
-      border-radius: 4px; }
-      .space_content .userLightBox .lightbox label {
-        display: block;
-        margin-top: 15px; }
-      .space_content .userLightBox .lightbox .closeBox {
-        top: -10px;
-        right: -5px;
-        width: 30px;
-        height: 30px;
-        color: #fff;
-        font-size: 1.5em;
-        background: #757575;
-        border-radius: 30px;
-        position: absolute;
-        z-index: 99;
-        cursor: pointer;
-        box-shadow: 0 0 3px 0 #000; }
-      .space_content .userLightBox .lightbox .userbutton {
-        padding-top: 10px; }
-      .space_content .userLightBox .lightbox a {
-        width: 100%;
-        margin: 15px 0 0 0; }
   .space_content .order_light_box {
     position: fixed;
     z-index: 40;
@@ -9891,19 +9902,26 @@ body {
   .nature_wo:hover:after {
     display: none; } }
 .blog_footer {
-  margin-top: 200px;
+  margin-top: 300px;
   z-index: 0; }
+
+.blog_main .main_nav_bar {
+  z-index: 100; }
+.blog_main .userLightBox .lightbox .closeBox i {
+  left: 5px; }
 
 .blog {
   position: relative;
   line-height: 2;
   background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%); }
+  .blog .row {
+    margin: 0; }
   .blog #lightboxbcc {
     background-color: rgba(33, 33, 33, 0.6);
     height: 100vh;
     width: 100vw;
     position: fixed;
-    z-index: 20;
+    z-index: 999;
     display: none;
     opacity: 0; }
   .blog .disn {
@@ -9991,199 +10009,184 @@ body {
       padding: 19px 12px; }
     .blog .container .blogNav .searchBtn {
       padding: 9px 12px; }
-  .blog .container .blogItemAll .blogItem {
+  .blog .container .search {
     position: relative;
     background-color: #fff;
-    margin-bottom: 10px;
-    border-radius: 20px;
-    padding: 15px;
-    z-index: 2; }
-    .blog .container .blogItemAll .blogItem h2 {
-      font-size: 40px;
-      line-height: 1.2;
-      padding: 0 10px; }
-    .blog .container .blogItemAll .blogItem h2::after {
-      content: '';
-      background-color: #000;
-      height: 3px;
-      width: 100%;
-      display: block;
-      margin: 5px auto; }
-    .blog .container .blogItemAll .blogItem .buttonRight a {
-      color: #fff;
-      list-style: none; }
-    .blog .container .blogItemAll .blogItem .buttonRight li {
-      display: inline-block;
-      padding-right: 10px; }
-    .blog .container .blogItemAll .blogItem .buttonleft a {
-      color: #fff;
-      list-style: none; }
-    .blog .container .blogItemAll .blogItem .buttonleft li {
-      display: inline-block;
-      padding-right: 10px; }
-  .blog .container .blogItemAll .blogItem::after {
-    content: '';
-    display: block;
-    clear: both; }
-  .blog .container .blogcontext {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: fixed;
-    top: -500px;
-    height: 1000px;
-    overflow: scroll;
-    left: 16.666666%;
-    z-index: 999;
-    display: none;
-    opacity: 0;
-    background-color: white;
-    border-radius: 20px; }
-    .blog .container .blogcontext #close {
-      position: absolute;
-      display: inline-block;
-      padding: 0 20px;
-      border-radius: 50%;
-      top: 0;
-      right: 0;
-      z-index: 99999;
-      font-size: 32px;
-      background-color: #BDBDBD; }
-    .blog .container .blogcontext .blogContextDetail {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 10px 25px; }
+    .blog .container .search .searchBar {
       position: relative; }
-      .blog .container .blogcontext .blogContextDetail h2 {
-        font-size: 40px;
+      .blog .container .search .searchBar input:focus {
+        outline: none; }
+      .blog .container .search .searchBar .searchControl {
+        color: #000;
+        border: solid #d6d6d6;
+        border-width: 0 0 1px;
+        transition: .5s;
+        padding: 0 10px; }
+      .blog .container .search .searchBar .searchControl:focus {
+        border: solid #03A9F4;
+        border-width: 0 0 1px; }
+      .blog .container .search .searchBar .searchSubmit {
+        background: url(http://www.toprank.com/wp-content/themes/toprank/svg/search.svg) 50% 50% no-repeat;
+        border: none;
+        position: absolute;
+        text-indent: -9999px;
+        font-size: 14px;
+        padding: 0;
+        width: 50px;
+        top: 0;
+        left: 175px; }
+  .blog .container .blogItemAll {
+    background-color: #ddd;
+    padding: 10px; }
+    .blog .container .blogItemAll .blogItem {
+      position: relative;
+      background-color: #fff;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      border-bottom: 1px solid rgba(189, 189, 189, 0.4);
+      padding: 30px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      z-index: 2; }
+      .blog .container .blogItemAll .blogItem h2 {
+        font-size: 32px;
         line-height: 1.2;
-        text-align: center; }
-      .blog .container .blogcontext .blogContextDetail h2::after {
+        padding: 0 10px; }
+      .blog .container .blogItemAll .blogItem h2::after {
         content: '';
         background-color: #000;
-        height: 3px;
+        height: 2px;
         width: 100%;
         display: block;
-        margin: 0 auto;
-        text-align: center; }
-      .blog .container .blogcontext .blogContextDetail .minp {
-        font-size: 12px;
-        text-align: center; }
-      .blog .container .blogcontext .blogContextDetail img {
-        width: 100%; }
-      .blog .container .blogcontext .blogContextDetail .blogContextRightAll {
-        position: relative; }
-        .blog .container .blogcontext .blogContextDetail .blogContextRightAll #startfixed {
-          position: fixed;
-          bottom: 50px;
-          right: 0;
-          background-color: #000;
-          width: 100px;
-          height: 2px; }
-        .blog .container .blogcontext .blogContextDetail .blogContextRightAll #fixedGo {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 20px;
-          height: 2px;
-          background-color: #000; }
-      .blog .container .blogcontext .blogContextDetail .blogContextRight {
-        border-radius: 20px;
-        border: 1px solid #000;
-        padding: 10px;
-        position: absolute;
-        left: 0; }
-        .blog .container .blogcontext .blogContextDetail .blogContextRight h4 {
-          font-size: 24px; }
-        .blog .container .blogcontext .blogContextDetail .blogContextRight h4::after {
-          content: '';
-          background-color: #000;
-          height: 3px;
-          width: 100%;
-          display: block;
-          margin: 0 auto;
-          text-align: center; }
-        .blog .container .blogcontext .blogContextDetail .blogContextRight li {
-          font-size: 12px;
-          padding: 5px 0; }
-        .blog .container .blogcontext .blogContextDetail .blogContextRight span {
-          background-color: #FFC107;
-          padding: 2px 6px;
-          border-radius: 50%; }
-    .blog .container .blogcontext .blogContextDetail::after {
+        margin: 10px auto; }
+      .blog .container .blogItemAll .blogItem .buttonRight a {
+        color: #fff;
+        list-style: none; }
+      .blog .container .blogItemAll .blogItem .buttonRight li {
+        display: inline-block;
+        padding-right: 10px; }
+      .blog .container .blogItemAll .blogItem .buttonleft a {
+        color: #fff;
+        list-style: none; }
+      .blog .container .blogItemAll .blogItem .buttonleft li {
+        display: inline-block;
+        padding-right: 10px; }
+      .blog .container .blogItemAll .blogItem .yoyo {
+        bottom: 30px;
+        padding: 0 40px 0 15px; }
+      .blog .container .blogItemAll .blogItem .yoyo2 {
+        bottom: 30px;
+        padding: 0 15px 0 40px; }
+    .blog .container .blogItemAll .first {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0; }
+    .blog .container .blogItemAll .blogItem::after {
       content: '';
       display: block;
       clear: both; }
-    .blog .container .blogcontext .share {
-      text-align: center;
-      margin: 20px 0; }
-      .blog .container .blogcontext .share a {
-        font-size: 16px; }
-      .blog .container .blogcontext .share a:hover {
-        text-decoration: none; }
-      .blog .container .blogcontext .share li {
-        display: inline-block;
-        background-color: #3B5998;
-        padding: 10px 40px 10px 10px;
-        vertical-align: middle;
-        width: 31%; }
-        .blog .container .blogcontext .share li i {
-          position: relative;
-          padding-right: 30px;
-          vertical-align: middle;
-          font-size: 40px; }
-      .blog .container .blogcontext .share .google {
-        background-color: #DB4437; }
-      .blog .container .blogcontext .share .twitter {
-        background-color: #36B9FF; }
-    .blog .container .blogcontext .writeRow {
-      font-size: 0; }
-      .blog .container .blogcontext .writeRow .writeAll .write {
-        width: 30%;
-        display: inline-block;
-        vertical-align: middle;
-        margin-left: 20%; }
-        .blog .container .blogcontext .writeRow .writeAll .write img {
-          border-radius: 50%;
-          overflow: hidden; }
-      .blog .container .blogcontext .writeRow .writeAll .writeText {
-        width: 30%;
-        display: inline-block;
-        vertical-align: middle;
-        margin: auto;
-        text-align: center; }
-    .blog .container .blogcontext .messageRow h4::after {
-      content: '';
-      background-color: #000;
-      height: 3px;
-      width: 100%;
-      display: block;
-      margin: 5px auto;
-      text-align: center; }
-    .blog .container .blogcontext .messageRow .iMessage .row img {
-      border-radius: 50%; }
-    .blog .container .blogcontext .messageRow .iMessage .row .re {
-      width: 95%; }
-    .blog .container .blogcontext .messageRow .iMessage .row .subMessage {
-      margin-top: -5px;
-      margin-right: 5%;
-      float: right; }
-    .blog .container .blogcontext .messageRow .message img {
-      border-radius: 50%;
-      overflow: hidden;
-      width: 16.66666666%; }
-    .blog .container .blogcontext .messageRow .message h5 {
-      font-size: 19px; }
-    .blog .container .blogcontext .messageRow .message p {
-      color: #757575; }
-    .blog .container .blogcontext .messageRow .message span {
-      padding-right: 10px; }
-    .blog .container .blogcontext .messageRow .message .iMessage img {
-      width: 100%; }
-    .blog .container .blogcontext .messageRow ul::after, .blog .container .blogcontext .messageRow li::after {
-      content: '';
-      display: block;
-      clear: both; }
-  .blog .container .blogcontext::after {
-    content: '';
-    display: block;
-    clear: both; }
+  .blog .moreButton {
+    text-align: center;
+    position: relative;
+    z-index: 9996; }
+
+#mdOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 999997;
+  background: #000;
+  display: none; }
+
+#mdWindow {
+  margin-top: -300px;
+  margin-left: -500px;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 600px;
+  position: fixed;
+  z-index: 999998;
+  background: #fff;
+  display: none;
+  border-radius: 4px; }
+
+#mdWindow > .mdClose {
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+  background: #757575;
+  border-radius: 30px;
+  position: absolute;
+  z-index: 999998;
+  cursor: pointer;
+  box-shadow: 0 0 3px 0 #000; }
+
+#contWrap {
+  margin: 30px auto;
+  padding: 0 20px;
+  width: 100%;
+  height: 540px;
+  box-sizing: border-box;
+  overflow-y: auto; }
+
+#logOverlay {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 999997;
+  background: #000;
+  display: none; }
+
+#logWindow {
+  margin-top: -172.5px;
+  margin-left: -150px;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 345px;
+  position: fixed;
+  z-index: 999998;
+  background: #fff;
+  display: none;
+  border-radius: 4px; }
+
+#logWindow > .logClose {
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 1.5em;
+  text-align: center;
+  background: #757575;
+  border-radius: 30px;
+  position: absolute;
+  z-index: 999998;
+  cursor: pointer;
+  box-shadow: 0 0 3px 0 #000; }
+
+#logcontWrap {
+  margin: 30px auto;
+  width: 100%;
+  height: 305px;
+  box-sizing: border-box;
+  overflow-y: auto; }
+
+#testp {
+  position: fixed;
+  top: 72px;
+  text-align: center;
+  z-index: 99999; }
 
 @media all and (min-width: 993px) {
   .blog .blogItemAll .blogItem .yoyo, .blog .blogItemAll .blogItem .yoyo2 {
@@ -10217,8 +10220,6 @@ body {
       width: 100%; }
     .blog .container .blogcontext .messageRow .message img {
       width: 30%; }
-    .blog .container .blogcontext .blogContextRightAll {
-      display: none; }
   .blog .yoyo {
     position: static; }
     .blog .yoyo .buttonRight, .blog .yoyo .buttonleft {
@@ -10228,16 +10229,187 @@ body {
     position: static; }
     .blog .yoyo2 .buttonRight, .blog .yoyo2 .buttonleft {
       text-align: center;
-      clear: both; } }
+      clear: both; }
+
+  #mdWindow {
+    margin-top: -250px;
+    margin-left: -150px;
+    width: 300px;
+    height: 500px; }
+
+  #contWrap {
+    height: 440px; }
+
+  .blog .container .blogItemAll .blogItem .yoyo, .blog .container .blogItemAll .blogItem .yoyo2 {
+    bottom: 30px;
+    padding: 0; }
+
+  .blog .container .blogItemAll .blogItem h2 {
+    font-size: 24px; }
+  .blog .container .blogItemAll .blogItem p {
+    font-size: 14px; } }
+#wrapper p {
+  width: 100%;
+  top: 140px;
+  left: 0;
+  font-size: 15px;
+  text-align: center;
+  position: fixed;
+  z-index: 999999; }
+#wrapper .scrollBottom {
+  color: #ff0000;
+  font-weight: bold; }
+
+.blogcontext {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  line-height: 1.5;
+  background-color: white; }
+  .blogcontext .blogContextDetail {
+    position: relative; }
+    .blogcontext .blogContextDetail h2 {
+      font-size: 40px;
+      line-height: 1.2;
+      text-align: center; }
+    .blogcontext .blogContextDetail h2::after {
+      content: '';
+      background-color: #000;
+      height: 3px;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      text-align: center; }
+    .blogcontext .blogContextDetail .minp {
+      font-size: 12px;
+      text-align: center; }
+    .blogcontext .blogContextDetail img {
+      width: 100%; }
+    .blogcontext .blogContextDetail .blogContextRightAll {
+      position: relative; }
+      .blogcontext .blogContextDetail .blogContextRightAll .minp {
+        text-align: left; }
+    .blogcontext .blogContextDetail .blogContextRight {
+      border-radius: 20px;
+      border: 1px solid #000;
+      padding: 10px;
+      position: absolute;
+      left: 0; }
+      .blogcontext .blogContextDetail .blogContextRight h4 {
+        font-size: 24px; }
+      .blogcontext .blogContextDetail .blogContextRight h4::after {
+        content: '';
+        background-color: #000;
+        height: 3px;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        text-align: center; }
+      .blogcontext .blogContextDetail .blogContextRight li {
+        font-size: 12px;
+        padding: 5px 0; }
+      .blogcontext .blogContextDetail .blogContextRight span {
+        background-color: #FFC107;
+        padding: 2px 6px;
+        border-radius: 50%; }
+  .blogcontext .blogContextDetail::after {
+    content: '';
+    display: block;
+    clear: both; }
+  .blogcontext .share {
+    text-align: center;
+    margin: 20px 0; }
+    .blogcontext .share .button, .blogcontext .share .border_button {
+      margin: 0; }
+    .blogcontext .share a {
+      font-size: 16px;
+      color: #fff; }
+    .blogcontext .share a:hover {
+      text-decoration: none; }
+    .blogcontext .share li {
+      display: inline-block;
+      background-color: #3B5998;
+      padding: 5px;
+      vertical-align: middle;
+      width: 31%; }
+      .blogcontext .share li i {
+        position: relative;
+        padding-right: 10px;
+        vertical-align: middle;
+        font-size: 28px; }
+    .blogcontext .share .google {
+      background-color: #DB4437; }
+    .blogcontext .share .twitter {
+      background-color: #36B9FF; }
+  .blogcontext .writeRow {
+    font-size: 0; }
+    .blogcontext .writeRow .writeAll .write {
+      width: 30%;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 20%; }
+      .blogcontext .writeRow .writeAll .write img {
+        border-radius: 50%;
+        overflow: hidden; }
+    .blogcontext .writeRow .writeAll .writeText {
+      width: 30%;
+      display: inline-block;
+      vertical-align: middle;
+      margin: auto;
+      text-align: center; }
+  .blogcontext .messageRow h4::after {
+    content: '';
+    background-color: #000;
+    height: 3px;
+    width: 100%;
+    display: block;
+    margin: 5px auto;
+    text-align: center; }
+  .blogcontext .messageRow .iMessage .row img {
+    border-radius: 50%; }
+  .blogcontext .messageRow .iMessage .row .re {
+    width: 95%; }
+  .blogcontext .messageRow .iMessage .row .subMessage {
+    margin-top: -5px;
+    margin-right: 5%;
+    float: right; }
+  .blogcontext .messageRow .message img {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 16.66666666%; }
+  .blogcontext .messageRow .message h5 {
+    font-size: 19px; }
+  .blogcontext .messageRow .message p {
+    color: #757575; }
+  .blogcontext .messageRow .message span {
+    padding-right: 10px; }
+  .blogcontext .messageRow .message .iMessage img {
+    width: 100%; }
+  .blogcontext .messageRow ul::after, .blogcontext .messageRow li::after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.blogcontext::after {
+  content: '';
+  display: block;
+  clear: both; }
+
+@media all and (max-width: 767px) {
+  .blogContextRightAll {
+    display: none; } }
 .mem_page {
-  background-color: #EEEEEE;
+  background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%);
   font-family: "Noto Sans TC", sans-serif; }
 
 .mem_page_footer {
-  margin-top: 200px; }
+  margin-top: 260px; }
 
 .mempage {
   margin: 50px 0; }
+  .mempage .container {
+    background: #EEEEEE;
+    padding-top: 30px;
+    padding-bottom: 5px; }
   .mempage .memPageAll {
     position: relative; }
     .mempage .memPageAll .navbar {
@@ -10288,32 +10460,49 @@ body {
     clear: both; }
 
 @media all and (max-width: 767px) {
-  .mempage .memPageAll .navbar {
-    box-shadow: none;
-    background-color: rgba(237, 237, 237, 0);
-    border-color: rgba(237, 237, 237, 0); }
-  .mempage .memPageAll .memNavAll {
-    position: fixed;
-    z-index: 999;
-    top: 100px; }
-    .mempage .memPageAll .memNavAll .memNavDisAll {
-      display: inline-block; }
-      .mempage .memPageAll .memNavAll .memNavDisAll button {
+  .mem_page_footer {
+    margin-top: 140px; }
+
+  .mem_page .col-xs-20p {
+    padding: 0; }
+
+  .mempage {
+    margin: 0; }
+    .mempage .col-xs-20p {
+      padding: 0; }
+    .mempage .memPageAll .navbar {
+      box-shadow: none;
+      background-color: rgba(237, 237, 237, 0);
+      border-color: rgba(237, 237, 237, 0); }
+    .mempage .memPageAll .memNavAll {
+      position: fixed;
+      z-index: 999;
+      top: 85px;
+      left: 0; }
+      .mempage .memPageAll .memNavAll .memNavDisAll {
+        display: inline-block; }
+        .mempage .memPageAll .memNavAll .memNavDisAll button {
+          background-color: #fff;
+          box-shadow: 1px 1px 10px #BDBDBD; }
+      .mempage .memPageAll .memNavAll .memNavNoneAll {
+        padding-right: 34px;
+        padding-left: 34px;
         background-color: #fff;
+        margin-top: -14px;
         box-shadow: 1px 1px 10px #BDBDBD; }
-    .mempage .memPageAll .memNavAll .memNavNoneAll {
-      background-color: #fff;
-      margin-top: -14px;
-      box-shadow: 1px 1px 10px #BDBDBD; }
-  .mempage .memPageAll .mempageDetail {
-    position: static;
-    margin-top: 50px; } }
+    .mempage .memPageAll .mempageDetail {
+      position: static;
+      margin-top: 50px; } }
 .mem_Info {
-  background-color: #EEEEEE;
+  background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%);
   font-family: "Noto Sans TC", sans-serif; }
 
 .memInfo {
   margin-top: 50px; }
+  .memInfo .container {
+    background: #EEEEEE;
+    padding-top: 30px;
+    padding-bottom: 5px; }
   .memInfo .memPageAll {
     position: relative; }
     .memInfo .memPageAll .navbar {
@@ -10390,16 +10579,24 @@ body {
       vertical-align: middle;
       width: 95%; }
     .memInfo .memPageAll .memInfoRight .memResult .memUpdateButton {
-      margin-top: 90px;
+      margin-top: 45px;
       text-align: center; }
+      .memInfo .memPageAll .memInfoRight .memResult .memUpdateButton .Btn {
+        width: 46%;
+        display: inline-block; }
   .memInfo .memPageAll::after {
     content: '';
     display: block;
     clear: both; }
 
 @media all and (max-width: 767px) {
+  .mem_Info .col-xs-20p {
+    padding: 0; }
+
   .memInfo {
     margin-top: 0; }
+    .memInfo .col-xs-20p {
+      padding: 0; }
     .memInfo .memPageAll .navbar {
       box-shadow: none;
       background-color: rgba(237, 237, 237, 0);
@@ -10407,13 +10604,16 @@ body {
     .memInfo .memPageAll .memNavAll {
       position: fixed;
       z-index: 999;
-      top: 100px; }
+      top: 85px;
+      left: 0; }
       .memInfo .memPageAll .memNavAll .memNavDisAll {
         display: inline-block; }
         .memInfo .memPageAll .memNavAll .memNavDisAll button {
           background-color: #fff;
           box-shadow: 1px 1px 10px #BDBDBD; }
       .memInfo .memPageAll .memNavAll .memNavNoneAll {
+        padding-right: 34px;
+        padding-left: 34px;
         background-color: #fff;
         margin-top: -14px;
         box-shadow: 1px 1px 10px #BDBDBD; }
@@ -10421,345 +10621,392 @@ body {
       position: static;
       margin-top: 50px; }
     .memInfo .memInfoRight {
-      margin-top: 50px; } }
+      margin-top: 50px; }
+      .memInfo .memInfoRight .memResult .submitImg, .memInfo .memInfoRight .memResult .submitImgButton {
+        text-align: center; }
+        .memInfo .memInfoRight .memResult .submitImg img, .memInfo .memInfoRight .memResult .submitImgButton img {
+          width: 50%; }
+
+  .memInfo .memPageAll .memInfoRight .memResult .memUpdateButton .Btn {
+    width: 100%;
+    display: block; } }
 .mem_Order {
-  background-color: #EEEEEE;
+  background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%);
   font-family: "Noto Sans TC", sans-serif; }
+  .mem_Order .ordtext {
+    margin-top: -267px;
+    margin-left: -160px; }
 
-.memOrder {
-  margin-top: 50px; }
-  .memOrder .memPageAll {
-    position: relative; }
-    .memOrder .memPageAll .navbar {
-      box-shadow: 1px 1px 15px #757575; }
-      .memOrder .memPageAll .navbar .navbar-left {
-        float: left; }
-    .memOrder .memPageAll .nav {
-      display: block; }
-    .memOrder .memPageAll .memNavNone {
-      padding-bottom: 15px; }
-      .memOrder .memPageAll .memNavNone img {
-        width: 100%;
-        border-radius: 50%;
-        padding: 15px 0; }
-      .memOrder .memPageAll .memNavNone li {
-        display: block;
-        clear: both;
-        width: 100%; }
-      .memOrder .memPageAll .memNavNone li > a:hover {
-        background-color: #0288D1;
-        transition: .5s; }
-      .memOrder .memPageAll .memNavNone .active a {
-        background-color: #0288D1;
-        color: #fff; }
-    .memOrder .memPageAll .memOrderRight img {
-      width: 100%;
-      border-radius: 50%;
-      padding: 15px 0;
-      vertical-align: middle;
-      display: inline-block; }
-    .memOrder .memPageAll .memOrderRight .breadcrumb {
-      background-color: #eeeeee;
-      padding-left: 0;
-      padding-right: 0; }
-    .memOrder .memPageAll .memOrderRight .orderHead {
-      font-size: 0; }
-      .memOrder .memPageAll .memOrderRight .orderHead li {
-        display: inline-block;
-        font-size: 20px;
-        padding-right: 30px; }
-        .memOrder .memPageAll .memOrderRight .orderHead li h3 {
-          margin: 0;
-          font-size: 32px; }
-      .memOrder .memPageAll .memOrderRight .orderHead li + li {
-        padding-right: 0px; }
-        .memOrder .memPageAll .memOrderRight .orderHead li + li a {
-          padding: 10px 20px;
-          color: #BDBDBD; }
-        .memOrder .memPageAll .memOrderRight .orderHead li + li .headLinkNow, .memOrder .memPageAll .memOrderRight .orderHead li + li a:hover {
-          background-color: #BDBDBD;
-          color: #757575;
-          text-decoration: none; }
-        .memOrder .memPageAll .memOrderRight .orderHead li + li a:hover {
-          transition: .5s; }
-    .memOrder .memPageAll .memOrderRight .orderTable thead {
-      background-color: #fff;
-      font-size: 24px; }
-      .memOrder .memPageAll .memOrderRight .orderTable thead tr th {
-        padding: 5px 5px;
-        font-size: 19px; }
-    .memOrder .memPageAll .memOrderRight .orderTable tbody tr {
-      border-bottom: 1px solid #BDBDBD; }
-    .memOrder .memPageAll .memOrderRight .orderTable td {
-      vertical-align: middle;
-      width: 25%; }
-      .memOrder .memPageAll .memOrderRight .orderTable td a {
-        color: #03A9F4;
-        font-weight: 900; }
-      .memOrder .memPageAll .memOrderRight .orderTable td .button, .memOrder .memPageAll .memOrderRight .orderTable td .border_button {
-        color: #fff;
-        font-weight: 500;
-        cursor: pointer; }
-    .memOrder .memPageAll .memOrderRight .orderTable .insert tr {
-      border-bottom: none; }
-    .memOrder .memPageAll .memOrderRight .orderTable .insert td {
-      vertical-align: middle;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-right: 44px;
-      padding-left: 5px; }
-    .memOrder .memPageAll .memOrderRight .orderChangePage {
-      text-align: center; }
-      .memOrder .memPageAll .memOrderRight .orderChangePage ul {
-        font-size: 0;
-        display: inline-block;
-        background-color: #fff;
-        margin-top: 5px;
-        border-radius: 4px;
-        border: 1px solid #BDBDBD; }
-        .memOrder .memPageAll .memOrderRight .orderChangePage ul li {
-          display: inline-block;
-          font-size: 20px;
-          vertical-align: middle;
-          color: #03A9F4;
-          position: relative;
-          padding: 0; }
-          .memOrder .memPageAll .memOrderRight .orderChangePage ul li a {
-            display: block;
-            padding: 5px 15px; }
-          .memOrder .memPageAll .memOrderRight .orderChangePage ul li .linkNow {
-            color: #fff;
-            background-color: #03A9F4;
-            text-decoration: none; }
-          .memOrder .memPageAll .memOrderRight .orderChangePage ul li a:hover {
-            color: #fff;
-            background-color: #03A9F4;
-            text-decoration: none;
-            transition: .5s; }
-        .memOrder .memPageAll .memOrderRight .orderChangePage ul li + li::before {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          left: 0;
-          vertical-align: middle;
-          width: 1px;
-          height: 38px;
-          background-color: #BDBDBD; }
-    .memOrder .memPageAll .memOrderRight .memResult input {
-      display: block;
-      padding: 5px 0;
-      width: 100%;
-      border-radius: 5px; }
-    .memOrder .memPageAll .memOrderRight .memResult select {
-      display: block;
-      padding: 5px 0;
-      width: 100%; }
-    .memOrder .memPageAll .memOrderRight .memResult p {
-      margin: 20px 0 0 0; }
-    .memOrder .memPageAll .memOrderRight .memResult .submitImgButton .subRect {
-      display: inline-block;
-      font-size: 0;
-      vertical-align: middle;
-      width: 1%;
-      height: 200px;
-      opacity: 0;
-      background-color: #000; }
-    .memOrder .memPageAll .memOrderRight .memResult .submitImgButton .subText {
-      display: inline-block;
-      vertical-align: middle;
-      width: 95%; }
-    .memOrder .memPageAll .memOrderRight .memResult .memUpdateButton {
-      margin-top: 90px;
-      text-align: center; }
-  .memOrder .memPageAll::after {
-    content: '';
-    display: block;
-    clear: both; }
-
-@media all and (max-width: 767px) {
+.memOrder .container {
+  background: #EEEEEE;
+  padding-top: 30px;
+  padding-bottom: 5px; }
+.memOrder .memPageAll {
+  position: relative; }
   .memOrder .memPageAll .navbar {
-    box-shadow: none;
-    background-color: rgba(237, 237, 237, 0);
-    border-color: rgba(237, 237, 237, 0); }
-  .memOrder .memPageAll .memNavAll {
-    position: fixed;
-    z-index: 999;
-    top: 100px; }
-    .memOrder .memPageAll .memNavAll .memNavDisAll {
-      display: inline-block; }
-      .memOrder .memPageAll .memNavAll .memNavDisAll button {
-        background-color: #fff;
-        box-shadow: 1px 1px 10px #BDBDBD; }
-    .memOrder .memPageAll .memNavAll .memNavNoneAll {
-      background-color: #fff;
-      margin-top: -14px;
-      box-shadow: 1px 1px 10px #BDBDBD; }
-  .memOrder .memPageAll .mempageDetail {
-    position: static;
-    margin-top: 50px; }
-  .memOrder .memInfoRight {
-    margin-top: 50px; } }
-.mem_spaceInfo {
-  background-color: #EEEEEE;
-  font-family: "Noto Sans TC", sans-serif; }
-
-.memSpace {
-  margin-top: 50px; }
-  .memSpace .memPageAll {
-    position: relative; }
-    .memSpace .memPageAll .navbar {
-      box-shadow: 1px 1px 15px #757575; }
-      .memSpace .memPageAll .navbar .navbar-left {
-        float: left; }
-    .memSpace .memPageAll .nav {
-      display: block; }
-    .memSpace .memPageAll .memNavNone {
-      padding-bottom: 15px; }
-      .memSpace .memPageAll .memNavNone img {
-        width: 100%;
-        border-radius: 50%;
-        padding: 15px 0; }
-      .memSpace .memPageAll .memNavNone li {
-        display: block;
-        clear: both;
-        width: 100%; }
-      .memSpace .memPageAll .memNavNone li > a:hover {
-        background-color: #0288D1;
-        transition: .5s; }
-      .memSpace .memPageAll .memNavNone .active a {
-        background-color: #0288D1;
-        color: #fff; }
-    .memSpace .memPageAll .memOrderRight img {
+    box-shadow: 1px 1px 15px #757575; }
+    .memOrder .memPageAll .navbar .navbar-left {
+      float: left; }
+  .memOrder .memPageAll .nav {
+    display: block; }
+  .memOrder .memPageAll .memNavNone {
+    padding-bottom: 15px; }
+    .memOrder .memPageAll .memNavNone img {
       width: 100%;
       border-radius: 50%;
-      padding: 15px 0;
-      vertical-align: middle;
-      display: inline-block; }
-    .memSpace .memPageAll .memOrderRight .breadcrumb {
-      background-color: #eeeeee;
-      padding-left: 0;
-      padding-right: 0; }
-    .memSpace .memPageAll .memOrderRight .orderHead {
-      font-size: 0; }
-      .memSpace .memPageAll .memOrderRight .orderHead li {
+      padding: 15px 0; }
+    .memOrder .memPageAll .memNavNone li {
+      display: block;
+      clear: both;
+      width: 100%; }
+    .memOrder .memPageAll .memNavNone li > a:hover {
+      background-color: #0288D1;
+      transition: .5s; }
+    .memOrder .memPageAll .memNavNone .active a {
+      background-color: #0288D1;
+      color: #fff; }
+  .memOrder .memPageAll .memOrderRight img {
+    width: 100%;
+    border-radius: 50%;
+    padding: 15px 0;
+    vertical-align: middle;
+    display: inline-block; }
+  .memOrder .memPageAll .memOrderRight .breadcrumb {
+    background-color: #eeeeee;
+    padding-left: 0;
+    padding-right: 0; }
+  .memOrder .memPageAll .memOrderRight .orderHead {
+    font-size: 0; }
+    .memOrder .memPageAll .memOrderRight .orderHead li {
+      display: inline-block;
+      font-size: 20px;
+      padding-right: 30px; }
+      .memOrder .memPageAll .memOrderRight .orderHead li h3 {
+        margin: 0;
+        font-size: 32px; }
+    .memOrder .memPageAll .memOrderRight .orderHead li + li {
+      padding-right: 0px; }
+      .memOrder .memPageAll .memOrderRight .orderHead li + li a {
+        padding: 10px 20px;
+        color: #BDBDBD; }
+      .memOrder .memPageAll .memOrderRight .orderHead li + li .headLinkNow, .memOrder .memPageAll .memOrderRight .orderHead li + li a:hover {
+        background-color: #BDBDBD;
+        color: #757575;
+        text-decoration: none; }
+      .memOrder .memPageAll .memOrderRight .orderHead li + li a:hover {
+        transition: .5s; }
+  .memOrder .memPageAll .memOrderRight .orderTable table {
+    width: 100%; }
+  .memOrder .memPageAll .memOrderRight .orderTable thead {
+    background-color: #fff;
+    font-size: 24px; }
+    .memOrder .memPageAll .memOrderRight .orderTable thead tr th {
+      padding: 5px 5px;
+      font-size: 19px;
+      width: 25%; }
+  .memOrder .memPageAll .memOrderRight .orderTable tbody tr {
+    border-bottom: 1px solid #BDBDBD; }
+  .memOrder .memPageAll .memOrderRight .orderTable td {
+    vertical-align: middle;
+    padding: 0 5px;
+    width: 25%; }
+    .memOrder .memPageAll .memOrderRight .orderTable td a {
+      color: #03A9F4;
+      font-weight: 900; }
+    .memOrder .memPageAll .memOrderRight .orderTable td .button, .memOrder .memPageAll .memOrderRight .orderTable td .border_button {
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0.17em; }
+  .memOrder .memPageAll .memOrderRight .orderTable .insert tr {
+    border-bottom: none; }
+  .memOrder .memPageAll .memOrderRight .orderTable .insert td {
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 44px;
+    padding-left: 5px; }
+  .memOrder .memPageAll .memOrderRight .orderChangePage {
+    text-align: center; }
+    .memOrder .memPageAll .memOrderRight .orderChangePage ul {
+      font-size: 0;
+      display: inline-block;
+      background-color: #fff;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #BDBDBD; }
+      .memOrder .memPageAll .memOrderRight .orderChangePage ul li {
         display: inline-block;
         font-size: 20px;
-        padding-right: 30px; }
-        .memSpace .memPageAll .memOrderRight .orderHead li h3 {
-          margin: 0;
-          font-size: 32px; }
-      .memSpace .memPageAll .memOrderRight .orderHead li + li {
-        padding-right: 0px; }
-        .memSpace .memPageAll .memOrderRight .orderHead li + li .spaceButton {
-          padding: 5px 10px;
-          display: inline;
-          color: #fff; }
-        .memSpace .memPageAll .memOrderRight .orderHead li + li .spaceButton:hover {
-          background-color: #FFC107;
-          color: #fff; }
-        .memSpace .memPageAll .memOrderRight .orderHead li + li a {
-          padding: 10px 20px;
-          color: #BDBDBD; }
-        .memSpace .memPageAll .memOrderRight .orderHead li + li .headLinkNow, .memSpace .memPageAll .memOrderRight .orderHead li + li a:hover {
-          background-color: #BDBDBD;
-          color: #757575;
-          text-decoration: none; }
-        .memSpace .memPageAll .memOrderRight .orderHead li + li a:hover {
-          transition: .5s; }
-    .memSpace .memPageAll .memOrderRight .orderTable thead {
-      background-color: #fff;
-      font-size: 19px; }
-      .memSpace .memPageAll .memOrderRight .orderTable thead tr th {
-        padding: 5px 5px; }
-    .memSpace .memPageAll .memOrderRight .orderTable tbody tr {
-      border-bottom: 1px solid #BDBDBD; }
-    .memSpace .memPageAll .memOrderRight .orderTable td {
-      vertical-align: middle;
-      width: 25%; }
-      .memSpace .memPageAll .memOrderRight .orderTable td a {
+        vertical-align: middle;
         color: #03A9F4;
-        font-weight: 900; }
-      .memSpace .memPageAll .memOrderRight .orderTable td .button, .memSpace .memPageAll .memOrderRight .orderTable td .border_button {
-        color: #fff;
-        font-weight: 500;
-        cursor: pointer; }
-    .memSpace .memPageAll .memOrderRight .orderTable .insert tr {
-      border-bottom: none; }
-    .memSpace .memPageAll .memOrderRight .orderTable .insert td {
-      vertical-align: middle;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-right: 44px;
-      padding-left: 5px; }
-    .memSpace .memPageAll .memOrderRight .orderChangePage {
-      text-align: center; }
-      .memSpace .memPageAll .memOrderRight .orderChangePage ul {
-        font-size: 0;
+        position: relative;
+        padding: 0; }
+        .memOrder .memPageAll .memOrderRight .orderChangePage ul li a {
+          display: block;
+          padding: 5px 15px; }
+        .memOrder .memPageAll .memOrderRight .orderChangePage ul li .linkNow {
+          color: #fff;
+          background-color: #03A9F4;
+          text-decoration: none; }
+        .memOrder .memPageAll .memOrderRight .orderChangePage ul li a:hover {
+          color: #fff;
+          background-color: #03A9F4;
+          text-decoration: none;
+          transition: .5s; }
+      .memOrder .memPageAll .memOrderRight .orderChangePage ul li + li::before {
+        content: '';
         display: inline-block;
-        background-color: #fff;
-        margin-top: 5px;
-        border-radius: 4px;
-        border: 1px solid #BDBDBD; }
-        .memSpace .memPageAll .memOrderRight .orderChangePage ul li {
-          display: inline-block;
-          font-size: 20px;
-          vertical-align: middle;
-          color: #03A9F4;
-          position: relative;
-          padding: 0; }
-          .memSpace .memPageAll .memOrderRight .orderChangePage ul li a {
-            display: block;
-            padding: 5px 15px; }
-          .memSpace .memPageAll .memOrderRight .orderChangePage ul li .linkNow {
-            color: #fff;
-            background-color: #03A9F4;
-            text-decoration: none; }
-          .memSpace .memPageAll .memOrderRight .orderChangePage ul li a:hover {
-            color: #fff;
-            background-color: #03A9F4;
-            text-decoration: none;
-            transition: .5s; }
-        .memSpace .memPageAll .memOrderRight .orderChangePage ul li + li::before {
-          content: '';
-          display: inline-block;
-          position: absolute;
-          left: 0;
-          vertical-align: middle;
-          width: 1px;
-          height: 38px;
-          background-color: #BDBDBD; }
-    .memSpace .memPageAll .memOrderRight .memResult input {
-      display: block;
-      padding: 5px 0;
-      width: 100%;
-      border-radius: 5px; }
-    .memSpace .memPageAll .memOrderRight .memResult select {
-      display: block;
-      padding: 5px 0;
-      width: 100%; }
-    .memSpace .memPageAll .memOrderRight .memResult p {
-      margin: 20px 0 0 0; }
-    .memSpace .memPageAll .memOrderRight .memResult .submitImgButton .subRect {
-      display: inline-block;
-      font-size: 0;
-      vertical-align: middle;
-      width: 1%;
-      height: 200px;
-      opacity: 0;
-      background-color: #000; }
-    .memSpace .memPageAll .memOrderRight .memResult .submitImgButton .subText {
-      display: inline-block;
-      vertical-align: middle;
-      width: 95%; }
-    .memSpace .memPageAll .memOrderRight .memResult .memUpdateButton {
-      margin-top: 90px;
-      text-align: center; }
-  .memSpace .memPageAll::after {
-    content: '';
+        position: absolute;
+        left: 0;
+        vertical-align: middle;
+        width: 1px;
+        height: 38px;
+        background-color: #BDBDBD; }
+  .memOrder .memPageAll .memOrderRight .memResult input {
     display: block;
-    clear: both; }
+    padding: 5px 0;
+    width: 100%;
+    border-radius: 5px; }
+  .memOrder .memPageAll .memOrderRight .memResult select {
+    display: block;
+    padding: 5px 0;
+    width: 100%; }
+  .memOrder .memPageAll .memOrderRight .memResult p {
+    margin: 20px 0 0 0; }
+  .memOrder .memPageAll .memOrderRight .memResult .submitImgButton .subRect {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+    width: 1%;
+    height: 200px;
+    opacity: 0;
+    background-color: #000; }
+  .memOrder .memPageAll .memOrderRight .memResult .submitImgButton .subText {
+    display: inline-block;
+    vertical-align: middle;
+    width: 95%; }
+  .memOrder .memPageAll .memOrderRight .memResult .memUpdateButton {
+    margin-top: 90px;
+    text-align: center; }
+.memOrder .memPageAll::after {
+  content: '';
+  display: block;
+  clear: both; }
 
 @media all and (max-width: 767px) {
+  .mem_Order .col-xs-20p {
+    padding: 0; }
+  .mem_Order .memOrder {
+    margin-top: 0; }
+    .mem_Order .memOrder .memPageAll .navbar {
+      box-shadow: none;
+      background-color: rgba(237, 237, 237, 0);
+      border-color: rgba(237, 237, 237, 0); }
+    .mem_Order .memOrder .memPageAll .memNavAll {
+      position: fixed;
+      z-index: 999;
+      top: 85px;
+      left: 0; }
+      .mem_Order .memOrder .memPageAll .memNavAll .memNavDisAll {
+        display: inline-block; }
+        .mem_Order .memOrder .memPageAll .memNavAll .memNavDisAll button {
+          background-color: #fff;
+          box-shadow: 1px 1px 10px #BDBDBD; }
+      .mem_Order .memOrder .memPageAll .memNavAll .memNavNoneAll {
+        padding-right: 34px;
+        padding-left: 34px;
+        background-color: #fff;
+        margin-top: -14px;
+        box-shadow: 1px 1px 10px #BDBDBD; }
+    .mem_Order .memOrder .memPageAll .memOrderRight .orderHead .listFirst {
+      width: 100%;
+      margin-bottom: 25px; }
+    .mem_Order .memOrder .memPageAll .memOrderRight .orderTable {
+      text-align: center; }
+      .mem_Order .memOrder .memPageAll .memOrderRight .orderTable th {
+        text-align: center; }
+      .mem_Order .memOrder .memPageAll .memOrderRight .orderTable .xs-none {
+        display: none; }
+    .mem_Order .memOrder .memPageAll .mempageDetail {
+      position: static; } }
+.mem_spaceInfo {
+  background: linear-gradient(#40afdf 0%, #7ec8e6 50%, #a1d0e3 100%);
+  font-family: "Noto Sans TC", sans-serif; }
+  .mem_spaceInfo .ordtext {
+    margin-top: -245px;
+    margin-left: -125px; }
+
+.memSpace .container {
+  background: #EEEEEE;
+  padding-top: 30px;
+  padding-bottom: 5px; }
+.memSpace .memPageAll {
+  position: relative; }
+  .memSpace .memPageAll .navbar {
+    box-shadow: 1px 1px 15px #757575; }
+    .memSpace .memPageAll .navbar .navbar-left {
+      float: left; }
+  .memSpace .memPageAll .nav {
+    display: block; }
+  .memSpace .memPageAll .memNavNone {
+    padding-bottom: 15px; }
+    .memSpace .memPageAll .memNavNone img {
+      width: 100%;
+      border-radius: 50%;
+      padding: 15px 0; }
+    .memSpace .memPageAll .memNavNone li {
+      display: block;
+      clear: both;
+      width: 100%; }
+    .memSpace .memPageAll .memNavNone li > a:hover {
+      background-color: #0288D1;
+      transition: .5s; }
+    .memSpace .memPageAll .memNavNone .active a {
+      background-color: #0288D1;
+      color: #fff; }
+  .memSpace .memPageAll .memOrderRight img {
+    width: 100%;
+    border-radius: 50%;
+    padding: 15px 0;
+    vertical-align: middle;
+    display: inline-block; }
+  .memSpace .memPageAll .memOrderRight .breadcrumb {
+    background-color: #eeeeee;
+    padding-left: 0;
+    padding-right: 0; }
+  .memSpace .memPageAll .memOrderRight .orderHead {
+    font-size: 0; }
+    .memSpace .memPageAll .memOrderRight .orderHead li {
+      display: inline-block;
+      font-size: 20px;
+      padding-right: 30px; }
+      .memSpace .memPageAll .memOrderRight .orderHead li h3 {
+        margin: 0;
+        font-size: 32px; }
+    .memSpace .memPageAll .memOrderRight .orderHead li + li {
+      padding-right: 0px; }
+      .memSpace .memPageAll .memOrderRight .orderHead li + li .spaceButton {
+        padding: 5px 10px;
+        display: inline;
+        color: #fff; }
+      .memSpace .memPageAll .memOrderRight .orderHead li + li .spaceButton:hover {
+        background-color: #FFC107;
+        color: #fff; }
+      .memSpace .memPageAll .memOrderRight .orderHead li + li a {
+        padding: 10px 20px;
+        color: #BDBDBD; }
+      .memSpace .memPageAll .memOrderRight .orderHead li + li .headLinkNow, .memSpace .memPageAll .memOrderRight .orderHead li + li a:hover {
+        background-color: #BDBDBD;
+        color: #757575;
+        text-decoration: none; }
+      .memSpace .memPageAll .memOrderRight .orderHead li + li a:hover {
+        transition: .5s; }
+  .memSpace .memPageAll .memOrderRight .orderTable table {
+    width: 100%; }
+  .memSpace .memPageAll .memOrderRight .orderTable thead {
+    background-color: #fff;
+    font-size: 19px; }
+    .memSpace .memPageAll .memOrderRight .orderTable thead tr th {
+      padding: 5px 5px;
+      width: 25%; }
+  .memSpace .memPageAll .memOrderRight .orderTable tbody tr {
+    border-bottom: 1px solid #BDBDBD; }
+  .memSpace .memPageAll .memOrderRight .orderTable td {
+    vertical-align: middle;
+    padding: 0 5px;
+    width: 25%; }
+    .memSpace .memPageAll .memOrderRight .orderTable td a {
+      color: #03A9F4;
+      font-weight: 900; }
+    .memSpace .memPageAll .memOrderRight .orderTable td .button, .memSpace .memPageAll .memOrderRight .orderTable td .border_button {
+      color: #fff;
+      font-weight: 500;
+      cursor: pointer;
+      margin: 0.17em; }
+  .memSpace .memPageAll .memOrderRight .orderTable .insert tr {
+    border-bottom: none; }
+  .memSpace .memPageAll .memOrderRight .orderTable .insert td {
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 44px;
+    padding-left: 5px; }
+  .memSpace .memPageAll .memOrderRight .orderChangePage {
+    text-align: center; }
+    .memSpace .memPageAll .memOrderRight .orderChangePage ul {
+      font-size: 0;
+      display: inline-block;
+      background-color: #fff;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #BDBDBD; }
+      .memSpace .memPageAll .memOrderRight .orderChangePage ul li {
+        display: inline-block;
+        font-size: 20px;
+        vertical-align: middle;
+        color: #03A9F4;
+        position: relative;
+        padding: 0; }
+        .memSpace .memPageAll .memOrderRight .orderChangePage ul li a {
+          display: block;
+          padding: 5px 15px; }
+        .memSpace .memPageAll .memOrderRight .orderChangePage ul li .linkNow {
+          color: #fff;
+          background-color: #03A9F4;
+          text-decoration: none; }
+        .memSpace .memPageAll .memOrderRight .orderChangePage ul li a:hover {
+          color: #fff;
+          background-color: #03A9F4;
+          text-decoration: none;
+          transition: .5s; }
+      .memSpace .memPageAll .memOrderRight .orderChangePage ul li + li::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        left: 0;
+        vertical-align: middle;
+        width: 1px;
+        height: 38px;
+        background-color: #BDBDBD; }
+  .memSpace .memPageAll .memOrderRight .memResult input {
+    display: block;
+    padding: 5px 0;
+    width: 100%;
+    border-radius: 5px; }
+  .memSpace .memPageAll .memOrderRight .memResult select {
+    display: block;
+    padding: 5px 0;
+    width: 100%; }
+  .memSpace .memPageAll .memOrderRight .memResult p {
+    margin: 20px 0 0 0; }
+  .memSpace .memPageAll .memOrderRight .memResult .submitImgButton .subRect {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+    width: 1%;
+    height: 200px;
+    opacity: 0;
+    background-color: #000; }
+  .memSpace .memPageAll .memOrderRight .memResult .submitImgButton .subText {
+    display: inline-block;
+    vertical-align: middle;
+    width: 95%; }
+  .memSpace .memPageAll .memOrderRight .memResult .memUpdateButton {
+    margin-top: 90px;
+    text-align: center; }
+.memSpace .memPageAll::after {
+  content: '';
+  display: block;
+  clear: both; }
+
+@media all and (max-width: 767px) {
+  .mem_spaceInfo .col-xs-20p {
+    padding: 0; }
+
+  .memSpace .memPageAll .memOrderRight .orderHead li + li a {
+    padding: 5px 2px; }
+
   .memSpace .memPageAll .navbar {
     box-shadow: none;
     background-color: rgba(237, 237, 237, 0);
@@ -10767,16 +11014,31 @@ body {
   .memSpace .memPageAll .memNavAll {
     position: fixed;
     z-index: 999;
-    top: 100px; }
+    top: 85px;
+    left: 0; }
     .memSpace .memPageAll .memNavAll .memNavDisAll {
       display: inline-block; }
       .memSpace .memPageAll .memNavAll .memNavDisAll button {
         background-color: #fff;
         box-shadow: 1px 1px 10px #BDBDBD; }
     .memSpace .memPageAll .memNavAll .memNavNoneAll {
+      padding-right: 34px;
+      padding-left: 34px;
       background-color: #fff;
       margin-top: -14px;
       box-shadow: 1px 1px 10px #BDBDBD; }
+  .memSpace .memPageAll .memOrderRight .orderHead li {
+    width: 33%;
+    box-sizing: border-box; }
+  .memSpace .memPageAll .memOrderRight .orderHead .listFirst {
+    width: 100%;
+    margin-bottom: 25px; }
+  .memSpace .memPageAll .memOrderRight .orderTable {
+    text-align: center; }
+    .memSpace .memPageAll .memOrderRight .orderTable th {
+      text-align: center; }
+    .memSpace .memPageAll .memOrderRight .orderTable .xs-none {
+      display: none; }
   .memSpace .memPageAll .mempageDetail {
     position: static;
     margin-top: 50px; }
@@ -10977,7 +11239,6 @@ body {
     background: #fff;
     color: steelblue; }
   .back_space .tab_container {
-    height: 68vh;
     background: rgba(51, 51, 51, 0.5);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .back_space .tab_container {
@@ -11059,7 +11320,8 @@ body {
   .back_space .backfooter {
     display: flex;
     justify-content: center;
-    align-items: flex-end; }
+    align-items: flex-end;
+    padding: 10px 0; }
     .back_space .backfooter p {
       color: #FFFFFF;
       display: flex;

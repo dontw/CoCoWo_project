@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
 	<title>可可窩CoCoWork</title>
@@ -10,58 +11,59 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+	<!-- <script type="text/javascript" src="js/jquery-ui.min.js"></script> -->
 	<script type="text/javascript" src="js/loginBox.js"></script>
-
+	<script type="text/javascript" src="js/member_page.js"></script>
 </head>
 <body class="mem_page">
-	<!-- main_nav_bar -->
+	 <!-- main_nav_bar -->
    <div class="main_nav_bar">
-  		<div class="container">
-  			<div class="row">
-  				<div class="col-xs-12 col-sm-2 col-md-2">
-  					<a href="index.html">
-  						<div class="main_nav_logo"></div>
-  					</a>
-  				</div>
-  				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="search_space.html" class="main_nav_a">
-  						<i class="fa fa-search" aria-hidden="true"></i>
-  						<span class="nav_p">搜索空間</span>
-  					</a>
-  				</div>
-  				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="post_space.html" class="main_nav_a  main_nav_a_active">
-  						<i class="fa fa-plus-square-o" aria-hidden="true"></i>
-  						<span class="nav_p">刊登空間</span>
-  					</a>
-  				</div>
-  				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="blog_main.html" class="main_nav_a main_nav_a_shop">
-  						<i class="fa fa-book" aria-hidden="true"></i>
-  						<span class="nav_p">窩 日 誌</span>
-  					</a>
-  				</div>
-  				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="" class="main_nav_a">
-  						<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
-  						<span class="nav_p">聯絡我們</span>
-  					</a>
-  				</div>
-          <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
-            <a href="#" class="main_nav_a">
-  						<i class="fa fa-user-circle-o" aria-hidden="true"></i>
-              <span class="nav_p">會員中心</span>
-  					</a>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-2 col-md-2">
+            <a href="index.html">
+              <div class="main_nav_logo"></div>
+            </a>
           </div>
-  			</div>
-  		</div>
-  	</div>
+          <!-- <div class="col-sm-2 col-md-2"></div> -->
+          <div class="col-xs-20p col-sm-2 col-md-2">
+            <a href="search_space.html" class="main_nav_a">
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <span class="nav_p">搜索空間</span>
+            </a>
+          </div>
+          <div class="col-xs-20p col-sm-2 col-md-2">
+            <a href="post_space.html" class="main_nav_a">
+              <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+              <span class="nav_p">刊登空間</span>
+            </a>
+          </div>
+          <div class="col-xs-20p col-sm-2 col-md-2">
+            <a href="#" class="main_nav_a main_nav_a_shop main_nav_a_active">
+              <i class="fa fa-book" aria-hidden="true"></i>
+              <span class="nav_p">窩 日 誌</span>
+            </a>
+          </div>
+          <div class="col-xs-20p col-sm-2 col-md-2">
+            <a href="#" class="main_nav_a">
+              <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+              <span class="nav_p">聯絡我們</span>
+            </a>
+          </div>
+          <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
+            <a href="member_page.html" class="main_nav_a main_nav_user_a">
+              <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+              <span class="nav_p">會員中心</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="stuff_nav"></div>
     <!-- main_nav_bar_end -->
 
 	<!-- userLightBox -->
-	<div class="userlightboxbccc">
+	<!-- <div class="userlightboxbccc">
 		<div class="userLightBox">
 			<div class="lightbox">
 				<div id="closeBox">
@@ -83,13 +85,13 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- userLightBoxEnd-->
-	<div class="mempage">
-		<div class="container">
+	 <div class="mempage" id="mempage">
+		<!--<div class="container">
 			<div class="memPageAll">
 
-				<div class="col-xs-6 col-sm-3 memNavAll">
+				<div class="col-xs-8 col-sm-3 memNavAll">
 					<nav class="navbar navbar-default" role="navigation">
 						<div class="navbar-header memNavDisAll">
 							<button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -99,12 +101,12 @@
 								<span class="icon-bar"></span>
 							</button>
 
-						</div>
+						</div> -->
 
 						<!-- 手機隱藏選單區 -->
-						<div class="collapse navbar-collapse navbar-ex1-collapse memNavNoneAll">
+						<!-- <div class="collapse navbar-collapse navbar-ex1-collapse memNavNoneAll"> -->
 							<!-- 左選單 -->
-							<ul class="nav navbar-nav memNavNone">
+							<!-- <ul class="nav navbar-nav memNavNone">
 								<li><img src="img/doge.jpeg"></li>
 								<li class="active"><a href="mem_page.html">會員名稱</a></li>
 								<li><a href="mem_info_update.html">會員資料更改</a></li>
@@ -116,9 +118,9 @@
 
 
 
-						</div>
+						</div> -->
 						<!-- 手機隱藏選單區結束 -->
-					</nav>
+					<!-- </nav>
 				</div>
 
 				<div class="col-xs-12 col-sm-9 mempageDetail">
@@ -133,8 +135,8 @@
 					<img src="img/mempage.png">
 				</div>
 			</div>
-		</div>
-	</div>
+		</div>-->
+	</div> 
 	<!-- footerstart -->
 	<div class="footer mem_page_footer">
 		<div class="footer_cloud"></div>

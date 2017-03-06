@@ -1,6 +1,13 @@
 @include respones(small) {
-  .memOrder
+.mem_Order{
+	.col-xs-20p
 	{
+		padding: 0;
+	}
+
+	.memOrder
+	{
+		margin-top:0;
 		.memPageAll
 		{
 
@@ -10,11 +17,13 @@
 				background-color: hsla(0, 0%, 93%, 0);
 				border-color: hsla(0, 0%, 93%, 0);
 			}
+
 			.memNavAll
 			{
 				position: fixed;
 				z-index: 999;
-        top: 100px;
+        		top: 85px;
+        		left: 0;
 				.memNavDisAll
 				{
 					display: inline-block;
@@ -27,22 +36,52 @@
 
 				.memNavNoneAll
 				{
+					padding-right: 34px;
+    				padding-left: 34px;
 					background-color: #fff;
 					margin-top: -14px;
 					box-shadow: 1px 1px 10px $grey;
 				}
 			}
 
+			.memOrderRight
+			{
+				.orderHead
+				{
+					.listFirst
+					{
+						width: 100%;
+						margin-bottom: 25px;
+					}
+					
+				}
+				.orderTable
+				{
+					text-align: center;
+					th
+					{
+						text-align: center;
+					}
+					.xs-none
+					{
+						display: none;
+					}
+				}
+			}
+
 			.mempageDetail
 			{
 				position: static;
-				margin-top: 50px;
+				// margin-top: 50px;
 			}
 		}
 
 		.memInfoRight
 		{
-			margin-top: 50px;
+			// margin-top: 50px;
 		}
 	}
+
+}
+  
 };

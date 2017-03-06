@@ -61,7 +61,7 @@
             </a>
           </div>
           <div class="col-xs-20p col-sm-2 col-md-2">
-            <a href="#" class="main_nav_a main_nav_a_shop">
+            <a href="blog_main.html" class="main_nav_a main_nav_a_shop">
               <i class="fa fa-book" aria-hidden="true"></i>
               <span class="nav_p">窩 日 誌</span>
             </a>
@@ -708,29 +708,23 @@
      <h4>會員註冊</h4>
      <form>
        <label for="usermail">
-         帳號:
          <input type="mail" name="signusermail" placeholder="aaa123@example.com">
        </label>
        <label for="userpsw">
-         密碼:
          <input type="password" name="signuserpsw" placeholder="會員密碼">
        </label>
        <label for="username">
-         名稱:
          <input type="text" name="username" placeholder="會員名稱">
        </label>
        <label for="userpho">
-         電話:
          <input type="text" name="userpho" placeholder="會員電話">
        </label>
        <label for="usersex">
-       性別:
          <input type="radio" name="usersex" value="0">男
          <input type="radio" name="usersex" value="1">女
        </label>
        <label for="useroccu">
-         職業:
-         <input type="text" name="useroccu" placeholder="Engineer">
+         <input type="text" name="useroccu" placeholder="職業">
        </label>
        <div class="userbutton">
          <a id="yesBtn" class="button dark-blue" href="#">確定</a>

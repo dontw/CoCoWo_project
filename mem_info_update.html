@@ -13,7 +13,7 @@
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="js/loginBox.js"></script>
-
+	<script type="text/javascript" src="js/member_info_update.js"></script>
 </head>
 <body class="mem_Info">
 	<!-- main_nav_bar -->
@@ -50,7 +50,7 @@
   					</a>
   				</div>
           <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
-            <a href="#" class="main_nav_a">
+            <a href="mem_page.html" class="main_nav_a">
   						<i class="fa fa-user-circle-o" aria-hidden="true"></i>
               <span class="nav_p">會員中心</span>
   					</a>
@@ -61,36 +61,12 @@
     <div class="stuff_nav"></div>
     <!-- main_nav_bar_end -->
 
-	<!-- userLightBox -->
-	<div class="userlightboxbccc">
-		<div class="userLightBox">
-			<div class="lightbox">
-				<div id="closeBox">
-					<i class="fa fa-window-close" aria-hidden="true"></i>
-				</div>
-				<h4>會員登入</h4>
-				<label for="username">
-					<input type="text" name="username" placeholder="會員帳號">
-				</label>
-				<label for="userpsw">
-					<input type="password" name="userpsw" placeholder="會員密碼">
-				</label>
-				<label for="userpsw">
-					<input type="checkbox" name="userck" >記住帳號與密碼
-				</label>
-				<div class="userbutton">
-					<a class="button dark-blue" href="#btn">登入</a>
-					<a class="button yellow" href="#btn">註冊</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- userLightBoxEnd-->
-	<div class="memInfo">
-		<div class="container">
+	
+	<div class="memInfo" id="memInfo">
+		<!-- <div class="container">
 			<div class="memPageAll">
 
-				<div class="col-xs-6 col-sm-3 memNavAll">
+				<div class="col-xs-8 col-sm-3 memNavAll">
 					<nav class="navbar navbar-default" role="navigation">
 						<div class="navbar-header memNavDisAll">
 							<button type="button" class="navbar-toggle navbar-left" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -101,11 +77,11 @@
 							</button>
 
 						</div>
-
+ -->
 						<!-- 手機隱藏選單區 -->
-						<div class="collapse navbar-collapse navbar-ex1-collapse memNavNoneAll">
+						<!-- <div class="collapse navbar-collapse navbar-ex1-collapse memNavNoneAll"> -->
 							<!-- 左選單 -->
-							<ul class="nav navbar-nav memNavNone">
+							<!-- <ul class="nav navbar-nav memNavNone">
 								<li><img src="img/doge.jpeg"></li>
 								<li><a href="mem_page.html">會員名稱</a></li>
 								<li class="active"><a href="mem_info_update.html">會員資料更改</a></li>
@@ -117,71 +93,73 @@
 
 
 
-						</div>
+						</div> -->
 						<!-- 手機隱藏選單區結束 -->
-					</nav>
+					<!-- </nav>
 				</div>
 
 
 				<div class="col-xs-12 col-sm-9 memInfoRight">
 					<ol class="breadcrumb">
 						<li>
-							<a href="#">首頁</a>
+							<a href="index.html">首頁</a>
 						</li>
 						<li>
-							<a href="#">我的會員頁面</a>
+							<a href="mem_page.html">我的會員頁面</a>
 						</li>
 						<li class="active">會員資料更改</li>
 					</ol>
 					<h3>會員資料更改</h3>
 
 					<div class="memResult">
+					<form>
 						<div class="col-xs-12 col-sm-6">
 							<p>會員信箱</p>
-							<input type="text" name="" placeholder="doge1945@gmail.com">
+							<input type="text" name="" value="doge1945@gmail.com">
 							<p>會員密碼</p>
-							<input type="password" name="" placeholder="******">
+							<input type="password" name="" value="free">
 							<p>再次確認密碼</p>
-							<input type="password" name="" placeholder="******">
+							<input type="password" name="" value="free">
 							<p>上傳會員頭像</p>
-							<div class="col-xs-6 col-sm-6 submitImg">
+							<div class="col-xs-12 col-sm-6 submitImg">
 								<img src="img/doge.jpeg">
 							</div>
 
-							<div class="col-xs-6 col-sm-6 submitImgButton">
+							<div class="col-xs-12 col-sm-6 submitImgButton">
 								<div class="subRect">
 
 								</div>
 								<div class="subText">
-									<a class="button dark-blue" href="">上傳檔案</a>
+									<input  type="file" name="">
 									<p>照片大小請小於2MB</p>
 								</div>
 							</div>
 						</div>
 						<div class="col-xs-12 col-sm-6">
 							<p>會員稱呼</p>
-							<input type="text" name="" placeholder="doge1945">
+							<input type="text" name="" value="doge1945">
 							<p>職業</p>
-							<input type="text" name="" placeholder="PPT架構師">
+							<input type="text" name="" value="PPT架構師">
 							<p>性別</p>
-							<form>
+							
 								<select name="YourLocation">
 									　<option value="Taipei">男</option>
 									　<option value="Taoyuan">女</option>
 									<option value="Taoyuan">不告訴你</option>
 								</select>
-							</form>
+							
 							<p>電話</p>
 							<input type="text" name="" placeholder="02-1234-5678">
 							<div class="memUpdateButton">
-								<a class="button dark-blue" >確認修改</a>
-								<a class="button yellow" >重新設定</a>
+								<input class="button dark-blue Btn" type="submit" name="">
+								<input class="button yellow Btn" type="reset" name="">
 							</div>
 						</div>
+						</form>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<!-- footerstart -->
 	<div class="footer mem_page_footer">

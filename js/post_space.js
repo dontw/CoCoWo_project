@@ -403,7 +403,7 @@ var scene_9 = new ScrollMagic.Scene({
       window.location = url + "?mem_no="+sessionStorage.getItem('userno');
       return false;
     }else{
-      alert("請先登入會員!");
+      alert("請登入會員後再點刊登鍵~~");
       $('.main_nav_user_a').click();
     }
   });

@@ -1,4 +1,5 @@
 @include respones(small) {
+	
   .blog_footer{
     	margin-top: 50px;
   }
@@ -19,6 +20,7 @@
 
 	.container
 	{
+
 		.blogNav .blogNavItem
 		{
 			margin: 0;
@@ -45,10 +47,7 @@
 				}
 
 			}
-			.blogContextRightAll
-			{
-				display: none;
-			}
+			
 		}
 
 
@@ -74,7 +73,36 @@
 			clear: both;
 		}
 	}
-
+	
 
   }
+  #mdWindow
+	{
+		margin-top: -250px;
+		margin-left: -150px;
+		width: 300px;
+		height: 500px;
+
+	}
+	#contWrap
+	{
+		height: 440px;
+	}
+
+	.blog .container .blogItemAll .blogItem .yoyo, .blog .container .blogItemAll .blogItem .yoyo2 {
+    bottom: 30px;
+    padding: 0; 
+}
+.blog .container .blogItemAll .blogItem
+{
+     h2
+     {
+     	font-size: 24px;
+     }
+     p
+     {
+     	font-size: 14px;
+     }
+}
+
 };

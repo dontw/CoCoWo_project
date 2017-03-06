@@ -1,11 +1,13 @@
 .mem_page
 {
-	background-color: #EEEEEE;
+	background: linear-gradient(#40afdf 0%,#7ec8e6 50%, #a1d0e3 100%);
+
 	font-family: $main_font_family;
+	
 }
 
 .mem_page_footer{
-	margin-top:200px;
+	margin-top: 260px;
 }
 
 
@@ -15,6 +17,12 @@
 .mempage
 {
 	margin: 50px 0;
+	.container
+	{
+		background: #EEEEEE;
+		padding-top: 30px;
+		padding-bottom: 5px;
+	}
 	.memPageAll
 	{
 		position: relative;
@@ -30,6 +38,7 @@
 		{
 			display: block;
 		}
+		
 		.memNavNone
 		{
 

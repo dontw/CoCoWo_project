@@ -31,7 +31,7 @@ function checkmem()
 			username:checkusername,
 			userpsw:checkuserpsw
 		},
-		type:"POST",
+		type:"GET",
 		dataType:'html',
 
 		success:function(msg)
@@ -44,10 +44,10 @@ function checkmem()
 				alert("帳密錯誤!!")
 			}else
 			{
-
-
-				var memcut = msg.split("|");
-				alert('登入成功!!!');
+				var member = JSON.parse(msg);
+				var memcut = member.split("|");
+				// alert(memcut[1]);
+				// alert('登入成功'+memcut[2]+'您好~!');
 
 				dofirst(memcut[1], memcut[2]);
 			}
@@ -93,7 +93,7 @@ function insertmem()
 			usersex:signusersex,
 			useroccu:signuseroccu
 		},
-		type:"POST",
+		type:"GET",
 		dataType:'html',
 
 		success:function(msg)
@@ -103,7 +103,7 @@ function insertmem()
 				// var member = JSON.parse(msg);
 
 
-				alert("已申請完成!請重新登入");
+				alert(msg);
 				window.location.reload();
 
 
@@ -125,7 +125,7 @@ function testmem()
 	$.ajax(
 	{
 		url:"../memberInsert_JSON.php",
-		type:"POST",
+		type:"GET",
 		dataType:'text',
 
 		success:function(msg)

@@ -3,7 +3,7 @@
 		background-color: rgba(33, 33, 33, 0.6);
 		width: 100%;
 		position: fixed;
-		z-index: 1;
+		z-index:99;
 		display: none;
 		opacity: 0;
 		top:0;
@@ -17,6 +17,27 @@
 			label
 			{
 				text-align: left;
+				font-family: $main_font_family;
+				font-size: 24px;
+				input[type="radio"]{
+					width:30px;
+					height:30px;
+				}
+				input[type="text"],input[type="mail"],input[type="password"]{
+					display: block;
+			    margin: 0;
+			    padding: 0 0 0.15em;
+			    width: 100%;
+			    border: none;
+			    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+			    color: #212121;
+			    text-overflow: ellipsis;
+			    font-weight: bold;
+			    font-size: 24px;
+			    border-radius: 0;
+			    margin-bottom: 15px;
+			    font-family: "Noto Sans TC", sans-serif;
+				};
 			}
 			input[type='reset']
 			{
@@ -49,7 +70,7 @@
 			padding: 30px;
 
 			border-radius: 4px;
-			left: 43px;
+			left: 0%;
 			label
 			{
 				display: block;
