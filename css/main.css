@@ -2358,7 +2358,7 @@
     position: relative;
     background-color: #fff;
     display: inline-block;
-    padding: 25px 40px;
+    padding: 30px;
     border-radius: 4px;
     left: 43px; }
     .userLightBox .lightbox label {
@@ -4204,7 +4204,7 @@ p {
   p.minp {
     font-size: 12px; }
 
-body {
+.index_body {
   background: linear-gradient(#40afdf 0%, #7ec8e6 20%, #fff 100%); }
 
 .index_body .footer {
@@ -10397,3 +10397,285 @@ body {
     margin-top: 50px; }
   .memSpace .memInfoRight {
     margin-top: 50px; } }
+.back_login_wrap {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(#40afdf 0%, #a1d0e3 100%);
+  width: 100%;
+  text-align: center;
+  padding-top: 5%; }
+  .back_login_wrap .login_box {
+    margin-top: 30%;
+    width: 500px;
+    background: #FFFFFF;
+    padding: 30px 30px 30px 30px;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 1px; }
+    .back_login_wrap .login_box img {
+      margin-bottom: 15px; }
+    .back_login_wrap .login_box h3 {
+      margin-bottom: 15px; }
+    .back_login_wrap .login_box a {
+      background: #0288D1;
+      width: 100%; }
+    .back_login_wrap .login_box input {
+      display: block;
+      margin: 0;
+      padding: 0 0 0.15em;
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+      color: #212121;
+      text-overflow: ellipsis;
+      font-weight: bold;
+      font-size: 24px;
+      border-radius: 0;
+      margin-bottom: 30px;
+      font-family: "Noto Sans TC", sans-serif; }
+    .back_login_wrap .login_box input + input {
+      margin-bottom: 60px; }
+
+.back_space {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../../img/back_bg.jpg); }
+  .back_space .nav {
+    display: none; }
+  .back_space .stuff_nav {
+    height: 50px; }
+  .back_space .back_nav_bar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    line-height: 72px;
+    background-color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    z-index: 20; }
+  .back_space .back_nav_logo {
+    margin: 2px;
+    height: 46px;
+    background-image: url(../../img/cocowo_logo_white.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%; }
+  .back_space .nav_user {
+    font-size: 42px;
+    color: #FFFFFF; }
+    .back_space .nav_user:hover {
+      color: #FFFFFF; }
+  .back_space .back_nav_a {
+    width: 100%;
+    display: block;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 1px;
+    font-family: "cwtexhei", sans-serif;
+    transition: .2s;
+    position: relative; }
+  .back_space .back_nav_a:after {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0px;
+    position: absolute;
+    bottom: -1px;
+    border-top: 5px	solid transparent;
+    border-left: 5px	solid transparent;
+    border-right: 5px	solid transparent;
+    border-bottom: 0px solid #03A9F4;
+    transition: .1s; }
+  .back_space .back_nav_a_active {
+    color: #FFC107; }
+  .back_space .back_nav_a_active:after {
+    width: 100%;
+    border-bottom: 1.5px solid #FFC107; }
+  .back_space .back_nav_a:hover {
+    text-decoration: none;
+    width: 100%;
+    height: 50px;
+    background: rgba(204, 204, 204, 0.15);
+    color: #fff;
+    transition: .2s; }
+  .back_space .back_nav_a:hover:after {
+    width: 100%;
+    border-bottom: 1.5px solid #FFC107; }
+  .back_space .back_nav_a_active:hover {
+    color: #FFC107;
+    transition: .2s; }
+  .back_space .back_nav_a:active {
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.16) inset; }
+  @media all and (max-width: 767px) {
+    .back_space .stuff_nav {
+      height: 70px;
+      background-color: #333; }
+    .back_space .nav_p {
+      display: block;
+      position: relative;
+      top: -20px;
+      font-size: 10px; }
+    .back_space .back_nav_bar {
+      display: block;
+      position: fixed;
+      width: 100%;
+      height: 75px;
+      line-height: 30px;
+      background-color: #333;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      z-index: 20; }
+    .back_space .back_nav_logo {
+      margin: 5px 0 0 0;
+      height: 28px;
+      background-image: url(../img/cocowo_logo_white.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50% 50%; }
+    .back_space .back_nav_a:hover {
+      text-decoration: none;
+      width: 100%;
+      height: 44px;
+      background: rgba(204, 204, 204, 0.18);
+      color: #fff;
+      transition: .2s; }
+    .back_space .nav_user {
+      font-size: 30px;
+      color: #FFFFFF; }
+      .back_space .nav_user:hover {
+        color: #FFFFFF; }
+    .back_space .back_nav_a {
+      width: 100%;
+      display: block;
+      height: 30px;
+      text-align: center;
+      line-height: 35px;
+      font-size: 12px;
+      text-decoration: none;
+      border-radius: 1px;
+      font-family: "cwtexhei", sans-serif;
+      transition: .2s;
+      position: relative; }
+      .back_space .back_nav_a i {
+        font-size: 17px; }
+    .back_space .back_nav_a:after {
+      display: none; } }
+  .back_space .abgne_tab {
+    width: 100%;
+    height: auto;
+    margin: 50px auto 120px auto; }
+  .back_space .tabs {
+    height: 41px; }
+    .back_space .tabs ul {
+      margin-bottom: 0; }
+  .back_space .tabs li {
+    float: left;
+    width: auto;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+    cursor: pointer;
+    color: #888;
+    font-size: 20px;
+    font-family: "cwtexhei", sans-serif;
+    background: rgba(224, 226, 235, 0.6);
+    border-radius: 15px 15px 0 0;
+    margin-right: 2px;
+    padding: 5px 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .back_space .tabs li:hover {
+    background: rgba(224, 226, 235, 0.8); }
+  .back_space .tabs li.active {
+    background: #fff;
+    color: steelblue; }
+  .back_space .tab_container {
+    height: 68vh;
+    background: rgba(51, 51, 51, 0.5);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .back_space .tab_container {
+    padding: 0;
+    line-height: 35px; }
+  .back_space .tab_content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(51, 51, 51, 0.5); }
+    .back_space .tab_content .orderChangePage ul li {
+      display: inline-block; }
+  .back_space table {
+    width: 100%; }
+  .back_space thead {
+    width: 100%;
+    background: #fff;
+    font-size: 24px; }
+    .back_space thead tr {
+      width: 100%; }
+      .back_space thead tr th {
+        width: 25%;
+        padding: 10px 15px;
+        text-align: left;
+        font-family: "cwtexhei", sans-serif; }
+  .back_space .order_list {
+    border-bottom: 1px solid #000;
+    height: auto;
+    padding: 10px 15px;
+    text-align: left; }
+    .back_space .order_list a {
+      text-decoration: none;
+      font-family: "cwtexhei", sans-serif; }
+    .back_space .order_list p {
+      font-family: "cwtexhei", sans-serif;
+      line-height: 2.5em; }
+    .back_space .order_list * {
+      color: #FFFFFF; }
+    .back_space .order_list td {
+      font-size: 16px;
+      padding-left: 10px;
+      vertical-align: middle; }
+    .back_space .order_list .button, .back_space .order_list .border_button {
+      padding: 0.5em 1.5em; }
+  .back_space .orderChangePage {
+    margin: 15px; }
+    .back_space .orderChangePage ul {
+      font-size: 0;
+      display: inline-block;
+      background-color: #fff;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #BDBDBD; }
+    .back_space .orderChangePage li {
+      display: inline-block;
+      font-size: 20px;
+      vertical-align: middle;
+      color: #03A9F4;
+      position: relative;
+      padding: 0; }
+    .back_space .orderChangePage li + li::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      vertical-align: middle;
+      width: 1px;
+      height: 35px;
+      background-color: #BDBDBD; }
+    .back_space .orderChangePage .linkNow {
+      color: #fff;
+      background-color: #03A9F4;
+      text-decoration: none; }
+    .back_space .orderChangePage a {
+      color: #337ab7;
+      font-size: 20px;
+      padding: 5px 15px; }
+  .back_space .backfooter {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; }
+    .back_space .backfooter p {
+      color: #FFFFFF;
+      display: flex;
+      align-items: flex-end; }

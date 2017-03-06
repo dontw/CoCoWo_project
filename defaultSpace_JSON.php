@@ -1,7 +1,7 @@
 <?php
 	try{
 		require_once("cocowoBooks.php");
-		$sql = "select * from cospace,photo where cospace.spa_no = photo.spa_no";
+		$sql = "select  *, count(pho_name) from cospace,photo where cospace.spa_no = photo.spa_no";
 		$cospace = $pdo->prepare($sql);
 		$cospace->execute();
 

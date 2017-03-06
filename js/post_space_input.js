@@ -1,3 +1,8 @@
+$(window).load(function(){
+  $("#preloader").hide();
+  $(".post_space_input").show();
+});
+
 $(document).ready(function() {
   if (sessionStorage.getItem('userno') === null) {
     alert("請先登入會員!");

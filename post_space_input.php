@@ -242,6 +242,19 @@ header("Location: post_space.html");
   	</div>
     <div class="stuff_nav"></div>
     <!-- main_nav_bar_end -->
+    <!-- preloader -->
+    <div id="preloader">
+      <div class="cube-wrapper">
+        <div class="cube-folding">
+          <span class="leaf1"></span>
+          <span class="leaf2"></span>
+          <span class="leaf3"></span>
+          <span class="leaf4"></span>
+        </div>
+        <span class="loading" data-name="Loading"><p>讀取中...</p></span>
+      </div>
+    </div>
+    <!-- preloader_end -->
     <!-- SignupuserLightBox -->
     <div class="userlightboxbccc" id="signupuserlightboxbccc"></div>
       <div class="userLightBox" id="signupuserLightBox">
