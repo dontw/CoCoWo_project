@@ -340,6 +340,7 @@
 
 			.devdata{
 				padding:10px 20px;
+				border-radius: 5px;
 			}
 
 			img{
@@ -463,7 +464,8 @@
 				//  width: 100%;
 				//  height: 100%;
 				cursor: pointer;
-			  	animation: unselected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+			  animation: unselected 0.3s cubic-bezier(0.250, 0.100, 0.250, 1.000);
+
 			}
 			label:before{
 				content: "\2714";

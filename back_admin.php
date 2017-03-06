@@ -16,6 +16,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="shortcut icon" href="img/back.ico">
 	<title>可可窩CoCoWo</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
@@ -78,6 +79,7 @@
 					<li><a href="#tab1"></a>管理員管理</li>
 					<a href="#" class="border_button red add_admin">新增管理員<i class="fa fa-plus fa-fw" aria-hidden="true"></i></a>
 				</ul>
+			</div>
 
 				<div class="tab_container">
 
@@ -109,12 +111,8 @@
 							</tbody>
 						</table>
 					</div>
-
-
-		<div class="backfooter">
-			<p class="minp copyright">Copyright © 2017 可可窩 cocowo</p>
-		</div>
-
+				</div>
+	</div>
 
 		<script>
 			$(function(){
@@ -146,5 +144,25 @@
 				});
 			});
 		</script>
+		<div class="backfooter">
+			<p class="minp copyright">Copyright © 2017 可可窩 cocowo</p>
+		</div>
+		<!-- add_admin -->
+		<div class="add_admin_shadow">
+				<div class="add_admin_box">
+					<form id="add_admin_form">
+						<h4>新增管理員帳號</h4>
+						<input type="text" name="adm_id" id="adm_id" placeholder="管理員帳號">
+						<input type="text" name="adm_name" placeholder="管理員姓名">
+						<input type="password" name="adm_pwd" placeholder="管理員密碼">
+						<a href="#" class="button blue add_admin_btn">新增</a>
+					</form>
+					<div class="add_min_close_btn">
+						<i class="fa fa-times" aria-hidden="true"></i>
+					</div>
+
+				</div>
+		</div>
+		<!-- add_min_end -->
 </body>
 </html>

@@ -246,7 +246,341 @@ var dates_num;
     event.preventDefault();
     return false;
   }
+
+  //Ajax
+
+  //去得各空間設備
+  $.ajax({
+    type : 'get',
+    url : 'spacontent_device_JSON.php',
+    data : {
+      dev : $('input[name="spadev"]').val()
+    },
+    datatype:'JSON',
+    error:function(xhr){
+      console.log(xhr.responseText);
+    },
+    success:function(data){
+      // data = JSON.stringify(data);
+
+      for(var i=0;i<data.length;i++){
+        $('.space_equip_item_wrapper').append(
+            '<div class="space_equip_item">'
+           +'  <img class="item_img" src="' + data[i].dev_icon +'">'
+           +'  <span class="item_name">' + data[i].dev_name +'</span>'
+           +'</div>'
+        );
+        // $('#cc').css(
+        //     "background-image" , "url( " +data[i].dev_icon+ ")"
+        // );
+      }//for
+     // console.log(data);
+   }//success
+  })
+
+  //去得上方動態照片
+  $.ajax({
+    type : 'get',
+    url :  'spacontent_photo_JSON.php',
+    data : {
+      pho : $('input[name="spadev"]').val()
+    },
+    datatype : 'JSON',
+    error:function(xhr){
+      console.log(xhr.responseText);
+    },
+    success:function(p){
+      for(var i=0 ; i< p.length;i++){
+        // $('.space_content_slider').append(
+        //     '<div class="slider_content">'
+        //   + '  <div class="content_img" style="width:100px;height:400px;background-image: url(' + p[i].pho_name + ');></div>'
+        //   + '</div>'
+        // );
+        $('.img1').css(
+          "background-image" , "url(" + p[0].pho_name + ")"
+        );
+        $('.img2').css(
+          "background-image" , "url(" + p[1].pho_name + ")"
+        );
+        $('.img3').css(
+          "background-image" , "url(" + p[2].pho_name + ")"
+        );
+        $('.img4').css(
+          "background-image" , "url(" + p[3].pho_name + ")"
+        );
+      }
+      // console.log(p);
+    }
+  })
+
+  //取得空間星星樣式
+    $.ajax({
+            type:'get',
+            url:'spacontent_stars_JSON.php',
+            data : {
+                star : $('input[name="spadev"]').val()
+            },
+            dataType:'json',
+            error:function(xhr){
+                console.log(xhr.responseText);
+            },
+            success:function(e){
+                var star1 = "";
+                var star0 = "";
+
+                for(var i=0;i<e.length;i++){
+
+                    star1 = "";
+                    for(var y=0;y<e[i].spa_allscore;y++){
+                        star1 = star1 + '<img src="img/star1.png">';
+                    }
+
+                    star0 = "";
+                    for(var z=0;z<5-e[i].spa_allscore;z++){
+                        star0 = star0 + '<img src="img/star0.png">';
+                    }
+
+                    $('#span_star_score').append(star1+star0);
+
+                }
+            }
+    });
+
+    //空間使用者
+    $.ajax({
+            type:'get',
+            url:'spacontent_user_JSON.php',
+            data : {
+                user : $('input[name="spadev"]').val()
+            },
+            dataType:'json',
+            error:function(xhr){
+                console.log(xhr.responseText);
+            },
+            success:function(u){
+
+                for(var i=0;i<u.length;i++){
+
+                    $('#usermember').append(
+                         '<div class="space_user_item">'
+                        +'  <img class="user_img" src="' + u[i].mem_img + '">'
+                        +'  <div class="user_status">'
+                        +'    <span class="user_name">' + u[i].mem_name + '</span>'
+                        +'    <span class="user_occu">' + u[i].mem_occu + '</span>'
+                        +'  </div>'//user_status
+                        +'</div>'//space_user_item
+                    );
+
+                    $('.owner_img').attr("src",u[0].mem_img);
+                    $('.owner_desc span').text(u[0].mem_name);
+
+                }
+
+                // console.log(u);
+            }
+    });
+
+    // //讀取窩誌編號
+    //   $.ajax({
+    //     type:'get',
+    //     url:'spacontent_blog_JSON.php',
+    //     data : {
+    //       spa : $('input[name="spadev"]').val()
+    //     },
+    //     dataType:'json',
+    //     error:function(xhr){
+    //       console.log(xhr.responseText);
+    //     },
+    //     success:function(b){
+    //
+    //       for(var i=0;i<b.length;i++){
+    //         var no = b[i].blog_no;
+    //         $('#spablog').val(no);
+    //
+    //       }//for
+    //
+    //       //bg();
+    //
+    //     }
+    //   });
+
+
+      count = 3;
+      //顯示問與答
+            $.ajax({
+                type : 'get',
+                url : 'spacontent_qadefaule_JSON.php',
+                data : {
+                    blog : $('input[name="spadev"]').val()
+                },
+                dataType : 'json',
+                error:function(xhr){
+                  console.log(xhr.responseText);
+                },
+                success:function(qad){
+                    var count = 0;
+                    for(var i=0;i<qad.length;i++){
+                        $('.qa_result').append(
+
+                        '<div class="space_qa_item col-md-12">'
+                        +'  <p class="qa_item_no">問與答#'+ count +'</p>'
+                        +'  <div class="col-md-2 qa_asker">'
+                        +'    <img class="eval_user_img" src="img/dummy_user.png" alt="">'
+                        +'    <p class="user_name">遊客</p>'
+                        +'    <p class="user_occu">遊客' + count + '號</p>'
+                        +'  </div>'//qa_asker
+                        +'  <div class="col-md-10 qa_asker_content">'
+                        +'    <div class="col-xs-12 asker_bubble unanswer">'
+                        +'      <p class="asker_tag">提問：</p>'
+                        +'      <p class="asker_word">' + qad[i].qa_qcontent + '</p>'
+                        +'      <p class="asker_time">於 ' + qad[i].qa_qtime + '</p>'
+                        +'    </div>'//unanswer
+                        +'  </div>'//qa_asker_content
+                        +'</div>');//item
+                        // $('.space_qa').reload();
+                         count++;
+                    }
+
+                            //console.log(qad);
+
+
+              }//success
+
+          });//ajax
+
+
+        //顯示窩誌
+        $.ajax({
+            type : 'get',
+            url : 'spacontent_blogarticle_JSON.php',
+            data : {
+              blog : $('input[name="spadev"]').val()
+            },
+            dataType : 'json',
+            error:function(xhr){
+              console.log(xhr.responseText);
+            },
+            success:function(b){
+                for(var i=0;i<b.length;i++){
+                  $('.space_blogs').append(
+                    ' <div class="col-md-3">'
+                    +'  <div class="blog_item">'
+                    +'    <img src="'+ b[i].bp_name +'" alt="cowork">'
+                    +'    <div class="blog_content">'
+                    +'      <h5>'+ b[i].blog_title +'</h5>'
+                    +'      <p>想開店的朋友，都知道初期必須準備一筆資金，而初期到底要準備多少資金，到底有什麼要花錢？...  <a href="#">...more</a></p>'
+                    +'    </div>'//blog_content
+                    +'  </div>'//blog_item
+                    +'</div>'); //col
+
+                }
+
+
+            }//success
+
+          });//ajax
+
+
+
+
+
+      // function bg(){
+      //   var num = $('input[name="spabg"]').val();
+
+      //   //顯示問與答
+      //     $.ajax({
+      //       type : 'get',
+      //       url : 'spacontent_qadefaule_JSON.php',
+      //       data : {
+      //         blog : num
+      //       },
+      //       dataType : 'json',
+      //       error:function(xhr){
+      //           console.log(xhr.responseText);
+      //       },
+      //       success:function(qad){
+      //             count = 0;
+      //           for(var i=0;i<qad.length;i++){
+      //               $('.qa_result').append(
+
+      //                 '<div class="space_qa_item col-md-12">'
+      //                 +'  <p class="qa_item_no">問與答#'+ count +'</p>'
+      //                 +'  <div class="col-md-2 qa_asker">'
+      //                 +'    <img class="eval_user_img" src="img/write.jpeg" alt="">'
+      //                 +'    <p class="user_name">遊客</p>'
+      //                 +'    <p class="user_occu">遊客號</p>'
+      //                 +'  </div>'//qa_asker
+      //                 +'  <div class="col-md-10 qa_asker_content">'
+      //                 +'    <div class="col-xs-12 asker_bubble unanswer">'
+      //                 +'      <p class="asker_tag">提問：</p>'
+      //                 +'      <p class="asker_word">' + qad[i].msg_content + '</p>'
+      //                 +'      <p class="asker_time">於 2017－1－20</p>'
+      //                 +'    </div>'//unanswer
+      //                 +'  </div>'//qa_asker_content
+      //                 +'</div>');//item
+      //               // $('.space_qa').reload();
+      //               count++;
+      //           }
+
+      //           //console.log(num);
+
+
+      //       }//success
+
+      //     })//ajax
+      // }//bg
+
   });
+
+  //送出問與答
+    $('.qa_input_btn').click(function(){
+          $.ajax({
+            type : 'get',
+            url : 'spacontent_qa_JSON.php',
+            data : {
+              bg : $('input[name="spadev"]').val(),
+              txt : $('.qa_input').val()
+            },
+            dataType : 'json',
+            error:function(xhr){
+                console.log(xhr.responseText);
+            },
+            success:function(qa){
+                $('.qa_result').empty();
+
+                for(var i=0;i<qa.length;i++){
+                    $('.qa_result').append(
+                      '<div class="space_qa_item col-md-12">'
+                      +'  <p class="qa_item_no">問與答#2</p>'
+                      +'  <div class="col-md-2 qa_asker">'
+                      +'    <img class="eval_user_img" src="img/dummy_user.png" alt="">'
+                      +'    <p class="user_name">遊客</p>'
+                      +'    <p class="user_occu">遊客' + count + '號</p>'
+                      +'  </div>'//qa_asker
+                      +'  <div class="col-md-10 qa_asker_content">'
+                      +'    <div class="col-xs-12 asker_bubble unanswer">'
+                      +'      <p class="asker_tag">提問：</p>'
+                      +'      <p class="asker_word">' + qa[i].qa_qcontent + '</p>'
+                      +'      <p class="asker_time">於' + qa[i].qa_qtime + '</p>'
+                      +'    </div>'//unanswer
+                      +'  </div>'//qa_asker_content
+                      +'</div>');//item
+
+                    count++;
+                }
+
+                $('.qa_input').val('');
+
+            }//success
+
+          })//ajax
+
+    });//click
+
+
+
+
+
 
 
 
