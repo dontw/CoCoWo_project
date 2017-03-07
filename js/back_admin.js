@@ -12,7 +12,7 @@ $(document).ready(function() {
     var adm_id = $("#adm_id").val();
     var adm_name = $("adm_")
     $.ajax({
-      url: '../back_add_admin.php',
+      url: 'back_add_admin.php',
       type: 'post',
       dataType: 'json',
       data: {admin: adm_id,}

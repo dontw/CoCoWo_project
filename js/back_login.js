@@ -8,7 +8,7 @@ $(".back_login_submit").on('click', function(){
   var adm_id = $('#adm_id').val();
   var adm_pwd = $('#adm_pwd').val();
   $.ajax({
-      url: '../back_login.php',
+      url: 'back_login.php',
       type : "POST",
       dataType : 'text',
       data :{adm_id,adm_pwd},

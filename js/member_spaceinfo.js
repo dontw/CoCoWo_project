@@ -9,13 +9,13 @@ function showOrder(fadeTime)
 	$('.ordtext').stop().animate({opacity:'1'},fadeTime);
 
 	closeBtn(fadeTime,wdHeight);
-	
+
 };
 
 function closeBtn(fadeTime,wdHeight)
 {
 	$('.detailbcc, .closeBox, #closeButton').on('click',function(){
-		
+
 		$('.detailbcc,.ordtext').stop().animate({opacity:'0'},fadeTime, function()
 			{
 				$('.detailbcc, .ordtext').css({display:'none'});
@@ -27,7 +27,7 @@ function upSpace(spano)
 {
 	$.ajax(
 	{
-		url:"../member_space_up_JSON.php",
+		url:"member_space_up_JSON.php",
 		data:
 		{
 			spano:spano
@@ -37,12 +37,12 @@ function upSpace(spano)
 
 		success:function(msg)
 		{
-			
+
 			alert("上架成功!");
 			window.location.reload();
 			loadBtn();
-			
-			
+
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -57,7 +57,7 @@ function deleteSpace(spano)
 {
 	$.ajax(
 	{
-		url:"../member_space_delete_JSON.php",
+		url:"member_space_delete_JSON.php",
 		data:
 		{
 			spano:spano
@@ -67,14 +67,14 @@ function deleteSpace(spano)
 
 		success:function(msg)
 		{
-			
+
 			alert("刪除成功!");
 			window.location.reload();
 			loadBtn();
 			showOrder(500);
-			
-			
-			
+
+
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -88,7 +88,7 @@ function getspaceContent(spano)
 {
 	$.ajax(
 	{
-		url:"../member_space_context_JSON.php",
+		url:"member_space_context_JSON.php",
 		data:
 		{
 			spano:spano
@@ -98,18 +98,18 @@ function getspaceContent(spano)
 
 		success:function(msg)
 		{
-			
+
 				var member = JSON.parse(msg);
 				console.log(member);
-				
+
 				document.getElementById("ordtext").innerHTML = member;
-				
-			
+
+
 			loadBtn();
 			showOrder(500);
-			
-			
-			
+
+
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -122,10 +122,10 @@ function getspaceContent(spano)
 
 function getDetail(userno,stat)
 {
-	
+
 	$.ajax(
 	{
-		url:"../member_spaceinfo_JSON.php",
+		url:"member_spaceinfo_JSON.php",
 		data:
 		{
 			userno:userno,
@@ -136,17 +136,17 @@ function getDetail(userno,stat)
 
 		success:function(msg)
 		{
-			
+
 				var member = JSON.parse(msg);
 				console.log(member);
-				
+
 				document.getElementById("memSpace").innerHTML = member;
-				
-			
+
+
 			loadBtn();
-			
-			
-			
+
+
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -196,7 +196,7 @@ function loadBtn()
 
 		showOrder(fadeTime)
 		// alert(spano);
-		
+
 	});
 
 	$('.why').on('click', function(e)
@@ -234,5 +234,5 @@ $(document).ready(function()
 	console.log(userno);
 	getDetail(userno,stat);
 
-	
+
 });

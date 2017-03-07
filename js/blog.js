@@ -8,7 +8,7 @@ var storage = sessionStorage;
 function insertMsg(blogno,user,gettext){
 	$.ajax(
 	{
-		url:"../blog_insertMsg_JSON.php",
+		url:"blog_insertMsg_JSON.php",
 		data:
 		{
 			blogno:blogno,
@@ -87,7 +87,7 @@ function getContext(parent,user)
 	var blogno = parent;
 	$.ajax(
 	{
-		url:"../blog_context_JSON.php",
+		url:"blog_context_JSON.php",
 		data:
 		{
 			blogno:blogno,
@@ -129,7 +129,7 @@ function getBlog(blognum, blogshow)
 	// alert(count+'hello:'+countprev);
 	$.ajax(
 	{
-		url:"../blogItem_JSON.php",
+		url:"blogItem_JSON.php",
 		data:
 		{
 			blognum:count,
@@ -174,7 +174,7 @@ function getSlider()
 
 	$.ajax(
 	{
-		url:"../blogItem_slider_JSON.php",
+		url:"blogItem_slider_JSON.php",
 		data:
 		{
 			pop:pop

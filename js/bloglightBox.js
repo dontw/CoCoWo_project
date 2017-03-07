@@ -17,9 +17,9 @@ function scrollRight()
 		}else
 		{
 			$('.blogContextRightAll').css({top:0});
-		
+
 		}
-		
+
 		if(scrollTop >= posBottom) {
 			$('p').addClass('scrollBottom');
 		} else {
@@ -33,7 +33,7 @@ function getContext()
 	var blogno = storage.getItem('blogno');
 	$.ajax(
 	{
-		url:"../blog_context_JSON.php",
+		url:"blog_context_JSON.php",
 		data:
 		{
 			blogno:blogno
@@ -43,16 +43,16 @@ function getContext()
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 				var member = JSON.parse(msg);
-				
+
 				console.log(member);
-				
+
 				document.getElementById('blogContextDetail').innerHTML = member;
 				scrollRight();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -68,5 +68,5 @@ $(document).ready(function(){
 
 	getContext();
 	scrollRight();
-	
+
 });

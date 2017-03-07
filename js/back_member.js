@@ -2,7 +2,7 @@ function doUnBan(memno)
 {
 	$.ajax(
 	{
-		url:"../back_member_UnBan_JSON.php",
+		url:"back_member_UnBan_JSON.php",
 		data:
 		{
 			memno:memno
@@ -12,12 +12,12 @@ function doUnBan(memno)
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 			alert("設定成功!");
 			window.location.reload();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -32,7 +32,7 @@ function doBan(memno)
 {
 	$.ajax(
 	{
-		url:"../back_member_ban_JSON.php",
+		url:"back_member_ban_JSON.php",
 		data:
 		{
 			memno:memno
@@ -42,12 +42,12 @@ function doBan(memno)
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 			alert("設定成功!");
 			window.location.reload();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -61,7 +61,7 @@ function showmemContext(memno)
 {
 	$.ajax(
 	{
-		url:"../back_member_list_detail_JSON.php",
+		url:"back_member_list_detail_JSON.php",
 		data:
 		{
 			memno:memno
@@ -71,13 +71,13 @@ function showmemContext(memno)
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 				var context = JSON.parse(msg);
 				document.getElementById('memContextDetail').innerHTML = context;
 				loadBtn();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -91,24 +91,24 @@ function getmemberList()
 {
 	$.ajax(
 	{
-		url:"../back_member_list_JSON.php",
+		url:"back_member_list_JSON.php",
 		data:
 		{
-			
+
 		},
 		type:"GET",
 		dataType:'html',
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 				var member = JSON.parse(msg);
 				document.getElementById('backspaceInfo').innerHTML = member;
 				loadTab();
 				loadBtn();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -157,13 +157,13 @@ function loadBtn()
 
 	spaceBtn.on('click', function(e){
 		e.preventDefault();
-		
+
 		var getmemno = $(this).parent().parent().children('.memNo').text();
 		var memno = parseInt(getmemno);
 		// alert(memno);
 		showmemContext(memno);
 		var wdHeight = $(window).height();
-		
+
 		$('#memOverlay,#memWindow').css({display:'block',opacity:'0'});
 		$('#memOverlay').css({height:wdHeight}).stop().animate({opacity:overlayOpacity},fadeTime);
 		$('#memWindow').stop().animate({opacity:'1'},fadeTime);
@@ -181,7 +181,7 @@ function loadBtn()
 	});
 
 
-	
+
 
 	$('.ban').on('click',function(e)
 	{
@@ -204,6 +204,6 @@ function loadBtn()
 $(function(){
 	getmemberList();
 
-	loadTab();	
+	loadTab();
 	loadBtn();
 });

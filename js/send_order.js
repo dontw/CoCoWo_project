@@ -4,7 +4,7 @@ $(document).ready(function(){
          $("#ord_money_input").val(parseInt($("#total_money").html()));
 
            $.ajax({
-               url: '../add_order_JSON.php',
+               url: 'add_order_JSON.php',
                type : "POST",
                dataType : 'json',
                data : $("#order_form").serialize(),

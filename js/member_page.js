@@ -7,7 +7,7 @@ function logout()
 		e.preventDefault();
 		storage.removeItem('username');
 		storage.removeItem('userno');
-		window.location = '../index.php';
+		window.location = 'main_page.php';
 	});
 }
 
@@ -15,7 +15,7 @@ function getDetail(userno)
 {
 	$.ajax(
 	{
-		url:"../member_page_JSON.php",
+		url:"member_page_JSON.php",
 		data:
 		{
 			userno:userno

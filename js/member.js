@@ -25,7 +25,7 @@ function checkmem()
 
 	$.ajax(
 	{
-		url:"../member_JSON.php",
+		url:"member_JSON.php",
 		data:
 		{
 			username:checkusername,
@@ -83,7 +83,7 @@ function insertmem()
 	// alert(signusermail+'<br>'+signuserpsw);
 	$.ajax(
 	{
-		url:"../memberInsert_JSON.php",
+		url:"memberInsert_JSON.php",
 		data:
 		{
 			usermail:signusermail,
@@ -124,7 +124,7 @@ function testmem()
 	alert(123);
 	$.ajax(
 	{
-		url:"../memberInsert_JSON.php",
+		url:"memberInsert_JSON.php",
 		type:"GET",
 		dataType:'text',
 

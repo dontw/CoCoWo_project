@@ -4,7 +4,7 @@ function getOrderContext(nowOrdNo)
 {
 	$.ajax(
 	{
-		url:"../member_order_context_JSON.php",
+		url:"member_order_context_JSON.php",
 		data:
 		{
 			ordno:nowOrdNo
@@ -14,18 +14,18 @@ function getOrderContext(nowOrdNo)
 
 		success:function(msg)
 		{
-			
-			
+
+
 			var member = JSON.parse(msg);
 			console.log(member);
-			
+
 			document.getElementById("ordtext").innerHTML = member;
 			loadBtn();
 			var fadeTime=500;
 			var wdHeight = $(window).height();
 			closeBtn(fadeTime,wdHeight);
-			
-			
+
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -41,13 +41,13 @@ function showOrder(fadeTime)
 	$('.detailbcc, .ordtext').css({display:'block',opacity:'0'});
 	$('.detailbcc').css({height:wdHeight}).stop().animate({opacity:'1'},fadeTime);
 	$('.ordtext').stop().animate({opacity:'1'},fadeTime);
-	
+
 }
 
 function closeBtn(fadeTime,wdHeight)
 {
 	$('.detailbcc, .closeBox, #closeButton').on('click',function(){
-		
+
 		$('.detailbcc,.ordtext').stop().animate({opacity:'0'},fadeTime, function()
 			{
 				$('.detailbcc, .ordtext').css({display:'none'});
@@ -57,10 +57,10 @@ function closeBtn(fadeTime,wdHeight)
 
 function docancel(nowOrdNo)
 {
-	
+
 	$.ajax(
 	{
-		url:"../member_order_cancel_JSON.php",
+		url:"member_order_cancel_JSON.php",
 		data:
 		{
 			ordno:nowOrdNo
@@ -70,13 +70,13 @@ function docancel(nowOrdNo)
 
 		success:function(msg)
 		{
-			
+
 			// var member = JSON.parse(msg);
 			console.log('取消成功');
-			
+
 			window.location.reload();
-			
-			
+
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -91,7 +91,7 @@ function getDetail(userno,stat)
 	// var stat = 0;
 	$.ajax(
 	{
-		url:"../member_order_JSON.php",
+		url:"member_order_JSON.php",
 		data:
 		{
 			userno:userno,
@@ -102,16 +102,16 @@ function getDetail(userno,stat)
 
 		success:function(msg)
 		{
-			
-			
+
+
 			var member = JSON.parse(msg);
 			console.log(member);
-			
+
 			document.getElementById("memOrder").innerHTML = member;
 			loadBtn();
-			
-			
-			
+
+
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -152,7 +152,7 @@ function loadBtn()
 		getOrderContext(nowOrdNo);
 		showOrder(fadeTime);
 		e.preventDefault();
-		
+
 	});
 
 	$('.cancel').on('click',function(e)
@@ -173,5 +173,5 @@ $(document).ready(function()
 	console.log(userno);
 	getDetail(userno,stat);
 
-	
+
 });

@@ -2,7 +2,7 @@ function doNotPassSpace(spaceno)
 {
 	$.ajax(
 	{
-		url:"../back_space_info_notPass_JSON.php",
+		url:"back_space_info_notPass_JSON.php",
 		data:
 		{
 			spano:spaceno
@@ -12,12 +12,12 @@ function doNotPassSpace(spaceno)
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 			alert("設定成功!");
 			window.location.reload();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -32,7 +32,7 @@ function doPassSpace(spaceno)
 {
 	$.ajax(
 	{
-		url:"../back_space_info_pass_JSON.php",
+		url:"back_space_info_pass_JSON.php",
 		data:
 		{
 			spano:spaceno
@@ -42,12 +42,12 @@ function doPassSpace(spaceno)
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 			alert("設定成功!");
 			window.location.reload();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -61,7 +61,7 @@ function getspaceInfoContext(spaceno)
 {
 	$.ajax(
 	{
-		url:"../back_space_info_detail_JSON.php",
+		url:"back_space_info_detail_JSON.php",
 		data:
 		{
 			spano:spaceno
@@ -71,13 +71,13 @@ function getspaceInfoContext(spaceno)
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 				var context = JSON.parse(msg);
 				document.getElementById('backContextDetail').innerHTML = context;
 				loadBtn();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -91,24 +91,24 @@ function getspaceInfo()
 {
 	$.ajax(
 	{
-		url:"../back_space_info_JSON.php",
+		url:"back_space_info_JSON.php",
 		data:
 		{
-			
+
 		},
 		type:"GET",
 		dataType:'html',
 
 		success:function(msg)
 		{
-			
+
 			//EMPTY存在的話
-			
+
 				var member = JSON.parse(msg);
 				document.getElementById('backspaceInfo').innerHTML = member;
 				loadTab();
 				loadBtn();
-			
+
 		},
 		error:function(xhr, ajaxOption, thrownError)
 		{
@@ -157,13 +157,13 @@ function loadBtn()
 
 	spaceBtn.on('click', function(e){
 		e.preventDefault();
-		
+
 		var getspaceno = $(this).parent().parent().children('.spaceNo').text();
 		var spaceno = parseInt(getspaceno);
 		// alert(spaceno);
 		getspaceInfoContext(spaceno);
 		var wdHeight = $(window).height();
-		
+
 		$('#backOverlay,#backWindow').css({display:'block',opacity:'0'});
 		$('#backOverlay').css({height:wdHeight}).stop().animate({opacity:overlayOpacity},fadeTime);
 		$('#backWindow').stop().animate({opacity:'1'},fadeTime);
@@ -201,6 +201,6 @@ function loadBtn()
 
 $(function(){
 	getspaceInfo();
-	loadTab();	
-	loadBtn();	
+	loadTab();
+	loadBtn();
 });

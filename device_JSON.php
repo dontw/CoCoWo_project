@@ -1,6 +1,6 @@
 <?php
 	try{
-		require_once("cocowoBooks.php");
+		require_once("connectBooks.php");
 		$sql = "select * from device";
 		$device = $pdo->prepare($sql);
 		$device->execute();
