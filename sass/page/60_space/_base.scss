@@ -1,0 +1,170 @@
+.mem_Order
+{
+	background-color: #EEEEEE;
+	font-family: $main_font_family;
+}
+.memOrder
+{
+	margin-top: 50px;
+
+	.memPageAll
+	{
+		
+		.memOrderRight
+		{
+
+			
+			
+			.backHead
+			{
+				li
+				{
+					padding-right:0px;
+					a
+					{
+						padding: 10px 20px;
+						color: $grey;
+					}
+					.headLinkNow
+					{
+						background-color: $grey;
+						color: $dark-grey;
+						text-decoration: none;
+					}
+					a:hover
+					{
+						@extend .headLinkNow;
+						transition:.5s;
+					}
+				}
+			}
+			.backTable
+			{
+				table
+				{
+					width: 100%;
+				}
+			}
+
+			.orderChangePage
+			{
+				text-align: center;
+				ul
+				{
+					font-size: 0;
+					display: inline-block;
+					background-color: #fff;
+					margin-top: 5px;
+					border-radius: 4px;
+					border: 1px solid  $grey;
+					li
+					{
+						// background-color: #fff;
+						display: inline-block;
+						font-size: 20px;
+						vertical-align: middle;
+						color: $normal-blue;
+						position: relative;
+						padding: 0;
+						a
+						{
+							display:block;
+							padding: 5px 15px;
+						}
+						.linkNow
+						{
+							color: #fff;
+							background-color: $normal-blue;
+							text-decoration: none;
+						}
+						a:hover
+						{
+							color: #fff;
+							background-color: $normal-blue;
+							text-decoration: none;
+							transition:.5s;
+						}
+					}
+					li+li::before
+					{
+						content: '';
+						display: inline-block;
+						position: absolute;
+						left: 0;
+						vertical-align: middle;
+						width: 1px;
+						height: 38px;
+						background-color: $grey;
+
+					}
+				}
+			}
+
+
+
+			.memResult
+			{
+				input
+				{
+					display: block;
+					padding: 5px 0;
+					width: 100%;
+					border-radius: 5px;
+
+				}
+				select
+				{
+					display: block;
+					padding: 5px 0;
+					width: 100%;
+				}
+				p
+				{
+					margin: 20px 0 0 0;
+				}
+
+				.submitImgButton
+				{
+
+					.subRect
+					{
+						display: inline-block;
+						font-size: 0;
+						vertical-align: middle;
+						width: 1%;
+						height: 200px;
+						opacity: 0;
+						background-color: #000;
+					}
+					.subText
+					{
+						display: inline-block;
+						vertical-align: middle;
+						width: 95%;
+					}
+				}
+
+				.memUpdateButton
+				{
+					margin-top: 90px;
+					text-align: center;
+				}
+			}
+		}
+
+
+	}
+	.memPageAll::after
+	{
+		content: '';
+		display: block;
+		clear: both;
+	}
+
+	.backfooter
+	{
+		background-color: #fff;
+		text-align: center;
+	}
+
+}

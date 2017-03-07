@@ -47,7 +47,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-2 col-md-2">
-              <a href="index.php">
+              <a href="main_page.php">
                 <div class="main_nav_logo"></div>
               </a>
             </div>
@@ -110,9 +110,9 @@
           <div class="slider_content">
             <div class="content_img img4"></div>
           </div>
-<!--      <div class="slider_content">
-            <div class="content_img img"></div>
-          </div> -->
+          <div class="slider_content">
+            <div class="content_img img5"></div>
+          </div>
           <div class="slider_ctrl left">
             <i class="fa fa-chevron-left" aria-hidden="true"></i>
           </div>

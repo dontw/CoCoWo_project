@@ -311,6 +311,9 @@ $(window).keydown(function(event){
         $('.img4').css(
           "background-image" , "url(" + p[3].pho_name + ")"
         );
+        $('.img5').css(
+          "background-image" , "url(" + p[4].pho_name + ")"
+        );
       }
       // console.log(p);
     }
@@ -366,7 +369,7 @@ $(window).keydown(function(event){
 
                     $('#usermember').append(
                          '<div class="space_user_item">'
-                        +'  <img class="user_img" src="' + u[i].mem_img + '">'
+                        +'  <img class="user_img" src="'+'img/' + u[i].mem_img + '">'
                         +'  <div class="user_status">'
                         +'    <span class="user_name">' + u[i].mem_name + '</span>'
                         +'    <span class="user_occu">' + u[i].mem_occu + '</span>'
@@ -374,7 +377,7 @@ $(window).keydown(function(event){
                         +'</div>'//space_user_item
                     );
 
-                    $('.owner_img').attr("src",u[0].mem_img);
+                    $('.owner_img').attr("src",'img/'+u[0].mem_img);
                     $('.owner_desc span').text(u[0].mem_name);
 
                 }
@@ -547,7 +550,7 @@ $(window).keydown(function(event){
               var sta = ss[i].spa_status;
 
               if(sta == 2){
-                $('#statu').attr("str",'img/img_verified_icon.png');
+                $('#statu').attr("src",'img/img_verified_icon.png');
               }else{
                 console.log(ss);
               }

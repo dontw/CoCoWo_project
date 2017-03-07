@@ -23,6 +23,8 @@
   font-weight: 400;
   cursor: pointer;
   border-radius: 34px;
+  transform: translate3d(0,0,0);
+
 }
 
 .button:hover {
@@ -41,6 +43,7 @@
   border: $dark-grey solid 2px;
   color: $dark-grey;
   box-shadow: none;
+  transform: rotate3d(0,0,0);
   &:hover{
     box-shadow: none;
     background-color: $dark-grey;

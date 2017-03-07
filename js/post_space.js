@@ -182,7 +182,6 @@ $(document).ready(function(){
 
 function clickAndShowMoney(){
   $("#money").click();
-  delay(1000);
   $("#money").click();
 }
 

@@ -1,17 +1,17 @@
 <?php
 try{
-  require_once("connectBooks.php");
+  require_once("PDOTEST.php");
   // $sql = "select * from member where mem_name=:username";
   $stat = $_REQUEST["stat"];
   if($stat==0)
   {
-    $sql = "select * from cospace a join member b on a.mem_no = b.mem_no where (a.spa_status=0 or a.spa_status =3) and ( b.mem_no=:userno)";
+    $sql = "select * from cospace a join member b on a.mem_no = b.mem_no  where (spa_status=0 or spa_status=3) and (b.mem_no=:userno)";
   }else if($stat==1)
   {
-    $sql = "select * from cospace a join member b on a.mem_no = b.mem_no where (a.spa_status=1) and ( b.mem_no=:userno)";
+    $sql = "select * from cospace a join member b on a.mem_no = b.mem_no where spa_status=1 and b.mem_no=:userno";
   }else if($stat==2)
   {
-    $sql = "select * from cospace a join member b on a.mem_no = b.mem_no where (a.spa_status=1) and ( b.mem_no=:userno)";
+    $sql = "select * from cospace a join member b on a.mem_no = b.mem_no where spa_status=2 and b.mem_no=:userno";
   };
 
   $member = $pdo->prepare( $sql );
@@ -260,7 +260,7 @@ try{
 
         $str.="
                 <tr>
-                  <td  class='xs-none'><a href=''>{$memRow["spa_no"]}</a></td>
+                  <td  class='xs-none getspano'><a href=''>{$memRow["spa_no"]}</a></td>
                   <td><a href=''>{$memRow["spa_name"]}</a></td>
                   <td  class='xs-none'>
                     <table class='insert'>
@@ -268,7 +268,7 @@ try{
                         <td>人數：{$memRow["spa_plimit"]} 金額：{$memRow["spa_price"]}</td>
                       </tr>
                       <tr>
-                        <td>開放時間:<p class='minp'>{$memRow["spa_time"]}</p></td>
+                        <td>日期:<p class='minp'>{$memRow["spa_time"]}</p></td>
                       </tr>
                     </table>
                   </td>
@@ -277,7 +277,7 @@ try{
         if($memRow["spa_status"]==0)
         {
           $str.="
-                    <a class='button dark-blue' >審核中.....</a>
+                    <a class='button dark-blue spaceDetail' >審核中.....</a>
 
                   </td>
                 </tr>
@@ -286,8 +286,8 @@ try{
            ";
         }else if($memRow["spa_status"]==1)
         {
-          $str.="  <a class='button red' >上架</a>
-                    <a class='button dark-blue' >查看</a>
+          $str.="  <a class='button yellow upSpace' >上架</a>
+                    <a class='button dark-blue spaceDetail' >查看</a>
                   </td>
                 </tr>
 
@@ -295,8 +295,8 @@ try{
            ";
         }else if($memRow["spa_status"]==2)
         {
-            $str.="  <a class='button dark-blue' >查看</a>
-                    <a class='button red' >刪除</a>
+            $str.="  <a class='button dark-blue spaceDetail' >查看</a>
+                    <a class='button red delete' >刪除</a>
 
                   </td>
                 </tr>
@@ -305,7 +305,7 @@ try{
            ";
         }else
         {
-            $str.="  <a class='button yellow' >審核未過!</a>
+            $str.="  <a class='button yellow why' >審核未過!</a>
                   </td>
                 </tr>
 

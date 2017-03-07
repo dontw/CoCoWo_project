@@ -1,6 +1,6 @@
 <?php
 	try{
-		require_once("connectBooks.php");
+		require_once("PDOTEST.php");
 		$sql = "select * from admin";
 		$admins = $pdo->prepare($sql);
 		$admins->execute();
@@ -33,7 +33,7 @@
   		<div class="container">
   			<div class="row">
   				<div class="col-xs-12 col-sm-2 col-md-2">
-  					<a href="#">
+  					<a href="index.html">
   						<div class="back_nav_logo"></div>
   					</a>
   				</div>
@@ -44,25 +44,25 @@
   					</a>
   				</div>
   				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="back_admin.html" class="back_nav_a  back_nav_a_active">
+  					<a href="back_admin.php" class="back_nav_a  back_nav_a_active">
   						<!-- <i class="fa fa-plus-square-o" aria-hidden="true"></i> -->
   						<span class="nav_p">管理者管理</span>
   					</a>
   				</div>
   				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="blog_back.html" class="back_nav_a back_nav_a_shop">
+  					<a href="back_member.html" class="back_nav_a back_nav_a_shop">
   						<!-- <i class="fa fa-book" aria-hidden="true"></i> -->
   						<span class="nav_p">會員管理</span>
   					</a>
   				</div>
   				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="" class="back_nav_a">
+  					<a href="back_blog.html" class="back_nav_a">
   						<!-- <i class="fa fa-volume-control-phone" aria-hidden="true"></i> -->
   						<span class="nav_p">窩誌管理</span>
   					</a>
   				</div>
           <div class="col-xs-20p col-sm-2 col-md-2 nav_user_btn">
-            <a href="#" class="back_nav_a">
+            <a href="index.html" class="back_nav_a">
   						<!-- <i class="fa fa-sign-out" aria-hidden="true"></i> -->
               <span class="nav_p">登出</span>
   					</a>
@@ -103,7 +103,7 @@
 									<td> <?php echo "<h4>".$row->adm_name.'</h4>' ?> </td>
 									<?php echo
 									"<td>
-                  <a class='button red' href='update.php?id=".$row->adm_no."'>刪除</a>
+                  <a style='width:95%' class='button red' href='update.php?id=".$row->adm_no."'>刪除</a>
 									</td>"
 									?>
 								</tr>
