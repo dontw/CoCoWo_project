@@ -1,7 +1,7 @@
 <?php
 
 try {
-	require_once("cocowoBooks.php");
+	require_once("connectBooks.php");
 
 	$sql = "select * from cospace inner join photo on cospace.spa_no=photo.spa_no where wot_no=:work and spa_plimit>=:people and spa_addr like :address";
 

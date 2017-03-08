@@ -1,6 +1,6 @@
 <?php
 	try{
-		require_once("cocowoBooks.php");
+		require_once("connectbooks.php");
 
 		$device = $_REQUEST["device"];
 		

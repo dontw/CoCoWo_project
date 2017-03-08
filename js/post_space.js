@@ -9,7 +9,7 @@ $(window).load(function(){
 $(document).ready(function(){
 
   $('#money').sparkleHover(
-  {image:'../img/flipping_coin.gif',
+  {image:'img/flipping_coin.gif',
   sprite_size:48,
   colors : ['transperant'],
   lifespan: 3000,
