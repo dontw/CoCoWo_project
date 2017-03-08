@@ -226,7 +226,7 @@ header("Location: post_space.html");
   					</a>
   				</div>
   				<div class="col-xs-20p col-sm-2 col-md-2">
-  					<a href="#" class="main_nav_a">
+  					<a href="about.html" class="main_nav_a">
   						<i class="fa fa-volume-control-phone" aria-hidden="true"></i>
   						<span class="nav_p">聯絡我們</span>
   					</a>
@@ -518,7 +518,7 @@ header("Location: post_space.html");
             </li>
 
             <li>
-              <label class="fs-field-label fs-anim-upper" for="spa_plimit">你的空每個營業日能提供多少位置?</label>
+              <label class="fs-field-label fs-anim-upper" for="spa_plimit">你的空間每個營業日能提供多少位置?</label>
 							<input class="fs-mark fs-anim-lower" id="spa_plimit" name="spa_plimit" type="number" placeholder="1" step="1" min="1"/>
 						</li>
 

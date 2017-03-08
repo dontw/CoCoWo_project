@@ -52,13 +52,13 @@
               </a>
             </div>
             <div class="col-xs-20p col-sm-2 col-md-2">
-              <a href="search_space.html" class="main_nav_a">
+              <a href="search_space.html" class="main_nav_a  main_nav_a_active">
                 <i class="fa fa-search" aria-hidden="true"></i>
                 <span class="nav_p">搜索空間</span>
               </a>
             </div>
             <div class="col-xs-20p col-sm-2 col-md-2">
-              <a href="post_space.html" class="main_nav_a  main_nav_a_active">
+              <a href="post_space.html" class="main_nav_a">
                 <i class="fa fa-plus-square-o" aria-hidden="true"></i>
                 <span class="nav_p">刊登空間</span>
               </a>
@@ -754,6 +754,20 @@
 
 <!-- SignupuserLightBoxEnd-->
 
+<!-- preloader -->
+<div id="preloader">
+  <div class="cube-wrapper">
+    <div class="cube-folding">
+      <span class="leaf1"></span>
+      <span class="leaf2"></span>
+      <span class="leaf3"></span>
+      <span class="leaf4"></span>
+    </div>
+    <span class="loading" data-name="Loading"><p>讀取中...</p></span>
+  </div>
+</div>
+<!-- preloader_end -->
+
 
 
       <!--footer_start-->
@@ -764,10 +778,10 @@
           <div class="col-xs-12 col-md-4 site footer_col" >
             <h5>網站地圖</h5>
             <hr>
-            <a href="#">刊登空間</a>
-            <a href="#">搜索空間</a>
-            <a href="#">窩 日 誌</a>
-            <a href="#">會員中心</a>
+            <a href="search_space.html">搜索空間</a>
+            <a href="post_space.html">刊登空間</a>
+            <a href="blog_main.html">窩 日 誌</a>
+            <a href="#" class="main_nav_user_a">會員中心</a>
           </div>
           <div class="col-xs-12 col-md-4 contacts footer_col" >
             <h5>聯絡資訊</h5>

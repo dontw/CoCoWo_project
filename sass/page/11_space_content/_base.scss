@@ -897,6 +897,17 @@
         padding:30px;
         float:left;
         overflow: auto;
+        &:after{
+          content:"";
+          display: block;
+          width: inherit;
+          height:50px;
+          background: linear-gradient(to bottom, rgba(76,76,76,0) 0%, $dark-grey 100%);
+          position: absolute;
+          bottom:0;
+          left:0px;
+          margin-right:30px;
+        }
         img{
           width: 100%;
           margin-bottom:15px;

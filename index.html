@@ -22,10 +22,9 @@
 	      background: linear-gradient(#40afdf 0%, #fff 100%);
 	      display: block;
 	  }
-
 	</style>
 </head>
-<body>
+<body class="intro_body">
 	<div class="intro">
 		<h2 id="front_title">前端</h2>
 		<h2 id="back_title">後端</h2>
@@ -281,6 +280,26 @@
 		});
 		$('.cube_back').on('click',function(){
 			window.location = "back_login.html";});
+			$(window).on('load',function(){
+				$("#preloader").hide();
+				// $("#preloader").css("z-index",0);
+				$(".intro_body").show();
+			});
 	</script>
+
+
+	<!-- preloader -->
+	<div id="preloader">
+		<div class="cube-wrapper">
+			<div class="cube-folding">
+				<span class="leaf1"></span>
+				<span class="leaf2"></span>
+				<span class="leaf3"></span>
+				<span class="leaf4"></span>
+			</div>
+			<span class="loading" data-name="Loading"><p>讀取中...</p></span>
+		</div>
+	</div>
+	<!-- preloader_end -->
 </body>
 </html>

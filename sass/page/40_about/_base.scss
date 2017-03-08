@@ -1,0 +1,110 @@
+.about_body{
+  background: linear-gradient(#40afdf 0%, #40afdf 100%);
+  .path,.path2{
+   stroke-dasharray: 1000;
+   stroke-dashoffset: 1000;
+}
+  h1{
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-top:30px;
+    margin-bottom: 15px;
+    display: inline-block;
+    color: #FFFFFF;
+    font-size: 80px;
+    font-weight: bold;
+  }
+
+  h3{
+    margin-bottom:30px;
+  }
+
+  .about_section{
+    margin-bottom:60px;
+  }
+
+  .card{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: $white;
+    padding:30px;
+    text-align: left;
+
+  }
+
+  .section_1{
+    text-align: center;
+  }
+
+  .section_2{
+    position: relative;
+    text-align: right;
+    img{
+      position: relative;
+      margin-right:-50px;
+      display: inline-block;
+    }
+    .sec2_svg {
+      position: absolute;
+      top:0;
+    }
+    .card_1{
+      width: 500px;
+      margin-top:-250px;
+      margin-left: 50px;
+      transform: translate3d(0,0,0);
+      z-index: 30;
+    }
+   }
+
+   .section_3{
+     position: relative;
+     margin-top:300px;
+
+     .sec3_svg{
+       position: absolute;
+       top:0;
+       right:0;
+       margin-bottom: 15px;
+     }
+
+     img{
+       margin-top:90px
+     }
+
+     .card_2{
+       width:500px;
+       margin-top:10px;
+       margin-right:80px;
+       text-align: center;
+
+     }
+   }
+
+   .section_4{
+     margin-top:115px;
+     width: 100%;
+     background-image: url(../img/about_plan.png);
+     height:600px;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: 50% 50%;
+     position: relative;
+     .wrapper{
+       padding:30px;
+       width: 100%;
+       height:600px;
+       display:block;
+       background-color: rgba(0, 0, 0, 0.53);
+       position: absolute;
+       top:0;
+       text-align: center;
+       p{
+         color:$white;
+         width: 30%;
+         margin: auto;
+         margin-top:30px;
+         font-size: 18px;
+       }
+     }
+   }
+
+}

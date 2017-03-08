@@ -1,4 +1,7 @@
-
+$(window).load(function(){
+  $("#preloader").hide();
+  $(".space_content").show();
+});
 
 $(document).ready(function(){
 
@@ -93,12 +96,17 @@ $(document).ready(function(){
   //add_ordeer_box
 var fadeTime = 500;
 $('.order_btn').on('click',function(){
-  $('.order_light_box').css({display:'block',opacity:'0'});
-  $('.order_light_box').stop().animate({opacity:'1'},fadeTime, function()
-    {
-      $('.order_light_box').css({display:'block'});
-    });
-    return false;
+  if(sessionStorage.getItem("username")){
+    $('.order_light_box').css({display:'block',opacity:'0'});
+    $('.order_light_box').stop().animate({opacity:'1'},fadeTime, function()
+      {
+        $('.order_light_box').css({display:'block'});
+      });
+      return false;
+  }else{
+    alert("請登入會員後再訂閱!");
+    $('.main_nav_user_a').click();
+  }
 });
 
 $('.order_light_box .close_box,.thx_button').on('click',function(){
@@ -606,6 +614,8 @@ $(window).keydown(function(event){
           })//ajax
 
     });//click
+
+
 
 
 
